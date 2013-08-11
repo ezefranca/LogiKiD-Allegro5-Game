@@ -1,0 +1,16 @@
+#include "../include/engine.h"
+
+void StartGame(Jogo *game)
+{
+    while(1)
+    {
+        bool event = false;
+        ALLEGRO_EVENT ev;
+        
+        if(game->fps > 0)
+        {
+            al_wait_for_event(game->evento, &ev);
+            event = false;
+        }
+    }
+}
