@@ -16,10 +16,12 @@ $(ODIR)/%.o: $(SRCDIR)/%.c
 
 $(OUTPUTDIR)/ProjetoPI2: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
+	$(info ************  COMPILADO COM SUCESSO ************)
 
 all: $(OUTPUTDIR)/ProjetoPI2
 
 .PHONY: clean
-
+    
 clean:
-	rm -f $(ODIR)/*.o $(ODIR)/kernel/*.o *~ allegro.log $(SRCDIR)/*~ $(OUTPUTDIR)/*
+	rm -f $(ODIR)/*.o *~ allegro.log $(SRCDIR)/*~ $(OUTPUTDIR)/*
+	
