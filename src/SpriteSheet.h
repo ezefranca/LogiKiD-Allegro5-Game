@@ -1,3 +1,9 @@
+/*
+ * Contem as informações do sprite sheet
+ * Inicio: 11/08/2013
+ * Autor: Alexandre Savelli Bencz
+ */
+
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 

@@ -1,3 +1,9 @@
+/*
+ * Informações comuns entre os arquivos
+ * Inicio: 11/08/2013
+ * Autor: Alexandre Savelli Bencz
+ */
+
 #include <stdio.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
