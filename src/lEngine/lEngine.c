@@ -24,18 +24,18 @@ void createInputsTest()
 	ast1.gate = NOR;
 	ast1.input1 = true;
 	ast1.input2 = true;
-	ast3.result = ~(ast1.input1|ast1.input2);
+	ast1.result = !(ast1.input1||ast1.input2);
 
 	ast2.gate = NOR;
 	ast2.input1 = true;
-	ast2.input2 = false;
-	ast2.result = ~(ast2.input1|ast2.input2);
+	ast2.input2 = true;
+	ast2.result = !(ast2.input1||ast2.input2);
 	ast1.nextGate = &ast2; // make the link
 
 	ast3.gate = NOR;
 	ast3.input1 = ast1.result;
 	ast3.input2 = ast2.result;
-	ast3.result = ~(ast3.input1|ast3.input2);
+	ast3.result = !(ast3.input1||ast3.input2);
 
 	if(ast3.result == true)
 		printf("true");
