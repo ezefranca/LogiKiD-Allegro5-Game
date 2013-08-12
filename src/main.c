@@ -5,7 +5,6 @@
  */
 
 #include "comum.h"
-#include "lEngine/lEngine.h"
 
 void QuitGame()
 {
@@ -15,8 +14,6 @@ void QuitGame()
 
 int main(void)
 {
-	executeTest();
-
 	if (!inicializar())
 			return -1;
 

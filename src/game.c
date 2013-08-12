@@ -5,59 +5,27 @@
  */
 
 #include "comum.h"
-#include "SpriteSheet.h"
-
-struct ImageSheet image;
-
-void moveDireita()
-{
-	if(++image.frameCount >= image.frameDelay)
-	{
-		if(++image.curFrame >= image.maxFrame)
-			image.curFrame = 0;
-
-		image.frameCount = 0;
-	}
-
-	image.x -= 4; // usado para controlar o fundo
-
-	/*if(image.x >= LARGURA + image.frameWidth)
-		image.x = 0; */
-}
-
-void moveEsquerda()
-{
-	if(++image.frameCount >= image.frameDelay)
-	{
-		if(++image.curFrame >= image.maxFrame)
-			image.curFrame = 0;
-
-		image.frameCount = 0;
-	}
-
-	image.x += 4; // usado para controlar o fundo
-
-	/*if(image.x <= image.frameWidth)
-		image.x = LARGURA; */
-}
+#include "Player.h"
 
 void GameLoop()
 {
+	struct Player player;
+
 	bool sair = false;
 	bool direita = false, esquerda = false;
 	bool idleE = false, idleD = true; // idle direita, idle esquerda
 
 	int posInSprite = 0;
 
-	image.x = ALTURA / 2;
-	image.y = LARGURA / 2;
-	image.maxFrame = 6;
-	image.curFrame = 0;
-	image.frameCount = 0;
-	image.frameDelay = 4;
-	image.frameWidth = 104;
-	image.frameHeight = 147;
-	image.image = al_load_bitmap("./data/gb_walk.png");
+	player.image.x = ALTURA / 2;
+	player.image.y = LARGURA / 2;
+	player.image.maxFrame = 6;
+	player.image.curFrame = 0;
+	player.image.frameCount = 0;
+	player.image.frameDelay = 4;
+	player.image.frameWidth = 104;
+	player.image.frameHeight = 147;
+	player.image.image = al_load_bitmap("./data/gb_walk.png");
 
 	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/FASE-1.png");
 
@@ -107,8 +75,8 @@ void GameLoop()
 				direita = false;
 
 				// reseta os valores dos sprites
-				image.curFrame = 0;
-				image.frameCount = 0;
+				player.image.curFrame = 0;
+				player.image.frameCount = 0;
 			}
 			if(esquerda == true)
 			{
@@ -117,26 +85,26 @@ void GameLoop()
 				esquerda = false;
 
 				// reseta os valores dos sprites
-				image.curFrame = 0;
-				image.frameCount = 0;
+				player.image.curFrame = 0;
+				player.image.frameCount = 0;
 			}
 		}
 		else if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
 			if(direita == true)
-				moveDireita();
+				moveDireita(&player);
 			if(esquerda == true)
-				moveEsquerda();
+				moveEsquerda(&player);
 		}
 		/* teste fundo */
-		al_draw_bitmap(fundo, image.x, 0, 0);
+		al_draw_bitmap(fundo, player.image.x-LARGURA, 0, 0);
 
 		if(idleE == true)
-			al_draw_bitmap_region(image.image, image.frameWidth, 303, image.frameWidth, image.frameHeight, 350, LARGURA/2, 0);
+			al_draw_bitmap_region(player.image.image, player.image.frameWidth, 303, player.image.frameWidth, player.image.frameHeight, 350, LARGURA/2, 0);
 		else if(idleD == true)
-			al_draw_bitmap_region(image.image, 0, 303, image.frameWidth, image.frameHeight, 350, LARGURA/2, 0);
+			al_draw_bitmap_region(player.image.image, 0, 303, player.image.frameWidth, player.image.frameHeight, 350, LARGURA/2, 0);
 		else
-			al_draw_bitmap_region(image.image, image.curFrame * image.frameWidth, posInSprite, image.frameWidth, image.frameHeight, 350, LARGURA/2, 0);
+			al_draw_bitmap_region(player.image.image, player.image.curFrame * player.image.frameWidth, posInSprite, player.image.frameWidth, player.image.frameHeight, 350, LARGURA/2, 0);
 
 
 
