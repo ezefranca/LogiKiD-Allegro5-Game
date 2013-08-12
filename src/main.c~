@@ -1,0 +1,37 @@
+#include "include/game.h"
+#include "include/config.h"
+#include "include/engine.h"
+
+int LoadFonts(Jogo* game) {
+	game->font = al_load_ttf_font("data/ShadowsIntoLight.ttf",alShared_Load_get_display_height(game->janela)*0.09,0 );
+	if(!game->font) {
+		fprintf(stderr, "failed to load game font!\n");
+		return -1;
+	}
+	al_set_target_bitmap(al_get_backbuffer(game->janela));
+	return 0;
+}
+
+int main(int argc, char **argv)
+{
+    Jogo *game = (Jogo*)malloc(sizeof(Jogo));
+    
+    if(!al_init()) {
+		fprintf(stderr, "failed to initialize allegro!\n");
+		return -1;
+	}
+	
+	LoadConfig(game, "config.ini");
+	
+	if (game->FullScreen == 1)
+	    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
+	else
+	    al_set_new_display_flags(ALLEGRO_WINDOWED);
+	    
+	LoadFonts(game);
+	game->janela = al_create_display(game->altura,game->largura);
+	
+	StartGame(game);
+    
+    return 0;
+}

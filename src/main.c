@@ -1,26 +1,19 @@
-#include "include/game.h"
-#include "include/config.h"
-#include "include/engine.h"
+#include "comum.h"
 
-int main(int argc, char **argv)
+void QuitGame()
 {
-    Jogo *game = (Jogo*)malloc(sizeof(Jogo));
-    
-    if(!al_init()) {
-		fprintf(stderr, "failed to initialize allegro!\n");
-		return -1;
-	}
-	
-	LoadConfig(game, "config.ini");
-	
-	if (game->FullScreen == 1)
-	    al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);
-	else
-	    al_set_new_display_flags(ALLEGRO_WINDOWED);
-	    
-	game->janela = al_create_display(game->altura,game->largura);
-	
-	StartGame(game);
-    
-    return 0;
+	al_destroy_event_queue(game.fila_eventos);
+	al_destroy_display(game.janela);
+}
+
+int main(void)
+{
+
+	if (!inicializar())
+			return -1;
+
+	GameLoop();
+	QuitGame();
+
+	return 0;
 }
