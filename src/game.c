@@ -19,9 +19,9 @@ void moveDireita()
 		image.frameCount = 0;
 	}
 
-	/*image.x += 5;
+	image.x -= 4; // usado para controlar o fundo
 
-	if(image.x >= LARGURA + image.frameWidth)
+	/*if(image.x >= LARGURA + image.frameWidth)
 		image.x = 0; */
 }
 
@@ -35,9 +35,9 @@ void moveEsquerda()
 		image.frameCount = 0;
 	}
 
-	/*image.x -= 5;
+	image.x += 4; // usado para controlar o fundo
 
-	if(image.x <= image.frameWidth)
+	/*if(image.x <= image.frameWidth)
 		image.x = LARGURA; */
 }
 
@@ -58,6 +58,8 @@ void GameLoop()
 	image.frameWidth = 104;
 	image.frameHeight = 147;
 	image.image = al_load_bitmap("./data/gb_walk.png");
+
+	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/FASE-1.png");
 
 	al_start_timer(game.timer);
 	while(!sair)
@@ -126,6 +128,8 @@ void GameLoop()
 			if(esquerda == true)
 				moveEsquerda();
 		}
+		/* teste fundo */
+		al_draw_bitmap(fundo, image.x, 0, 0);
 
 		if(idleE == true)
 			al_draw_bitmap_region(image.image, image.frameWidth, 303, image.frameWidth, image.frameHeight, 350, LARGURA/2, 0);
@@ -133,6 +137,8 @@ void GameLoop()
 			al_draw_bitmap_region(image.image, 0, 303, image.frameWidth, image.frameHeight, 350, LARGURA/2, 0);
 		else
 			al_draw_bitmap_region(image.image, image.curFrame * image.frameWidth, posInSprite, image.frameWidth, image.frameHeight, 350, LARGURA/2, 0);
+
+
 
 		al_flip_display();
 		al_clear_to_color(al_map_rgb(0,0,0));
