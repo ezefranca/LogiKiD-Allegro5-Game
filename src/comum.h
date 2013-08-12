@@ -4,6 +4,9 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 
+#define ALTURA  800
+#define LARGURA 600
+
 struct Game
 {
 	ALLEGRO_TIMER *timer;

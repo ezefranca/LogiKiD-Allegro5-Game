@@ -8,12 +8,11 @@ void QuitGame()
 
 int main(void)
 {
-
 	if (!inicializar())
 			return -1;
 
 	GameLoop();
-	QuitGame();
 
+	QuitGame();
 	return 0;
 }

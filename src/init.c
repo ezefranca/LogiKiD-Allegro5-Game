@@ -28,7 +28,7 @@ bool inicializar()
         return false;
     }
 
-    game.janela = al_create_display(800, 600);
+    game.janela = al_create_display(ALTURA, LARGURA);
     if (!game.janela)
     {
         fprintf(stderr, "Falha ao criar janela.\n");
