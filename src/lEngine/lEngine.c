@@ -34,7 +34,7 @@ void createInputsTest()
 	ast3.gate = NOR;
 	ast1.nextGate->input1 = !(ast1.input1|ast1.input2);
 	ast2.nextGate->input2 = !(ast2.input1|ast2.input2);
-	ast3.result = ~(ast3.input1|ast3.input2);
+	ast3.result = !(ast3.input1|ast3.input2);
 
 	if(ast3.result == true)
 		printf("true");

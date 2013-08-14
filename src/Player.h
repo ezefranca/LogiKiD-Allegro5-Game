@@ -32,3 +32,6 @@ struct Player
 
 void moveDireita(struct Player *player);
 void moveEsquerda(struct Player *player);
+void moveCima(struct Player *player);
+void moveBaixo(struct Player *player);
+

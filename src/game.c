@@ -13,6 +13,7 @@ void GameLoop()
 
 	bool sair = false;
 	bool direita = false, esquerda = false;
+	bool sobe = false, desce = false;
 	bool idleE = false, idleD = true; // idle direita, idle esquerda
 
 	int posInSprite = 0;
@@ -64,6 +65,14 @@ void GameLoop()
 					idleD = false;
 				}
 				break;
+			case ALLEGRO_KEY_UP:
+				if(desce != true)
+					sobe = true;
+				break;
+			case ALLEGRO_KEY_DOWN:
+				if(sobe != true)
+					desce = true;
+				break;
 			}
 		}
 		else if(ev.type == ALLEGRO_EVENT_KEY_UP)
@@ -88,6 +97,16 @@ void GameLoop()
 				player.image.curFrame = 0;
 				player.image.frameCount = 0;
 			}
+			if(sobe == true)
+			{
+				sobe = false;
+				desce = false;
+			}
+			if(desce == true)
+			{
+				sobe = false;
+				desce = false;
+			}
 		}
 		else if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
@@ -95,16 +114,20 @@ void GameLoop()
 				moveDireita(&player);
 			if(esquerda == true)
 				moveEsquerda(&player);
+			if(sobe == true)
+				moveCima(&player);
+			if(desce == true)
+				moveBaixo(&player);
 		}
 		/* teste fundo */
-		al_draw_bitmap(fundo, player.image.x-LARGURA, 0, 0);
+		al_draw_bitmap(fundo, 0, 0, 0);
 
 		if(idleE == true)
-			al_draw_bitmap_region(player.image.image, player.image.frameWidth, 303, player.image.frameWidth, player.image.frameHeight, 350, LARGURA/2, 0);
+			al_draw_bitmap_region(player.image.image, player.image.frameWidth, 303, player.image.frameWidth, player.image.frameHeight, player.image.x, player.image.y, 0);
 		else if(idleD == true)
-			al_draw_bitmap_region(player.image.image, 0, 303, player.image.frameWidth, player.image.frameHeight, 350, LARGURA/2, 0);
+			al_draw_bitmap_region(player.image.image, 0, 303, player.image.frameWidth, player.image.frameHeight, player.image.x, player.image.y, 0);
 		else
-			al_draw_bitmap_region(player.image.image, player.image.curFrame * player.image.frameWidth, posInSprite, player.image.frameWidth, player.image.frameHeight, 350, LARGURA/2, 0);
+			al_draw_bitmap_region(player.image.image, player.image.curFrame * player.image.frameWidth, posInSprite, player.image.frameWidth, player.image.frameHeight, player.image.x, player.image.y, 0);
 
 
 
