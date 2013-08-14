@@ -6,7 +6,7 @@
 
 #include "lEngine.h"
 
-struct AstLogic ast1, ast2, ast3;
+struct AstLogic ast1, ast2, ast3, ast4;
 
 //
 //     1-|ast1|
@@ -21,7 +21,7 @@ struct AstLogic ast1, ast2, ast3;
 
 void createInputsTest()
 {
-	ast1.gate = NOR;
+	ast1.gate = NOR;!(ast2.input1|ast2.input2);
 	ast1.input1 = true;
 	ast1.input2 = true;
 	ast1.nextGate = &ast3;
@@ -34,9 +34,15 @@ void createInputsTest()
 	ast3.gate = NOR;
 	ast1.nextGate->input1 = !(ast1.input1|ast1.input2);
 	ast2.nextGate->input2 = !(ast2.input1|ast2.input2);
+	ast3.nextGate = &ast4;
 	ast3.result = !(ast3.input1|ast3.input2);
 
-	if(ast3.result == true)
+	ast4.gate = AND;
+	ast4.input1 = ast3.result;
+	ast4.input2 = !(ast2.input1|ast2.input2);
+	ast4.result = (ast4.input1 && ast4.input2);
+
+	if(ast4.result == true)
 		printf("true");
 	else
 		printf("false");
