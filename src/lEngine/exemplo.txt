@@ -3,10 +3,10 @@
 # desenho de demonstração da idéia...
 # [1]-+|AND|
 # [0]-+|___|+-----+|AND|
-# [0]-------------+|___|+--[OUTPUT]
+# [1]-------------+|___|+--[OUTPUT]
 
 # demonstração otimizada
-LET A = [AND] 1 1
+LET A = [AND] 1 0
 LET B = [AND] A 1
 
 return B
