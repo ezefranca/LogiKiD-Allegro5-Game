@@ -1,0 +1,18 @@
+# [1]-+|AND|
+# [0]-+|___|+-----+|AND|
+# [0]-------------+|___|+--[OUTPUT]
+
+# desenho de demonstração da idéia...
+
+$[A] = 1
+$[B] = 0
+$[C] = AND A,B
+$[D] = AND C,0
+
+# demonstração otimizada
+$[A] = AND 1,0
+$[B] = AND A,0
+
+@return [B]
+
+ 
