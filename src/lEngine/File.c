@@ -1,6 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include "File.h"
 
 char** readFile(const char *filename, size_t *lineCount)
 {
