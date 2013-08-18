@@ -1,0 +1,12 @@
+# OBS: TODAS AS LINHAS INICIADAS COM '#' SÃO CONSIDERADAS COMENTARIOS...
+
+# desenho de demonstração da idéia...
+# [1]-+|AND|
+# [0]-+|___|+-----+|AND|
+# [1]-------------+|___|+--[OUTPUT]
+
+# demonstração otimizada
+LET A = [AND] 1 0
+LET B = [AND] A 1
+
+return B
