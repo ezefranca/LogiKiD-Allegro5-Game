@@ -1,6 +1,6 @@
 #include "StartMenu.h"
 
-void printCoisaNova(int MenuPosition)
+void PrintMenu(int MenuPosition)
 {
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "Iniciar jogo");
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 140, ALLEGRO_ALIGN_CENTRE, "Sair");
@@ -22,7 +22,7 @@ void StartMenu()
 	int tecla = 0;
 	int MenuPosition = 0;
 	
-	printCoisaNova(0);
+	PrintMenu(0);
 	
 	al_start_timer(game.timer);
 	while(!sair)
@@ -41,7 +41,7 @@ void StartMenu()
 				if(MenuPosition == 0)
 				{
 					GameLoop();
-					printCoisaNova(0);
+					PrintMenu(0);
 				}
 				else
 					sair = true;
@@ -75,7 +75,7 @@ void StartMenu()
         {
             al_clear_to_color(al_map_rgb(0, 0, 0));
  
-            printCoisaNova(MenuPosition);
+            PrintMenu(MenuPosition);
  
             tecla = 0;
         }
