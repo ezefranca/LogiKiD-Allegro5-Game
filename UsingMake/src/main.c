@@ -14,13 +14,77 @@ void QuitGame()
 	al_destroy_font(game.fonte);
 }
 
+void fadeout(int velocidade)
+{
+    ALLEGRO_BITMAP *buffer = NULL;
+    buffer = al_create_bitmap(800, 600);
+    al_set_target_bitmap(buffer);
+    al_draw_bitmap(al_get_backbuffer(game.janela), 0, 0, 0);
+    al_set_target_bitmap(al_get_backbuffer(game.janela));
+ 
+    if (velocidade <= 0)
+    {
+        velocidade = 1;
+    }
+    else if (velocidade > 15)
+    {
+        velocidade = 15;
+    }
+ 
+    int alfa;
+    for (alfa = 0; alfa <= 255; alfa += velocidade)
+    {
+        al_clear_to_color(al_map_rgba(0, 0, 0, 0));
+        al_draw_tinted_bitmap(buffer, al_map_rgba(255 - alfa, 255 - alfa, 255 - alfa, alfa), 0, 0, 0);
+        al_flip_display();
+        al_rest(0.005); // Não é necessário caso haja controle de FPS
+    }
+ 
+    al_destroy_bitmap(buffer);
+}
+ 
+void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
+{
+    if (velocidade < 0)
+    {
+        velocidade = 1;
+    }
+    else if (velocidade > 15)
+    {
+        velocidade = 15;
+    }
+ 
+    int alfa;
+    for (alfa = 0; alfa <= 255; alfa += velocidade)
+    {
+        al_clear_to_color(al_map_rgb(0, 0, 0));
+        al_draw_tinted_bitmap(imagem, al_map_rgba(alfa, alfa, alfa, alfa), 80, 100, 0);
+        al_flip_display();
+        al_rest(0.005); // Não é necessário caso haja controle de FPS
+    }
+}
+
+void InitScreens()
+{
+	ALLEGRO_BITMAP *temp = al_load_bitmap("data/senac.png");
+	fadein(temp, 1);
+	al_rest(3.0);
+    fadeout(1);
+    
+    temp = al_load_bitmap("data/pi.png");
+	fadein(temp, 1);
+	al_rest(3.0);
+    fadeout(1);
+}
+
 int main(void)
 {
 	//inputLogic("logic/exemplo.txt");
 
 	if (!inicializar())
-			return -1;
-
+		return -1;
+			
+	InitScreens();
 	GameLoop();
 
 	QuitGame();

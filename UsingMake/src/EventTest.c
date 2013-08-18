@@ -1,6 +1,24 @@
 #include "EventTest.h"
 #include "comum.h"
 
+void printCoisa(int tecla)
+{
+	switch (tecla)
+	{
+    	case 1:
+        	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "CIMA");
+            break;
+        case 2:
+        	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "BAIXO");
+            break;
+        case 3:
+        	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "ESQUERDA");
+            break;
+        case 4:
+        	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "DIREITA");
+    }
+}
+
 void StartEventTest(ALLEGRO_EVENT evento)
 {
 	bool sair = false;
@@ -40,25 +58,11 @@ void StartEventTest(ALLEGRO_EVENT evento)
         {
             al_clear_to_color(al_map_rgb(0, 0, 0));
  
-            switch (tecla)
-            {
-            case 1:
-            	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "CIMA");
-                break;
-            case 2:
-                al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "BAIXO");
-                break;
-            case 3:
-            	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "ESQUERDA");
-                break;
-            case 4:
-            	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "DIREITA");
-                break;
-            }
+            printCoisa(tecla);
  
             tecla = 0;
         }
- 
+        
         al_flip_display();
 	}
 }
