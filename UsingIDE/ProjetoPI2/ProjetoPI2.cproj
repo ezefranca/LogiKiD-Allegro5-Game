@@ -75,6 +75,9 @@
     <Compile Include="..\..\UsingMake\src\EventTest.c">
       <Link>EventTest.c</Link>
     </Compile>
+    <Compile Include="..\..\UsingMake\src\StartMenu.c">
+      <Link>StartMenu.c</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\UsingMake\src\Player.h">
@@ -94,6 +97,9 @@
     </None>
     <None Include="..\..\UsingMake\src\EventTest.h">
       <Link>EventTest.h</Link>
+    </None>
+    <None Include="..\..\UsingMake\src\StartMenu.h">
+      <Link>StartMenu.h</Link>
     </None>
   </ItemGroup>
 </Project>

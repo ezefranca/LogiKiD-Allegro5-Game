@@ -5,7 +5,6 @@
  */
 
 #include "comum.h"
-#include "lEngine/lEngine.h"
 
 void QuitGame()
 {
@@ -84,8 +83,9 @@ int main(void)
 	if (!inicializar())
 		return -1;
 			
-	InitScreens();
-	GameLoop();
+	//InitScreens();
+	StartMenu();
+	//GameLoop();
 
 	QuitGame();
 	return 0;
