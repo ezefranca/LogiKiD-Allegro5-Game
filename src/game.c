@@ -9,8 +9,6 @@
 
 void GameLoop()
 {
-	struct Player player;
-
 	bool sair = false;
 	bool direita = false, esquerda = false;
 	bool sobe = false, desce = false;
@@ -18,15 +16,16 @@ void GameLoop()
 
 	int posInSprite = 0;
 
-	player.image.x = ALTURA / 2;
-	player.image.y = LARGURA / 2;
-	player.image.maxFrame = 6;
-	player.image.curFrame = 0;
-	player.image.frameCount = 0;
-	player.image.frameDelay = 4;
-	player.image.frameWidth = 104;
-	player.image.frameHeight = 147;
-	player.image.image = al_load_bitmap("./data/gb_walk.png");
+	struct Player player;
+	player.Image.x = ALTURA / 2;
+	player.Image.y = LARGURA / 2;
+	player.Image.maxFrame = 6;
+	player.Image.curFrame = 0;
+	player.Image.frameCount = 0;
+	player.Image.frameDelay = 4;
+	player.Image.frameWidth = 104;
+	player.Image.frameHeight = 147;
+	player.Image.image = al_load_bitmap("./data/gb_walk.png");
 
 	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/FASE-1.png");
 
@@ -84,8 +83,8 @@ void GameLoop()
 				direita = false;
 
 				// reseta os valores dos sprites
-				player.image.curFrame = 0;
-				player.image.frameCount = 0;
+				player.Image.curFrame = 0;
+				player.Image.frameCount = 0;
 			}
 			if(esquerda == true)
 			{
@@ -94,8 +93,8 @@ void GameLoop()
 				esquerda = false;
 
 				// reseta os valores dos sprites
-				player.image.curFrame = 0;
-				player.image.frameCount = 0;
+				player.Image.curFrame = 0;
+				player.Image.frameCount = 0;
 			}
 			if(sobe == true)
 			{
@@ -123,11 +122,11 @@ void GameLoop()
 		al_draw_bitmap(fundo, 0, 0, 0);
 
 		if(idleE == true)
-			al_draw_bitmap_region(player.image.image, player.image.frameWidth, 303, player.image.frameWidth, player.image.frameHeight, player.image.x, player.image.y, 0);
+			al_draw_bitmap_region(player.Image.image, player.Image.frameWidth, 303, player.Image.frameWidth, player.Image.frameHeight, player.Image.x, player.Image.y, 0);
 		else if(idleD == true)
-			al_draw_bitmap_region(player.image.image, 0, 303, player.image.frameWidth, player.image.frameHeight, player.image.x, player.image.y, 0);
+			al_draw_bitmap_region(player.Image.image, 0, 303, player.Image.frameWidth, player.Image.frameHeight, player.Image.x, player.Image.y, 0);
 		else
-			al_draw_bitmap_region(player.image.image, player.image.curFrame * player.image.frameWidth, posInSprite, player.image.frameWidth, player.image.frameHeight, player.image.x, player.image.y, 0);
+			al_draw_bitmap_region(player.Image.image, player.Image.curFrame * player.Image.frameWidth, posInSprite, player.Image.frameWidth, player.Image.frameHeight, player.Image.x, player.Image.y, 0);
 
 
 

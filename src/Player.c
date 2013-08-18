@@ -2,15 +2,15 @@
 
 void moveDireita(struct Player *player)
 {
-	if(++player->image.frameCount >= player->image.frameDelay)
+	if(++player->Image.frameCount >= player->Image.frameDelay)
 	{
-		if(++player->image.curFrame >= player->image.maxFrame)
-			player->image.curFrame = 0;
+		if(++player->Image.curFrame >= player->Image.maxFrame)
+			player->Image.curFrame = 0;
 
-		player->image.frameCount = 0;
+		player->Image.frameCount = 0;
 	}
 
-	player->image.x += 4; // usado para controlar o fundo
+	player->Image.x += 4; // usado para controlar o fundo
 
 	/*if(image.x >= LARGURA + image.frameWidth)
 		image.x = 0; */
@@ -18,15 +18,15 @@ void moveDireita(struct Player *player)
 
 void moveEsquerda(struct Player *player)
 {
-	if(++player->image.frameCount >= player->image.frameDelay)
+	if(++player->Image.frameCount >= player->Image.frameDelay)
 	{
-		if(++player->image.curFrame >= player->image.maxFrame)
-			player->image.curFrame = 0;
+		if(++player->Image.curFrame >= player->Image.maxFrame)
+			player->Image.curFrame = 0;
 
-		player->image.frameCount = 0;
+		player->Image.frameCount = 0;
 	}
 
-	player->image.x -= 4; // usado para controlar o fundo
+	player->Image.x -= 4; // usado para controlar o fundo
 
 	/*if(image.x <= image.frameWidth)
 		image.x = LARGURA; */
@@ -34,18 +34,10 @@ void moveEsquerda(struct Player *player)
 
 void moveCima(struct Player *player)
 {
-	if(++player->image.frameCount >= player->image.frameDelay)
-	{
-		if(++player->image.curFrame >= player->image.maxFrame)
-			player->image.curFrame = 0;
-
-		player->image.frameCount = 0;
-	}
-
-	player->image.y -= 4;
+	player->Image.y -= 4;
 }
 
 void moveBaixo(struct Player *player)
 {
-	player->image.y += 4;
+	player->Image.y += 4;
 }
