@@ -4,7 +4,7 @@
  * Autor: Alexandre Savelli Bencz
  */
 
-#include "lEngine.h"
+/*#include "lEngine.h"
 #include "File.h"
 
 struct AstLogic ast1, ast2, ast3, ast4;
@@ -81,3 +81,4 @@ bool inputLogic(const char *FileName)
 
 void ConfirmeLogic(){
 }
+*/

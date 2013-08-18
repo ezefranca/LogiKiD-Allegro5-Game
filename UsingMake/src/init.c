@@ -15,7 +15,6 @@ bool inicializar()
     }
 
     al_init_font_addon();
-
     if (!al_init_ttf_addon())
     {
         fprintf(stderr, "Falha ao inicializar add-on allegro_ttf.\n");
@@ -58,7 +57,13 @@ bool inicializar()
         al_destroy_display(game.janela);
         return false;
     }
-
+    
+    game.fonte = al_load_font("data/terminal.ttf", 20, 0);
+    if (!game.fonte)
+    {
+        fprintf(stderr, "Falha ao carregar fonte.\n");
+        return false;
+    }
 
     al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
     al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());

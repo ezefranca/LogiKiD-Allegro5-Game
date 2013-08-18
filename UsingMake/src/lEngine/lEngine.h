@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <allegro5/allegro.h>
 
 typedef enum { NEG, AND, OR, NAND, NOR, XOR, XNOR }Gates;
@@ -15,3 +15,4 @@ struct AstLogic
 void executeTest();
 bool inputLogic(const char *FileName);
 void ConfirmeLogic();
+*/

@@ -1,4 +1,4 @@
-#include "File.h"
+/*#include "File.h"
 
 // Forked from: http://stackoverflow.com/questions/252782/strdup-what-does-it-do-in-c
 char *strdup (const char *s) {
@@ -83,4 +83,4 @@ int split(char*** ret, char* instr, char* delim)
 	free(str);
  
 	return count;
-}
+}*/

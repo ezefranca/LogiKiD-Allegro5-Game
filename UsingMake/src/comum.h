@@ -15,6 +15,7 @@
 
 struct Game
 {
+	ALLEGRO_FONT *fonte;
 	ALLEGRO_TIMER *timer;
 	ALLEGRO_DISPLAY *janela;
 	ALLEGRO_EVENT_QUEUE *fila_eventos;
