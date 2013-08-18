@@ -1,5 +1,13 @@
 #include "File.h"
 
+// Forked from: http://stackoverflow.com/questions/252782/strdup-what-does-it-do-in-c
+char *strdup (const char *s) {
+    char *d = malloc (strlen (s) + 1);   // Allocate memory
+    if (d != NULL)
+        strcpy (d,s);                    // Copy string if okay
+    return d;                            // Return new memory
+}
+
 char** readFile(const char *filename, size_t *lineCount)
 {
 	FILE *fp;
@@ -9,13 +17,14 @@ char** readFile(const char *filename, size_t *lineCount)
 
 	if(NULL==(fp=fopen(filename, "r")))
 	{
-		perror("Impossivel abrir o arquivo."); // lembrar de fazer o tratamento para funcionar com a allegro
+	
+		fprintf(stderr, "Impossivel abrir o arquivo\n.");
 		return NULL;
 	}
 
 	if(NULL==(line=(char**)malloc(sizeof(char*)*capacity)))
 	{
-		perror("Impossivel de alocar a memoria"); // lembrar de fazer o tratamento para funcionar com a allegro
+		fprintf(stderr, "Impossivel de alocar a memoria\n");
 		fclose(fp);
 		return NULL;
 	}
@@ -28,7 +37,7 @@ char** readFile(const char *filename, size_t *lineCount)
 			capacity += 32;
 			if(NULL==(line=(char**)realloc(line, sizeof(char*)*capacity)))
 			{
-				perror("Impossivel alocar a memoria"); // lembrar de fazer o tratamento para funcionar com a allegro
+				fprintf(stderr, "Impossivel de alocar a memoria\n");
 				fclose(fp);
 				return NULL;
 			}
@@ -52,20 +61,26 @@ void freeMem(char** p, size_t size)
 	free(p);
 }
 
-/*
- * Teste...
- */
-/*int main(int argc, char **argv)
+int split(char*** ret, char* instr, char* delim)
 {
-	int i = 0;
-	size_t lines;
-	char **line;
-
-	if(NULL!=(line=readFile("teste.txt", &lines)))
+	char* str = strdup(instr);
+ 
+	char** arr = (char**)malloc(sizeof(char*) * (strlen(instr)+1));
+	int count = 0;
+	char* result = NULL;
+	result = strtok(str, delim);
+	while (result != NULL)
 	{
-		for(i=0;i<lines;i++)
-			printf("%s", line[i]);
+		arr[count] = strdup(result);
+		count++;
+		result = strtok(NULL, delim);
 	}
-	freeMem(line, lines);
-	return 0;
-}*/
+ 
+	arr = (char**)realloc(arr, sizeof(char*) * (count+1));
+ 
+	*ret = arr;
+ 
+	free(str);
+ 
+	return count;
+}

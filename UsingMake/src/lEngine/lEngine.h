@@ -13,5 +13,5 @@ struct AstLogic
 };
 
 void executeTest();
-bool inputLogic(FILE *inp);
+bool inputLogic(const char *FileName);
 void ConfirmeLogic();

@@ -15,7 +15,7 @@ void QuitGame()
 
 int main(void)
 {
-	executeTest();
+	inputLogic("logic/exemplo.txt");
 
 	if (!inicializar())
 			return -1;

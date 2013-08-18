@@ -1,6 +1,11 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../UsingMake/src/lEngine/File.c">
+    <Files>
+      <File FileName="../UsingMake/src/lEngine/File.h" Line="1" Column="1" />
+      <File FileName="../UsingMake/src/lEngine/File.c" Line="16" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

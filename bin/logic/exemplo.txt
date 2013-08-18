@@ -1,0 +1,4 @@
+LET A = [AND] 1 0
+LET B = [AND] A 1
+
+return B

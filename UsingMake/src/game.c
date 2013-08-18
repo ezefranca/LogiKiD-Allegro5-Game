@@ -128,8 +128,6 @@ void GameLoop()
 		else
 			al_draw_bitmap_region(player.Image.image, player.Image.curFrame * player.Image.frameWidth, posInSprite, player.Image.frameWidth, player.Image.frameHeight, player.Image.x, player.Image.y, 0);
 
-
-
 		al_flip_display();
 		al_clear_to_color(al_map_rgb(0,0,0));
 	}
