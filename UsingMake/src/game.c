@@ -6,19 +6,26 @@
 
 #include "comum.h"
 #include "Player.h"
+#include "EventTest.h"
 
 void TextInScreen(const char *text, int flags)
 {
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 10, 10, flags, text);
 }
 
+ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
+{
+	return al_load_bitmap(bk_path);
+}
+
 void GameLoop()
 {
 	bool sair = false;
 	struct Player player;
-	CreatePlayer(&player);
+	
+	CreatePlayer(&player, ALTURA/2, LARGURA/2);
 
-	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/FASE-1.png");
+	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/FASE-1.png");
 
 	al_start_timer(game.timer);
 	while(!sair)
@@ -38,6 +45,8 @@ void GameLoop()
 				break;
 			case ALLEGRO_KEY_LEFT:
 				ProcessaMovimentoEsquerda(&player);
+				
+				StartEventTest(ev); // o parametro passado para o novo evento é o proprio evento, para o consumo do buffer de eventos...				
 				break;
 			case ALLEGRO_KEY_RIGHT:
 				ProcessaMovimentoDireita(&player);

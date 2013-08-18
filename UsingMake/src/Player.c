@@ -1,7 +1,6 @@
 #include "Player.h"
-#include "comum.h"
 
-void CreatePlayer(struct Player *player)
+void CreatePlayer(struct Player *player, int hStartPosition, int wStartPosition)
 {
 	player->state.direita = false;
 	player->state.esquerda = false;
@@ -11,8 +10,8 @@ void CreatePlayer(struct Player *player)
 	player->state.idleD = true;
 	
 	player->Image.posInSprite = 0;
-	player->Image.x = ALTURA / 2;
-	player->Image.y = LARGURA / 2;
+	player->Image.x = hStartPosition;
+	player->Image.y = wStartPosition;
 	player->Image.maxFrame = 6;
 	player->Image.curFrame = 0;
 	player->Image.frameCount = 0;

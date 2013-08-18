@@ -72,6 +72,9 @@
     <Compile Include="..\..\UsingMake\src\lEngine\lEngine.c">
       <Link>lEngine\lEngine.c</Link>
     </Compile>
+    <Compile Include="..\..\UsingMake\src\EventTest.c">
+      <Link>EventTest.c</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\UsingMake\src\Player.h">
@@ -88,6 +91,9 @@
     </None>
     <None Include="..\..\UsingMake\src\lEngine\lEngine.h">
       <Link>lEngine\lEngine.h</Link>
+    </None>
+    <None Include="..\..\UsingMake\src\EventTest.h">
+      <Link>EventTest.h</Link>
     </None>
   </ItemGroup>
 </Project>

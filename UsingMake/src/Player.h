@@ -36,7 +36,7 @@ struct Player
 	}Image;
 };
 
-void CreatePlayer(struct Player *player);
+void CreatePlayer(struct Player *player, int hStartPosition, int wStartPosition);
 void moveDireita(struct Player *player);
 void moveEsquerda(struct Player *player);
 void moveCima(struct Player *player);
