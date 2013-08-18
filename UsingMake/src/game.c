@@ -18,7 +18,7 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 	return al_load_bitmap(bk_path);
 }
 
-void GameLoop()
+void GameLoop(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
 	struct Player player;
@@ -27,10 +27,10 @@ void GameLoop()
 
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/FASE-1.png");
 
-	al_start_timer(game.timer);
+	//al_start_timer(game.timer);
 	while(!sair)
 	{
-		ALLEGRO_EVENT ev;
+		//ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
@@ -46,7 +46,7 @@ void GameLoop()
 			case ALLEGRO_KEY_LEFT:
 				ProcessaMovimentoEsquerda(&player);
 				
-				StartEventTest(ev); // o parametro passado para o novo evento é o proprio evento, para o consumo do buffer de eventos...				
+				//StartEventTest(ev); // o parametro passado para o novo evento é o proprio evento, para o consumo do buffer de eventos...				
 				break;
 			case ALLEGRO_KEY_RIGHT:
 				ProcessaMovimentoDireita(&player);
