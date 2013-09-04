@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.8.31)  3 SEP 2013 21:24
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.8.31)  4 SEP 2013 18:27
 entering extended mode
  %&-line parsing enabled.
 **main.tex
@@ -100,7 +100,26 @@ File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
 \Urlmuskip=\muskip10
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+(/usr/share/texmf-texlive/tex/generic/babel/babel.sty
+Package: babel 2008/07/06 v3.8l The Babel package
+
+(/usr/share/texmf-texlive/tex/generic/babel/portuges.ldf
+Language: portuges 2008/03/18 v1.2q Portuguese support from the babel system
+
+(/usr/share/texmf-texlive/tex/generic/babel/babel.def
+File: babel.def 2008/07/06 v3.8l Babel common definitions
+\babel@savecnt=\count92
+\U@D=\dimen118
+)
+
+Package babel Warning: No hyphenation patterns were loaded for
+(babel)                the language `Portuguese'
+(babel)                I will use the patterns loaded for \language=0 instead.
+
+\l@portuges = a dialect from \language0
+\l@brazil = a dialect from \language\l@portuges 
+Package babel Info: Making " an active character on input line 145.
+)) (/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
@@ -379,15 +398,15 @@ driver: pdftex
 -----------------------
 (/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count92
-\scratchdimen=\dimen118
+\scratchcounter=\count93
+\scratchdimen=\dimen119
 \scratchbox=\box27
-\nofMPsegments=\count93
-\nofMParguments=\count94
+\nofMPsegments=\count94
+\nofMParguments=\count95
 \everyMPshowfont=\toks19
-\MPscratchCnt=\count95
-\MPscratchDim=\dimen119
-\MPnumerator=\count96
+\MPscratchCnt=\count96
+\MPscratchDim=\dimen120
+\MPnumerator=\count97
 \everyMPtoPDFconversion=\toks20
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <16> not available
@@ -404,11 +423,14 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 29.
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
+Overfull \hbox (51.80182pt too wide) in paragraph at lines 29--29
+ [][] 
+ []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 31.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
-
 
 LaTeX Warning: Citation `A' on page 1 undefined on input line 62.
 
@@ -436,26 +458,27 @@ File: table.jpg Graphic file (type jpg)
 LaTeX Warning: Citation `barbosa:97' on page 2 undefined on input line 120.
 
 
-LaTeX Warning: Citation `boulic:91' on page 2 undefined on input line 121.
+LaTeX Warning: Citation `rau:11' on page 2 undefined on input line 121.
 
 
 LaTeX Warning: Citation `barbosa:97' on page 2 undefined on input line 121.
 
-[2 <./fig1.jpg> <./fig2.jpg>]
-No file main.bbl.
-[3 <./table.jpg>] (./main.aux)
+[2 <./fig1.jpg> <./fig2.jpg>] (./main.bbl) [3 <./table.jpg>] (./main.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 2186 strings out of 495061
- 27896 string characters out of 1182621
- 84898 words of memory out of 3000000
- 5341 multiletter control sequences out of 15000+50000
+ 2523 strings out of 495061
+ 31914 string characters out of 1182621
+ 91868 words of memory out of 3000000
+ 5665 multiletter control sequences out of 15000+50000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 30i,8n,28p,443b,308s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,28p,443b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type
 1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhv
@@ -463,7 +486,7 @@ b8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts
 /type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on main.pdf (3 pages, 204229 bytes).
+Output written on main.pdf (3 pages, 205530 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
