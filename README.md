@@ -45,6 +45,20 @@ $ cd UsingMake ; Make
 |   \---logic
 |           exemplo.txt
 |
++---doc
+|   \---latex
+|           caption2.sty
+|           fig1.jpg
+|           fig2.jpg
+|           main.aux
+|           main.log
+|           main.synctex.gz
+|           main.tex
+|           sbc-template.bib
+|           sbc-template.sty
+|           sbc.bst
+|           table.jpg
+|
 +---UsingIDE
 |   |   ProjetoPI2.sln
 |   |   ProjetoPI2.userprefs
