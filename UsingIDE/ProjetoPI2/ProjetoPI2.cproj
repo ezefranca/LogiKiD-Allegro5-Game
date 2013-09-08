@@ -81,6 +81,12 @@
     <Compile Include="..\..\UsingMake\src\ItensMenu.c">
       <Link>ItensMenu.c</Link>
     </Compile>
+    <Compile Include="..\..\UsingMake\src\Fases\Fase1\fase1.c">
+      <Link>Fases\Fase1\fase1.c</Link>
+    </Compile>
+    <Compile Include="..\..\UsingMake\src\Fases\Fase2\fase2.c">
+      <Link>Fases\Fase2\fase2.c</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\UsingMake\src\Player.h">
@@ -107,5 +113,14 @@
     <None Include="..\..\UsingMake\src\ItensMenu.h">
       <Link>ItensMenu.h</Link>
     </None>
+    <None Include="..\..\UsingMake\src\Fases\Fase1\fase1.h">
+      <Link>Fases\Fase1\fase1.h</Link>
+    </None>
+    <None Include="..\..\UsingMake\src\Fases\Fase2\fase2.h">
+      <Link>Fases\Fase2\fase2.h</Link>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Fases\" />
   </ItemGroup>
 </Project>
