@@ -1,15 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="ProjetoPI2/ItensMenu.c">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../UsingMake/src/EventTest.c">
     <Files>
-      <File FileName="ProjetoPI2/ItensMenu.h" Line="5" Column="41" />
-      <File FileName="ProjetoPI2/ItensMenu.c" Line="13" Column="9" />
       <File FileName="../UsingMake/src/EventTest.c" Line="33" Column="17" />
       <File FileName="../UsingMake/src/EventTest.h" Line="1" Column="1" />
-      <File FileName="../UsingMake/src/game.c" Line="21" Column="31" />
+      <File FileName="../UsingMake/src/game.c" Line="5" Column="4" />
       <File FileName="../UsingMake/src/main.c" Line="8" Column="23" />
       <File FileName="../UsingMake/src/comum.h" Line="16" Column="8" />
-      <File FileName="../UsingMake/src/StartMenu.c" Line="42" Column="26" />
+      <File FileName="../UsingMake/src/StartMenu.c" Line="42" Column="11" />
       <File FileName="../UsingMake/src/StartMenu.h" Line="1" Column="1" />
       <File FileName="../UsingMake/src/init.c" Line="9" Column="18" />
     </Files>
