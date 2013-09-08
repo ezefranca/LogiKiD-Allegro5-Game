@@ -5,6 +5,7 @@
  */
 
 #include "comum.h"
+#include "StartMenu.h"
 
 void QuitGame()
 {
@@ -28,7 +29,7 @@ void fadeout(int velocidade)
     else if (velocidade > 15)
     {
         velocidade = 15;
-    }
+    }            
  
     int alfa;
     for (alfa = 0; alfa <= 255; alfa += velocidade)

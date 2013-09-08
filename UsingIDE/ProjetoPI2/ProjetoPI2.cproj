@@ -13,7 +13,7 @@
     </Compiler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <OutputPath>..\..\bin</OutputPath>
     <DefineSymbols>DEBUG MONODEVELOP</DefineSymbols>
     <SourceDirectory>.</SourceDirectory>
@@ -78,6 +78,9 @@
     <Compile Include="..\..\UsingMake\src\StartMenu.c">
       <Link>StartMenu.c</Link>
     </Compile>
+    <Compile Include="..\..\UsingMake\src\ItensMenu.c">
+      <Link>ItensMenu.c</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\UsingMake\src\Player.h">
@@ -100,6 +103,9 @@
     </None>
     <None Include="..\..\UsingMake\src\StartMenu.h">
       <Link>StartMenu.h</Link>
+    </None>
+    <None Include="..\..\UsingMake\src\ItensMenu.h">
+      <Link>ItensMenu.h</Link>
     </None>
   </ItemGroup>
 </Project>

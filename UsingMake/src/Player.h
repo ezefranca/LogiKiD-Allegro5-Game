@@ -7,6 +7,42 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_image.h>
 
+typedef struct
+{
+	ALLEGRO_BITMAP *image;
+
+	int x;
+	int y;
+
+	int posInSprite;
+	int maxFrame;
+	int curFrame;
+	int frameCount;
+	int frameDelay;
+	int frameWidth;
+	int frameHeight;
+}Image;
+
+typedef struct
+{
+	bool direita, esquerda;
+	bool sobe, desce;
+	bool idleE, idleD;
+}State;
+
+typedef struct
+{
+	int lgAND, lgOr, lgNAND, lgNOR;
+	int lgNEG, lgXOR, lgXNOR;
+}LogicGates;
+
+typedef struct
+{
+	State state;
+	Image image;
+	LogicGates lGates;
+}Player;
+
 struct Player
 {
 	int points;
@@ -34,6 +70,13 @@ struct Player
 		int frameWidth;
 		int frameHeight;
 	}Image;
+	
+	struct
+	{
+		int lgAND, lgOr, lgNAND, lgNOR;
+		int lgNEG, lgXOR, lgXNOR;
+		
+	}LogicGates;
 };
 
 void CreatePlayer(struct Player *player, int hStartPosition, int wStartPosition);

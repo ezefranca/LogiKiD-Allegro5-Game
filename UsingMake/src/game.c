@@ -23,6 +23,19 @@ void GameLoop(ALLEGRO_EVENT ev)
 	bool sair = false;
 	struct Player player;
 	
+	/* Adiciona as portas logicas... */
+	Player *test = malloc(sizeof(Player));
+	test->lGates.lgAND = 0;
+	/* teste... */
+	
+	player.LogicGates.lgAND = 0;
+	player.LogicGates.lgOr = 0;
+	player.LogicGates.lgNAND = 0;
+	player.LogicGates.lgNOR = 0;
+	player.LogicGates.lgNEG = 0;
+	player.LogicGates.lgXOR = 0;
+	player.LogicGates.lgXNOR = 0;
+	
 	CreatePlayer(&player, ALTURA/2, LARGURA/2);
 
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/FASE-1.png");

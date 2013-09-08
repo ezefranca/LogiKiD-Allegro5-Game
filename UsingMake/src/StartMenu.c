@@ -1,4 +1,5 @@
 #include "StartMenu.h"
+#include "comum.h"
 
 void PrintMenu(int MenuPosition)
 {

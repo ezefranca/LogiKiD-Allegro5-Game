@@ -1,0 +1,16 @@
+Beta - 0.0.1
+  xdev ->
+  [] Correção dos nomes de funções e variaveis
+  [] Correção do sistema de Player ->
+    [] Corrigir sistem de chamada e criação das variaveis ( utilizar malloc para proteger o tipo )
+    [] corrigir chamada da primeira fase
+    [] corrigir menu e o parametro de evento ( fehar o jogo quando o player realmente quer...)
+  [] criar um menu especial para o player ( enquanto joga )
+  [] buscar informações sobre o sistea AI
+  [] buscar infomações de como realmente vai ser o jogo
+    [] chegar em um consenso entre o grupo sobre como vai ser o jogo,e partir deste principio, sem mudanças...
+    
+  sdev ->
+  [] Desenvolvimento dos sprites
+  [] Desenvolvimento dos sons
+  [] documentação
