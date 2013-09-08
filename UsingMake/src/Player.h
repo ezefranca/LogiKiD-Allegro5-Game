@@ -43,51 +43,15 @@ typedef struct
 	LogicGates lGates;
 }Player;
 
-struct Player
-{
-	int points;
-	int level;
-
-	struct
-	{
-		bool direita, esquerda;
-		bool sobe, desce;
-		bool idleE, idleD;
-	}state;
-
-	struct
-	{
-		ALLEGRO_BITMAP *image;
-
-		int x;
-		int y;
-
-		int posInSprite;
-		int maxFrame;
-		int curFrame;
-		int frameCount;
-		int frameDelay;
-		int frameWidth;
-		int frameHeight;
-	}Image;
-	
-	struct
-	{
-		int lgAND, lgOr, lgNAND, lgNOR;
-		int lgNEG, lgXOR, lgXNOR;
-		
-	}LogicGates;
-};
-
-void CreatePlayer(struct Player *player, int hStartPosition, int wStartPosition);
-void moveDireita(struct Player *player);
-void moveEsquerda(struct Player *player);
-void moveCima(struct Player *player);
-void moveBaixo(struct Player *player);
-void ProcessaMovimentoEsquerda(struct Player *player);
-void ProcessaMovimentoDireita(struct Player *player);
-void ProcessaMovimentoCima(struct Player *player);
-void ProcessaMovimentoBaixo(struct Player *player);
-void ValidaMovimento_CK_UP(struct Player *player);
-void ValidaMovimento_TIMER(struct Player *player);
-void ValidaMovimento(struct Player *player);
+void CreatePlayer(Player *player, int hStartPosition, int wStartPosition);
+void moveDireita(Player *player);
+void moveEsquerda(Player *player);
+void moveCima(Player *player);
+void moveBaixo(Player *player);
+void ProcessaMovimentoEsquerda(Player *player);
+void ProcessaMovimentoDireita(Player *player);
+void ProcessaMovimentoCima(Player *player);
+void ProcessaMovimentoBaixo(Player *player);
+void ValidaMovimento_CK_UP(Player *player);
+void ValidaMovimento_TIMER(Player *player);
+void ValidaMovimento(Player *player);

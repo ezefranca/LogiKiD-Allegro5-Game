@@ -21,22 +21,18 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 void GameLoop(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
-	struct Player player;
-	
+	Player *player = malloc(sizeof(Player));
+		
 	/* Adiciona as portas logicas... */
-	Player *test = malloc(sizeof(Player));
-	test->lGates.lgAND = 0;
-	/* teste... */
+	player->lGates.lgAND = 0;
+	player->lGates.lgOr = 0;
+	player->lGates.lgNAND = 0;
+	player->lGates.lgNOR = 0;
+	player->lGates.lgNEG = 0;
+	player->lGates.lgXOR = 0;
+	player->lGates.lgXNOR = 0;
 	
-	player.LogicGates.lgAND = 0;
-	player.LogicGates.lgOr = 0;
-	player.LogicGates.lgNAND = 0;
-	player.LogicGates.lgNOR = 0;
-	player.LogicGates.lgNEG = 0;
-	player.LogicGates.lgXOR = 0;
-	player.LogicGates.lgXNOR = 0;
-	
-	CreatePlayer(&player, ALTURA/2, LARGURA/2);
+	CreatePlayer(player, ALTURA/2, LARGURA/2);
 
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/FASE-1.png");
 
@@ -57,35 +53,35 @@ void GameLoop(ALLEGRO_EVENT ev)
 				sair = true;
 				break;
 			case ALLEGRO_KEY_LEFT:
-				ProcessaMovimentoEsquerda(&player);
+				ProcessaMovimentoEsquerda(player);
 				
 				//StartEventTest(ev); // o parametro passado para o novo evento é o proprio evento, para o consumo do buffer de eventos...				
 				break;
 			case ALLEGRO_KEY_RIGHT:
-				ProcessaMovimentoDireita(&player);
+				ProcessaMovimentoDireita(player);
 				break;
 			case ALLEGRO_KEY_UP:
-				ProcessaMovimentoCima(&player);
+				ProcessaMovimentoCima(player);
 				break;
 			case ALLEGRO_KEY_DOWN:
-				ProcessaMovimentoBaixo(&player);
+				ProcessaMovimentoBaixo(player);
 				break;
 			}
 		}
 		else if(ev.type == ALLEGRO_EVENT_KEY_UP)
 		{
-			ValidaMovimento_CK_UP(&player);
+			ValidaMovimento_CK_UP(player);
 		}
 		else if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			ValidaMovimento_TIMER(&player);
+			ValidaMovimento_TIMER(player);
 		}
 		/* teste fundo */
 		al_draw_bitmap(fundo, 0, 0, 0);
 		
 		TextInScreen("Portas:", 0);
 		
-		ValidaMovimento(&player);
+		ValidaMovimento(player);
 		
 		al_flip_display();
 		al_clear_to_color(al_map_rgb(0,0,0));

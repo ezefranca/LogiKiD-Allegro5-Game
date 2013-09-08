@@ -1,6 +1,6 @@
 #include "Player.h"
 
-void CreatePlayer(struct Player *player, int hStartPosition, int wStartPosition)
+void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 {
 	player->state.direita = false;
 	player->state.esquerda = false;
@@ -9,76 +9,76 @@ void CreatePlayer(struct Player *player, int hStartPosition, int wStartPosition)
 	player->state.idleE = false;
 	player->state.idleD = true;
 	
-	player->Image.posInSprite = 0;
-	player->Image.x = hStartPosition;
-	player->Image.y = wStartPosition;
-	player->Image.maxFrame = 6;
-	player->Image.curFrame = 0;
-	player->Image.frameCount = 0;
-	player->Image.frameDelay = 4;
-	player->Image.frameWidth = 104;
-	player->Image.frameHeight = 147;
-	player->Image.image = al_load_bitmap("./data/gb_walk.png");
+	player->image.posInSprite = 0;
+	player->image.x = hStartPosition;
+	player->image.y = wStartPosition;
+	player->image.maxFrame = 6;
+	player->image.curFrame = 0;
+	player->image.frameCount = 0;
+	player->image.frameDelay = 4;
+	player->image.frameWidth = 104;
+	player->image.frameHeight = 147;
+	player->image.image = al_load_bitmap("./data/gb_walk.png");
 }
 
-void moveDireita(struct Player *player)
+void moveDireita(Player *player)
 {
-	if(++player->Image.frameCount >= player->Image.frameDelay)
+	if(++player->image.frameCount >= player->image.frameDelay)
 	{
-		if(++player->Image.curFrame >= player->Image.maxFrame)
-			player->Image.curFrame = 0;
+		if(++player->image.curFrame >= player->image.maxFrame)
+			player->image.curFrame = 0;
 
-		player->Image.frameCount = 0;
+		player->image.frameCount = 0;
 	}
 
-	player->Image.x += 4; // usado para controlar o fundo
+	player->image.x += 4; // usado para controlar o fundo
 
 	/*if(image.x >= LARGURA + image.frameWidth)
 		image.x = 0; */
 }
 
-void moveEsquerda(struct Player *player)
+void moveEsquerda(Player *player)
 {
-	if(++player->Image.frameCount >= player->Image.frameDelay)
+	if(++player->image.frameCount >= player->image.frameDelay)
 	{
-		if(++player->Image.curFrame >= player->Image.maxFrame)
-			player->Image.curFrame = 0;
+		if(++player->image.curFrame >= player->image.maxFrame)
+			player->image.curFrame = 0;
 
-		player->Image.frameCount = 0;
+		player->image.frameCount = 0;
 	}
 
-	player->Image.x -= 4; // usado para controlar o fundo
+	player->image.x -= 4; // usado para controlar o fundo
 
 	/*if(image.x <= image.frameWidth)
 		image.x = LARGURA; */
 }
 
-void moveCima(struct Player *player)
+void moveCima(Player *player)
 {
-	player->Image.y -= 4;
+	player->image.y -= 4;
 }
 
-void moveBaixo(struct Player *player)
+void moveBaixo(Player *player)
 {
-	player->Image.y += 4;
+	player->image.y += 4;
 }
 
-void ProcessaMovimentoEsquerda(struct Player *player)
+void ProcessaMovimentoEsquerda(Player *player)
 {
 	if(player->state.direita != true)
 	{
-		player->Image.posInSprite = 150;
+		player->image.posInSprite = 150;
 		player->state.esquerda = true;
 		player->state.idleE = false;
 		player->state.idleD = false;
 	}
 }
 
-void ProcessaMovimentoDireita(struct Player *player)
+void ProcessaMovimentoDireita(Player *player)
 {
 	if(player->state.esquerda != true)
 	{
-		player->Image.posInSprite = 0;
+		player->image.posInSprite = 0;
 		player->state.direita = true;
 
 		player->state.idleE = false;
@@ -86,19 +86,19 @@ void ProcessaMovimentoDireita(struct Player *player)
 	}
 }
 
-void ProcessaMovimentoCima(struct Player *player)
+void ProcessaMovimentoCima(Player *player)
 {
 	if(player->state.desce != true)
 		player->state.sobe = true;
 }
 
-void ProcessaMovimentoBaixo(struct Player *player)
+void ProcessaMovimentoBaixo(Player *player)
 {
 	if(player->state.sobe != true)
 		player->state.desce = true;
 }
 
-void ValidaMovimento_CK_UP(struct Player *player)
+void ValidaMovimento_CK_UP(Player *player)
 {
 	if(player->state.direita == true)
 	{
@@ -107,8 +107,8 @@ void ValidaMovimento_CK_UP(struct Player *player)
 		player->state.direita = false;
 
 		// reseta os valores dos sprites
-		player->Image.curFrame = 0;
-		player->Image.frameCount = 0;
+		player->image.curFrame = 0;
+		player->image.frameCount = 0;
 	}
 	if(player->state.esquerda == true)
 	{
@@ -117,8 +117,8 @@ void ValidaMovimento_CK_UP(struct Player *player)
 		player->state.esquerda = false;
 
 		// reseta os valores dos sprites
-		player->Image.curFrame = 0;
-		player->Image.frameCount = 0;
+		player->image.curFrame = 0;
+		player->image.frameCount = 0;
 	}
 	if(player->state.sobe == true)
 	{
@@ -132,7 +132,7 @@ void ValidaMovimento_CK_UP(struct Player *player)
 	}
 }
 
-void ValidaMovimento_TIMER(struct Player *player)
+void ValidaMovimento_TIMER(Player *player)
 {
 	if(player->state.direita == true)
 		moveDireita(player);
@@ -144,13 +144,13 @@ void ValidaMovimento_TIMER(struct Player *player)
 		moveBaixo(player);
 }
 
-void ValidaMovimento(struct Player *player)
+void ValidaMovimento(Player *player)
 {
 	if(player->state.idleE == true)
-		al_draw_bitmap_region(player->Image.image, player->Image.frameWidth, 303, player->Image.frameWidth, player->Image.frameHeight, player->Image.x, player->Image.y, 0);
+		al_draw_bitmap_region(player->image.image, player->image.frameWidth, 303, player->image.frameWidth, player->image.frameHeight, player->image.x, player->image.y, 0);
 	else if(player->state.idleD == true)
-		al_draw_bitmap_region(player->Image.image, 0, 303, player->Image.frameWidth, player->Image.frameHeight, player->Image.x, player->Image.y, 0);
+		al_draw_bitmap_region(player->image.image, 0, 303, player->image.frameWidth, player->image.frameHeight, player->image.x, player->image.y, 0);
 	else
-		al_draw_bitmap_region(player->Image.image, player->Image.curFrame * player->Image.frameWidth, player->Image.posInSprite, player->Image.frameWidth, player->Image.frameHeight, player->Image.x, player->Image.y, 0);
+		al_draw_bitmap_region(player->image.image, player->image.curFrame * player->image.frameWidth, player->image.posInSprite, player->image.frameWidth, player->image.frameHeight, player->image.x, player->image.y, 0);
 
 }
