@@ -234,5 +234,7 @@ Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player)
 		al_flip_display();
 	}
 	
+	free(lgDados);
+	
 	return 99;
 }

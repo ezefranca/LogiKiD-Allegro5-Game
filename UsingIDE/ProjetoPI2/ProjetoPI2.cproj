@@ -63,12 +63,6 @@
     <Compile Include="..\..\UsingMake\src\main.c">
       <Link>main.c</Link>
     </Compile>
-    <Compile Include="..\..\UsingMake\src\lEngine\File.c">
-      <Link>lEngine\File.c</Link>
-    </Compile>
-    <Compile Include="..\..\UsingMake\src\lEngine\lEngine.c">
-      <Link>lEngine\lEngine.c</Link>
-    </Compile>
     <Compile Include="..\..\UsingMake\src\StartMenu.c">
       <Link>StartMenu.c</Link>
     </Compile>
@@ -88,15 +82,6 @@
     </None>
     <None Include="..\..\UsingMake\src\comum.h">
       <Link>comum.h</Link>
-    </None>
-    <None Include="..\..\UsingMake\src\lEngine\File.h">
-      <Link>lEngine\File.h</Link>
-    </None>
-    <None Include="..\..\UsingMake\src\lEngine\exemplo.txt">
-      <Link>lEngine\exemplo.txt</Link>
-    </None>
-    <None Include="..\..\UsingMake\src\lEngine\lEngine.h">
-      <Link>lEngine\lEngine.h</Link>
     </None>
     <None Include="..\..\UsingMake\src\StartMenu.h">
       <Link>StartMenu.h</Link>

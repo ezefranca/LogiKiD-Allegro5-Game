@@ -105,4 +105,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_flip_display();
 		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
+	
+	free(player);
 }
