@@ -99,6 +99,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		case XNOR:
 			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XNOR");
 			break;
+		default:
+			if(gate == 66)
+				al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
+			break;	
 		}
 		/* Fim dos testes... */
 		

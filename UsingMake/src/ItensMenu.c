@@ -148,32 +148,53 @@ void DrawImages(lgImages *lgDados, Player *player)
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 397, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOT));
 }
 
-Gates GetGate(lgImages *lgDados)
+Gates GetGate(lgImages *lgDados, Player *player)
 {
-	/*switch(lgDados->currGate)
+	switch(lgDados->currGate)
 	{
 	case AND:
-		printf("%d -> AND\n", lgDados->currGate);
+		if(player->lGates.lgAND > 0)
+			player->lGates.lgAND -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
 	case OR:
-		printf("%d -> OR\n", lgDados->currGate);
+		if(player->lGates.lgOR > 0)
+			player->lGates.lgOR -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
 	case NAND:
-		printf("%d -> NAND\n", lgDados->currGate);
+		if(player->lGates.lgNAND > 0)
+			player->lGates.lgNAND -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
 	case NOR:
-		printf("%d -> NOR\n", lgDados->currGate);
+		if(player->lGates.lgNOR > 0)
+			player->lGates.lgNOR -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
 	case XOR:
-		printf("%d -> XOR\n", lgDados->currGate);
+		if(player->lGates.lgXOR > 0)
+			player->lGates.lgXOR -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
 	case XNOR:
-		printf("%d -> XNOR\n", lgDados->currGate);
+		if(player->lGates.lgXNOR > 0)
+			player->lGates.lgXNOR -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
 	case NOT:
-		printf("%d -> NOT\n", lgDados->currGate);
+		if(player->lGates.lgNOT > 0)
+			player->lGates.lgNOT -= 1;
+		else
+			lgDados->currGate = 66;
 		break;
-	} */
+	}
 	
 	return lgDados->currGate;
 }
@@ -212,7 +233,7 @@ Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player)
 				sair = true;
 				break;
 			case ALLEGRO_KEY_ENTER:
-				return GetGate(lgDados);			
+				return GetGate(lgDados, player);			
 				break;
 			case ALLEGRO_KEY_LEFT:
 				mk_left(lgDados);
