@@ -32,8 +32,8 @@ typedef struct
 
 typedef struct
 {
-	int lgAND, lgOr, lgNAND, lgNOR;
-	int lgNEG, lgXOR, lgXNOR;
+	int lgAND, lgOR, lgNAND, lgNOR;
+	int lgNOT, lgXOR, lgXNOR;
 }LogicGates;
 
 typedef struct

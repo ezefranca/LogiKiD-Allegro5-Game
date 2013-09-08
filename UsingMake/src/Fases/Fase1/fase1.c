@@ -1,12 +1,7 @@
 #include "fase1.h"
 #include "../../comum.h"
 #include "../../Player.h"
-#include "../../EventTest.h"
-
-void TextInScreen(const char *text, int flags)
-{
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 10, 10, flags, text);
-}
+#include "../../ItensMenu.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 {
@@ -16,17 +11,18 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
+	Gates gate = 99;
 	Player *player = malloc(sizeof(Player));
-		
+						
 	/* Adiciona as portas logicas... */
 	player->lGates.lgAND = 0;
-	player->lGates.lgOr = 0;
+	player->lGates.lgOR = 0;
 	player->lGates.lgNAND = 0;
-	player->lGates.lgNOR = 0;
-	player->lGates.lgNEG = 0;
+	player->lGates.lgNOR = 5;
 	player->lGates.lgXOR = 0;
 	player->lGates.lgXNOR = 0;
-	
+	player->lGates.lgNOT = 0;
+
 	CreatePlayer(player, ALTURA/2, LARGURA/2);
 
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/FASE-1.png");
@@ -48,9 +44,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				sair = true;
 				break;
 			case ALLEGRO_KEY_LEFT:
-				ProcessaMovimentoEsquerda(player);
-				
-				//StartEventTest(ev); // o parametro passado para o novo evento é o proprio evento, para o consumo do buffer de eventos...				
+				ProcessaMovimentoEsquerda(player);			
 				break;
 			case ALLEGRO_KEY_RIGHT:
 				ProcessaMovimentoDireita(player);
@@ -60,6 +54,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				break;
 			case ALLEGRO_KEY_DOWN:
 				ProcessaMovimentoBaixo(player);
+				break;
+				
+			// inicializa o MENU de portas...
+			case ALLEGRO_KEY_M:
+				gate = MenuLoad(&ev, player);
 				break;
 			}
 		}
@@ -74,11 +73,36 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		/* teste fundo */
 		al_draw_bitmap(fundo, 0, 0, 0);
 		
-		TextInScreen("Portas:", 0);
-		
 		ValidaMovimento(player);
 		
+		/* Apenas para teste... */
+		switch(gate)
+		{
+		case NOT:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOT");
+			break;
+		case AND:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "AND");
+			break;
+		case OR:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "OR");
+			break;
+		case NAND:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NAND");
+			break;
+		case NOR:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOR");
+			break;
+		case XOR:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XOR");
+			break;
+		case XNOR:
+			al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XNOR");
+			break;
+		}
+		/* Fim dos testes... */
+		
 		al_flip_display();
-		al_clear_to_color(al_map_rgb(0,0,0));
+		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
 }

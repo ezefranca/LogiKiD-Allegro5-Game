@@ -69,20 +69,17 @@
     <Compile Include="..\..\UsingMake\src\lEngine\lEngine.c">
       <Link>lEngine\lEngine.c</Link>
     </Compile>
-    <Compile Include="..\..\UsingMake\src\EventTest.c">
-      <Link>EventTest.c</Link>
-    </Compile>
     <Compile Include="..\..\UsingMake\src\StartMenu.c">
       <Link>StartMenu.c</Link>
-    </Compile>
-    <Compile Include="..\..\UsingMake\src\ItensMenu.c">
-      <Link>ItensMenu.c</Link>
     </Compile>
     <Compile Include="..\..\UsingMake\src\Fases\Fase1\fase1.c">
       <Link>Fases\Fase1\fase1.c</Link>
     </Compile>
     <Compile Include="..\..\UsingMake\src\Fases\Fase2\fase2.c">
       <Link>Fases\Fase2\fase2.c</Link>
+    </Compile>
+    <Compile Include="..\..\UsingMake\src\ItensMenu.c">
+      <Link>ItensMenu.c</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -101,20 +98,17 @@
     <None Include="..\..\UsingMake\src\lEngine\lEngine.h">
       <Link>lEngine\lEngine.h</Link>
     </None>
-    <None Include="..\..\UsingMake\src\EventTest.h">
-      <Link>EventTest.h</Link>
-    </None>
     <None Include="..\..\UsingMake\src\StartMenu.h">
       <Link>StartMenu.h</Link>
-    </None>
-    <None Include="..\..\UsingMake\src\ItensMenu.h">
-      <Link>ItensMenu.h</Link>
     </None>
     <None Include="..\..\UsingMake\src\Fases\Fase1\fase1.h">
       <Link>Fases\Fase1\fase1.h</Link>
     </None>
     <None Include="..\..\UsingMake\src\Fases\Fase2\fase2.h">
       <Link>Fases\Fase2\fase2.h</Link>
+    </None>
+    <None Include="..\..\UsingMake\src\ItensMenu.h">
+      <Link>ItensMenu.h</Link>
     </None>
   </ItemGroup>
   <ItemGroup>

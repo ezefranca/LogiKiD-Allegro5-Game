@@ -18,7 +18,7 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->image.frameDelay = 4;
 	player->image.frameWidth = 104;
 	player->image.frameHeight = 147;
-	player->image.image = al_load_bitmap("./data/gb_walk.png");
+	player->image.image = al_load_bitmap("./data/images/Player/gb_walk.png");
 }
 
 void moveDireita(Player *player)

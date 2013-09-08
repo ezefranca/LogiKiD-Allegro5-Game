@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_image.h>
-#include <allegro5/allegro_primitives.h>
+ 
+typedef enum { AND, OR, NAND, NOR, XOR, XNOR, NOT }Gates;
 
-void ItensMenu_Init();
+Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player);
