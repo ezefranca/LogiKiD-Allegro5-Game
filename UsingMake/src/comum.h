@@ -23,5 +23,4 @@ struct Game
 
 struct Game game;
 
-void GameLoop();
 bool inicializar();

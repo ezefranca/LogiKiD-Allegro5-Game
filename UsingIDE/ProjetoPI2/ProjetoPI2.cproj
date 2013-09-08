@@ -57,9 +57,6 @@
     <Compile Include="..\..\UsingMake\src\Player.c">
       <Link>Player.c</Link>
     </Compile>
-    <Compile Include="..\..\UsingMake\src\game.c">
-      <Link>game.c</Link>
-    </Compile>
     <Compile Include="..\..\UsingMake\src\init.c">
       <Link>init.c</Link>
     </Compile>

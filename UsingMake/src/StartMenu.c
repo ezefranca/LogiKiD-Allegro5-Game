@@ -1,6 +1,8 @@
 #include "StartMenu.h"
 #include "comum.h"
 
+#include "Fases/Fase1/fase1.h"
+
 void PrintMenu(int MenuPosition)
 {
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "Iniciar jogo");
@@ -41,7 +43,7 @@ void StartMenu()
 			case ALLEGRO_KEY_ENTER:
 				if(MenuPosition == 0)
 				{
-					GameLoop();
+					GameLoop_Fase1(ev);
 					PrintMenu(0);
 				}
 				else
