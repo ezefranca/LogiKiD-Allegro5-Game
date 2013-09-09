@@ -2,6 +2,11 @@ ProjetoPI2
 ==========
 Desenvolvimento de um jogo utilizando a Allegro 5.
 
+Creditos
+========
+Todos os arquivos de audio utilizados no jogo, estão sendo retirados dos seguintes links:
+http://www.freesfx.co.uk/
+
 Requerimentos
 =============
 Allegro 5.x instalado no sistema
@@ -32,26 +37,47 @@ $ cd UsingMake ; Make
 |   README.md
 |
 +---bin
-|   +---data
-|   |   |   gb_walk.png
-|   |   |   pi.png
-|   |   |   sega.ttf
-|   |   |   senac.png
-|   |   |   terminal.ttf
-|   |   |
-|   |   \---levels
-|   |           FASE-1.png
-|   |
-|   \---logic
-|           exemplo.txt
+|   \---data
+|       |   sega.ttf
+|       |   terminal.ttf
+|       |
+|       +---images
+|       |   |   pi.png
+|       |   |   senac.png
+|       |   |
+|       |   +---Gates
+|       |   |       AND.png
+|       |   |       ItemSelector.png
+|       |   |       NAND.png
+|       |   |       NOR.png
+|       |   |       NOT.png
+|       |   |       OR.png
+|       |   |       XNOR.png
+|       |   |       XOR.png
+|       |   |
+|       |   \---Player
+|       |           gb_walk.png
+|       |           PlayerMenu.png
+|       |
+|       +---levels
+|       |       FASE-1.png
+|       |
+|       \---sound
+|               footstep.wav
 |
 +---doc
+|   |   main.pdf
+|   |   todo
+|   |
 |   \---latex
 |           caption2.sty
 |           fig1.jpg
 |           fig2.jpg
 |           main.aux
+|           main.bbl
+|           main.blg
 |           main.log
+|           main.pdf
 |           main.synctex.gz
 |           main.tex
 |           sbc-template.bib
@@ -72,20 +98,21 @@ $ cd UsingMake ; Make
     |
     \---src
         |   comum.h
-        |   EventTest.c
-        |   EventTest.h
-        |   game.c
         |   init.c
+        |   ItensMenu.c
+        |   ItensMenu.h
         |   main.c
         |   Player.c
         |   Player.h
         |   StartMenu.c
         |   StartMenu.h
         |
-        \---lEngine
-                exemplo.txt
-                File.c
-                File.h
-                lEngine.c
-                lEngine.h
+        \---Fases
+            +---Fase1
+            |       fase1.c
+            |       fase1.h
+            |
+            \---Fase2
+                    fase2.c
+                    fase2.h
 ```
