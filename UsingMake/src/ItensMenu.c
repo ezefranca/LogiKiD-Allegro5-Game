@@ -1,11 +1,3 @@
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
-#include <stdio.h>
-#include <allegro5/allegro.h>
-#include <allegro5/allegro_ttf.h>
-#include <allegro5/allegro_image.h>
-#include <allegro5/allegro_primitives.h>
 #include "Player.h"
 #include "comum.h"
 #include "ItensMenu.h"
@@ -24,6 +16,8 @@ typedef struct
 	ALLEGRO_BITMAP *xnor_gate;
 	ALLEGRO_BITMAP *not_gate;
 	ALLEGRO_BITMAP *itmSelec;
+	
+	ALLEGRO_SAMPLE *menuSoundOpen;
 }lgImages;
 
 char *itoa(int x)
@@ -217,6 +211,11 @@ Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player)
 	lgDados->xnor_gate = al_load_bitmap("data/images/Gates/XNOR.png");
 	lgDados->not_gate = al_load_bitmap("data/images/Gates/NOT.png");
 	lgDados->itmSelec = al_load_bitmap("data/images/Gates/ItemSelector.png");
+	
+	lgDados->menuSoundOpen = al_load_sample("./data/sound/menu_open.wav");
+	al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+	
+	al_rest(0.1); // causa um micro delay, apenas para sincronizar o audio...
 
 	while(!sair)
 	{
@@ -230,9 +229,11 @@ Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player)
 			switch(ev->keyboard.keycode)
 			{
 			case ALLEGRO_KEY_ESCAPE:
+				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 				sair = true;
 				break;
 			case ALLEGRO_KEY_ENTER:
+				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 				return GetGate(lgDados, player);			
 				break;
 			case ALLEGRO_KEY_LEFT:
@@ -246,6 +247,10 @@ Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player)
 				break;
 			case ALLEGRO_KEY_DOWN:
 				mk_down(lgDados);
+				break;
+			case ALLEGRO_KEY_M:
+				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+				sair=true;
 				break;
 			}
 		}
