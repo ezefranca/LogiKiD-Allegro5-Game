@@ -64,6 +64,24 @@ bool inicializar()
         fprintf(stderr, "Falha ao carregar fonte.\n");
         return false;
     }
+    
+    if(!al_install_audio())
+    {
+    	fprintf(stderr, "Falha ao inicializar o audio.\n");
+      	return -1;
+   	}
+    
+    if(!al_init_acodec_addon())
+    {
+      	fprintf(stderr, "Falha ao iniciar o audio codec.!\n");
+    	return -1;
+    }
+    
+    if (!al_reserve_samples(1))
+    {
+        fprintf(stderr, "Falha ao alocar canais de audio.\n");
+        return false;
+    }
 
     al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
     al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());

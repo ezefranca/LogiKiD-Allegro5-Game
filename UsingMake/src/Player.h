@@ -5,6 +5,8 @@
  */
 
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_audio.h>
+#include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_image.h>
 
 typedef struct
@@ -38,6 +40,8 @@ typedef struct
 
 typedef struct
 {
+	ALLEGRO_SAMPLE *footstep;
+
 	State state;
 	Image image;
 	LogicGates lGates;

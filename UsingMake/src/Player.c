@@ -19,6 +19,8 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->image.frameWidth = 104;
 	player->image.frameHeight = 147;
 	player->image.image = al_load_bitmap("./data/images/Player/gb_walk.png");
+	
+	player->footstep = al_load_sample("./data/sound/footstep.wav");
 }
 
 void moveDireita(Player *player)
@@ -151,6 +153,9 @@ void ValidaMovimento(Player *player)
 	else if(player->state.idleD == true)
 		al_draw_bitmap_region(player->image.image, 0, 303, player->image.frameWidth, player->image.frameHeight, player->image.x, player->image.y, 0);
 	else
+	{
 		al_draw_bitmap_region(player->image.image, player->image.curFrame * player->image.frameWidth, player->image.posInSprite, player->image.frameWidth, player->image.frameHeight, player->image.x, player->image.y, 0);
-
+		// play no audio...
+		al_play_sample(player->footstep, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+	}
 }

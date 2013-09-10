@@ -75,7 +75,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		
 		ValidaMovimento(player);
 		
-		/* Apenas para teste... */
+		/* Apenas para teste... inicio*/
 		switch(gate)
 		{
 		case NOT:
