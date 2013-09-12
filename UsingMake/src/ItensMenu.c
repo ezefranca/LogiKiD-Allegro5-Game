@@ -22,39 +22,19 @@ typedef struct
 
 char *itoa(int x)
 {
-    static char buffer[12];
-    char *aux = buffer + 11;
-
-    if(x >=0)
-	{
-        do
-		{
-            *--aux = '0' + (x % 10);
-            x /= 10;
-        }while (x != 0);
-    } 
+	if(x == 0)
+		return "0";
 	else
-    {
-        do
-		{
-            *--aux = '0' - (x % 10);
-            x /= 10;
-        }while (x != 0);
-        *--aux = '-';
-    }
-    return aux;
+	{
+		int s = x<=0 ? 1 : 0; 
+		size_t len = (size_t)ceil(log10(abs(x)));
+		char *str = (char *)malloc(len+s + 1);
+
+		sprintf(str, "%i", x);
+
+		return str;
+	}
 }
-
-/*char *itoa(int x)
-{
-	int s = x<=0 ? 1 : 0; 
-   	size_t len = (size_t)ceil(log10(abs(x)));
-   	char *str = malloc(len+s + 1);
-
-   	sprintf(str, "%i", x);
-
-   	return str;
-} */
 
 void mk_up(lgImages *lgDados)
 {
