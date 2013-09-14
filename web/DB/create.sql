@@ -52,3 +52,13 @@ ALTER TABLE user_meta ADD FOREIGN KEY (user_id) REFERENCES users (user_id) ON DE
 ALTER TABLE user_ranking_app ADD FOREIGN KEY (ranking_id) REFERENCES user_ranking (ranking_id) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE user_ranking_app ADD FOREIGN KEY (ranking_app_id) REFERENCES app (app_id) ON DELETE CASCADE ON UPDATE CASCADE;
 ALTER TABLE user_ranking_app ADD FOREIGN KEY (ranking_app_domain) REFERENCES app_domain (pk_app_domain) ON DELETE CASCADE ON UPDATE CASCADE;
+
+CREATE INDEX index_users ON users (user_id, user_email);
+CREATE INDEX index_user_rankings ON user_ranking (user_id, user_ranking);
+CREATE INDEX index_user_ranking_apps ON user_ranking_app (ranking_app_id, ranking_app_domain);
+CREATE INDEX index_user_metas ON user_meta (meta_key, meta_value, user_id);
+CREATE INDEX index_apps ON app (user_id, user_email);
+CREATE INDEX index_app_domains ON app_domain (app_id, domain_name, app_domain_add_date);
+
+
+
