@@ -15,10 +15,10 @@ void PrintMenu(int MenuPosition)
 	{
 		
 		case 0:
-			al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 300, ALLEGRO_ALIGN_CENTRE, ">Iniciar jogo<");
+			al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 300, ALLEGRO_ALIGN_CENTRE, "-Iniciar jogo-");
 			break;
 		case 1:
-    		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 400, ALLEGRO_ALIGN_CENTRE, ">Sair<");
+    		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 400, ALLEGRO_ALIGN_CENTRE, "-Sair-");
     		break;
 	}
 }
