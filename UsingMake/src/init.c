@@ -58,7 +58,8 @@ bool inicializar()
         return false;
     }
     
-    game.fonte = al_load_font("data/256BYTES.TTF", 70, 10);
+    game.fonte = al_load_font("data/circuito.ttf", 70, 10);
+    game.fonte_menu = al_load_font("data/terminal.ttf", 20, 10);
     if (!game.fonte)
     {
         fprintf(stderr, "Falha ao carregar fonte.\n");

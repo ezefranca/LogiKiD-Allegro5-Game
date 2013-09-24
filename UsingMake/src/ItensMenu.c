@@ -125,26 +125,26 @@ void DrawImages(lgImages *lgDados, Player *player)
 		
 	// show gates and the gate count...
 	al_draw_bitmap(lgDados->and_gate, 150, 460, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 197, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgAND));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 197, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgAND));
 		
 	al_draw_bitmap(lgDados->or_gate, 250, 460, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 297, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgOR));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 297, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgOR));
 		
 	al_draw_bitmap(lgDados->nand_gate, 350, 460, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 397, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNAND));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 397, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNAND));
 		
 	al_draw_bitmap(lgDados->nor_gate, 450, 460, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 497, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOR));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 497, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOR));
 		
 	// next line...
 	al_draw_bitmap(lgDados->xor_gate, 150, 525, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 197, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgXOR));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 197, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgXOR));
 		
 	al_draw_bitmap(lgDados->xnor_gate, 250, 525, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 297, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgXNOR));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 297, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgXNOR));
 		
 	al_draw_bitmap(lgDados->not_gate, 350, 525, 0);
-	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 397, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOT));
+	al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 397, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOT));
 }
 
 Gates GetGate(lgImages *lgDados, Player *player)
