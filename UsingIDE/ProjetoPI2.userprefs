@@ -1,16 +1,16 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../UsingMake/src/ItensMenu.c">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../UsingMake/src/Fases/Fase1/fase1.c">
     <Files>
       <File FileName="../UsingMake/src/main.c" Line="8" Column="23" />
-      <File FileName="../UsingMake/src/comum.h" Line="21" Column="27" />
-      <File FileName="../UsingMake/src/StartMenu.c" Line="21" Column="100" />
+      <File FileName="../UsingMake/src/comum.h" Line="22" Column="27" />
+      <File FileName="../UsingMake/src/StartMenu.c" Line="1" Column="1" />
       <File FileName="../UsingMake/src/StartMenu.h" Line="1" Column="1" />
-      <File FileName="../UsingMake/src/init.c" Line="62" Column="65" />
+      <File FileName="../UsingMake/src/init.c" Line="61" Column="53" />
       <File FileName="../UsingMake/src/Player.h" Line="1" Column="1" />
-      <File FileName="../UsingMake/src/Player.c" Line="1" Column="1" />
-      <File FileName="../UsingMake/src/ItensMenu.c" Line="212" Column="4" />
-      <File FileName="../UsingMake/src/Fases/Fase1/fase1.c" Line="110" Column="35" />
+      <File FileName="../UsingMake/src/Player.c" Line="87" Column="31" />
+      <File FileName="../UsingMake/src/ItensMenu.c" Line="221" Column="2" />
+      <File FileName="../UsingMake/src/Fases/Fase1/fase1.c" Line="74" Column="24" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
