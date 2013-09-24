@@ -58,7 +58,7 @@ bool inicializar()
         return false;
     }
     
-    game.fonte = al_load_font("data/terminal.ttf", 20, 0);
+    game.fonte = al_load_font("data/256BYTES.TTF", 70, 10);
     if (!game.fonte)
     {
         fprintf(stderr, "Falha ao carregar fonte.\n");
