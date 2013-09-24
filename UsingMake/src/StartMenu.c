@@ -1,10 +1,13 @@
 #include "StartMenu.h"
 #include "comum.h"
-
 #include "Fases/Fase1/fase1.h"
+
+
 
 void PrintMenu(int MenuPosition)
 {
+	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu_fundo.png");
+	al_draw_bitmap(menu_fundo, 0, 0, 0);
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 90, ALLEGRO_ALIGN_CENTRE, "Iniciar jogo");
 	al_draw_text(game.fonte, al_map_rgb(255, 0, 0), 800 / 2, 140, ALLEGRO_ALIGN_CENTRE, "Sair");
 	
