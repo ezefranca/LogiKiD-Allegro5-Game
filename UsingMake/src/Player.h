@@ -5,14 +5,16 @@
  */
 
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_audio.h>
-#include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_image.h>
+#include <allegro5/allegro_acodec.h>
+#include <allegro5/allegro_primitives.h>
 
 typedef struct
 {
 	ALLEGRO_BITMAP *image;
-
+    
 	int x;
 	int y;
 
@@ -41,11 +43,13 @@ typedef struct
 typedef struct
 {
 	ALLEGRO_SAMPLE *footstep;
-
+    ALLEGRO_FONT *play_font;
 	State state;
 	Image image;
 	LogicGates lGates;
 }Player;
+
+
 
 void CreatePlayer(Player *player, int hStartPosition, int wStartPosition);
 void moveDireita(Player *player);

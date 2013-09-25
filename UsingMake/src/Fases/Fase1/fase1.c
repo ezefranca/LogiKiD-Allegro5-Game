@@ -13,6 +13,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	bool sair = false;
 	Gates gate = 99;
 	Player *player = malloc(sizeof(Player));
+	Player *testeObjeto = malloc(sizeof(Player)); 
+	testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
+
 						
 	/* Adiciona as portas logicas... */
 	player->lGates.lgAND = 0;
@@ -26,7 +29,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, ALTURA/2, LARGURA/2);
 
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase2.jpg");
-
+	
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
@@ -73,6 +76,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		/* teste fundo */
 		al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 		
+		/* teste de um Objeto na tela  */
+		al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
+	
+
 		ValidaMovimento(player);
 		
 		/* Apenas para teste... inicio*/
@@ -111,4 +118,5 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	}
 	
 	free(player);
+	free(testeObjeto);
 }

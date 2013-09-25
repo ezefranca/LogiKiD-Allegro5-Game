@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "ItensMenu.h"
 #include <stdio.h>
 
 void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
@@ -26,7 +27,7 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->image.frameWidth = 57;
 	player->image.frameHeight = 79;
 	player->image.image = al_load_bitmap("./data/images/Player/boy.png");
-	
+	player->play_font = al_load_font("data/circuito.ttf", 50, 10);
 	player->footstep = al_load_sample("./data/sound/footstep.wav");
 }
 
@@ -44,13 +45,17 @@ void moveDireita(Player *player)
 	{
 		if(player->image.x < 650)
 		{
+			
 		player->image.x += 4; // usado para controlar o fundo
 		}
+	
 	}
 	else
 	{
 		if(player->image.x < 500)
 		{
+			
+		
 			player->image.x += 4; // usado para controlar o fundo
 		}
 	}
@@ -73,6 +78,8 @@ void moveEsquerda(Player *player)
 	
 	if(player->image.x > 200)
 	{
+		
+		
 	player->image.x -= 4; // usado para controlar o fundo
 	}
 	printf("%d %d \n", player->image.x, player->image.y);
@@ -91,6 +98,8 @@ void moveCima(Player *player)
 	}
 	if(player->image.y > 100)
 	{
+			
+		
 		player->image.y -= 4;	
 	}
 	printf("%d %d \n", player->image.x, player->image.y);

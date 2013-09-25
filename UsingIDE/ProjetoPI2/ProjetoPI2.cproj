@@ -13,7 +13,7 @@
     </Compiler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>True</DebugSymbols>
+    <DebugSymbols>true</DebugSymbols>
     <OutputPath>..\..\bin</OutputPath>
     <DefineSymbols>DEBUG MONODEVELOP</DefineSymbols>
     <SourceDirectory>.</SourceDirectory>
@@ -95,6 +95,7 @@
     <None Include="..\..\UsingMake\src\ItensMenu.h">
       <Link>ItensMenu.h</Link>
     </None>
+    <None Include="Objetos.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Fases\" />
