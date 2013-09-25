@@ -39,8 +39,22 @@ void moveDireita(Player *player)
 
 		player->image.frameCount = 0;
 	}
-
-	player->image.x += 4; // usado para controlar o fundo
+	
+	if(player->image.y - player->image.frameHeight < 200)
+	{
+		if(player->image.x < 650)
+		{
+		player->image.x += 4; // usado para controlar o fundo
+		}
+	}
+	else
+	{
+		if(player->image.x < 500)
+		{
+			player->image.x += 4; // usado para controlar o fundo
+		}
+	}
+	
 	printf("%d %d \n", player->image.x, player->image.y);
 
 	/*if(image.x >= LARGURA + image.frameWidth)
@@ -56,8 +70,11 @@ void moveEsquerda(Player *player)
 
 		player->image.frameCount = 0;
 	}
-
+	
+	if(player->image.x > 200)
+	{
 	player->image.x -= 4; // usado para controlar o fundo
+	}
 	printf("%d %d \n", player->image.x, player->image.y);
 	/*if(image.x <= image.frameWidth)
 		image.x = LARGURA; */
