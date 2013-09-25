@@ -8,6 +8,7 @@ void PrintMenu(int MenuPosition)
 {
 	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu_fundo.png");
 	al_draw_bitmap(menu_fundo, 0, 0, 0);
+	//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 302, ALLEGRO_ALIGN_CENTRE, "--------------------------");
 	al_draw_text(game.fonte, al_map_rgb(0, 255, 0), 800 / 2, 305, ALLEGRO_ALIGN_CENTRE, "--------------------------");
 	al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 800 / 2, 350, ALLEGRO_ALIGN_CENTRE, "LOGIC GATES ADVENTURE");

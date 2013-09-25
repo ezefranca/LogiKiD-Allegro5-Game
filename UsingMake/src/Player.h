@@ -29,7 +29,7 @@ typedef struct
 {
 	bool direita, esquerda;
 	bool sobe, desce;
-	bool idleE, idleD;
+	bool idleE, idleD, idleC, idleB;
 }State;
 
 typedef struct

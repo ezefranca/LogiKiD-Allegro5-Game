@@ -57,7 +57,7 @@ void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
     int alfa;
     for (alfa = 0; alfa <= 255; alfa += velocidade)
     {
-        al_clear_to_color(al_map_rgb(0, 0, 0));
+        al_clear_to_color(al_map_rgb(255, 255, 255));
         al_draw_tinted_bitmap(imagem, al_map_rgba(alfa, alfa, alfa, alfa), 80, 100, 0);
         al_flip_display();
         al_rest(0.005); // Não é necessário caso haja controle de FPS
@@ -83,8 +83,8 @@ int main(void)
 
 	if (!inicializar())
 		return -1;
-			
-	//InitScreens();
+	//Animação inicial		
+	InitScreens();
 	StartMenu();
 	//GameLoop();
 

@@ -1,16 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="../UsingMake/src/Fases/Fase1/fase1.c">
+  <MonoDevelop.Ide.Workbench ActiveDocument="../UsingMake/src/main.c">
     <Files>
-      <File FileName="../UsingMake/src/main.c" Line="8" Column="23" />
+      <File FileName="../UsingMake/src/main.c" Line="87" Column="2" />
       <File FileName="../UsingMake/src/comum.h" Line="22" Column="27" />
       <File FileName="../UsingMake/src/StartMenu.c" Line="1" Column="1" />
       <File FileName="../UsingMake/src/StartMenu.h" Line="1" Column="1" />
-      <File FileName="../UsingMake/src/init.c" Line="61" Column="53" />
-      <File FileName="../UsingMake/src/Player.h" Line="1" Column="1" />
-      <File FileName="../UsingMake/src/Player.c" Line="87" Column="31" />
-      <File FileName="../UsingMake/src/ItensMenu.c" Line="221" Column="2" />
       <File FileName="../UsingMake/src/Fases/Fase1/fase1.c" Line="74" Column="24" />
+      <File FileName="../UsingMake/src/Player.c" Line="92" Column="6" />
+      <File FileName="../UsingMake/src/Player.h" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
