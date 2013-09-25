@@ -50,7 +50,7 @@ void StartMenu()
         {
 	        game.som = al_load_sample("./data/sound/menu_open.wav");
 	        al_play_sample(game.som, 2.0, 0.0,1,ALLEGRO_PLAYMODE_ONCE,NULL);
-	        al_rest(0.4); // causa um micro delay, apenas para sincronizar o audio...
+	       // al_rest(0.4); // causa um micro delay, apenas para sincronizar o audio...
         	switch(ev.keyboard.keycode)
             {
             case ALLEGRO_KEY_ESCAPE:
