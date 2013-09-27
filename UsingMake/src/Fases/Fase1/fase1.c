@@ -14,7 +14,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	bool sair = false;
 	Gates gate = 99;
 	
-	Keys *keys = malloc(sizeof(Player));
+	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 	Player *testeObjeto = malloc(sizeof(Player)); 
 	testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
@@ -30,7 +30,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgNOT = 0;
 
 	CreatePlayer(player, ALTURA/2, LARGURA/2);
-
+	createKeys(keys);
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase2.jpg");
 	
 	//al_start_timer(game.timer);
@@ -39,9 +39,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		//ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
 
+		setKeys(keys, &ev);
+
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			sair = true;
-
+		
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
 			switch(ev.keyboard.keycode)
