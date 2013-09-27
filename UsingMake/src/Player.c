@@ -31,6 +31,7 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->footstep = al_load_sample("./data/sound/footstep.wav");
 }
 
+
 void moveDireita(Player *player)
 {
 	if(++player->image.frameCount >= player->image.frameDelay)
@@ -39,16 +40,13 @@ void moveDireita(Player *player)
 			player->image.curFrame = 0;
 
 		player->image.frameCount = 0;
-	}
-	
+	}	
 	if(player->image.y - player->image.frameHeight < 200)
 	{
 		if(player->image.x < 650)
-		{
-			
+		{			
 		player->image.x += 4; // usado para controlar o fundo
-		}
-	
+		}	
 	}
 	else
 	{

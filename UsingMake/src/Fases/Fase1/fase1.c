@@ -2,6 +2,7 @@
 #include "../../comum.h"
 #include "../../Player.h"
 #include "../../ItensMenu.h"
+#include "../../KeyHandler.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 {
@@ -12,6 +13,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
 	Gates gate = 99;
+	
+	Keys *keys = malloc(sizeof(Player));
 	Player *player = malloc(sizeof(Player));
 	Player *testeObjeto = malloc(sizeof(Player)); 
 	testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
@@ -116,7 +119,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_flip_display();
 		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
-	
+	free(keys);
 	free(player);
 	free(testeObjeto);
 }
