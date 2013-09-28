@@ -40,7 +40,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		//ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
 
-		setKeys(keys, &ev);
+		setKeys(keys, player, &ev);
+		movePlayer(keys, player);
 		if(keys->keyLeft == true) printf("Esquerda\n");
 		if(keys->keyRight == true) printf("Direita\n");
 		if(keys->keyUp == true) printf("Cima\n");

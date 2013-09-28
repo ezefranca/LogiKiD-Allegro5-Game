@@ -15,9 +15,6 @@ typedef struct
 {
 	ALLEGRO_BITMAP *image;
     
-	int x;
-	int y;
-
 	int posInSprite;
 	int maxFrame;
 	int curFrame;
@@ -29,6 +26,9 @@ typedef struct
 
 typedef struct
 {
+	int x;
+	int y;
+	int speed;
 	bool direita, esquerda;
 	bool sobe, desce;
 	bool idleE, idleD, idleC, idleB;
@@ -71,5 +71,6 @@ void ValidaMovimento_CK_UP(Player *player);
 void ValidaMovimento_TIMER(Player *player);
 void ValidaMovimento(Player *player);
 
-void setKeys(Keys *keys, ALLEGRO_EVENT *ev);
+void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev);
 void createKeys(Keys *keys);
+void movePlayer(Keys *keys, Player *player);
