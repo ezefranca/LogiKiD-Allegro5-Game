@@ -43,7 +43,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, ALTURA/2, LARGURA/2);
 	createKeys(keys);
 
-	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase2.jpg");
+	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fundo640.png");
 	
 	//al_start_timer(game.timer);
 	while(!sair)
@@ -99,7 +99,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 		
 		/* teste de um Objeto na tela  */
-		al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
+		//al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
 		ValidaMovimento(player);
 		if (obterTempoTimer() < 1.0 / FPS)
         {
