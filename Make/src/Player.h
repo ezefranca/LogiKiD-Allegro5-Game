@@ -68,7 +68,6 @@ void ProcessaMovimentoDireita(Player *player);
 void ProcessaMovimentoCima(Player *player);
 void ProcessaMovimentoBaixo(Player *player);
 void ValidaMovimento_CK_UP(Player *player);
-void ValidaMovimento_TIMER(Player *player);
 void ValidaMovimento(Player *player);
 
 void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev);
