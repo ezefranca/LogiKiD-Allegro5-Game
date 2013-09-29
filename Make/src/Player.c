@@ -233,6 +233,9 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 		case ALLEGRO_KEY_DOWN:
 			keys->keyDown = true;
 			break;
+		case ALLEGRO_KEY_M:
+			printf("Entrou no Menu: \n");
+			break;
 		}
 	}
 	else if(ev->type == ALLEGRO_EVENT_KEY_UP)

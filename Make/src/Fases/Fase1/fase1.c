@@ -12,7 +12,6 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
-	Gates gate = 99;
 	int FPS = 30;
 	double tempoInicial = 0;
 	void iniciarTimer()
@@ -27,8 +26,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
-	Player *testeObjeto = malloc(sizeof(Player)); 
-	testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
+	//Player *testeObjeto = malloc(sizeof(Player)); 
+	//testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
 
 						
 	/* Adiciona as portas logicas... */
@@ -42,8 +41,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 	CreatePlayer(player, ALTURA/2, LARGURA/2);
 	createKeys(keys);
-
-	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fundo640.png");
+    Gates gate;
+	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 	
 	//al_start_timer(game.timer);
 	while(!sair)
@@ -96,7 +95,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		}
 		//ValidaMovimento_TIMER(player);
 		//teste fundo
-		al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
+		al_draw_bitmap(fundo, 0, 0, 0);
+		
+		//TESTE DE FUNDO ESCALONADO
+		//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 		
 		/* teste de um Objeto na tela  */
 		//al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
@@ -107,6 +109,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
         }
 		
 		/* Apenas para teste... inicio*/
+		/*
 		switch(gate)
 		{
 		case NOT:
@@ -135,12 +138,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
 			break;	
 		}
-		/* Fim dos testes... */
+		Fim dos testes... */
 		
 		al_flip_display();
 		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
 	free(keys);
 	free(player);
-	free(testeObjeto);
+	//free(testeObjeto);
 }

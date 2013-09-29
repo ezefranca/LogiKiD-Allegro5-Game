@@ -66,15 +66,25 @@ void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
 
 void InitScreens()
 {
-	ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/senac.png");
-	fadein(temp, 3);
+	ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/intro/senac.png");
+	fadein(temp, 7);
 	al_rest(2.0);
-    fadeout(3);
+    fadeout(8);
     
-    temp = al_load_bitmap("data/images/pi.png");
-	fadein(temp, 3);
+    temp = al_load_bitmap("data/images/intro/pi.png");
+	fadein(temp, 7);
 	al_rest(2.0);
-    fadeout(3);
+    fadeout(8);
+
+    temp = al_load_bitmap("data/images/intro/allegro.png");
+    fadein(temp, 7);
+    al_rest(2.0);
+    fadeout(8);
+
+    temp = al_load_bitmap("data/images/intro/github.png");
+    fadein(temp, 7);
+    al_rest(2.0);
+    fadeout(8);
 }
 
 int main(void)
@@ -84,7 +94,7 @@ int main(void)
 	if (!inicializar())
 		return -1;
 	//Animação inicial		
-	//InitScreens();
+	InitScreens();
 	StartMenu();
 	//GameLoop();
 
