@@ -13,7 +13,18 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
 	Gates gate = 99;
-	
+	int FPS = 30;
+	double tempoInicial = 0;
+	void iniciarTimer()
+	{
+    	tempoInicial = al_get_time();
+	}
+ 
+	double obterTempoTimer()
+	{
+   		return al_get_time() - tempoInicial;
+	}
+
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 	Player *testeObjeto = malloc(sizeof(Player)); 
@@ -41,16 +52,15 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_wait_for_event(game.fila_eventos, &ev);
 
 		setKeys(keys, player, &ev);
-		movePlayer(keys, player);
+		//movePlayer(keys, player);
 		if(keys->keyLeft == true) printf("Esquerda\n");
 		if(keys->keyRight == true) printf("Direita\n");
 		if(keys->keyUp == true) printf("Cima\n");
 		if(keys->keyDown == true) printf("Baixo\n");
 
-		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
-			sair = true;
+		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
 		
-		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+		/*if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
 			switch(ev.keyboard.keycode)
 			{
@@ -79,19 +89,22 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		else if(ev.type == ALLEGRO_EVENT_KEY_UP)
 		{
 			ValidaMovimento_CK_UP(player);
-		}
-		else if(ev.type == ALLEGRO_EVENT_TIMER)
+		}*/
+		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			ValidaMovimento_TIMER(player);
+			movePlayer(keys, player);
 		}
-		/* teste fundo */
+		//ValidaMovimento_TIMER(player);
+		//teste fundo
 		al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 		
 		/* teste de um Objeto na tela  */
 		al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
-	
-
 		ValidaMovimento(player);
+		if (obterTempoTimer() < 1.0 / FPS)
+        {
+            al_rest((1.0 / FPS) - obterTempoTimer());
+        }
 		
 		/* Apenas para teste... inicio*/
 		switch(gate)

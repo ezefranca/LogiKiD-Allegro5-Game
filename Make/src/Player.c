@@ -22,10 +22,6 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->image.curFrame = 1;
 	player->image.frameCount = 1;
 	player->image.frameDelay = 3;
-	/*
-	player->image.frameWidth = 104;
-	player->image.frameHeight = 147;
-	*/
 	player->image.frameWidth = 57;
 	player->image.frameHeight = 79;
 	player->image.image = al_load_bitmap("./data/images/Player/boy.png");
@@ -43,27 +39,7 @@ void moveDireita(Player *player)
 
 		player->image.frameCount = 0;
 	}	
-	/*if(player->state.y - player->image.frameHeight < 200)
-	{
-		if(player->state.x < 650)
-		{			
-		player->state.x += 4; // usado para controlar o fundo
-		}	
-	}
-	else
-	{
-		if(player->state.x < 500)
-		{
-			
-		
-			player->state.x += 4; // usado para controlar o fundo
-		}
-	}*/
-	
 	printf("%d %d \n", player->state.x, player->state.y);
-
-	//if(state.x >= LARGURA + image.frameWidth)
-	//	state.x = 0;
 }
 
 void moveEsquerda(Player *player)
@@ -75,16 +51,6 @@ void moveEsquerda(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	
-	/*if(player->state.x > 200)
-	{
-		
-		
-	player->state.x -= 4; // usado para controlar o fundo
-	}
-	printf("%d %d \n", player->state.x, player->state.y);
-	if(state.x <= image.frameWidth)
-		state.x = LARGURA; */
 }
 
 void moveCima(Player *player)
@@ -95,10 +61,6 @@ void moveCima(Player *player)
 			player->image.curFrame = 0;
 
 		player->image.frameCount = 0;
-	}
-	if(player->state.y > 100)
-	{		
-		player->state.y -= 4;	
 	}
 	printf("%d %d \n", player->state.x, player->state.y);
 	
@@ -113,11 +75,6 @@ void moveBaixo(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	/*if(player->state.y < 510 - player->image.frameHeight)
-	{
-		player->state.y += 4;
-		
-	}*/
 	printf("%d %d \n", player->state.x, player->state.y);
 }
 
@@ -125,12 +82,13 @@ void ProcessaMovimentoEsquerda(Player *player)
 {
 	if(player->state.direita != true)
 	{
-		//player->image.posInSprite = 150;
 		player->image.posInSprite = player->image.frameHeight*3;
 		player->state.esquerda = true;
 		
 		player->state.idleE = false;
 		player->state.idleD = false;
+		player->state.idleB = false;
+		player->state.idleC = false;
 	}
 }
 
@@ -154,7 +112,7 @@ void ProcessaMovimentoCima(Player *player)
 	{
 		player->image.posInSprite = 0;
 		player->state.sobe = true;
-		
+
 		player->state.idleC = false;
 		player->state.idleB = false;
 		player->state.idleE = false;
@@ -168,7 +126,7 @@ void ProcessaMovimentoBaixo(Player *player)
 	{
 		player->image.posInSprite = player->image.frameHeight*2;
 		player->state.desce = true;
-		
+
 		player->state.idleC = false;
 		player->state.idleB = false;
 		player->state.idleE = false;
@@ -230,25 +188,12 @@ void ValidaMovimento_CK_UP(Player *player)
 	}
 }
 
-void ValidaMovimento_TIMER(Player *player)
-{
-	if(player->state.direita == true)
-		moveDireita(player);
-	if(player->state.esquerda == true)
-		moveEsquerda(player);
-	if(player->state.sobe == true)
-		moveCima(player);
-	if(player->state.desce == true)
-		moveBaixo(player);
-}
-
 void ValidaMovimento(Player *player)
-{
-	
-	if(player->state.idleE == true)
-		al_draw_bitmap_region(player->image.image, player->image.frameWidth, player->image.frameHeight*3, player->image.frameWidth, player->image.frameHeight, player->state.x, player->state.y, 0);
-	else if(player->state.idleD == true)
+{	
+	if(player->state.idleD == true)
 		al_draw_bitmap_region(player->image.image, player->image.frameWidth, player->image.frameHeight, player->image.frameWidth, player->image.frameHeight, player->state.x, player->state.y, 0);
+	else if(player->state.idleE == true)
+		al_draw_bitmap_region(player->image.image, player->image.frameWidth, player->image.frameHeight*3, player->image.frameWidth, player->image.frameHeight, player->state.x, player->state.y, 0);
 	else if(player->state.idleB == true)
 		al_draw_bitmap_region(player->image.image, player->image.frameWidth, player->image.frameHeight*2, player->image.frameWidth, player->image.frameHeight, player->state.x, player->state.y, 0);
 	else if(player->state.idleC == true)
@@ -292,6 +237,7 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 	}
 	else if(ev->type == ALLEGRO_EVENT_KEY_UP)
 	{
+		ValidaMovimento_CK_UP(player);
 		switch(ev->keyboard.keycode)
 		{
 		case ALLEGRO_KEY_LEFT:
@@ -313,15 +259,22 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 void movePlayer(Keys *keys, Player *player){
 	if(keys->keyUp == true){
 		player->state.y -= player->state.speed;
-		printf("shero lerol\n");
+		ProcessaMovimentoCima(player);
+		moveCima(player);
 	}
 	if(keys->keyDown == true){
-		player->state.y += 4;
+		player->state.y += player->state.speed;
+		ProcessaMovimentoBaixo(player);
+		moveBaixo(player);
 	}
 	if(keys->keyLeft == true){
 		player->state.x -= player->state.speed;
+		ProcessaMovimentoEsquerda(player);
+		moveEsquerda(player);
 	}
 	if(keys->keyRight == true){
 		player->state.x += player->state.speed;
+		ProcessaMovimentoDireita(player);
+		moveDireita(player);
 	}
 }
