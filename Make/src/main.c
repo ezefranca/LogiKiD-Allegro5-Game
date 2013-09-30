@@ -94,7 +94,7 @@ int main(void)
 	if (!inicializar())
 		return -1;
 	//Animação inicial		
-	InitScreens();
+	//InitScreens();
 	StartMenu();
 	//GameLoop();
 

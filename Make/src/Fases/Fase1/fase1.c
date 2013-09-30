@@ -29,15 +29,15 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	Player *player = malloc(sizeof(Player));
 	
 	
-	/* TESTE MUSICA */
+	/* TESTE MUSICA 
 	ALLEGRO_SAMPLE *song;
-        ALLEGRO_SAMPLE_INSTANCE *songInstance;
+    ALLEGRO_SAMPLE_INSTANCE *songInstance;
 	//song = al_load_sample("song.ogg");
 	song = al_load_sample("./data/sound/music/Lunch.ogg");
 	songInstance = al_create_sample_instance(song);
 	al_set_sample_instance_playmode(songInstance, ALLEGRO_PLAYMODE_LOOP);
 	al_attach_sample_instance_to_mixer(songInstance, al_get_default_mixer());
-	al_play_sample_instance(songInstance);
+	al_play_sample_instance(songInstance);*/
 	
 	
 	//Player *testeObjeto = malloc(sizeof(Player)); 
@@ -74,50 +74,36 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
 		
-		/*if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
-		{
-			switch(ev.keyboard.keycode)
-			{
-			case ALLEGRO_KEY_ESCAPE:
-				sair = true;
-				break;
-			case ALLEGRO_KEY_LEFT:
-				ProcessaMovimentoEsquerda(player);			
-				break;
-			case ALLEGRO_KEY_RIGHT:
-				ProcessaMovimentoDireita(player);
-				break;
-			case ALLEGRO_KEY_UP:
-				ProcessaMovimentoCima(player);
-				break;
-			case ALLEGRO_KEY_DOWN:
-				ProcessaMovimentoBaixo(player);
-				break;
-				
-			// inicializa o MENU de portas...
-			case ALLEGRO_KEY_M:
-				gate = MenuLoad(&ev, player);
-				break;
-			}
-		}
-		else if(ev.type == ALLEGRO_EVENT_KEY_UP)
-		{
-			ValidaMovimento_CK_UP(player);
-		}*/
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
 			//TESTE MUDANÇA DE TELA 
-			if ((andar ==1) && (player->state.x > 640 && player->state.x < 680) && (player->state.y > 560 && player->state.y < 600)) 
+			if ((andar == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
+				(player->state.y + player->image.frameHeight / 2) > 500 && 
+				(player->state.y + player->image.frameHeight / 2 < 600)) 
 			{
-			andar = 0;
-			fundo = SetBackGroundImage("./data/levels/fase1/faseone2.png");
-			printf("ENTROU NA ESCADA \n");
+				andar = 0;
+				player->state.x = 693;
+				player->state.y = 30;
+				fundo = SetBackGroundImage("./data/levels/fase1/faseone2.png");
+				player->state.idleE = false;
+				player->state.idleD = false;
+				player->state.idleC = false;
+				player->state.idleB = true;
+				printf("ENTROU NA ESCADA \n");
 			}
-			if ((andar == 0) && (player->state.x > 640 && player->state.x < 680) && (player->state.y > -60 && player->state.y < -40)) 
+			if ((andar == 0) && (player->state.x > 667 && player->state.x < 780 - player->image.frameWidth) &&
+				(player->state.y + player->image.frameHeight / 2) > 0 && 
+				(player->state.y + player->image.frameHeight / 2 < 20))
 			{
-			andar = 1;
-			fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
-			printf("ENTROU NA ESCADA \n");
+				andar = 1;
+				player->state.x = 632;
+				player->state.y = 452;
+				player->state.idleE = false;
+				player->state.idleD = false;
+				player->state.idleC = true;
+				player->state.idleB = false;
+				fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
+				printf("ENTROU NA ESCADA \n");
 			}
 			movePlayer(keys, player);
 		}
@@ -171,9 +157,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_flip_display();
 		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
-	al_destroy_sample(song);
-	al_destroy_sample_instance(songInstance);
-	al_stop_sample_instance(songInstance);
+	//al_destroy_sample(song);
+	//al_destroy_sample_instance(songInstance);
+	//al_stop_sample_instance(songInstance);
 	free(keys);
 	free(player);
 	//free(testeObjeto);
