@@ -13,6 +13,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
 	int FPS = 30;
+	int andar = 1;
 	double tempoInicial = 0;
 	void iniciarTimer()
 	{
@@ -105,6 +106,19 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		}*/
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
+			//TESTE MUDANÇA DE TELA 
+			if ((andar ==1) && (player->state.x > 640 && player->state.x < 680) && (player->state.y > 560 && player->state.y < 600)) 
+			{
+			andar = 0;
+			fundo = SetBackGroundImage("./data/levels/fase1/faseone2.png");
+			printf("ENTROU NA ESCADA \n");
+			}
+			if ((andar == 0) && (player->state.x > 640 && player->state.x < 680) && (player->state.y > -60 && player->state.y < -40)) 
+			{
+			andar = 1;
+			fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
+			printf("ENTROU NA ESCADA \n");
+			}
 			movePlayer(keys, player);
 		}
 		//ValidaMovimento_TIMER(player);

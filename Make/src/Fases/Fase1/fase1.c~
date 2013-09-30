@@ -31,8 +31,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	/* TESTE MUSICA */
 	ALLEGRO_SAMPLE *song;
         ALLEGRO_SAMPLE_INSTANCE *songInstance;
-	song = al_load_sample("song.ogg");
-	//song = al_load_sample("./data/sound/music/Lunch.mp3");
+	//song = al_load_sample("song.ogg");
+	song = al_load_sample("./data/sound/music/Lunch.ogg");
 	songInstance = al_create_sample_instance(song);
 	al_set_sample_instance_playmode(songInstance, ALLEGRO_PLAYMODE_LOOP);
 	al_attach_sample_instance_to_mixer(songInstance, al_get_default_mixer());
@@ -105,6 +105,19 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		}*/
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
+			//TESTE MUDANÇA DE TELA 
+			if ((andar ==1) && (player->state.x > 640 && player->state.x < 680) && (player->state.y > 560 && player->state.y < 600)) 
+			{
+			andar = 0;
+			fundo = SetBackGroundImage("./data/levels/fase1/faseone2.png");
+			printf("ENTROU NA ESCADA \n");
+			}
+			if ((andar == 0) && (player->state.x > 640 && player->state.x < 680) && (player->state.y > -60 && player->state.y < -40)) 
+			{
+			andar = 0;
+			fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
+			printf("ENTROU NA ESCADA \n");
+			}
 			movePlayer(keys, player);
 		}
 		//ValidaMovimento_TIMER(player);
