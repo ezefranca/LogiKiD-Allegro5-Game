@@ -26,6 +26,19 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
+	
+	
+	/* TESTE MUSICA */
+	ALLEGRO_SAMPLE *song;
+        ALLEGRO_SAMPLE_INSTANCE *songInstance;
+	//song = al_load_sample("song.ogg");
+	song = al_load_sample("./data/sound/music/Lunch.ogg");
+	songInstance = al_create_sample_instance(song);
+	al_set_sample_instance_playmode(songInstance, ALLEGRO_PLAYMODE_LOOP);
+	al_attach_sample_instance_to_mixer(songInstance, al_get_default_mixer());
+	al_play_sample_instance(songInstance);
+	
+	
 	//Player *testeObjeto = malloc(sizeof(Player)); 
 	//testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
 
@@ -41,12 +54,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 	CreatePlayer(player, ALTURA/2, LARGURA/2);
 	createKeys(keys);
-    Gates gate;
+        Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 	
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
+	
 		//ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
 
@@ -143,6 +157,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_flip_display();
 		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
+	al_destroy_sample(song);
+	al_destroy_sample_instance(songInstance);
+	al_stop_sample_instance(songInstance);
 	free(keys);
 	free(player);
 	//free(testeObjeto);

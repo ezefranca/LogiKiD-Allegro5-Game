@@ -17,7 +17,7 @@ void QuitGame()
 void fadeout(int velocidade)
 {
     ALLEGRO_BITMAP *buffer = NULL;
-    buffer = al_create_bitmap(800, 800);
+    buffer = al_create_bitmap(800, 600);
     al_set_target_bitmap(buffer);
     al_draw_bitmap(al_get_backbuffer(game.janela), 0, 0, 0);
     al_set_target_bitmap(al_get_backbuffer(game.janela));

@@ -11,19 +11,23 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_primitives.h>
+//#include <allegro5\allegro_audio.h>
+
 
 #define ALTURA  800
 #define LARGURA 600
 
 struct Game
 {
-	ALLEGRO_SAMPLE *som;
+	ALLEGRO_SAMPLE *som; 
 	ALLEGRO_FONT *fonte;
 	ALLEGRO_FONT *fonte_menu;
 	ALLEGRO_FONT *fonte_logo;
 	ALLEGRO_TIMER *timer;
 	ALLEGRO_DISPLAY *janela;
 	ALLEGRO_EVENT_QUEUE *fila_eventos;
+	ALLEGRO_SAMPLE *song;
+        ALLEGRO_SAMPLE_INSTANCE *songInstance;
 };
 
 struct Game game;
