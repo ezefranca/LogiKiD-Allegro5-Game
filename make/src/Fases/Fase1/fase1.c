@@ -27,35 +27,35 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
  	}
 }
 
-bool isColliding_fase1(Player *player){
-	if (isColliding(35, 12, 24, 80, player) ||
-		isColliding(35, 154, 24, 80, player) ||
-		isColliding(35, 288, 24, 80, player) ||
-		isColliding(35, 445, 24, 80, player) ||
-		isColliding(78, 25, 80, 60, player) ||
-		isColliding(78, 165, 80, 60, player) ||
-		isColliding(78, 303, 80, 60, player) ||
-		isColliding(78, 452, 80, 60, player) ||
-		isColliding(395, 0, 52, 408, player) ||
-		isColliding(512, 380, 294, 35, player) ||
-		isColliding(500, 277, 53, 74, player) ||
-		isColliding(516, 150, 84, 58, player) ||
-		isColliding(594, 235, 208, 50, player) ||
-		isColliding(775, 412, 25, 36, player))
-	{
-		return true;
+bool isCollidingGlobal(Player *player, int level){
+	if(level == 1){
+		if (isColliding(35, 12, 24, 80, player) ||
+			isColliding(35, 154, 24, 80, player) ||
+			isColliding(35, 288, 24, 80, player) ||
+			isColliding(35, 445, 24, 80, player) ||
+			isColliding(78, 25, 80, 60, player) ||
+			isColliding(78, 165, 80, 60, player) ||
+			isColliding(78, 303, 80, 60, player) ||
+			isColliding(78, 452, 80, 60, player) ||
+			isColliding(395, 0, 52, 408, player) ||
+			isColliding(512, 380, 294, 35, player) ||
+			isColliding(500, 277, 53, 74, player) ||
+			isColliding(516, 150, 84, 58, player) ||
+			isColliding(594, 235, 208, 50, player) ||
+			isColliding(775, 412, 25, 36, player))
+		{
+			return true;
+		}
+		else return false;
 	}
-	else
-	{
-		return false;
-	}
+	else return false;
 }
 
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
-	int andar = 1;
+	int level = 1;
 		
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
@@ -109,12 +109,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			//MUDANÇA DE TELA - Andar 1 para o 0
-			if ((andar == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
+			//MUDANÇA DE TELA - level 1 para o 2
+			if ((level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
 				(player->state.y + player->image.frameHeight / 2) > 500 && 
 				(player->state.y + player->image.frameHeight / 2 < 600)) 
 			{
-				andar = 0;
+				level = 2;
 				player->state.x = 693;
 				player->state.y = 30;
 				fundo = SetBackGroundImage("./data/levels/fase1/faseone2.png");
@@ -124,12 +124,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				player->state.idleB = true;
 				printf("ENTROU NA ESCADA \n");
 			}
-			//Mudança de tela - andar 0 para o 1
-			if ((andar == 0) && (player->state.x > 667 && player->state.x < 780 - player->image.frameWidth) &&
+			//Mudança de tela - level 2 para o 1
+			if ((level == 2) && (player->state.x > 667 && player->state.x < 780 - player->image.frameWidth) &&
 				(player->state.y + player->image.frameHeight / 2) > 0 && 
 				(player->state.y + player->image.frameHeight / 2 < 40))
 			{
-				andar = 1;
+				level = 1;
 				player->state.x = 632;
 				player->state.y = 452;
 				player->state.idleE = false;
@@ -139,7 +139,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 				printf("ENTROU NA ESCADA \n");
 			}
-			if(!isColliding_fase1(player))
+			if(!isCollidingGlobal(player, level))
 			{				
 				movePlayer(keys, player);
 			}
