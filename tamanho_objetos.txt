@@ -1,2 +1,2 @@
-mesa c/ banco: width:133
-      	       height: 85
+mesa c/ banco: width:130
+      	       height: 83

@@ -290,5 +290,5 @@ void movePlayer(Keys *keys, Player *player){
 		ProcessaMovimentoDireita(player);
 		moveDireita(player);
 	}
-	
+	//al_play_sample(player->footstep, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 }

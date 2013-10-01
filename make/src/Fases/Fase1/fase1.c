@@ -2,7 +2,6 @@
 #include "../../comum.h"
 #include "../../Player.h"
 #include "../../ItensMenu.h"
-//#include "../../KeyHandler.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 {
@@ -16,11 +15,11 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
     	(player->state.y + player->image.frameHeight > boxPosY) &&
     	(player->state.y < boxPosY + boxHeight - (player->image.frameHeight/2)))
     {
-        if(player->state.idleE == true) player->state.x += player->state.speed;
-        if(player->state.idleD == true) player->state.x -= player->state.speed;
-        if(player->state.idleC == true)	player->state.y += player->state.speed;
-        if(player->state.idleB == true) player->state.y -= player->state.speed;
-        return true;
+        if(player->state.idleE == true) player->state.x += 1;
+        if(player->state.idleD == true) player->state.x -= 1;
+        if(player->state.idleC == true)	player->state.y += 1;
+        if(player->state.idleB == true) player->state.y -= 1;
+        return true;        
         printf("estou dentro\n");
     }
     else
@@ -30,23 +29,31 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
  	}
 }
 
+bool isColliding_fase1(Player *player){
+	if (isColliding(35, 12, 130, 80, player) ||
+		isColliding(35, 154, 130, 80, player) ||
+		isColliding(35, 288, 130, 80, player) ||
+		isColliding(35, 440, 130, 80, player) ||
+		isColliding(395, 0, 60, 408, player) ||
+		isColliding(506, 380, 294, 35, player) ||
+		isColliding(500, 277, 53, 74, player) ||
+		isColliding(516, 150, 84, 58, player) ||
+		isColliding(594, 235, 208, 50, player))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
-	int FPS = 30;
 	int andar = 1;
-	double tempoInicial = 0;
-	void iniciarTimer()
-	{
-    	tempoInicial = al_get_time();
-	}
- 
-	double obterTempoTimer()
-	{
-   		return al_get_time() - tempoInicial;
-	}
-
+	
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 	
@@ -88,7 +95,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_wait_for_event(game.fila_eventos, &ev);
 
 		setKeys(keys, player, &ev);
-		//movePlayer(keys, player);
+		
+		if(player->state.x + player->image.frameWidth > 800) player->state.x = 800 - player->image.frameWidth;
+		if(player->state.x < 0) player->state.x = 0;
+		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
+		if(player->state.y < 0) player->state.y = 0;
+
 		if(keys->keyLeft == true) printf("Esquerda\n");
 		if(keys->keyRight == true) printf("Direita\n");
 		if(keys->keyUp == true) printf("Cima\n");
@@ -127,25 +139,22 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 				printf("ENTROU NA ESCADA \n");
 			}
-			if(!isColliding(33, 12, 133, 85, player))
+			if(!isColliding_fase1(player))
 			{				
 				movePlayer(keys, player);
 			}
+			else
+			{
+				//ValidaMovimento_CK_UP(player);
+			}
 		}
-		//ValidaMovimento_TIMER(player);
+		
 		//teste fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
-		
-		//TESTE DE FUNDO ESCALONADO
-		//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 		
 		/* teste de um Objeto na tela  */
 		//al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
 		ValidaMovimento(player);
-		if (obterTempoTimer() < 1.0 / FPS)
-        {
-            al_rest((1.0 / FPS) - obterTempoTimer());
-        }
 		
 		/* Apenas para teste... inicio*/
 		/*
