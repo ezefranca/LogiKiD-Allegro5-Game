@@ -103,8 +103,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			switch(ev.keyboard.keycode)
 			{
 			case ALLEGRO_KEY_M:
-				gate = MenuLoad(&ev, player);
+				if(keys->keyUp == false && keys->keyDown == false && keys->keyLeft == false && keys->keyRight == false)
+				{
+					gate = MenuLoad(&ev, player);	
+				}
 				break;
+				
 			case ALLEGRO_KEY_ENTER:
 				if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
 				{
@@ -157,9 +161,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		
 		ValidaMovimento(player);
 		
-		/*Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
-		Está comentado pois ainda não está funcionando da forma correta
-		switch(gate)
+		//Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
+		//Está comentado pois ainda não está funcionando da forma correta
+		/*switch(gate)
 		{
 		case NOT:
 			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOT");
