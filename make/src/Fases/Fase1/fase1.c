@@ -83,7 +83,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, 213, 36);
 	createKeys(keys);
     Gates gate;
-	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
+	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 	
 	//al_start_timer(game.timer);
 	while(!sair)
@@ -98,11 +98,18 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
 
-		if(ev.type == ALLEGRO_EVENT_KEY_DOWN){
+		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+		{
 			switch(ev.keyboard.keycode)
 			{
 			case ALLEGRO_KEY_M:
 				gate = MenuLoad(&ev, player);
+				break;
+			case ALLEGRO_KEY_ENTER:
+				if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
+				{
+					printf("Oi tudo bem?\n");
+				}
 				break;
 			}
 		}
@@ -136,7 +143,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				player->state.idleD = false;
 				player->state.idleC = true;
 				player->state.idleB = false;
-				fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
+				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 				printf("ENTROU NA ESCADA \n");
 			}
 			if(!isCollidingGlobal(player, level))
