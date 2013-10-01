@@ -9,6 +9,44 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 	return al_load_bitmap(bk_path);
 }
 
+void isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player)
+{	
+    if ((player->state.x + player->image.frameWidth > boxPosX) &&
+    	(player->state.x < boxPosX + boxWidth) && 
+    	(player->state.y + player->image.frameHeight > boxPosY) &&
+    	(player->state.y < boxPosY + boxHeight - (player->image.frameHeight/2)))
+    {
+        // no collision
+        if(player->state.idleE == true)
+        {
+        	player->state.x += player->state.speed;
+        	return;
+        }
+        if(player->state.idleD == true)
+        {
+        	player->state.x -= player->state.speed;
+        	return;
+        }
+        if(player->state.idleC == true)
+        {
+        	player->state.y += player->state.speed;
+        	return;
+        }
+        if(player->state.idleB == true)
+        {
+        	player->state.y -= player->state.speed;
+        	return;
+        }
+        printf("estou dentro\n");
+    }
+    else
+    {
+    	printf("Estou fora\n");;
+ 		return;
+ 	}
+}
+
+
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
@@ -53,9 +91,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 0;
 	player->lGates.lgNOT = 0;
 
-	CreatePlayer(player, ALTURA/2, LARGURA/2);
+	CreatePlayer(player, 213, 36);
 	createKeys(keys);
-        Gates gate;
+    //Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 	
 	//al_start_timer(game.timer);
@@ -76,7 +114,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			//TESTE MUDANÇA DE TELA 
+			//MUDANÇA DE TELA 
 			if ((andar == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
 				(player->state.y + player->image.frameHeight / 2) > 500 && 
 				(player->state.y + player->image.frameHeight / 2 < 600)) 
@@ -105,7 +143,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 				printf("ENTROU NA ESCADA \n");
 			}
+			isColliding(33, 12, 133, 85, player);				
 			movePlayer(keys, player);
+			
 		}
 		//ValidaMovimento_TIMER(player);
 		//teste fundo

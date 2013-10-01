@@ -51,6 +51,7 @@ void moveEsquerda(Player *player)
 
 		player->image.frameCount = 0;
 	}
+	printf("%d %d \n", player->state.x, player->state.y);
 }
 
 void moveCima(Player *player)
@@ -260,6 +261,15 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 }
 
 void movePlayer(Keys *keys, Player *player){
+	if((keys->keyUp == true && keys->keyLeft == true) ||
+		(keys->keyUp == true && keys->keyRight == true) ||
+		(keys->keyDown == true && keys->keyLeft == true) ||
+		(keys->keyDown == true && keys->keyRight == true) ||
+		(keys->keyDown == true && keys->keyUp == true))
+	{
+		ValidaMovimento_CK_UP(player);
+		return;
+	}
 	if(keys->keyUp == true){
 		player->state.y -= player->state.speed;
 		ProcessaMovimentoCima(player);
@@ -280,4 +290,5 @@ void movePlayer(Keys *keys, Player *player){
 		ProcessaMovimentoDireita(player);
 		moveDireita(player);
 	}
+	
 }
