@@ -39,7 +39,7 @@ void moveDireita(Player *player)
 
 		player->image.frameCount = 0;
 	}	
-	printf("%d %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d \n", player->state.x, player->state.y);
 }
 
 void moveEsquerda(Player *player)
@@ -51,7 +51,7 @@ void moveEsquerda(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	printf("%d %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d \n", player->state.x, player->state.y);
 }
 
 void moveCima(Player *player)
@@ -63,7 +63,7 @@ void moveCima(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	printf("%d %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d \n", player->state.x, player->state.y);
 	
 }
 
@@ -76,7 +76,7 @@ void moveBaixo(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	printf("%d %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d \n", player->state.x, player->state.y);
 }
 
 void ProcessaMovimentoEsquerda(Player *player)
@@ -223,7 +223,6 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 		{
 		case ALLEGRO_KEY_LEFT:
 			keys->keyLeft = true;
-			printf("Virou esquerda\n");
 			break;
 		case ALLEGRO_KEY_RIGHT:
 			keys->keyRight = true;

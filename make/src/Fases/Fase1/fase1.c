@@ -19,26 +19,25 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
         if(player->state.idleD == true) player->state.x -= 1;
         if(player->state.idleC == true)	player->state.y += 1;
         if(player->state.idleB == true) player->state.y -= 1;
-        return true;        
-        printf("estou dentro\n");
+        return true;
     }
     else
     {
-    	printf("Estou fora\n");
  		return false;
  	}
 }
 
 bool isColliding_fase1(Player *player){
-	if (isColliding(35, 12, 130, 80, player) ||
-		isColliding(35, 154, 130, 80, player) ||
-		isColliding(35, 288, 130, 80, player) ||
-		isColliding(35, 440, 130, 80, player) ||
+	if (isColliding(35, 12, 125, 80, player) ||
+		isColliding(35, 154, 125, 80, player) ||
+		isColliding(35, 288, 125, 80, player) ||
+		isColliding(35, 445, 125, 80, player) ||
 		isColliding(395, 0, 60, 408, player) ||
 		isColliding(506, 380, 294, 35, player) ||
 		isColliding(500, 277, 53, 74, player) ||
 		isColliding(516, 150, 84, 58, player) ||
-		isColliding(594, 235, 208, 50, player))
+		isColliding(594, 235, 208, 50, player) ||
+		isColliding(775, 412, 25, 36, player))
 	{
 		return true;
 	}
@@ -53,7 +52,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
 	int andar = 1;
-	
+		
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 	
@@ -67,33 +66,25 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	al_set_sample_instance_playmode(songInstance, ALLEGRO_PLAYMODE_LOOP);
 	al_attach_sample_instance_to_mixer(songInstance, al_get_default_mixer());
 	al_play_sample_instance(songInstance);*/
-	
-	
-	//Player *testeObjeto = malloc(sizeof(Player)); 
-	//testeObjeto->image.image = al_load_bitmap("./data/images/Objects/PC.png");  
-
 						
-	/* Adiciona as portas logicas... */
-	player->lGates.lgAND = 0;
-	player->lGates.lgOR = 0;
+	/* Adiciona a quantidade de portas logicas... */
+	player->lGates.lgAND = 2;
+	player->lGates.lgOR = 3;
 	player->lGates.lgNAND = 0;
 	player->lGates.lgNOR = 5;
-	player->lGates.lgXOR = 0;
-	player->lGates.lgXNOR = 0;
-	player->lGates.lgNOT = 0;
+	player->lGates.lgXOR = 1;
+	player->lGates.lgXNOR = 10;
+	player->lGates.lgNOT = 3;
 
 	CreatePlayer(player, 213, 36);
 	createKeys(keys);
-    //Gates gate;
+    Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone.png");
 	
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
-	
-		//ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
-
 		setKeys(keys, player, &ev);
 		
 		if(player->state.x + player->image.frameWidth > 800) player->state.x = 800 - player->image.frameWidth;
@@ -101,16 +92,20 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
 		if(player->state.y < 0) player->state.y = 0;
 
-		if(keys->keyLeft == true) printf("Esquerda\n");
-		if(keys->keyRight == true) printf("Direita\n");
-		if(keys->keyUp == true) printf("Cima\n");
-		if(keys->keyDown == true) printf("Baixo\n");
-
 		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
-		
+
+		if(ev.type == ALLEGRO_EVENT_KEY_DOWN){
+			switch(ev.keyboard.keycode)
+			{
+			case ALLEGRO_KEY_M:
+				gate = MenuLoad(&ev, player);
+				break;
+			}
+		}
+
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			//MUDANÇA DE TELA 
+			//MUDANÇA DE TELA - Andar 1 para o 0
 			if ((andar == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
 				(player->state.y + player->image.frameHeight / 2) > 500 && 
 				(player->state.y + player->image.frameHeight / 2 < 600)) 
@@ -125,9 +120,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				player->state.idleB = true;
 				printf("ENTROU NA ESCADA \n");
 			}
+			//Mudança de tela - andar 0 para o 1
 			if ((andar == 0) && (player->state.x > 667 && player->state.x < 780 - player->image.frameWidth) &&
 				(player->state.y + player->image.frameHeight / 2) > 0 && 
-				(player->state.y + player->image.frameHeight / 2 < 20))
+				(player->state.y + player->image.frameHeight / 2 < 40))
 			{
 				andar = 1;
 				player->state.x = 632;
@@ -143,21 +139,15 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			{				
 				movePlayer(keys, player);
 			}
-			else
-			{
-				//ValidaMovimento_CK_UP(player);
-			}
 		}
 		
-		//teste fundo
+		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
 		
-		/* teste de um Objeto na tela  */
-		//al_draw_bitmap(testeObjeto->image.image, 600, 200, 0);
 		ValidaMovimento(player);
 		
-		/* Apenas para teste... inicio*/
-		/*
+		/*Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
+		Está comentado pois ainda não está funcionando da forma correta
 		switch(gate)
 		{
 		case NOT:
@@ -185,9 +175,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			if(gate == 66)
 				al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
 			break;	
-		}
-		Fim dos testes... */
-		
+		}*/
+				
 		al_flip_display();
 		//al_clear_to_color(al_map_rgb(0,0,0));
 	}
@@ -196,5 +185,4 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	//al_stop_sample_instance(songInstance);
 	free(keys);
 	free(player);
-	//free(testeObjeto);
 }
