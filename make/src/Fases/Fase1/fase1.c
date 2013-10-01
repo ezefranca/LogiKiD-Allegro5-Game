@@ -28,12 +28,16 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
 }
 
 bool isColliding_fase1(Player *player){
-	if (isColliding(35, 12, 125, 80, player) ||
-		isColliding(35, 154, 125, 80, player) ||
-		isColliding(35, 288, 125, 80, player) ||
-		isColliding(35, 445, 125, 80, player) ||
-		isColliding(395, 0, 60, 408, player) ||
-		isColliding(506, 380, 294, 35, player) ||
+	if (isColliding(35, 12, 24, 80, player) ||
+		isColliding(35, 154, 24, 80, player) ||
+		isColliding(35, 288, 24, 80, player) ||
+		isColliding(35, 445, 24, 80, player) ||
+		isColliding(78, 25, 80, 60, player) ||
+		isColliding(78, 165, 80, 60, player) ||
+		isColliding(78, 303, 80, 60, player) ||
+		isColliding(78, 452, 80, 60, player) ||
+		isColliding(395, 0, 52, 408, player) ||
+		isColliding(512, 380, 294, 35, player) ||
 		isColliding(500, 277, 53, 74, player) ||
 		isColliding(516, 150, 84, 58, player) ||
 		isColliding(594, 235, 208, 50, player) ||
