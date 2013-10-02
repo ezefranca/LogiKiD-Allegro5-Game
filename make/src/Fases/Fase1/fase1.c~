@@ -160,7 +160,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				level = 2;
 				player->state.x = 284;
 				player->state.y = 40;
-				//AQUI VAI UM FADE IN FADE OUT
+				fundo = SetBackGroundImage("./data/levels/blackscreen.png");
+				al_rest(0.5);
 				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
 				player->state.idleE = false;
 				player->state.idleD = false;
@@ -176,7 +177,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				level = 1;
 				player->state.x = 632;
 				player->state.y = 452;
-				//AQUI VAI UM FADE IN FADE OUT
+				fundo = SetBackGroundImage("./data/levels/blackscreen.png");
+				al_rest(0.5);
 				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 				player->state.idleE = false;
 				player->state.idleD = false;
