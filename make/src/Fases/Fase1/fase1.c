@@ -48,6 +48,23 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
+	if(level == 2)
+	{
+		if (isColliding(421, 157, 92, 61, player) ||
+			isColliding(518, 314, 92, 61, player) ||
+			isColliding(741, 157, 92, 61, player) ||
+			isColliding(0, 0, 195, 220, player) ||
+			isColliding(195, 0, 66, 90, player) ||
+			isColliding(357, 0, 177, 90, player) ||
+			isColliding(0, 415, 505, 600, player) ||
+			isColliding(357, 0, 177, 90, player) ||
+			isColliding(510, 490, 290, 110, player) ||
+			isColliding(0, 283, 220, 100, player))
+		{
+			return true;
+		}
+		else return false;
+	}
 	else return false;
 }
 
@@ -80,7 +97,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
-	CreatePlayer(player, 213, 36);
+	CreatePlayer(player, 213, 450);
 	createKeys(keys);
     Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
@@ -96,7 +113,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
 		if(player->state.y < 0) player->state.y = 0;
 
-		if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
+		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
 
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
@@ -110,10 +127,20 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				break;
 				
 			case ALLEGRO_KEY_ENTER:
-				if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
+				if(level == 1)
 				{
-					printf("Oi tudo bem?\n");
+					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
+					{
+						printf("Oi tudo bem?\n");
+					}
 				}
+				if(level == 2)
+				{
+					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
+					{
+						printf("Acessando computador\n");
+					}	
+				}	
 				break;
 			}
 		}
@@ -126,28 +153,32 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				(player->state.y + player->image.frameHeight / 2 < 600)) 
 			{
 				level = 2;
-				player->state.x = 693;
-				player->state.y = 30;
-				fundo = SetBackGroundImage("./data/levels/fase1/faseone2.png");
+				player->state.x = 284;
+				player->state.y = 40;
+				fundo = SetBackGroundImage("./data/levels/blackscreen.png");
+				al_rest(0.005);
+				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
 				player->state.idleE = false;
 				player->state.idleD = false;
 				player->state.idleC = false;
 				player->state.idleB = true;
-				printf("ENTROU NA ESCADA \n");
+				printf("ENTROU NA ESCADA X \n");
 			}
 			//Mudança de tela - level 2 para o 1
-			if ((level == 2) && (player->state.x > 667 && player->state.x < 780 - player->image.frameWidth) &&
+			if ((level == 2) && (player->state.x > 262 && player->state.x < 354 - player->image.frameWidth) &&
 				(player->state.y + player->image.frameHeight / 2) > 0 && 
 				(player->state.y + player->image.frameHeight / 2 < 40))
 			{
 				level = 1;
 				player->state.x = 632;
 				player->state.y = 452;
+				fundo = SetBackGroundImage("./data/levels/blackscreen.png");
+				al_rest(0.005);
+				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 				player->state.idleE = false;
 				player->state.idleD = false;
 				player->state.idleC = true;
 				player->state.idleB = false;
-				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 				printf("ENTROU NA ESCADA \n");
 			}
 			if(!isCollidingGlobal(player, level))
