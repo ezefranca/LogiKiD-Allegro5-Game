@@ -2,10 +2,18 @@ ProjetoPI2
 ==========
 Desenvolvimento de um jogo utilizando a Allegro 5.
 
-Creditos
+Licença e Créditos
 ========
-Todos os arquivos de audio utilizados no jogo, est�o sendo retirados dos seguintes links:
+![My image](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+Este obra foi licenciado sob uma [Licença Creative Commons Atribuição-CompartilhaIgual 2.5 Brasil.](http://creativecommons.org/choose/results-one?license_code=by-sa&jurisdiction=br&version=2.5&lang=pt_BR)
+
+This work is licensed under a [Creative Commons Attribution-ShareAlike 3.0 Unported License.](http://creativecommons.org/licenses/by-sa/3.0/)
+
+Arquivos de audio utilizados no jogo, estão sendo retirados dos seguintes links:
+
 http://www.freesfx.co.uk/
+http://freemusicarchive.org/
+
 
 Requerimentos
 =============
@@ -13,17 +21,6 @@ Allegro 5.x instalado no sistema
 
 Como compilar
 =============
-Utilizando IDE:
-```
--> Entrar na pasta UsingIDE e abrir o arquivo ProjetoPI2.sln
-```
-
-Ou por linha de comando...
-
-```
--> Linux: $ cd UsingIDE ; xbuild ProjetoPI2.sln
--> Windows: cd UsingIDE ; msbuild ProjetoPI2.sln
-```
 
 Utilizando make:
 
