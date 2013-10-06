@@ -59,6 +59,20 @@ bool inicializar()
         return false;
     }
     
+    if (!al_install_mouse())
+    {
+        fprintf(stderr, "Falha ao inicializar o mouse.\n");
+        al_destroy_display(game.janela);
+        return -1;
+    }
+
+    if (!al_set_system_mouse_cursor(game.janela, ALLEGRO_SYSTEM_MOUSE_CURSOR_DEFAULT))
+    {
+        fprintf(stderr, "Falha ao atribuir ponteiro do mouse.\n");
+        al_destroy_display(game.janela);
+        return -1;
+    }
+    
     game.fonte = al_load_font("data/circuito.ttf", 50, 10);
     game.fonte_menu = al_load_font("data/terminal.ttf", 20, 10);
     game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
@@ -88,6 +102,10 @@ bool inicializar()
         return false;
     }
 
+    game.mute = 1;
+    //Aqui você pode implementar um savestate
+    game.level = 1;
+    al_register_event_source(game.fila_eventos, al_get_mouse_event_source());
     al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
     al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());
     al_register_event_source(game.fila_eventos, al_get_display_event_source(game.janela));

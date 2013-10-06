@@ -29,7 +29,7 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
 
 bool isCollidingGlobal(Player *player, int level){
 	if(level == 1){
-		if (isColliding(35, 12, 24, 80, player) ||
+		if (isColliding(35, 12, 24, 80, player)    ||
 			isColliding(35, 154, 24, 80, player)   ||
 			isColliding(35, 288, 24, 80, player)   ||
 			isColliding(35, 445, 24, 80, player)   ||
@@ -50,7 +50,7 @@ bool isCollidingGlobal(Player *player, int level){
 	}
 	if(level == 2)
 	{
-		if (isColliding(421, 157, 92, 61, player)       ||
+		if (isColliding(421, 157, 92, 61, player)   ||
 			isColliding(518, 314, 92, 61, player)   ||
 			isColliding(741, 157, 92, 61, player)   ||
 			isColliding(0, 0, 195, 220, player)     ||
@@ -68,30 +68,34 @@ bool isCollidingGlobal(Player *player, int level){
 	else return false;
 }
 
+	/* TESTE MUSICA */
+	
+void musicPlayer(int mute){
+
+	if (mute == 0){
+		printf("***************MUTE*****************\n");
+	    al_destroy_sample_instance(game.songInstance);
+	}
+	else if(mute == 1){
+		printf("*******************PLAY************\n");
+		game.song = al_load_sample("./data/sound/music/Lunch.ogg");
+		game.songInstance = al_create_sample_instance(game.song);
+		al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+		al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+		al_play_sample_instance(game.songInstance);
+	}
+}
+	/*FIM DO TESTE MUSICA */
+
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
-	int level = 1;
-		
+	//int level = 1;
+	//musicPlayer(game.mute);	
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
-	
-	
-	/* TESTE MUSICA 
-	
-	ALLEGRO_SAMPLE *song;
-        ALLEGRO_SAMPLE_INSTANCE *songInstance;
-	//song = al_load_sample("song.ogg");
-	song = al_load_sample("./data/sound/music/Lunch.ogg");
-	songInstance = al_create_sample_instance(song);
-	al_set_sample_instance_playmode(songInstance, ALLEGRO_PLAYMODE_LOOP);
-	al_attach_sample_instance_to_mixer(songInstance, al_get_default_mixer());
-	al_play_sample_instance(songInstance);
-	
-	
-	FIM DO TESTE MUSICA */
-	
+		
 						
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
@@ -106,10 +110,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	createKeys(keys);
     Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
+	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/sound.png");
 	
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
+
 		al_wait_for_event(game.fila_eventos, &ev);
 		setKeys(keys, player, &ev);
 		
@@ -132,14 +138,14 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				break;
 				
 			case ALLEGRO_KEY_ENTER:
-				if(level == 1)
+				if(game.level == 1)
 				{
 					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
 					{
 						printf("Oi tudo bem?\n");
 					}
 				}
-				if(level == 2)
+				if(game.level == 2)
 				{
 					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
 					{
@@ -152,12 +158,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
+			al_draw_bitmap(soundIcon, 300, 300, 0);
 			//MUDANÇA DE TELA - level 1 para o 2
-			if ((level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
+			if ((game.level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
 				(player->state.y + player->image.frameHeight / 2) > 500 && 
 				(player->state.y + player->image.frameHeight / 2 < 600)) 
 			{
-				level = 2;
+				game.level = 2;
 				player->state.x = 284;
 				player->state.y = 40;
 				//AQUI VAI UM FADE IN FADE OUT
@@ -169,11 +176,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				printf("ENTROU NA ESCADA X \n");
 			}
 			//Mudança de tela - level 2 para o 1
-			if ((level == 2) && (player->state.x > 262 && player->state.x < 354 - player->image.frameWidth) &&
+			if ((game.level == 2) && (player->state.x > 262 && player->state.x < 354 - player->image.frameWidth) &&
 				(player->state.y + player->image.frameHeight / 2) > 0 && 
 				(player->state.y + player->image.frameHeight / 2 < 40))
 			{
-				level = 1;
+				game.level = 1;
 				player->state.x = 632;
 				player->state.y = 452;
 				//AQUI VAI UM FADE IN FADE OUT
@@ -184,11 +191,45 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				player->state.idleB = false;
 				printf("ENTROU NA ESCADA \n");
 			}
-			if(!isCollidingGlobal(player, level))
+			if(!isCollidingGlobal(player, game.level))
 			{				
 				movePlayer(keys, player);
 			}
 		}
+
+		//IMPLEMENTACAO MOUSE PARA TIRAR O SOM
+            // Se o evento foi de movimentação do mouse
+            if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
+            {
+            	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
+                // Verificamos se ele está sobre a região do botao de mute
+                if (ev.mouse.x >= 770 && ev.mouse.x <= 800 && ev.mouse.y >= 0 && ev.mouse.y <= 30 )
+                {
+                    //em cima do mute
+                }
+                else
+                {
+                    //fora do mute
+                }
+            }
+            // Ou se o evento foi um clique do mouse
+            else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+            {
+            	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
+               
+                if (ev.mouse.x >= 770 && ev.mouse.x <= 800 && ev.mouse.y >= 0 && ev.mouse.y <= 30 )
+                {
+                	if (game.mute == 0){
+                    musicPlayer(game.mute);
+                	game.mute = 1;
+                	}
+                	else{
+                	musicPlayer(game.mute);
+                	game.mute = 0;
+                	}
+
+                }
+            }
 		
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
@@ -231,7 +272,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	}
 	//al_destroy_sample(song);
 	//al_destroy_sample_instance(songInstance);
-	//al_stop_sample_instance(songInstance);
+    //al_stop_sample_instance(songInstance);
 	free(keys);
 	free(player);
 }

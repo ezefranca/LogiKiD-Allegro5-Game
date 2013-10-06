@@ -19,6 +19,8 @@
 
 struct Game
 {
+	int mute;
+	int level;
 	ALLEGRO_SAMPLE *som; 
 	ALLEGRO_FONT *fonte;
 	ALLEGRO_FONT *fonte_menu;
@@ -27,7 +29,7 @@ struct Game
 	ALLEGRO_DISPLAY *janela;
 	ALLEGRO_EVENT_QUEUE *fila_eventos;
 	ALLEGRO_SAMPLE *song;
-        ALLEGRO_SAMPLE_INSTANCE *songInstance;
+    ALLEGRO_SAMPLE_INSTANCE *songInstance;
 };
 
 struct Game game;
