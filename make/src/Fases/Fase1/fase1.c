@@ -8,6 +8,200 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
 	return al_load_bitmap(bk_path);
 }
 
+bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player);
+bool isCollidingGlobal(Player *player, int level);	
+void musicPlayer(int mute);
+
+void GameLoop_Fase1(ALLEGRO_EVENT ev)
+{
+	bool sair = false;
+	//int level = 1;
+	//musicPlayer(game.mute);	
+	Keys *keys = malloc(sizeof(Keys));
+	Player *player = malloc(sizeof(Player));
+		
+						
+	/* Adiciona a quantidade de portas logicas... */
+	player->lGates.lgAND = 2;
+	player->lGates.lgOR = 3;
+	player->lGates.lgNAND = 0;
+	player->lGates.lgNOR = 5;
+	player->lGates.lgXOR = 1;
+	player->lGates.lgXNOR = 10;
+	player->lGates.lgNOT = 3;
+
+	CreatePlayer(player, 213, 450);
+	createKeys(keys);
+    Gates gate;
+	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
+	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
+	musicPlayer(game.mute);
+	//al_start_timer(game.timer);
+	while(!sair)
+	{
+
+		al_wait_for_event(game.fila_eventos, &ev);
+		setKeys(keys, player, &ev);
+		
+		if(player->state.x + player->image.frameWidth > 800) player->state.x = 800 - player->image.frameWidth;
+		if(player->state.x < 0) player->state.x = 0;
+		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
+		if(player->state.y < 0) player->state.y = 0;
+
+		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
+
+		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
+		{
+			switch(ev.keyboard.keycode)
+			{
+			case ALLEGRO_KEY_M:
+				if(keys->keyUp == false && keys->keyDown == false && keys->keyLeft == false && keys->keyRight == false)
+				{
+					gate = MenuLoad(&ev, player);	
+				}
+				break;
+				
+			case ALLEGRO_KEY_ENTER:
+				if(game.level == 1)
+				{
+					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
+					{
+						printf("Oi tudo bem?\n");
+					}
+				}
+				if(game.level == 2)
+				{
+					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
+					{
+						printf("Acessando computador\n");
+					}	
+				}	
+				break;
+			}
+		}
+
+		if(ev.type == ALLEGRO_EVENT_TIMER)
+		{
+			//MUDANÇA DE TELA - level 1 para o 2
+			if ((game.level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
+				(player->state.y + player->image.frameHeight / 2) > 500 && 
+				(player->state.y + player->image.frameHeight / 2 < 600)) 
+			{
+				game.level = 2;
+				player->state.x = 284;
+				player->state.y = 40;
+				//AQUI VAI UM FADE IN FADE OUT
+				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
+				player->state.idleE = false;
+				player->state.idleD = false;
+				player->state.idleC = false;
+				player->state.idleB = true;
+				printf("ENTROU NA ESCADA X \n");
+			}
+			//Mudança de tela - level 2 para o 1
+			if ((game.level == 2) && (player->state.x > 262 && player->state.x < 354 - player->image.frameWidth) &&
+				(player->state.y + player->image.frameHeight / 2) > 0 && 
+				(player->state.y + player->image.frameHeight / 2 < 40))
+			{
+				game.level = 1;
+				player->state.x = 632;
+				player->state.y = 452;
+				//AQUI VAI UM FADE IN FADE OUT
+				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
+				player->state.idleE = false;
+				player->state.idleD = false;
+				player->state.idleC = true;
+				player->state.idleB = false;
+				printf("ENTROU NA ESCADA \n");
+			}
+			if(!isCollidingGlobal(player, game.level))
+			{				
+				movePlayer(keys, player);
+			}
+		}
+
+		    //IMPLEMENTACAO MOUSE PARA TIRAR O SOM
+            // Se o evento foi de movimentação do mouse
+            if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
+            {
+            	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
+                // Verificamos se ele está sobre a região do botao de mute
+                if (ev.mouse.x > 750 && ev.mouse.x <= 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
+                {
+                    //em cima do mute
+                }
+                else
+                {
+                    //fora do mute
+                }
+            }
+            // Ou se o evento foi um clique do mouse
+            else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+            {
+            	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
+               
+                if (ev.mouse.x > 750 && ev.mouse.x < 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
+                {
+                	if (game.mute == 0){
+                       	game.mute = 1;
+                       	soundIcon = al_load_bitmap("./data/images/icons/som.png");
+                       	musicPlayer(game.mute);
+                	}
+                	else{
+                	   	game.mute = 0;
+                	   	soundIcon = al_load_bitmap("./data/images/icons/sem_som.png");
+                	   	musicPlayer(game.mute);
+                	}
+
+                }
+            }
+		
+		//Exibe fundo
+		al_draw_bitmap(fundo, 0, 0, 0);
+		ValidaMovimento(player);
+		al_draw_bitmap(soundIcon, 750, 20, 0);
+		
+		//Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
+		//Está comentado pois ainda não está funcionando da forma correta
+		/*switch(gate)
+		{
+		case NOT:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOT");
+			break;
+		case AND:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "AND");
+			break;
+		case OR:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "OR");
+			break;
+		case NAND:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NAND");
+			break;
+		case NOR:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOR");
+			break;
+		case XOR:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XOR");
+			break;
+		case XNOR:
+			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XNOR");
+			break;
+		default:
+			if(gate == 66)
+				al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
+			break;	
+		}*/
+				
+		al_flip_display();
+		//al_clear_to_color(al_map_rgb(0,0,0));
+	}
+	//al_destroy_sample(song);
+	//al_destroy_sample_instance(songInstance);
+    //al_stop_sample_instance(songInstance);
+	free(keys);
+	free(player);
+}
+
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player)
 {	
 	if ((player->state.x + player->image.frameWidth > boxPosX) &&
@@ -68,8 +262,6 @@ bool isCollidingGlobal(Player *player, int level){
 	else return false;
 }
 
-	/* TESTE MUSICA */
-	
 void musicPlayer(int mute){
 
 	if (mute == 0){
@@ -86,193 +278,3 @@ void musicPlayer(int mute){
 	}
 }
 	/*FIM DO TESTE MUSICA */
-
-
-void GameLoop_Fase1(ALLEGRO_EVENT ev)
-{
-	bool sair = false;
-	//int level = 1;
-	//musicPlayer(game.mute);	
-	Keys *keys = malloc(sizeof(Keys));
-	Player *player = malloc(sizeof(Player));
-		
-						
-	/* Adiciona a quantidade de portas logicas... */
-	player->lGates.lgAND = 2;
-	player->lGates.lgOR = 3;
-	player->lGates.lgNAND = 0;
-	player->lGates.lgNOR = 5;
-	player->lGates.lgXOR = 1;
-	player->lGates.lgXNOR = 10;
-	player->lGates.lgNOT = 3;
-
-	CreatePlayer(player, 213, 450);
-	createKeys(keys);
-    Gates gate;
-	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
-	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/sound.png");
-	
-	//al_start_timer(game.timer);
-	while(!sair)
-	{
-
-		al_wait_for_event(game.fila_eventos, &ev);
-		setKeys(keys, player, &ev);
-		
-		if(player->state.x + player->image.frameWidth > 800) player->state.x = 800 - player->image.frameWidth;
-		if(player->state.x < 0) player->state.x = 0;
-		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
-		if(player->state.y < 0) player->state.y = 0;
-
-		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
-
-		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
-		{
-			switch(ev.keyboard.keycode)
-			{
-			case ALLEGRO_KEY_M:
-				if(keys->keyUp == false && keys->keyDown == false && keys->keyLeft == false && keys->keyRight == false)
-				{
-					gate = MenuLoad(&ev, player);	
-				}
-				break;
-				
-			case ALLEGRO_KEY_ENTER:
-				if(game.level == 1)
-				{
-					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
-					{
-						printf("Oi tudo bem?\n");
-					}
-				}
-				if(game.level == 2)
-				{
-					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
-					{
-						printf("Acessando computador\n");
-					}	
-				}	
-				break;
-			}
-		}
-
-		if(ev.type == ALLEGRO_EVENT_TIMER)
-		{
-			al_draw_bitmap(soundIcon, 300, 300, 0);
-			//MUDANÇA DE TELA - level 1 para o 2
-			if ((game.level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
-				(player->state.y + player->image.frameHeight / 2) > 500 && 
-				(player->state.y + player->image.frameHeight / 2 < 600)) 
-			{
-				game.level = 2;
-				player->state.x = 284;
-				player->state.y = 40;
-				//AQUI VAI UM FADE IN FADE OUT
-				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
-				player->state.idleE = false;
-				player->state.idleD = false;
-				player->state.idleC = false;
-				player->state.idleB = true;
-				printf("ENTROU NA ESCADA X \n");
-			}
-			//Mudança de tela - level 2 para o 1
-			if ((game.level == 2) && (player->state.x > 262 && player->state.x < 354 - player->image.frameWidth) &&
-				(player->state.y + player->image.frameHeight / 2) > 0 && 
-				(player->state.y + player->image.frameHeight / 2 < 40))
-			{
-				game.level = 1;
-				player->state.x = 632;
-				player->state.y = 452;
-				//AQUI VAI UM FADE IN FADE OUT
-				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
-				player->state.idleE = false;
-				player->state.idleD = false;
-				player->state.idleC = true;
-				player->state.idleB = false;
-				printf("ENTROU NA ESCADA \n");
-			}
-			if(!isCollidingGlobal(player, game.level))
-			{				
-				movePlayer(keys, player);
-			}
-		}
-
-		//IMPLEMENTACAO MOUSE PARA TIRAR O SOM
-            // Se o evento foi de movimentação do mouse
-            if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
-            {
-            	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
-                // Verificamos se ele está sobre a região do botao de mute
-                if (ev.mouse.x >= 770 && ev.mouse.x <= 800 && ev.mouse.y >= 0 && ev.mouse.y <= 30 )
-                {
-                    //em cima do mute
-                }
-                else
-                {
-                    //fora do mute
-                }
-            }
-            // Ou se o evento foi um clique do mouse
-            else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
-            {
-            	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
-               
-                if (ev.mouse.x >= 770 && ev.mouse.x <= 800 && ev.mouse.y >= 0 && ev.mouse.y <= 30 )
-                {
-                	if (game.mute == 0){
-                    musicPlayer(game.mute);
-                	game.mute = 1;
-                	}
-                	else{
-                	musicPlayer(game.mute);
-                	game.mute = 0;
-                	}
-
-                }
-            }
-		
-		//Exibe fundo
-		al_draw_bitmap(fundo, 0, 0, 0);
-		
-		ValidaMovimento(player);
-		
-		//Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
-		//Está comentado pois ainda não está funcionando da forma correta
-		/*switch(gate)
-		{
-		case NOT:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOT");
-			break;
-		case AND:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "AND");
-			break;
-		case OR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "OR");
-			break;
-		case NAND:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NAND");
-			break;
-		case NOR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOR");
-			break;
-		case XOR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XOR");
-			break;
-		case XNOR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XNOR");
-			break;
-		default:
-			if(gate == 66)
-				al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
-			break;	
-		}*/
-				
-		al_flip_display();
-		//al_clear_to_color(al_map_rgb(0,0,0));
-	}
-	//al_destroy_sample(song);
-	//al_destroy_sample_instance(songInstance);
-    //al_stop_sample_instance(songInstance);
-	free(keys);
-	free(player);
-}

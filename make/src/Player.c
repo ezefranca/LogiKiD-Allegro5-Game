@@ -221,15 +221,19 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 	{
 		switch(ev->keyboard.keycode)
 		{
+		case ALLEGRO_KEY_A:
 		case ALLEGRO_KEY_LEFT:
 			keys->keyLeft = true;
 			break;
+		case ALLEGRO_KEY_D:
 		case ALLEGRO_KEY_RIGHT:
 			keys->keyRight = true;
 			break;
+		case ALLEGRO_KEY_W:
 		case ALLEGRO_KEY_UP:
 			keys->keyUp = true;
 			break;
+		case ALLEGRO_KEY_S:
 		case ALLEGRO_KEY_DOWN:
 			keys->keyDown = true;
 			break;
