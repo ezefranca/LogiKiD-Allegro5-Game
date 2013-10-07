@@ -247,15 +247,19 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 		ValidaMovimento_CK_UP(player);
 		switch(ev->keyboard.keycode)
 		{
+		case ALLEGRO_KEY_A:
 		case ALLEGRO_KEY_LEFT:
 			keys->keyLeft = false;
 			break;
+		case ALLEGRO_KEY_D:
 		case ALLEGRO_KEY_RIGHT:
 			keys->keyRight = false;
 			break;
+		case ALLEGRO_KEY_W:
 		case ALLEGRO_KEY_UP:
 			keys->keyUp = false;
 			break;
+		case ALLEGRO_KEY_S:
 		case ALLEGRO_KEY_DOWN:
 			keys->keyDown = false;
 			break;
