@@ -2,6 +2,7 @@
 #include "../../comum.h"
 #include "../../Player.h"
 #include "../../ItensMenu.h"
+#include "../../textBox.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player);
@@ -15,7 +16,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	bool sair = false;
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
-		
+	Dialogs *dialog = malloc(sizeof(Dialogs));	
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -27,6 +28,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
+	createDialogs(dialog);
     Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
@@ -43,8 +45,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
 		if(player->state.y < 0) player->state.y = 0;
 
-		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)	sair = true;
-
+		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+		{
+			sair = true;
+			al_destroy_sample_instance(game.songInstance);
+		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
 			switch(ev.keyboard.keycode)
@@ -62,6 +67,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
 					{
 						printf("Oi tudo bem?\n");
+						TextBoxLoad(&ev, dialog->menina_texto_1);
 					}
 				}
 				if(game.level == 2)
@@ -118,7 +124,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 	    //IMPLEMENTACAO MOUSE PARA TIRAR O SOM
         // Se o evento foi de movimentação do mouse
-        if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
+        /*if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
         {
         	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
             // Verificamos se ele está sobre a região do botao de mute
@@ -130,9 +136,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             {
                 //fora do mute
             }
-        }
+        }*/
         // Ou se o evento foi um clique do mouse
-        else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+        if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
         {
         	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
            
@@ -143,7 +149,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
                    	soundIcon = al_load_bitmap("./data/images/icons/som.png");
                    	musicPlayer(game.mute);
             	}
-            	else{
+            	else
+            	{
             	   	game.mute = 0;
             	   	soundIcon = al_load_bitmap("./data/images/icons/sem_som.png");
             	   	musicPlayer(game.mute);
@@ -195,6 +202,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	}
 	free(keys);
 	free(player);
+	free(dialog);
 }
 
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player)
