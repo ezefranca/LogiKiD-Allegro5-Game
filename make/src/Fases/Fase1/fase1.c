@@ -3,24 +3,19 @@
 #include "../../Player.h"
 #include "../../ItensMenu.h"
 
-ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
-{
-	return al_load_bitmap(bk_path);
-}
-
+ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player);
 bool isCollidingGlobal(Player *player, int level);	
 void musicPlayer(int mute);
 
+bool redraw = false;
+
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
 	bool sair = false;
-	//int level = 1;
-	//musicPlayer(game.mute);	
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 		
-						
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -118,43 +113,44 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			{				
 				movePlayer(keys, player);
 			}
+			redraw = true;
 		}
 
-		    //IMPLEMENTACAO MOUSE PARA TIRAR O SOM
-            // Se o evento foi de movimentação do mouse
-            if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
+	    //IMPLEMENTACAO MOUSE PARA TIRAR O SOM
+        // Se o evento foi de movimentação do mouse
+        if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
+        {
+        	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
+            // Verificamos se ele está sobre a região do botao de mute
+            if (ev.mouse.x > 750 && ev.mouse.x <= 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
             {
-            	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
-                // Verificamos se ele está sobre a região do botao de mute
-                if (ev.mouse.x > 750 && ev.mouse.x <= 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
-                {
-                    //em cima do mute
-                }
-                else
-                {
-                    //fora do mute
-                }
+                //em cima do mute
             }
-            // Ou se o evento foi um clique do mouse
-            else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+            else
             {
-            	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
-               
-                if (ev.mouse.x > 750 && ev.mouse.x < 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
-                {
-                	if (game.mute == 0){
-                       	game.mute = 1;
-                       	soundIcon = al_load_bitmap("./data/images/icons/som.png");
-                       	musicPlayer(game.mute);
-                	}
-                	else{
-                	   	game.mute = 0;
-                	   	soundIcon = al_load_bitmap("./data/images/icons/sem_som.png");
-                	   	musicPlayer(game.mute);
-                	}
+                //fora do mute
+            }
+        }
+        // Ou se o evento foi um clique do mouse
+        else if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_UP)
+        {
+        	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
+           
+            if (ev.mouse.x > 750 && ev.mouse.x < 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
+            {
+            	if (game.mute == 0){
+                   	game.mute = 1;
+                   	soundIcon = al_load_bitmap("./data/images/icons/som.png");
+                   	musicPlayer(game.mute);
+            	}
+            	else{
+            	   	game.mute = 0;
+            	   	soundIcon = al_load_bitmap("./data/images/icons/sem_som.png");
+            	   	musicPlayer(game.mute);
+            	}
 
-                }
             }
+        }
 		
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
@@ -191,13 +187,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
 			break;	
 		}*/
-				
-		al_flip_display();
-		//al_clear_to_color(al_map_rgb(0,0,0));
+		
+		if(redraw && al_is_event_queue_empty(game.fila_eventos)) {
+        	redraw = false; 
+        	al_flip_display();
+      	}
 	}
-	//al_destroy_sample(song);
-	//al_destroy_sample_instance(songInstance);
-    //al_stop_sample_instance(songInstance);
 	free(keys);
 	free(player);
 }
@@ -269,7 +264,7 @@ void musicPlayer(int mute){
 	    al_destroy_sample_instance(game.songInstance);
 	}
 	else if(mute == 1){
-		printf("*******************PLAY************\n");
+		printf("***************PLAY*****************\n");
 		game.song = al_load_sample("./data/sound/music/Lunch.ogg");
 		game.songInstance = al_create_sample_instance(game.song);
 		al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
@@ -277,4 +272,8 @@ void musicPlayer(int mute){
 		al_play_sample_instance(game.songInstance);
 	}
 }
-	/*FIM DO TESTE MUSICA */
+
+ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
+{
+	return al_load_bitmap(bk_path);
+}
