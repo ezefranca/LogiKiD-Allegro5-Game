@@ -9,7 +9,9 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
 bool isCollidingGlobal(Player *player, int level);	
 void musicPlayer(int mute);
 
+int i;
 bool redraw = false;
+ALLEGRO_BITMAP *textBox;
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
@@ -69,17 +71,23 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						printf("Oi tudo bem?\n");
 						TextBoxLoad(&ev, dialog->menina_texto_1);
 					}
+					else
+					{ 
+						
+						textBox = al_load_bitmap("data/images/textbox.png");
+						al_draw_bitmap(textBox, 0, 450, 0);
+						for(i = 0; i < 3; i++)
+						{
+							TextBoxLoad_matriz(&ev, dialog->computador_matriz[i], 472 + i*25);
+							printf("Acessando computador %d \n", i);
+						}
+					}	
 				}
 				if(game.level == 2)
 				{
 					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
 					{
 						TextBoxLoad(&ev, dialog->computador_texto_1);
-						printf("Acessando computador\n");
-					}
-					else
-					{
-						TextBoxLoad_matriz(&ev, dialog->computador_matriz);
 						printf("Acessando computador\n");
 					}	
 				}	

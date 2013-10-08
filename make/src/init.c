@@ -58,7 +58,6 @@ bool inicializar()
         al_destroy_display(game.janela);
         return false;
     }
-    
     if (!al_install_mouse())
     {
         fprintf(stderr, "Falha ao inicializar o mouse.\n");

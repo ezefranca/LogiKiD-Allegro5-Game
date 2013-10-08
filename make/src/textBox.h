@@ -18,5 +18,5 @@ typedef struct {
 }Dialogs;
 
 void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[]);
-void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[]);
+void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[], int textYPos);
 void createDialogs(Dialogs *dialog);
