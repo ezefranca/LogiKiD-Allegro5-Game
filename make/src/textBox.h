@@ -13,7 +13,10 @@
   
 typedef struct {
 	char menina_texto_1[90];
+	char computador_texto_1[90];
+	char computador_matriz[3][90];
 }Dialogs;
 
 void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[]);
+void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[]);
 void createDialogs(Dialogs *dialog);

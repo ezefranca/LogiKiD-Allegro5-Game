@@ -74,6 +74,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				{
 					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
 					{
+						TextBoxLoad(&ev, dialog->computador_texto_1);
+						printf("Acessando computador\n");
+					}
+					else
+					{
+						TextBoxLoad_matriz(&ev, dialog->computador_matriz);
 						printf("Acessando computador\n");
 					}	
 				}	
