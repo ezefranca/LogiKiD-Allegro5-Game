@@ -68,20 +68,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				{
 					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
 					{
-						printf("Oi tudo bem?\n");
-						TextBoxLoad(&ev, dialog->menina_texto_1);
-					}
-					else
-					{ 
-						
 						textBox = al_load_bitmap("data/images/textbox.png");
 						al_draw_bitmap(textBox, 0, 450, 0);
 						for(i = 0; i < 3; i++)
 						{
-							TextBoxLoad_matriz(&ev, dialog->computador_matriz[i], 472 + i*25);
-							printf("Acessando computador %d \n", i);
+							TextBoxLoad_matriz(&ev, dialog->menina_texto[i], 472 + i*25);
 						}
-					}	
+					}
 				}
 				if(game.level == 2)
 				{
@@ -90,7 +83,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						TextBoxLoad(&ev, dialog->computador_texto_1);
 						printf("Acessando computador\n");
 					}	
-				}	
+				}
 				break;
 			}
 		}

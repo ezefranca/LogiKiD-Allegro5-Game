@@ -7,9 +7,9 @@ void createDialogs(Dialogs *dialog){
 	//Não estou conseguindo quebrar a linha
 	strcpy(dialog->menina_texto_1, "Oi tudo bem? Você poderia me ajudar?");
 	strcpy(dialog->computador_texto_1, "Que computador velho, será que eu consigo arrumar?");
-	strcpy(dialog->computador_matriz[0], "Oi tudo bem? Sou o primeiro texto!");
-	strcpy(dialog->computador_matriz[1], "Oi tudo bem? Sou o segundo texto!");
-	strcpy(dialog->computador_matriz[2], "Oi tudo bem? Sou o terceiro texto!");
+	strcpy(dialog->menina_texto[0], "Oi tudo bem? Você poderia me ajudar? Estou com um problema");
+	strcpy(dialog->menina_texto[1], "na minha máquina de refrigerante, alguma coisa aconteceu");
+	strcpy(dialog->menina_texto[2], "e ela não funciona mais.");
 }
 
 void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[])
