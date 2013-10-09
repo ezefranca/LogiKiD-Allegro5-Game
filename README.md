@@ -33,7 +33,7 @@ Utilizando make:
 ```
 $ cd make ; Make
 ```
-...
+```
 Estrutura de Arquivos
 ============
 ├── bin
@@ -150,4 +150,5 @@ Estrutura de Arquivos
 └── web
     └── DB
         └── create.sql                 
+```
 ```
