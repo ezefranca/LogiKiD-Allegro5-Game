@@ -58,7 +58,6 @@ bool inicializar()
         al_destroy_display(game.janela);
         return false;
     }
-    
     if (!al_install_mouse())
     {
         fprintf(stderr, "Falha ao inicializar o mouse.\n");
@@ -74,7 +73,7 @@ bool inicializar()
     }
     
     game.fonte = al_load_font("data/circuito.ttf", 50, 10);
-    game.fonte_menu = al_load_font("data/terminal.ttf", 20, 10);
+    game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 10);
     game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
     
     
