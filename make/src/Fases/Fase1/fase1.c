@@ -93,7 +93,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				}
 				if(game.level == 3)
 				{
-					if ((player->state.y > 51 && player->state.y < 93) && 
+					if ((player->state.y > 51 && player->state.y < 120) && 
 						(player->state.x > 68 && player->state.x < 73))
 					{
 						if(inputs[0] == false){
@@ -103,7 +103,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 						printf("Mudando porta 1\n");
 					}
-					if((player->state.y > 186 && player->state.y < 229) &&
+					if((player->state.y > 132 && player->state.y < 191) &&
 						(player->state.x > 68 && player->state.x < 73))
 					{
 						if(inputs[1] == false){
@@ -305,7 +305,7 @@ bool isCollidingGlobal(Player *player, int level){
 	if(level == 3)
 	{
 		if (isColliding(126, 106, 60, 42, player)   ||
-			isColliding(128, 234, 60, 42, player)   ||
+			isColliding(128, 169, 60, 42, player)   ||
 			isColliding(446, 133, 64, 64, player))
 		{
 			return true;
