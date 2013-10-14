@@ -7,7 +7,7 @@ struct Config load_config(char *arquivo) {
 
 }
 
-struct Config load_idioma(char *idioma){
+struct Idioma load_idioma(char *idioma){
 	char *local_idioma;
 	int loaded;
 	
