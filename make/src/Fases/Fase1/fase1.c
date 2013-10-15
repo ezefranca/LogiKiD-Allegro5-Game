@@ -3,6 +3,7 @@
 #include "../../Player.h"
 #include "../../ItensMenu.h"
 #include "../../textBox.h"
+#include "../../gatelogic.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player);
@@ -11,7 +12,9 @@ void musicPlayer(int mute);
 
 int i;
 bool redraw = false;
+bool drawCirc = false;
 ALLEGRO_BITMAP *textBox;
+bool inputs[8] = {false, false, false, false, false, false, false, false};
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
@@ -34,6 +37,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
     Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
+	ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito); 
 	musicPlayer(game.mute);
 	//al_start_timer(game.timer);
 	while(!sair)
@@ -62,7 +66,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					gate = MenuLoad(&ev, player);	
 				}
 				break;
-				
+			case ALLEGRO_KEY_U:
+				game.level = 3;
+				drawCirc = true;
+				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+				break;
 			case ALLEGRO_KEY_ENTER:
 				if(game.level == 1)
 				{
@@ -82,6 +90,29 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					{
 						TextBoxLoad(&ev, dialog->computador_texto_1);
 						printf("Acessando computador\n");
+					}	
+				}
+				if(game.level == 3)
+				{
+					if ((player->state.y > 51 && player->state.y < 120) &&
+						(player->state.x > 68 && player->state.x < 73))
+					{
+						if(inputs[0] == false)
+						{
+							inputs[0] = true;
+						}
+						else inputs[0] = false;
+						circuito = logicLevelOne(inputs[0], inputs[1], circuito);
+						printf("Mudando porta 1\n");
+					}
+					if((player->state.y > 132 && player->state.y < 191) &&
+						(player->state.x > 68 && player->state.x < 73))
+					{
+						if(inputs[1] == false){
+							inputs[1] = true;
+						}
+						else inputs[1] = false;
+						circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 					}	
 				}
 				break;
@@ -162,12 +193,15 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             	   	soundIcon = al_load_bitmap("./data/images/icons/sem_som.png");
             	   	musicPlayer(game.mute);
             	}
-
             }
         }
 		
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
+		if(drawCirc)
+		{
+			al_draw_bitmap(circuito, 0, 0 , 0);
+		}
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
 		
@@ -269,6 +303,16 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
+	if(level == 3)
+	   	{
+	    if (isColliding(126, 106, 60, 42, player)   ||
+	    	isColliding(128, 234, 60, 42, player)   ||
+	      	isColliding(446, 133, 64, 64, player))
+	    {
+	    	return true;
+	    }
+	    else return false;
+	} 
 	else return false;
 }
 
