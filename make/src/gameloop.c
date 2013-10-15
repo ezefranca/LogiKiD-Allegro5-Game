@@ -33,6 +33,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
+	initDrawGatesLevelOne(levelOne);
+	
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
 	createDialogs(dialog);
@@ -55,7 +57,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 		{
+			drawCirc = false;
 			sair = true;
+			game.level = 1;
 			al_destroy_sample_instance(game.songInstance);
 		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
@@ -69,10 +73,19 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				}
 				break;
 			case ALLEGRO_KEY_U:
-				game.level = 3;
-				drawCirc = true;
-				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-				logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+				if(game.level == 3)
+				{
+					game.level = 1;
+					fundo = al_load_bitmap("./data/levels/fase1/faseone_with_girl.png");
+					drawCirc = false;
+				}
+				else
+				{
+					game.level = 3;
+					drawCirc = true;
+					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+				}
 				break;
 			case ALLEGRO_KEY_ENTER:
 				if(game.level == 1)

@@ -15,8 +15,11 @@ typedef struct {
 	ALLEGRO_BITMAP *circ4;
 	ALLEGRO_BITMAP *circ5;
 	ALLEGRO_BITMAP *portas;
+
+	bool isOn[5];
 } LevelOne;
 
-//ALLEGRO_BITMAP *logicLevelOne(bool gateOne, bool gateTwo, ALLEGRO_BITMAP *bitmap);
 void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne);
-void drawLevelOne();
+void drawLevelOne(LevelOne *levelOne);
+void destroyLevelOne(LevelOne *levelOne);
+void initDrawGatesLevelOne(LevelOne *levelOne);
