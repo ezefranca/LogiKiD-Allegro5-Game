@@ -1,7 +1,22 @@
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 #include <stdio.h>
+
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
 
-void GameLoop_Fase1(ALLEGRO_EVENT ev);
+typedef struct {
+	ALLEGRO_BITMAP *circ1;
+	ALLEGRO_BITMAP *circ2;
+	ALLEGRO_BITMAP *circ3;
+	ALLEGRO_BITMAP *circ4;
+	ALLEGRO_BITMAP *circ5;
+	ALLEGRO_BITMAP *portas;
+} LevelOne;
+
+//ALLEGRO_BITMAP *logicLevelOne(bool gateOne, bool gateTwo, ALLEGRO_BITMAP *bitmap);
+void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne);
+void drawLevelOne();
