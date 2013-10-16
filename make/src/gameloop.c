@@ -135,8 +135,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 0)
 				{
-					game.level = 1;
-					fundo = al_load_bitmap("./data/levels/fase1/faseone_with_girl.png");
+					game.level = 4;
+					//fundo = al_load_bitmap("./data/levels/fase0/faseruavermelho.png");
+					fundo = SetBackGroundImage("./data/levels/fase0/faseruavermelho.png");
 					drawCirc = false;
 				}
 				else
@@ -227,6 +228,15 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						printf("Mudando porta 3\n");
 					}
 					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);	
+				}
+
+				if(game.level == 4)
+				{
+					//if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
+					//{
+						TextBoxLoad(&ev, dialog->computador_texto_1);
+						printf("Eu estou na  rua\n");
+					//}	
 				}
 			break;
 			}
