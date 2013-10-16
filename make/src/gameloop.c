@@ -36,7 +36,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
-	//initDrawGatesLevelZero(levelZero);
+	
 	initDrawGatesLevelOne(levelOne);
 	
 	CreatePlayer(player, 213, 450);
@@ -78,13 +78,14 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				}
 			break;
 			
+			// PORQUERA PRA MUDAR DE FASE APERTANDO P
 			case ALLEGRO_KEY_P:
-				if(game.level <= 2)
+				if(game.level <= 3)
 				game.level++;
 				else
 				game.level = 0;
 			break;
-
+			// FIM DA PORQUERA
 
 			case ALLEGRO_KEY_U:
 
@@ -129,13 +130,31 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 				}
 			break;
+
+			case ALLEGRO_KEY_L:
+
+				if(game.level == 0)
+				{
+					game.level = 1;
+					fundo = al_load_bitmap("./data/levels/fase1/faseone_with_girl.png");
+					drawCirc = false;
+				}
+				else
+				{
+					game.level = 0;
+					drawCirc = true;
+					initDrawGatesLevelZero(levelZero);
+					fundo = SetBackGroundImage("./data/levels/fase0/teste.png");
+					logicLevelZero(inputs[0], inputs[1], levelZero);
+				}
+			break;
 			
 			case ALLEGRO_KEY_ENTER:
 
 				if(game.level == 0)
 				{
-					if ((player->state.y > 54 && player->state.y < 122) &&
-						(player->state.x > 40 && player->state.x < 46))
+					if ((player->state.y > 100 && player->state.y < 120) &&
+						(player->state.x > 105 && player->state.x < 125))
 					{
 						if(inputs[0] == false)
 						{
@@ -144,8 +163,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						else inputs[0] = false;
 						printf("Mudando porta 1\n");
 					}
-					if((player->state.y > 150 && player->state.y < 218) &&
-						(player->state.x > 40 && player->state.x < 46))
+					if((player->state.y > 230 && player->state.y < 250) &&
+						(player->state.x > 105 && player->state.x < 125))
 					{
 						if(inputs[1] == false){
 							inputs[1] = true;
@@ -215,7 +234,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-			//MUDANÇA DE TELA - level 1 para o 2
+			//MUDANÇA DE TELA - level 2 para o 3
 			if ((game.level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) && 
 				(player->state.y + player->image.frameHeight / 2) > 500 && 
 				(player->state.y + player->image.frameHeight / 2 < 600)) 
@@ -296,11 +315,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		{
 			//al_draw_bitmap(circuito, 0, 0 , 0);
 			
-			/* TESTE *************************************
+			
 			if (game.level == 0) drawLevelZero(levelZero);
-			if (game.level == 1) drawLevelOne(levelOne);
-			**********************************************/
-			drawLevelOne(levelOne);
+			if (game.level == 3) drawLevelOne(levelOne);
+			
+			//drawLevelOne(levelOne);
 		}
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
