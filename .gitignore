@@ -1,5 +1,6 @@
 # Object files
 *.o
+*.o~
 
 # Libraries
 *.lib
@@ -15,5 +16,12 @@
 *.exe
 *.out
 *.app
-
 ProjetoPI2
+
+# Temporarios
+*.c~
+*.h~
+*.o~
+*.exe~
+*.txt~
+*.md~
