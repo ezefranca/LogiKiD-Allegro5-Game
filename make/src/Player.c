@@ -39,7 +39,7 @@ void moveDireita(Player *player)
 
 		player->image.frameCount = 0;
 	}	
-	printf("x: %d, y: %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d - Game Level: %d\n", player->state.x, player->state.y, game.level);
 }
 
 void moveEsquerda(Player *player)
@@ -51,7 +51,7 @@ void moveEsquerda(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	printf("x: %d, y: %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d - Game Level: %d\n", player->state.x, player->state.y, game.level);
 }
 
 void moveCima(Player *player)
@@ -63,7 +63,7 @@ void moveCima(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	printf("x: %d, y: %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d - Game Level: %d\n", player->state.x, player->state.y, game.level);
 	
 }
 
@@ -76,7 +76,7 @@ void moveBaixo(Player *player)
 
 		player->image.frameCount = 0;
 	}
-	printf("x: %d, y: %d \n", player->state.x, player->state.y);
+	printf("x: %d, y: %d - Game Level: %d\n", player->state.x, player->state.y, game.level);
 }
 
 void ProcessaMovimentoEsquerda(Player *player)

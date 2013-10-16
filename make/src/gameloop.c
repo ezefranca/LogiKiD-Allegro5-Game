@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "ItensMenu.h"
 #include "textBox.h"
+#include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
 
 
@@ -23,7 +24,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 	Dialogs *dialog = malloc(sizeof(Dialogs));	
+	LevelZero *levelZero = malloc(sizeof(LevelZero));
 	LevelOne *levelOne = malloc(sizeof(LevelOne));
+	
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -33,6 +36,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
+	//initDrawGatesLevelZero(levelZero);
 	initDrawGatesLevelOne(levelOne);
 	
 	CreatePlayer(player, 213, 450);
@@ -46,7 +50,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
-
+	
 		al_wait_for_event(game.fila_eventos, &ev);
 		setKeys(keys, player, &ev);
 		
@@ -66,13 +70,51 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		{
 			switch(ev.keyboard.keycode)
 			{
+			
 			case ALLEGRO_KEY_M:
 				if(keys->keyUp == false && keys->keyDown == false && keys->keyLeft == false && keys->keyRight == false)
 				{
 					gate = MenuLoad(&ev, player);	
 				}
-				break;
+			break;
+			
+			case ALLEGRO_KEY_P:
+				if(game.level <= 2)
+				game.level++;
+				else
+				game.level = 0;
+			break;
+
+
 			case ALLEGRO_KEY_U:
+
+				/*
+				switch (game.level)
+
+				case 0:
+					game.level = 1;
+					drawCirc = true;
+					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+				break;
+
+				case 1:
+					game.level = 3;
+					drawCirc = true;
+					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+				break;
+
+				case 2:
+					drawCirc = true;
+				break;
+
+				case 3:
+					game.level = 1;
+					fundo = al_load_bitmap("./data/levels/fase1/faseone_with_girl.png");
+					drawCirc = false;
+				break;
+				*/
 				if(game.level == 3)
 				{
 					game.level = 1;
@@ -86,8 +128,35 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 				}
-				break;
+			break;
+			
 			case ALLEGRO_KEY_ENTER:
+
+				if(game.level == 0)
+				{
+					if ((player->state.y > 54 && player->state.y < 122) &&
+						(player->state.x > 40 && player->state.x < 46))
+					{
+						if(inputs[0] == false)
+						{
+							inputs[0] = true;
+						}
+						else inputs[0] = false;
+						printf("Mudando porta 1\n");
+					}
+					if((player->state.y > 150 && player->state.y < 218) &&
+						(player->state.x > 40 && player->state.x < 46))
+					{
+						if(inputs[1] == false){
+							inputs[1] = true;
+						}
+						else inputs[1] = false;
+						printf("Mudando porta 2\n");
+					}
+					logicLevelZero(inputs[0], inputs[1], levelZero);	
+				}
+
+
 				if(game.level == 1)
 				{
 					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
@@ -140,7 +209,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					}
 					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);	
 				}
-				break;
+			break;
 			}
 		}
 
@@ -226,6 +295,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if(drawCirc)
 		{
 			//al_draw_bitmap(circuito, 0, 0 , 0);
+			
+			/* TESTE *************************************
+			if (game.level == 0) drawLevelZero(levelZero);
+			if (game.level == 1) drawLevelOne(levelOne);
+			**********************************************/
 			drawLevelOne(levelOne);
 		}
 		ValidaMovimento(player);
