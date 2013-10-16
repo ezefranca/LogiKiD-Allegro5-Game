@@ -30,86 +30,173 @@ $ cd UsingMake ; Make
 ```
 
 ```
-|   LICENSE
-|   README.md
-|
-+---bin
-|   \---data
-|       |   sega.ttf
-|       |   terminal.ttf
-|       |
-|       +---images
-|       |   |   pi.png
-|       |   |   senac.png
-|       |   |
-|       |   +---Gates
-|       |   |       AND.png
-|       |   |       ItemSelector.png
-|       |   |       NAND.png
-|       |   |       NOR.png
-|       |   |       NOT.png
-|       |   |       OR.png
-|       |   |       XNOR.png
-|       |   |       XOR.png
-|       |   |
-|       |   \---Player
-|       |           gb_walk.png
-|       |           PlayerMenu.png
-|       |
-|       +---levels
-|       |       FASE-1.png
-|       |
-|       \---sound
-|               footstep.wav
-|
-+---doc
-|   |   main.pdf
-|   |   todo
-|   |
-|   \---latex
-|           caption2.sty
-|           fig1.jpg
-|           fig2.jpg
-|           main.aux
-|           main.bbl
-|           main.blg
-|           main.log
-|           main.pdf
-|           main.synctex.gz
-|           main.tex
-|           sbc-template.bib
-|           sbc-template.sty
-|           sbc.bst
-|           table.jpg
-|
-+---UsingIDE
-|   |   ProjetoPI2.sln
-|   |   ProjetoPI2.userprefs
-|   |
-|   \---ProjetoPI2
-|           ProjetoPI2.cproj
-|           ProjetoPI2.pidb
-|
-\---UsingMake
-    |   Makefile
-    |
-    \---src
-        |   comum.h
-        |   init.c
-        |   ItensMenu.c
-        |   ItensMenu.h
-        |   main.c
-        |   Player.c
-        |   Player.h
-        |   StartMenu.c
-        |   StartMenu.h
-        |
-        \---Fases
-            +---Fase1
-            |       fase1.c
-            |       fase1.h
-            |
-            \---Fase2
-                    fase2.c
-                    fase2.h
+.
+├── bin
+│   ├── data
+│   │   ├── 256BYTES.TTF
+│   │   ├── BORON2.TTF
+│   │   ├── circuito.ttf
+│   │   ├── images
+│   │   │   ├── Gates
+│   │   │   │   ├── AND.png
+│   │   │   │   ├── ItemSelector.png
+│   │   │   │   ├── NAND.png
+│   │   │   │   ├── NOR.png
+│   │   │   │   ├── NOT.png
+│   │   │   │   ├── OR.png
+│   │   │   │   ├── XNOR.png
+│   │   │   │   └── XOR.png
+│   │   │   ├── icons
+│   │   │   │   ├── nosound.png
+│   │   │   │   ├── sem_som.png
+│   │   │   │   ├── som.png
+│   │   │   │   └── sound.png
+│   │   │   ├── intro
+│   │   │   │   ├── allegro.png
+│   │   │   │   ├── github.png
+│   │   │   │   ├── pi.png
+│   │   │   │   └── senac.png
+│   │   │   ├── Objects
+│   │   │   │   └── PC.png
+│   │   │   ├── Player
+│   │   │   │   ├── boy.png
+│   │   │   │   ├── gb_walk (cópia).png
+│   │   │   │   ├── gb_walk.png
+│   │   │   │   ├── girl_meiocorpo.png
+│   │   │   │   ├── girl.png
+│   │   │   │   └── PlayerMenu.png
+│   │   │   └── textbox.png
+│   │   ├── levels
+│   │   │   ├── blackscreen.png
+│   │   │   ├── fase0
+│   │   │   │   ├── bus_um_um.png
+│   │   │   │   ├── bus_um_zero.png
+│   │   │   │   ├── bus_zero_um.png
+│   │   │   │   ├── bus_zero_zero.png
+│   │   │   │   ├── faseruaverde.png
+│   │   │   │   ├── faseruavermelho.png
+│   │   │   │   └── teste.png
+│   │   │   ├── fase1
+│   │   │   │   ├── circ1_off.png
+│   │   │   │   ├── circ1_on.png
+│   │   │   │   ├── circ2_off.png
+│   │   │   │   ├── circ2_on.png
+│   │   │   │   ├── circ3_off.png
+│   │   │   │   ├── circ3_on.png
+│   │   │   │   ├── circ4_off.png
+│   │   │   │   ├── circ4_on.png
+│   │   │   │   ├── circ5_off.png
+│   │   │   │   ├── circ5_on.png
+│   │   │   │   ├── fase1.tmx
+│   │   │   │   ├── faseone.png
+│   │   │   │   ├── faseone_with_girl.png
+│   │   │   │   ├── portas.png
+│   │   │   │   ├── somenteobjetos.png
+│   │   │   │   ├── teste.png
+│   │   │   │   └── teste.xcf
+│   │   │   ├── fase2
+│   │   │   │   └── fundo-fase2.png
+│   │   │   ├── fundo640.png
+│   │   │   ├── menu
+│   │   │   │   ├── BG2.png
+│   │   │   │   ├── BG3.png
+│   │   │   │   └── BG.png
+│   │   │   ├── menu_fundo.png
+│   │   │   ├── saidas_zer_um.png
+│   │   │   ├── tile_alavancas.png
+│   │   │   └── tile_circ.png
+│   │   ├── PC.png
+│   │   ├── sega.ttf
+│   │   ├── sound
+│   │   │   ├── badfeeling.wav
+│   │   │   ├── doh.wav
+│   │   │   ├── footstep.wav
+│   │   │   ├── forcebewith.wav
+│   │   │   ├── menu_open.wav
+│   │   │   ├── music
+│   │   │   │   └── Lunch.ogg
+│   │   │   └── yesmaster.wav
+│   │   ├── sourcecode.ttf
+│   │   └── terminal.ttf
+│   └── ProjetoPI2
+├── doc
+│   ├── allegro-5.0.10-manual.pdf
+│   ├── latex
+│   │   ├── caption2.sty
+│   │   ├── fig1.jpg
+│   │   ├── fig2.jpg
+│   │   ├── main.aux
+│   │   ├── main.bbl
+│   │   ├── main.blg
+│   │   ├── main.log
+│   │   ├── main.pdf
+│   │   ├── main.synctex.gz
+│   │   ├── main.tex
+│   │   ├── sbc.bst
+│   │   ├── sbc-template.bib
+│   │   ├── sbc-template.sty
+│   │   └── table.jpg
+│   ├── main.pdf
+│   └── todo
+├── LICENSE
+├── LICENSE.htm
+├── make
+│   ├── Makefile
+│   ├── obj
+│   │   ├── Config
+│   │   ├── Fases
+│   │   │   ├── Fase0
+│   │   │   │   └── fase0.o
+│   │   │   ├── Fase1
+│   │   │   │   └── fase1.o
+│   │   │   └── Fase2
+│   │   │       └── fase2.o
+│   │   ├── gameloop.o
+│   │   ├── Idioma
+│   │   ├── init.o
+│   │   ├── ItensMenu.o
+│   │   ├── main.o
+│   │   ├── Player.o
+│   │   ├── StartMenu.o
+│   │   └── textBox.o
+│   └── src
+│       ├── comum.h
+│       ├── Config
+│       │   ├── fases.conf
+│       │   └── idioma.conf
+│       ├── config.c
+│       ├── config.h
+│       ├── Fases
+│       │   ├── Fase0
+│       │   │   ├── fase0.c
+│       │   │   └── fase0.h
+│       │   ├── Fase1
+│       │   │   ├── fase1.c
+│       │   │   ├── fase1.c~
+│       │   │   └── fase1.h
+│       │   └── Fase2
+│       │       ├── fase2.c
+│       │       └── fase2.h
+│       ├── gameloop.c
+│       ├── gameloop.h
+│       ├── Idioma
+│       │   └── pt_br.conf
+│       ├── init.c
+│       ├── ItensMenu.c
+│       ├── ItensMenu.h
+│       ├── main.c
+│       ├── Player.c
+│       ├── Player.h
+│       ├── StartMenu.c
+│       ├── StartMenu.h
+│       ├── textBox.c
+│       └── textBox.h
+├── README.md
+├── README.md~
+├── tamanho_objetos.txt
+├── tree.txt
+└── web
+    └── DB
+        └── create.sql
+
 ```
