@@ -19,7 +19,8 @@ typedef struct {
 	bool isOn[5];
 } LevelOne;
 
-void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne);
+//void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player);
+void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne);
 void drawLevelOne(LevelOne *levelOne);
 void destroyLevelOne(LevelOne *levelOne);
 void initDrawGatesLevelOne(LevelOne *levelOne);

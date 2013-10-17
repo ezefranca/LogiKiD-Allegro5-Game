@@ -1,7 +1,39 @@
 #include "../../comum.h"
 #include "fase1.h"
+#include "../../Player.h"
 
-void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne){
+void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
+	if ((player->state.y > 54 && player->state.y < 122) &&
+		(player->state.x > 40 && player->state.x < 46))
+	{
+		if(gateOne == false)
+		{
+			gateOne = true;
+		}
+		else gateOne = false;
+		printf("Mudando porta 1\n");
+	}
+	if((player->state.y > 150 && player->state.y < 218) &&
+		(player->state.x > 40 && player->state.x < 46))
+	{
+		if(gateTwo == false){
+			gateTwo = true;
+		}
+		else gateTwo = false;
+		printf("Mudando porta 2\n");
+	}
+	if((player->state.y > 246 && player->state.y < 310) &&
+		(player->state.x > 40 && player->state.x < 46))
+	{
+		if(gateThree == false){
+			gateThree = true;
+		}
+		else gateThree = false;
+		printf("Mudando porta 3\n");
+	}
+}
+
+void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne){
 	if(gateOne)
 	{
 		levelOne->circ1 = al_load_bitmap("./data/levels/fase1/circ1_on.png");
@@ -33,7 +65,6 @@ void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOn
 	}
 	else
 	{
-		//al_destroy_bitmap(levelOne->circ4);
 		levelOne->isOn[3] = false;
 	}
 	if(gateTwo || gateThree)
@@ -43,7 +74,6 @@ void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOn
 	}
 	else
 	{
-		//al_destroy_bitmap(levelOne->circ5);
 		levelOne->isOn[4] = false;
 	}
 }

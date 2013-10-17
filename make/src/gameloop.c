@@ -36,7 +36,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
-	
 	initDrawGatesLevelOne(levelOne);
 	
 	CreatePlayer(player, 213, 450);
@@ -87,69 +86,41 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			break;
 			// FIM DA PORQUERA
 
-			case ALLEGRO_KEY_U:
-
-				/*
-				switch (game.level)
-
-				case 0:
-					game.level = 1;
-					drawCirc = true;
-					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
-				break;
-
-				case 1:
-					game.level = 3;
-					drawCirc = true;
-					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
-				break;
-
-				case 2:
-					drawCirc = true;
-				break;
-
-				case 3:
-					game.level = 1;
-					fundo = al_load_bitmap("./data/levels/fase1/faseone_with_girl.png");
-					drawCirc = false;
-				break;
-				*/
-				if(game.level == 3)
-				{
-					game.level = 1;
-					fundo = al_load_bitmap("./data/levels/fase1/faseone_with_girl.png");
-					drawCirc = false;
-				}
-				else
-				{
-					game.level = 3;
-					drawCirc = true;
-					fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
-				}
-			break;
-
-			case ALLEGRO_KEY_L:
-
-				if(game.level == 0)
-				{
-					game.level = 4;
-					//fundo = al_load_bitmap("./data/levels/fase0/faseruavermelho.png");
-					fundo = SetBackGroundImage("./data/levels/fase0/faseruavermelho.png");
-					drawCirc = false;
-				}
-				else
-				{
-					game.level = 0;
-					drawCirc = true;
-					initDrawGatesLevelZero(levelZero);
-					fundo = SetBackGroundImage("./data/levels/fase0/teste.png");
-					logicLevelZero(inputs[0], inputs[1], levelZero);
-				}
+			case ALLEGRO_KEY_1:
+				game.level = 1;
+				drawCirc = false;
+				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 			break;
 			
+			case ALLEGRO_KEY_2:
+				game.level = 2;
+				drawCirc = false;
+				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
+			break;
+			
+			case ALLEGRO_KEY_3:
+				game.level = 3;
+				initDrawGatesLevelOne(levelOne);					
+				drawCirc = true;
+				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+				drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+			break;
+
+			case ALLEGRO_KEY_4:
+				game.level = 4;
+				//fundo = al_load_bitmap("./data/levels/fase0/faseruavermelho.png");
+				fundo = SetBackGroundImage("./data/levels/fase0/faseruavermelho.png");
+				drawCirc = false;
+			break;
+
+			case ALLEGRO_KEY_5:
+				game.level = 0;
+				drawCirc = true;
+				initDrawGatesLevelZero(levelZero);
+				fundo = SetBackGroundImage("./data/levels/fase0/teste.png");
+				logicLevelZero(inputs[0], inputs[1], levelZero);
+			break;
+						
 			case ALLEGRO_KEY_ENTER:
 
 				if(game.level == 0)
@@ -227,7 +198,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						else inputs[2] = false;
 						printf("Mudando porta 3\n");
 					}
-					logicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);	
+					//logicLevelOne(inputs[0], inputs[1], inputs[2], player);
+					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);	
 				}
 
 				if(game.level == 4)
