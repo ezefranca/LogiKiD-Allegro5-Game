@@ -5,6 +5,7 @@
 #include "textBox.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
+#include "../src/Fases/Fase3/fase3.h"
 
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
@@ -25,6 +26,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	Player *player = malloc(sizeof(Player));
 	Dialogs *dialog = malloc(sizeof(Dialogs));	
 	LevelZero *levelZero = malloc(sizeof(LevelZero));
+	LevelTres *levelTres = malloc(sizeof(LevelTres));
 	LevelOne *levelOne = malloc(sizeof(LevelOne));
 	
 	/* Adiciona a quantidade de portas logicas... */
@@ -119,6 +121,14 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				initDrawGatesLevelZero(levelZero);
 				fundo = SetBackGroundImage("./data/levels/fase0/teste.png");
 				logicLevelZero(inputs[0], inputs[1], levelZero);
+			break;
+
+			case ALLEGRO_KEY_6:
+				game.level = 0;
+				drawCirc = true;
+				initDrawGatesLevelZero(levelTres);
+				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+				logicLevelZero(inputs[0], inputs[1], levelTres);
 			break;
 						
 			case ALLEGRO_KEY_ENTER:
