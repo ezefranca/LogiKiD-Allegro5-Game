@@ -438,12 +438,14 @@ bool isCollidingGlobal(Player *player, int level){
 }
 
 void musicPlayer(int mute){
-al_destroy_sample_instance(game.songInstance);
 	if (mute == 0){
 		printf("***************MUTE*****************\n");
 	    al_destroy_sample_instance(game.songInstance);
-	}
-	else if(mute == 1){
+	    game.songInstance = NULL;
+	    return;
+	} else if(mute == 1){
+			if (game.songInstance != NULL)
+			al_destroy_sample_instance(game.songInstance);
 		printf("***************PLAY*****************\n");
 		switch (game.level){
 			case 0:
@@ -465,10 +467,12 @@ al_destroy_sample_instance(game.songInstance);
 			game.song = al_load_sample("./data/sound/music/Syntheticity.ogg");
 			break;
 		}
-		game.songInstance = al_create_sample_instance(game.song);
-		al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
-		al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
-		al_play_sample_instance(game.songInstance);
+
+			game.songInstance = al_create_sample_instance(game.song);
+                al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+                al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+                al_play_sample_instance(game.songInstance);
+
 	}
 }
 
