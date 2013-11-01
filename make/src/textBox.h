@@ -10,11 +10,12 @@
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-  
+
 typedef struct {
 	char menina_texto_1[90];
 	char computador_texto_1[90];
 	char menina_texto[3][90];
+	char texto_generico[5][100];
 }Dialogs;
 
 void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[]);
