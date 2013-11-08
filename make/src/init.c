@@ -71,30 +71,30 @@ bool inicializar()
         al_destroy_display(game.janela);
         return -1;
     }
-    
+
     game.fonte = al_load_font("data/circuito.ttf", 50, 10);
     game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 10);
     game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
-    
-    
+
+
     if (!game.fonte)
     {
         fprintf(stderr, "Falha ao carregar fonte.\n");
         return false;
     }
-    
+
     if(!al_install_audio())
     {
     	fprintf(stderr, "Falha ao inicializar o audio.\n");
       	return -1;
    	}
-    
+
     if(!al_init_acodec_addon())
     {
       	fprintf(stderr, "Falha ao iniciar o audio codec.!\n");
     	return -1;
     }
-    
+
     if (!al_reserve_samples(1))
     {
         fprintf(stderr, "Falha ao alocar canais de audio.\n");
@@ -103,7 +103,8 @@ bool inicializar()
 
     game.mute = 1;
     //Aqui você pode implementar um savestate
-    game.level = 1;
+    // 42 é o valor do tutorial (instrucoes de jogo)
+    game.level = 42;
     al_register_event_source(game.fila_eventos, al_get_mouse_event_source());
     al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
     al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());
