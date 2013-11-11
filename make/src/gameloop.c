@@ -14,12 +14,13 @@ void musicPlayer(int mute);
 
 int i;
 bool redraw = false;
-bool drawCirc = false;
+//bool drawCirc = false;
 ALLEGRO_BITMAP *textBox;
 bool inputs[8] = {false, false, false, false, false, false, false, false};
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev)
 {
+	game.level = 0;
 	bool sair = false;
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
@@ -37,7 +38,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
-	initDrawGatesLevelOne(levelOne);
+	//initDrawGatesLevelOne(levelOne);
 
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
@@ -45,6 +46,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
       Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
+	logicLevelZero(inputs[0], levelZero);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
 	//al_start_timer(game.timer);
@@ -61,7 +63,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 		{
-			drawCirc = false;
+			//drawCirc = false;
 			sair = true;
 			game.level = 1;
 			al_destroy_sample_instance(game.songInstance);
@@ -80,14 +82,14 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 			case ALLEGRO_KEY_1:
 				game.level = 1;
-				drawCirc = false;
+				//drawCirc = false;
 				musicPlayer(game.mute);
 				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 			break;
 
 			case ALLEGRO_KEY_2:
 				game.level = 2;
-				drawCirc = false;
+			//	drawCirc = false;
 				musicPlayer(game.mute);
 				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
 			break;
@@ -96,7 +98,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				game.level = 3;
 				initDrawGatesLevelOne(levelOne);
 				musicPlayer(game.mute);
-				drawCirc = true;
+				//drawCirc = true;
 				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 				drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 			break;
@@ -106,10 +108,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				//fundo = al_load_bitmap("./data/levels/fase0/faseruavermelho.png");
 				musicPlayer(game.mute);
 				fundo = SetBackGroundImage("./data/levels/fase0/faseruavermelho.png");
-				drawCirc = false;
+				//drawCirc = false;
 			break;
 
-			case ALLEGRO_KEY_5:
+			/*case ALLEGRO_KEY_5:
 				game.level = 0;
 				drawCirc = true;
 				musicPlayer(game.mute);
@@ -118,21 +120,21 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				logicLevelZero(inputs[0], inputs[1], levelZero);
 			break;
 
-			case ALLEGRO_KEY_6:
+			/*case ALLEGRO_KEY_6:
 				game.level = 0;
 				drawCirc = true;
 				musicPlayer(game.mute);
 				initDrawGatesLevelZero(levelTres);
 				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 				logicLevelZero(inputs[0], inputs[1], levelTres);
-			break;
+			break;*/
 
 			case ALLEGRO_KEY_ENTER:
 
 				if(game.level == 0)
 				{
-					if ((player->state.y > 100 && player->state.y < 120) &&
-						(player->state.x > 105 && player->state.x < 125))
+					if ((player->state.y > 220 && player->state.y < 280) &&
+						(player->state.x > 200 && player->state.x < 210))
 					{
 						if(inputs[0] == false)
 						{
@@ -141,16 +143,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						else inputs[0] = false;
 						printf("Mudando porta 1\n");
 					}
-					if((player->state.y > 230 && player->state.y < 250) &&
-						(player->state.x > 105 && player->state.x < 125))
-					{
-						if(inputs[1] == false){
-							inputs[1] = true;
-						}
-						else inputs[1] = false;
-						printf("Mudando porta 2\n");
-					}
-					logicLevelZero(inputs[0], inputs[1], levelZero);
+					logicLevelZero(inputs[0], levelZero);
 				}
 
 
@@ -308,18 +301,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             }
         }
 
+        //AQUI TODA ITERAÇÃO CARREGA IMAGEM. PRECISA CORRIGIR
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
-		if(drawCirc)
-		{
-			//al_draw_bitmap(circuito, 0, 0 , 0);
-
-
-			if (game.level == 0) drawLevelZero(levelZero);
-			if (game.level == 3) drawLevelOne(levelOne);
-
-			//drawLevelOne(levelOne);
-		}
+		//al_draw_bitmap(circuito, 0, 0 , 0);
+		if (game.level == 0) drawLevelZero(levelZero);
+		if (game.level == 3) drawLevelOne(levelOne);
+		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
 
@@ -385,6 +373,12 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
 }
 
 bool isCollidingGlobal(Player *player, int level){
+	if(level == 0)
+	{
+		if(isColliding(258, 267, 60, 42, player)) return true;
+		else return false;
+	}
+
 	if(level == 1){
 		if (isColliding(35, 12, 24, 80, player)    ||
 			isColliding(35, 154, 24, 80, player)   ||
