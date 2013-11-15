@@ -5,6 +5,7 @@
 #include "textBox.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
+#include "../src/Fases/Fase2/fase2.h"
 #include "../src/Fases/Fase3/fase3.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
@@ -27,6 +28,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	Player *player = malloc(sizeof(Player));
 	Dialogs *dialog = malloc(sizeof(Dialogs));
 	LevelZero *levelZero = malloc(sizeof(LevelZero));
+	LevelDois *levelDois = malloc(sizeof(LevelDois));
 	LevelTres *levelTres = malloc(sizeof(LevelTres));
 	LevelOne *levelOne = malloc(sizeof(LevelOne));
 
@@ -154,44 +156,41 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					{
 						if(inputs[0] == false){
 							inputs[0] = true;
-							printf("False para true\n");						
+							printf("False para true\n");
+							complete = true;
 						}
 						else{
 							inputs[0] = false;
 							printf("True para false\n");
-						} 
+						}
 					}
 					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
 					{
 						if(inputs[1] == false){
 							inputs[1] = true;
-							printf("False para true\n");						
+							printf("False para true\n");
 						}
 						else{
 							inputs[1] = false;
 							printf("True para false\n");
-						} 
+						}
 					}
 					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
 					{
 						if(inputs[2] == false){
 							inputs[2] = true;
-							printf("False para true\n");						
+							printf("False para true\n");
 						}
 						else{
 							inputs[2] = false;
 							printf("True para false\n");
-						} 
+						}
 					}
 					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 				}
 				if(game.level == 2)
 				{
-					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
-					{
-						TextBoxLoad(&ev, dialog->computador_texto_1);
-						printf("Acessando computador\n");
-					}
+					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
 				}
 				if(game.level == 3)
 				{
@@ -246,7 +245,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						}
 				}
 			break;
-			
+
 			case ALLEGRO_KEY_ENTER:
 				if(complete){
 					if(game.level == 0){
@@ -264,7 +263,23 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						printf("Objetivo completo\n");
 						complete = false;
 					}
-				} 
+					if(game.level == 1 && complete){
+						game.level = 2;
+						player->state.x = 350;
+						player->state.y = 20;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+						inputs[0] = false;
+						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						initDrawGatesLevelDois(levelOne);
+						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
+						printf("Objetivo completo\n");
+						complete = false;
+					}
+
+				}
 
 			}
 		}
