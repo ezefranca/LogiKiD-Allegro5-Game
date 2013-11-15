@@ -14,6 +14,7 @@ void musicPlayer(int mute);
 
 int i;
 bool redraw = false;
+bool complete = false;
 //bool drawCirc = false;
 ALLEGRO_BITMAP *textBox;
 bool inputs[8] = {false, false, false, false, false, false, false, false};
@@ -129,7 +130,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				logicLevelZero(inputs[0], inputs[1], levelTres);
 			break;*/
 
-			case ALLEGRO_KEY_ENTER:
+			case ALLEGRO_KEY_SPACE:
 
 				if(game.level == 0)
 				{
@@ -139,6 +140,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						if(inputs[0] == false)
 						{
 							inputs[0] = true;
+							complete = true;
 						}
 						else inputs[0] = false;
 						printf("Mudando porta 1\n");
@@ -220,6 +222,19 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						}
 				}
 			break;
+			
+			case ALLEGRO_KEY_ENTER:
+				if(game.level == 0){
+					if(complete){
+						game.level = 3;
+						fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						initDrawGatesLevelOne(levelOne);
+						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+						printf("Objetivo completo\n");
+						complete = false;
+					}
+				} 
+
 			}
 		}
 
