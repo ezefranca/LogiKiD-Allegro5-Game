@@ -5,6 +5,7 @@
 #include "textBox.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
+#include "../src/Fases/Fase2/fase2.h"
 #include "../src/Fases/Fase3/fase3.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
@@ -27,6 +28,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	Player *player = malloc(sizeof(Player));
 	Dialogs *dialog = malloc(sizeof(Dialogs));
 	LevelZero *levelZero = malloc(sizeof(LevelZero));
+	LevelDois *levelDois = malloc(sizeof(LevelDois));
 	LevelTres *levelTres = malloc(sizeof(LevelTres));
 	LevelOne *levelOne = malloc(sizeof(LevelOne));
 
@@ -134,8 +136,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 0)
 				{
-					if ((player->state.y > 220 && player->state.y < 280) &&
-						(player->state.x > 200 && player->state.x < 210))
+					if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
 					{
 						if(inputs[0] == false)
 						{
@@ -151,23 +152,45 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 1)
 				{
-					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
+					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 					{
-						textBox = al_load_bitmap("data/images/textbox.png");
-						al_draw_bitmap(textBox, 0, 450, 0);
-						for(i = 0; i < 3; i++)
-						{
-							TextBoxLoad_matriz(&ev, dialog->menina_texto[i], 472 + i*25);
+						if(inputs[0] == false){
+							inputs[0] = true;
+							printf("False para true\n");
+							complete = true;
+						}
+						else{
+							inputs[0] = false;
+							printf("True para false\n");
 						}
 					}
+					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
+					{
+						if(inputs[1] == false){
+							inputs[1] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[1] = false;
+							printf("True para false\n");
+						}
+					}
+					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
+					{
+						if(inputs[2] == false){
+							inputs[2] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[2] = false;
+							printf("True para false\n");
+						}
+					}
+					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 				}
 				if(game.level == 2)
 				{
-					if((player->state.x > 214 && player->state.x < 230) && (player->state.y > 265 && player->state.y < 326))
-					{
-						TextBoxLoad(&ev, dialog->computador_texto_1);
-						printf("Acessando computador\n");
-					}
+					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
 				}
 				if(game.level == 3)
 				{
@@ -222,18 +245,41 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						}
 				}
 			break;
-			
+
 			case ALLEGRO_KEY_ENTER:
-				if(game.level == 0){
-					if(complete){
-						game.level = 3;
-						fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+				if(complete){
+					if(game.level == 1){
+						game.level = 2;
+						player->state.x = 350;
+						player->state.y = 20;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+						inputs[0] = false;
+						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						initDrawGatesLevelDois(levelOne);
+						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
+						printf("Objetivo completo\n");
+						complete = false;
+					}
+					if(game.level == 0){
+						game.level = 1;
+						player->state.x = 350;
+						player->state.y = 20;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+						inputs[0] = false;
+						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 						printf("Objetivo completo\n");
 						complete = false;
 					}
-				} 
+					
+				}
 
 			}
 		}
@@ -321,7 +367,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_draw_bitmap(fundo, 0, 0, 0);
 		//al_draw_bitmap(circuito, 0, 0 , 0);
 		if (game.level == 0) drawLevelZero(levelZero);
-		if (game.level == 3) drawLevelOne(levelOne);
+		if (game.level == 1) drawLevelOne(levelOne);
 		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
@@ -362,6 +408,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
         	al_flip_display();
       	}
 	}
+	free(levelZero);
 	free(levelOne);
 	free(keys);
 	free(player);
@@ -390,31 +437,20 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
 bool isCollidingGlobal(Player *player, int level){
 	if(level == 0)
 	{
-		if(isColliding(258, 267, 60, 42, player)) return true;
+		if(isColliding(261, 267, 56, 40, player)) return true;
 		else return false;
 	}
 
 	if(level == 1){
-		if (isColliding(35, 12, 24, 80, player)    ||
-			isColliding(35, 154, 24, 80, player)   ||
-			isColliding(35, 288, 24, 80, player)   ||
-			isColliding(35, 445, 24, 80, player)   ||
-			isColliding(78, 25, 80, 60, player)    ||
-			isColliding(78, 165, 80, 60, player)   ||
-			isColliding(78, 303, 80, 60, player)   ||
-			isColliding(78, 452, 80, 60, player)   ||
-			isColliding(395, 0, 52, 408, player)   ||
-			isColliding(512, 380, 294, 35, player) ||
-			isColliding(500, 277, 53, 74, player)  ||
-			isColliding(516, 150, 84, 58, player)  ||
-			isColliding(594, 235, 208, 50, player) ||
-			isColliding(775, 412, 25, 36, player))
+		if (isColliding(165, 150, 55, 35, player)    ||
+			isColliding(165, 238, 55, 35, player)   ||
+			isColliding(165, 335, 55, 35, player))
 		{
 			return true;
 		}
 		else return false;
 	}
-	if(level == 2)
+	/*if(level == 2)
 	{
 		if (isColliding(421, 157, 92, 61, player)   ||
 			isColliding(518, 314, 92, 61, player)   ||
@@ -430,7 +466,7 @@ bool isCollidingGlobal(Player *player, int level){
 			return true;
 		}
 		else return false;
-	}
+	}*/
 	if(level == 3)
 	   	{
 	    if (isColliding(98, 108, 60, 42, player)   ||
