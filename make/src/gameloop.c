@@ -248,6 +248,21 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 			case ALLEGRO_KEY_ENTER:
 				if(complete){
+					if(game.level == 1){
+						game.level = 2;
+						player->state.x = 350;
+						player->state.y = 20;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+						inputs[0] = false;
+						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						initDrawGatesLevelDois(levelOne);
+						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
+						printf("Objetivo completo\n");
+						complete = false;
+					}
 					if(game.level == 0){
 						game.level = 1;
 						player->state.x = 350;
@@ -263,22 +278,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						printf("Objetivo completo\n");
 						complete = false;
 					}
-					if(game.level == 1 && complete){
-						game.level = 2;
-						player->state.x = 350;
-						player->state.y = 20;
-						player->state.idleE = false;
-						player->state.idleD = false;
-						player->state.idleC = false;
-						player->state.idleB = true;
-						inputs[0] = false;
-						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						initDrawGatesLevelDois(levelOne);
-						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
-
+					
 				}
 
 			}
@@ -450,7 +450,7 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
-	if(level == 2)
+	/*if(level == 2)
 	{
 		if (isColliding(421, 157, 92, 61, player)   ||
 			isColliding(518, 314, 92, 61, player)   ||
@@ -466,7 +466,7 @@ bool isCollidingGlobal(Player *player, int level){
 			return true;
 		}
 		else return false;
-	}
+	}*/
 	if(level == 3)
 	   	{
 	    if (isColliding(98, 108, 60, 42, player)   ||
