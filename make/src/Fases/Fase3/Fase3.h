@@ -13,9 +13,9 @@ typedef struct {
 	ALLEGRO_BITMAP *portas;
 
 	bool isOn[5];
-} LevelZero;
+} LevelTres;
 
-void logicLevelZero(bool gateOne, LevelZero *levelZero);
-void drawLevelZero(LevelZero *levelZero);
-void destroyLevelZero(LevelZero *levelZero);
-void initDrawGatesLevelZero(LevelZero *levelZero);
+void logicLevelTres(bool gateOne, bool gateTwo, LevelTres *LevelTres);
+void drawLevelTres(LevelTres *LevelTres);
+void destroyLevelTres(LevelTres *LevelTres);
+void initDrawGatesLevelTres(LevelTres *LevelTres);

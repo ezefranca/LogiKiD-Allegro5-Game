@@ -2,7 +2,7 @@
 #include "fase1.h"
 #include "../../Player.h"
 
-void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
+/*void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
 	if ((player->state.y > 54 && player->state.y < 122) &&
 		(player->state.x > 40 && player->state.x < 46))
 	{
@@ -31,7 +31,7 @@ void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
 		else gateThree = false;
 		printf("Mudando porta 3\n");
 	}
-}
+}*/
 
 void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne){
 	if(gateOne)

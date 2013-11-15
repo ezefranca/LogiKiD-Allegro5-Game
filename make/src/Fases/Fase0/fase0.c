@@ -1,22 +1,14 @@
 #include "../../comum.h"
 #include "fase0.h"
 
-void logicLevelZero(bool gateOne, bool gateTwo, LevelZero *levelZero){
-	if(gateOne && !gateTwo)
+void logicLevelZero(bool gateOne, LevelZero *levelZero){
+	if(gateOne)
 	{
-		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/bus_um_zero.png");
+		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_on.png");
 	}
-	else if(gateTwo && !gateOne)
+	if(!gateOne)
 	{
-		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/bus_zero_um.png");
-	}
-	else if (!gateOne && !gateTwo)
-	{
-		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/bus_zero_zero.png");
-	}
-	else if(gateOne && gateTwo)
-	{
-		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/bus_um_um.png");
+		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_off.png");
 	}
 }
 
