@@ -2,7 +2,7 @@
 #include "fase1.h"
 #include "../../Player.h"
 
-/*void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
+void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
 	if ((player->state.y > 54 && player->state.y < 122) &&
 		(player->state.x > 40 && player->state.x < 46))
 	{
@@ -31,9 +31,10 @@
 		else gateThree = false;
 		printf("Mudando porta 3\n");
 	}
-}*/
+}
 
 void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne){
+	levelOne->portas = al_load_bitmap("./data/levels/fase1/circ_off.png");
 	if(gateOne)
 	{
 		levelOne->circ1 = al_load_bitmap("./data/levels/fase1/circ1_on.png");
@@ -67,7 +68,7 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 	{
 		levelOne->isOn[3] = false;
 	}
-	if(gateTwo || gateThree)
+	if((gateOne && gateTwo) && gateThree)
 	{
 		levelOne->circ5 = al_load_bitmap("./data/levels/fase1/circ5_on.png");
 		levelOne->isOn[4] = true;
@@ -80,6 +81,7 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 
 void initDrawGatesLevelOne(LevelOne *levelOne){
 	int i;
+
 	for(i = 0; i < 5; i++){
 		levelOne->isOn[i] = false;
 	}
@@ -88,6 +90,7 @@ void initDrawGatesLevelOne(LevelOne *levelOne){
 }
 
 void drawLevelOne(LevelOne *levelOne){
+	al_draw_bitmap(levelOne->portas, 0, 0 , 0);
 	al_draw_bitmap(levelOne->circ1, 0, 0 , 0);
 	al_draw_bitmap(levelOne->circ2, 0, 0 , 0);
 	al_draw_bitmap(levelOne->circ3, 0, 0 , 0);

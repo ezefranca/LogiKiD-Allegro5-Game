@@ -151,15 +151,40 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 1)
 				{
-					if((player->state.x > 560 && player->state.x < 610) && (player->state.y > 372 && player->state.y < 382))
+					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 					{
-						textBox = al_load_bitmap("data/images/textbox.png");
-						al_draw_bitmap(textBox, 0, 450, 0);
-						for(i = 0; i < 3; i++)
-						{
-							TextBoxLoad_matriz(&ev, dialog->menina_texto[i], 472 + i*25);
+						if(inputs[0] == false){
+							inputs[0] = true;
+							printf("False para true\n");						
 						}
+						else{
+							inputs[0] = false;
+							printf("True para false\n");
+						} 
 					}
+					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
+					{
+						if(inputs[1] == false){
+							inputs[1] = true;
+							printf("False para true\n");						
+						}
+						else{
+							inputs[1] = false;
+							printf("True para false\n");
+						} 
+					}
+					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
+					{
+						if(inputs[2] == false){
+							inputs[2] = true;
+							printf("False para true\n");						
+						}
+						else{
+							inputs[2] = false;
+							printf("True para false\n");
+						} 
+					}
+					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 				}
 				if(game.level == 2)
 				{
@@ -226,8 +251,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			case ALLEGRO_KEY_ENTER:
 				if(game.level == 0){
 					if(complete){
-						game.level = 3;
-						fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						game.level = 1;
+						player->state.x = 350;
+						player->state.y = 20;
+						//inputs[0] = false;
+						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
 						printf("Objetivo completo\n");
@@ -321,7 +349,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		al_draw_bitmap(fundo, 0, 0, 0);
 		//al_draw_bitmap(circuito, 0, 0 , 0);
 		if (game.level == 0) drawLevelZero(levelZero);
-		if (game.level == 3) drawLevelOne(levelOne);
+		if (game.level == 1) drawLevelOne(levelOne);
 		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
@@ -395,20 +423,9 @@ bool isCollidingGlobal(Player *player, int level){
 	}
 
 	if(level == 1){
-		if (isColliding(35, 12, 24, 80, player)    ||
-			isColliding(35, 154, 24, 80, player)   ||
-			isColliding(35, 288, 24, 80, player)   ||
-			isColliding(35, 445, 24, 80, player)   ||
-			isColliding(78, 25, 80, 60, player)    ||
-			isColliding(78, 165, 80, 60, player)   ||
-			isColliding(78, 303, 80, 60, player)   ||
-			isColliding(78, 452, 80, 60, player)   ||
-			isColliding(395, 0, 52, 408, player)   ||
-			isColliding(512, 380, 294, 35, player) ||
-			isColliding(500, 277, 53, 74, player)  ||
-			isColliding(516, 150, 84, 58, player)  ||
-			isColliding(594, 235, 208, 50, player) ||
-			isColliding(775, 412, 25, 36, player))
+		if (isColliding(165, 150, 55, 40, player)    ||
+			isColliding(165, 238, 55, 40, player)   ||
+			isColliding(165, 335, 55, 40, player))
 		{
 			return true;
 		}
