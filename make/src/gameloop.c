@@ -134,8 +134,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 0)
 				{
-					if ((player->state.y > 220 && player->state.y < 280) &&
-						(player->state.x > 200 && player->state.x < 210))
+					if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
 					{
 						if(inputs[0] == false)
 						{
@@ -249,12 +248,16 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			break;
 			
 			case ALLEGRO_KEY_ENTER:
-				if(game.level == 0){
-					if(complete){
+				if(complete){
+					if(game.level == 0){
 						game.level = 1;
 						player->state.x = 350;
 						player->state.y = 20;
-						//inputs[0] = false;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+						inputs[0] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
@@ -390,6 +393,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
         	al_flip_display();
       	}
 	}
+	free(levelZero);
 	free(levelOne);
 	free(keys);
 	free(player);
@@ -418,14 +422,14 @@ bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *
 bool isCollidingGlobal(Player *player, int level){
 	if(level == 0)
 	{
-		if(isColliding(258, 267, 60, 42, player)) return true;
+		if(isColliding(261, 267, 56, 40, player)) return true;
 		else return false;
 	}
 
 	if(level == 1){
-		if (isColliding(165, 150, 55, 40, player)    ||
-			isColliding(165, 238, 55, 40, player)   ||
-			isColliding(165, 335, 55, 40, player))
+		if (isColliding(165, 150, 55, 35, player)    ||
+			isColliding(165, 238, 55, 35, player)   ||
+			isColliding(165, 335, 55, 35, player))
 		{
 			return true;
 		}
