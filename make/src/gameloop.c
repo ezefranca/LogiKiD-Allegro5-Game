@@ -31,7 +31,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	LevelZero *levelZero = malloc(sizeof(LevelZero));
 	LevelDois *levelDois = malloc(sizeof(LevelDois));
 	LevelTres *levelTres = malloc(sizeof(LevelTres));
-	
+
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -228,36 +228,41 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				}
 				if(game.level == 3)
 				{
-					if ((player->state.y > 54 && player->state.y < 122) &&
-						(player->state.x > 40 && player->state.x < 46))
+					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
 					{
-						if(inputs[0] == false)
-						{
+						if(inputs[0] == false){
 							inputs[0] = true;
+							printf("False para true\n");
+							complete = true;
 						}
-						else inputs[0] = false;
-						printf("Mudando porta 1\n");
+						else{
+							inputs[0] = false;
+							printf("True para false\n");
+						}
 					}
-					if((player->state.y > 150 && player->state.y < 218) &&
-						(player->state.x > 40 && player->state.x < 46))
+					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 123 && player->state.y < 206))
 					{
 						if(inputs[1] == false){
 							inputs[1] = true;
+							printf("False para true\n");
 						}
-						else inputs[1] = false;
-						printf("Mudando porta 2\n");
+						else{
+							inputs[1] = false;
+							printf("True para false\n");
+						}
 					}
-					if((player->state.y > 246 && player->state.y < 310) &&
-						(player->state.x > 40 && player->state.x < 46))
+					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 222 && player->state.y < 306))
 					{
 						if(inputs[2] == false){
 							inputs[2] = true;
+							printf("False para true\n");
 						}
-						else inputs[2] = false;
-						printf("Mudando porta 3\n");
+						else{
+							inputs[2] = false;
+							printf("True para false\n");
+						}
 					}
-					//logicLevelOne(inputs[0], inputs[1], inputs[2], player);
-					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], levelTres);
 				}
 
 				if(game.level == 4)
@@ -282,6 +287,23 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 			case ALLEGRO_KEY_ENTER:
 				if(complete){
+					if(game.level == 2){
+						game.level = 3;
+						player->state.x = 350;
+						player->state.y = 20;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+						inputs[0] = false;
+						inputs[1] = false;
+						inputs[2] = false;
+						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						initDrawGatesLevelTres(levelTres);
+						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], levelTres);
+						printf("Objetivo completo\n");
+						complete = false;
+					}
 					if(game.level == 1){
 						game.level = 2;
 						player->state.x = 350;
@@ -314,7 +336,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						printf("Objetivo completo\n");
 						complete = false;
 					}
-					
+
 				}
 
 			}
@@ -405,6 +427,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if (game.level == 0) drawLevelZero(levelZero);
 		if (game.level == 1) drawLevelOne(levelOne);
 		if (game.level == 2) drawLevelDois(levelDois);
+		if (game.level == 3) drawLevelTres(levelTres);
 		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
@@ -497,7 +520,8 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
-	if(level == 3)
+	//if(level == 3)
+		/*
 	   	{
 	    if (isColliding(98, 108, 60, 42, player)   ||
 	    	isColliding(98, 206, 60, 42, player)   ||
@@ -510,6 +534,7 @@ bool isCollidingGlobal(Player *player, int level){
 	    else return false;
 	}
 	else return false;
+*/
 }
 
 void musicPlayer(int mute){

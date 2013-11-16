@@ -10,12 +10,18 @@
 
 typedef struct {
 	ALLEGRO_BITMAP *circ1;
+	ALLEGRO_BITMAP *circ2;
+	ALLEGRO_BITMAP *circ3;
+	ALLEGRO_BITMAP *circ4;
+	ALLEGRO_BITMAP *circ5;
+	ALLEGRO_BITMAP *circ6;
 	ALLEGRO_BITMAP *portas;
 
 	bool isOn[5];
 } LevelTres;
 
-void logicLevelTres(bool gateOne, bool gateTwo, LevelTres *LevelTres);
-void drawLevelTres(LevelTres *LevelTres);
-void destroyLevelTres(LevelTres *LevelTres);
+//void logicLevelTres(bool gateOne, bool gateTwo, bool gateThree, Player *player);
 void initDrawGatesLevelTres(LevelTres *LevelTres);
+void drawLevelTres(LevelTres *LevelTres);
+void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, LevelTres *LevelTres);
+void destroyLevelTres(LevelTres *LevelTres);
