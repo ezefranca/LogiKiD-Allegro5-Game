@@ -2,34 +2,40 @@
 #include "fase1.h"
 #include "../../Player.h"
 
-void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player){
-	if ((player->state.y > 54 && player->state.y < 122) &&
-		(player->state.x > 40 && player->state.x < 46))
+void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player)
+{
+	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 	{
-		if(gateOne == false)
-		{
+		if(gateOne == false){
 			gateOne = true;
+			printf("False para true\n");
 		}
-		else gateOne = false;
-		printf("Mudando porta 1\n");
+		else{
+			gateOne = false;
+			printf("True para false\n");
+		}
 	}
-	if((player->state.y > 150 && player->state.y < 218) &&
-		(player->state.x > 40 && player->state.x < 46))
+	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
 	{
 		if(gateTwo == false){
 			gateTwo = true;
+			printf("False para true\n");
 		}
-		else gateTwo = false;
-		printf("Mudando porta 2\n");
+		else{
+			gateTwo = false;
+			printf("True para false\n");
+		}
 	}
-	if((player->state.y > 246 && player->state.y < 310) &&
-		(player->state.x > 40 && player->state.x < 46))
+	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
 	{
 		if(gateThree == false){
 			gateThree = true;
+			printf("False para true\n");
 		}
-		else gateThree = false;
-		printf("Mudando porta 3\n");
+		else{
+			gateThree = false;
+			printf("True para false\n");
+		}
 	}
 }
 

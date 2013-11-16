@@ -27,11 +27,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	Keys *keys = malloc(sizeof(Keys));
 	Player *player = malloc(sizeof(Player));
 	Dialogs *dialog = malloc(sizeof(Dialogs));
+	LevelOne *levelOne = malloc(sizeof(LevelOne));
 	LevelZero *levelZero = malloc(sizeof(LevelZero));
 	LevelDois *levelDois = malloc(sizeof(LevelDois));
 	LevelTres *levelTres = malloc(sizeof(LevelTres));
-	LevelOne *levelOne = malloc(sizeof(LevelOne));
-
+	
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -190,6 +190,40 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				}
 				if(game.level == 2)
 				{
+					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
+					{
+						if(inputs[0] == false){
+							inputs[0] = true;
+							printf("False para true\n");
+							complete = true;
+						}
+						else{
+							inputs[0] = false;
+							printf("True para false\n");
+						}
+					}
+					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 123 && player->state.y < 206))
+					{
+						if(inputs[1] == false){
+							inputs[1] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[1] = false;
+							printf("True para false\n");
+						}
+					}
+					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 222 && player->state.y < 306))
+					{
+						if(inputs[2] == false){
+							inputs[2] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[2] = false;
+							printf("True para false\n");
+						}
+					}
 					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
 				}
 				if(game.level == 3)
@@ -257,8 +291,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						player->state.idleC = false;
 						player->state.idleB = true;
 						inputs[0] = false;
+						inputs[1] = false;
+						inputs[2] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						initDrawGatesLevelDois(levelOne);
+						initDrawGatesLevelDois(levelDois);
 						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
 						printf("Objetivo completo\n");
 						complete = false;
@@ -287,7 +323,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
 			//MUDANÇA DE TELA - level 2 para o 3
-			if ((game.level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) &&
+			/*if ((game.level == 1) && (player->state.x > 630 && player->state.x < 740 - player->image.frameWidth) &&
 				(player->state.y + player->image.frameHeight / 2) > 500 &&
 				(player->state.y + player->image.frameHeight / 2 < 600))
 			{
@@ -317,7 +353,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				player->state.idleC = true;
 				player->state.idleB = false;
 				printf("ENTROU NA ESCADA \n");
-			}
+			}*/
 			if(!isCollidingGlobal(player, game.level))
 			{
 				movePlayer(keys, player);
@@ -368,6 +404,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		//al_draw_bitmap(circuito, 0, 0 , 0);
 		if (game.level == 0) drawLevelZero(levelZero);
 		if (game.level == 1) drawLevelOne(levelOne);
+		if (game.level == 2) drawLevelDois(levelDois);
 		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
@@ -450,23 +487,16 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
-	/*if(level == 2)
+	if(level == 2)
 	{
-		if (isColliding(421, 157, 92, 61, player)   ||
-			isColliding(518, 314, 92, 61, player)   ||
-			isColliding(741, 157, 92, 61, player)   ||
-			isColliding(0, 0, 195, 220, player)     ||
-			isColliding(195, 0, 66, 90, player)     ||
-			isColliding(357, 0, 177, 90, player)    ||
-			isColliding(0, 415, 505, 600, player)   ||
-			isColliding(357, 0, 177, 90, player)    ||
-			isColliding(510, 490, 290, 110, player) ||
-			isColliding(0, 283, 220, 100, player))
+		if (isColliding(133, 118, 55, 35, player)    ||
+			isColliding(133, 202, 55, 35, player)   ||
+			isColliding(133, 302, 55, 35, player))
 		{
 			return true;
 		}
 		else return false;
-	}*/
+	}
 	if(level == 3)
 	   	{
 	    if (isColliding(98, 108, 60, 42, player)   ||
