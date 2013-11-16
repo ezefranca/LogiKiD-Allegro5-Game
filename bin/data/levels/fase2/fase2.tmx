@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="tile_alavancas" tilewidth="32" tileheight="32">
+  <image source="../tile_alavancas.png" width="128" height="64"/>
+ </tileset>
+ <tileset firstgid="9" name="tile_circ" tilewidth="32" tileheight="32">
+  <image source="../tile_circ.png" width="224" height="256"/>
+ </tileset>
+ <layer name="Camada de Tiles 1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgF5AJGIGaisR2sQMxGYzvoAUbDingwGlajYBQMPwAAzNAAKw==
+  </data>
+ </layer>
+ <layer name="circ" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQwFwMTAswIVB8rxAzE9F+zgZGA6g2yECxGJUtIOLRHESzIW7mxOHGk4s4WdOob3oYYYt/OwotIPSsMFiHoZbcYXZKBgFo4B8AACIohSM
+  </data>
+ </layer>
+ <layer name="portas" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFQxmIA7EEje2QA2J5GtsxUGA0/EbBKBgF9AAAGGgA2Q==
+  </data>
+ </layer>
+ <layer name="sherol" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAS0BAAdsAAE=
+  </data>
+ </layer>
+</map>

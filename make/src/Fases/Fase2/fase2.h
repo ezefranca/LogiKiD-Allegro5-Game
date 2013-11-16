@@ -14,6 +14,7 @@ typedef struct {
 	ALLEGRO_BITMAP *circ3;
 	ALLEGRO_BITMAP *circ4;
 	ALLEGRO_BITMAP *circ5;
+	ALLEGRO_BITMAP *circ6;
 	ALLEGRO_BITMAP *portas;
 
 	bool isOn[5];
