@@ -23,5 +23,5 @@ typedef struct {
 //void logicLevelTres(bool gateOne, bool gateTwo, bool gateThree, Player *player);
 void initDrawGatesLevelTres(LevelTres *LevelTres);
 void drawLevelTres(LevelTres *LevelTres);
-void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, LevelTres *LevelTres);
+void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, LevelTres *LevelTres);
 void destroyLevelTres(LevelTres *LevelTres);

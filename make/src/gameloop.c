@@ -228,7 +228,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				}
 				if(game.level == 3)
 				{
-					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
+					if((player->state.x > 0 && player->state.x < 20) && (player->state.y > 40 && player->state.y < 70))
 					{
 						if(inputs[0] == false){
 							inputs[0] = true;
@@ -240,29 +240,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							printf("True para false\n");
 						}
 					}
-					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 123 && player->state.y < 206))
-					{
-						if(inputs[1] == false){
-							inputs[1] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[1] = false;
-							printf("True para false\n");
-						}
-					}
-					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 222 && player->state.y < 306))
-					{
-						if(inputs[2] == false){
-							inputs[2] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[2] = false;
-							printf("True para false\n");
-						}
-					}
-					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], levelTres);
+
+					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
 				}
 
 				if(game.level == 4)
@@ -298,9 +277,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						inputs[0] = false;
 						inputs[1] = false;
 						inputs[2] = false;
+						inputs[3] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelTres(levelTres);
-						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], levelTres);
+						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
 						printf("Objetivo completo\n");
 						complete = false;
 					}
