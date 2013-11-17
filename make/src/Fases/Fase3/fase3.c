@@ -3,6 +3,7 @@
 #include "../../Player.h"
 
 void logicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, Player *player){
+
 	if ((player->state.y > 40 && player->state.y < 60) && (player->state.x > 0 && player->state.x < 20))
 	{
 		gateOne = !gateOne;
@@ -28,11 +29,25 @@ void logicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, P
 
 void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, LevelTres *levelTres){
 	al_draw_bitmap(levelTres->portas, 0, 0 , 0);
-	if(gateOne)  levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-11XX.png");
-	if(gateOne)  levelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-XX11.png");
-	//if(gateOne) levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-1000.png");
-	//if(gateOne) levelTres->circ4 = al_load_bitmap("./data/levels/fase3/DES1-1000.png");
-	else levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-01XX.png");
+	if(gateOne)  levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-1XXX.png");
+	if(gateTwo)  levelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-X1XX.png");
+	if(!gateOne)  levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-0XXX.png");
+	if(!gateTwo)  levelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-X0XX.png");
+
+	if(!gateOne && !gateTwo) levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-00XX.png");
+	if(!gateOne && gateTwo) levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-01XX.png");
+	if(gateOne && !gateTwo) levelTres->circ1= al_load_bitmap("./data/levels/fase3/DES1-10XX.png");
+	if(gateOne && gateTwo)  levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-11XX.png");
+
+	if(gateThree)  levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX1X.png");
+	if(gateFour)  levelTres->circ4 = al_load_bitmap("./data/levels/fase3/DES1-XXX1.png");
+	if(!gateThree)  levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX0X.png");
+	if(!gateFour)  levelTres->circ4 = al_load_bitmap("./data/levels/fase3/DES1-XXX0.png");
+
+	if(!gateThree && !gateFour) levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX00.png");
+	if(!gateThree && gateFour) levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX01.png");
+	if(gateThree && !gateFour) levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX10.png");
+	if(gateThree && gateFour)  levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX11.png");
 
 }
 
@@ -43,17 +58,20 @@ void initDrawGatesLevelTres(LevelTres *LevelTres){
 	for(i = 1; i < 5; i++){
 		LevelTres->isOn[i] = false;
 	}
-	LevelTres->portas = al_load_bitmap("./data/levels/fase3/DES1-0100.png");
+	LevelTres->portas = al_load_bitmap("./data/levels/fase3/DES1-portas.png");
 	LevelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-1000.png");
-	LevelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-XX11.png");
+	LevelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-X0XX.png");
+	LevelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX0X.png");
+	LevelTres->circ4 = al_load_bitmap("./data/levels/fase3/DES1-XXX0.png");
 	printf("iniciou\n");
 }
 
 void drawLevelTres(LevelTres *LevelTres){
-	if(LevelTres->isOn[2] && !LevelTres->isOn[1] && !LevelTres->isOn[2] && !LevelTres->isOn[3])
-		al_draw_bitmap(LevelTres->portas, 0, 0 , 0);
+	al_draw_bitmap(LevelTres->circ4, 0, 0 , 0);
+	al_draw_bitmap(LevelTres->circ3, 0, 0 , 0);
+       al_draw_bitmap(LevelTres->circ2, 0, 0 , 0);
 	al_draw_bitmap(LevelTres->circ1, 0, 0 , 0);
-	al_draw_bitmap(LevelTres->circ2, 0, 0 , 0);
+	al_draw_bitmap(LevelTres->portas, 0, 0 , 0);
 }
 
 void destroyLevelTres(LevelTres *LevelTres){

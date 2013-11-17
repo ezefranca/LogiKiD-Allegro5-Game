@@ -17,10 +17,10 @@ void PrintMenu(int MenuPosition)
 	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, "Iniciar jogo");
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, "Sair");
 	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, "Sair");
-	
+
 	switch(MenuPosition)
 	{
-		
+
 		case 0:
 			al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, "--Iniciar jogo--");
 			al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, "--Iniciar jogo--");
@@ -37,15 +37,15 @@ void StartMenu()
 	bool sair = false;
 	int tecla = 0;
 	int MenuPosition = 0;
-	
+
 	PrintMenu(0);
-	
+
 	al_start_timer(game.timer);
 	while(!sair)
 	{
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
-		
+
         if (ev.type == ALLEGRO_EVENT_KEY_DOWN)
         {
 	        game.som = al_load_sample("./data/sound/menu_open.wav");
@@ -90,17 +90,17 @@ void StartMenu()
         {
         	sair = true;
         }
- 
+
         if (tecla)
         {
             al_clear_to_color(al_map_rgb(0, 0, 0));
- 
+
             PrintMenu(MenuPosition);
- 
+
             tecla = 0;
         }
-        
-        
+
+
         al_flip_display();
 	}
 }

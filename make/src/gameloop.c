@@ -240,7 +240,39 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							printf("True para false\n");
 						}
 					}
-					logicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
+					if ((player->state.y > 100 && player->state.y < 120) && (player->state.x > 0 && player->state.x < 20))
+					{
+						if(inputs[1] == false){
+							inputs[1] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[1] = false;
+							printf("True para false\n");
+						}
+					}
+					if ((player->state.y > 200 && player->state.y < 220) && (player->state.x > 0 && player->state.x < 20))
+					{
+						if(inputs[2] == false){
+							inputs[2] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[2] = false;
+							printf("True para false\n");
+						}
+					}
+					if ((player->state.y > 260 && player->state.y < 280) && (player->state.x > 0 && player->state.x < 20))
+					{
+						if(inputs[3] == false){
+							inputs[3] = true;
+							printf("False para true\n");
+						}
+						else{
+							inputs[3] = false;
+							printf("True para false\n");
+						}
+					}
 					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
 				}
 
