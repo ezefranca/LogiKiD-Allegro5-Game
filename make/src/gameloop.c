@@ -240,7 +240,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							printf("True para false\n");
 						}
 					}
-
+					logicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
 					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
 				}
 
@@ -274,13 +274,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						player->state.idleD = false;
 						player->state.idleC = false;
 						player->state.idleB = true;
-						inputs[0] = false;
+						inputs[0] = true;
 						inputs[1] = false;
 						inputs[2] = false;
 						inputs[3] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelTres(levelTres);
-						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
+						drawLevelTres(levelTres);
 						printf("Objetivo completo\n");
 						complete = false;
 					}
