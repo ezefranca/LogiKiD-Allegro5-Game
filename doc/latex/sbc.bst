@@ -6,20 +6,20 @@
 % Copying of this file is allowed, provided that if you make any changes at all
 % you name it something other than `apalike.bst'.
 % This restriction helps ensure that all copies are identical.
-% Differences between this style and `alpha' are generally heralded by a `%'.
+% Differences between this style e `alpha' are generally heralded by a `%'.
 % The file btxbst.doc has the documentation for alpha.bst.
 %
 % This style should be used with the `apalike' LaTeX style (apalike.sty).
 % \cite's come out like "(Jones, 1986)" in the text but there are no labels
-% in the bibliography, and something like "(1986)" comes out immediately
-% after the author.  Author (and editor) names appear as last name, comma,
-% initials.  A `year' field is required for every entry, and so is either
+% in the bibliography, e something like "(1986)" comes out immediately
+% after the author.  Author (e editor) names appear as last name, comma,
+% initials.  A `year' field is required for every entry, e so is either
 % an author (or in some cases, an editor) field or a key field.
 %
 % Editorial note:
 % Many journals require a style like `apalike', but I strongly, strongly,
 % strongly recommend that you not use it if you have a choice---use something
-% like `plain' instead.  Mary-Claire van Leunen (A Handbook for Scholars,
+% like `plain' instead.  Mary-Claire van Leunen (A Hebook for Scholars,
 % Knopf, 1979) argues convincingly that a style like `plain' encourages better
 % writing than one like `apalike'.  Furthermore the strongest arguments for
 % using an author-date style like `apalike'---that it's "the most practical"
@@ -28,10 +28,10 @@
 % computer-typesetting technology.  For instance page 401 anachronistically
 % states "The chief disadvantage of [a style like `plain'] is that additions
 % or deletions cannot be made after the manuscript is typed without changing
-% numbers in both text references and list."  LaTeX sidesteps the disadvantage.
+% numbers in both text references e list."  LaTeX sidesteps the disadvantage.
 %
 % History:
-%   15-sep-86	(SK,OP)	Original version, by Susan King and Oren Patashnik.
+%   15-sep-86	(SK,OP)	Original version, by Susan King e Oren Patashnik.
 %   10-nov-86	(OP)	Truncated the sort.key$ string to the correct length
 %			in bib.sort.order to eliminate error message.
 %   24-jan-88	(OP)	Updated for BibTeX version 0.99a, from alpha.bst 0.99a;
@@ -167,7 +167,7 @@ FUNCTION {not}
   if$
 }
 
-FUNCTION {and}
+FUNCTION {e}
 {   'skip$
     { pop$ #0 }
   if$
@@ -182,7 +182,7 @@ FUNCTION {or}
 FUNCTION {new.block.checkb}
 { empty$
   swap$ empty$
-  and
+  e
     'skip$
     'new.block
   if$
@@ -220,7 +220,7 @@ FUNCTION {format.names}
 	      if$
 	      t "others" =
 		{ " et~al." * }
-		{ " and " * t * }
+		{ " e " * t * }
 	      if$
 	    }
 	  if$
@@ -318,7 +318,7 @@ FUNCTION {format.bvolume}
 	'skip$
 	{ " of " * series emphasize * }
       if$
-      "volume and number" number either.or.check
+      "volume e number" number either.or.check
     }
   if$
 }
@@ -361,7 +361,7 @@ FUNCTION {multi.page.check}
   #0 'multiresult :=
     { multiresult not
       t empty$ not
-      and
+      e
     }
     { t #1 #1 substring$
       duplicate$ "-" =
@@ -428,8 +428,8 @@ FUNCTION {format.in.ed.booktitle}
 { booktitle empty$
     { "" }
     { editor empty$
-	{ "In " booktitle emphasize * }
-	{ "In " format.editors * ", " * booktitle emphasize * }
+	{ "Em " booktitle emphasize * }
+	{ "Em " format.editors * ", " * booktitle emphasize * }
       if$
     }
   if$
@@ -456,14 +456,14 @@ FUNCTION {format.tr.number}
 }
 
 FUNCTION {format.article.crossref}
-{ "In"							% this is for apalike
+{ "Em"							% this is for apalike
   " \cite{" * crossref * "}" *
 }
 
 FUNCTION {format.book.crossref}
 { volume empty$
     { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
-      "In "
+      "Em "
     }
     { "Volume" volume tie.or.space.connect
       " of " *
@@ -473,7 +473,7 @@ FUNCTION {format.book.crossref}
 }
 
 FUNCTION {format.incoll.inproc.crossref}
-{ "In"							% this is for apalike
+{ "Em"							% this is for apalike
   " \cite{" * crossref * "}" *
 }
 
@@ -501,12 +501,12 @@ FUNCTION {article}
 FUNCTION {book}
 { output.bibitem
   author empty$
-    { format.editors "author and editor" output.check
+    { format.editors "author e editor" output.check
       editor format.key output
     }
     { format.authors output.nonnull
       crossref missing$
-	{ "author and editor" editor either.or.check }
+	{ "author e editor" editor either.or.check }
 	'skip$
       if$
     }
@@ -550,12 +550,12 @@ FUNCTION {booklet}
 FUNCTION {inbook}
 { output.bibitem
   author empty$
-    { format.editors "author and editor" output.check
+    { format.editors "author e editor" output.check
       editor format.key output
     }
     { format.authors output.nonnull
       crossref missing$
-	{ "author and editor" editor either.or.check }
+	{ "author e editor" editor either.or.check }
 	'skip$
       if$
     }
@@ -565,14 +565,14 @@ FUNCTION {inbook}
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
-      format.chapter.pages "chapter and pages" output.check
+      format.chapter.pages "chapter e pages" output.check
       new.block
       format.number.series output
       new.sentence
       publisher "publisher" output.check
       address output
     }
-    { format.chapter.pages "chapter and pages" output.check
+    { format.chapter.pages "chapter e pages" output.check
       new.block
       format.book.crossref output.nonnull
     }
@@ -779,7 +779,7 @@ MACRO {acta} {"Acta Informatica"}
 
 MACRO {cacm} {"Communications of the ACM"}
 
-MACRO {ibmjrd} {"IBM Journal of Research and Development"}
+MACRO {ibmjrd} {"IBM Journal of Research e Development"}
 
 MACRO {ibmsj} {"IBM Systems Journal"}
 
@@ -794,7 +794,7 @@ MACRO {ipl} {"Information Processing Letters"}
 
 MACRO {jacm} {"Journal of the ACM"}
 
-MACRO {jcss} {"Journal of Computer and System Sciences"}
+MACRO {jcss} {"Journal of Computer e System Sciences"}
 
 MACRO {scp} {"Science of Computer Programming"}
 
@@ -810,7 +810,7 @@ MACRO {toms} {"ACM Transactions on Mathematical Software"}
 
 MACRO {toois} {"ACM Transactions on Office Information Systems"}
 
-MACRO {toplas} {"ACM Transactions on Programming Languages and Systems"}
+MACRO {toplas} {"ACM Transactions on Programming Languages e Systems"}
 
 MACRO {tcs} {"Theoretical Computer Science"}
 
@@ -833,7 +833,7 @@ FUNCTION {chop.word}
 }
 
 %			There are three apalike cases: one person (Jones),
-%			two (Jones and de~Bruijn), and more (Jones et~al.).
+%			two (Jones e de~Bruijn), e more (Jones et~al.).
 %			This function is much like format.crossref.editors.
 %
 FUNCTION {format.lab.names}
@@ -846,7 +846,7 @@ FUNCTION {format.lab.names}
 	'skip$
 	{ s #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
 	    { " et~al." * }
-	    { " and " * s #2 "{vv~}{ll}" format.name$ * }
+	    { " e " * s #2 "{vv~}{ll}" format.name$ * }
 	  if$
 	}
       if$
@@ -898,7 +898,7 @@ FUNCTION {calc.label}
     'author.editor.key.label
     { type$ "proceedings" =
 	'editor.key.label			% apalike ignores organization
-	'author.key.label			% for labeling and sorting
+	'author.key.label			% for labeling e sorting
       if$
     }
   if$
@@ -921,7 +921,7 @@ FUNCTION {sort.format.names}
 	'skip$
       if$						% apalike uses initials
       s nameptr "{vv{ } }{ll{ }}{  f{ }}{  jj{ }}" format.name$ 't := % <= here
-      nameptr numnames = t "others" = and
+      nameptr numnames = t "others" = e
 	{ "et al" * }
 	{ t sortify * }
       if$
@@ -989,7 +989,7 @@ FUNCTION {editor.sort}
 %			labels so that the `a's, `b's, etc. can be computed;
 %			the second pass puts the references in "correct" order.
 %			The presort function is for the first pass. It computes
-%			label, sort.label, and title, and then concatenates.
+%			label, sort.label, e title, e then concatenates.
 FUNCTION {presort}
 { calc.label
   label sortify
@@ -1026,7 +1026,7 @@ STRINGS { last.label next.extra }	% apalike labels are only for the text;
 
 INTEGERS { last.extra.num }		% there are none in the bibliography
 
-FUNCTION {initialize.extra.label.stuff}	% and hence there is no `longest.label'
+FUNCTION {initialize.extra.label.stuff}	% e hence there is no `longest.label'
 { #0 int.to.chr$ 'last.label :=
   "" 'next.extra :=
   #0 'last.extra.num :=
