@@ -4,12 +4,17 @@
  * Autor: Alexandre Savelli Bencz
  */
 
+ #ifndef PLAYER_H
+ #define PLAYER_H
+
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_primitives.h>
+//
+// Praticamente vcs não mudaram no player nao
 
 typedef struct
 {
@@ -43,7 +48,7 @@ typedef struct
 typedef struct
 {
 	ALLEGRO_SAMPLE *footstep;
-        ALLEGRO_FONT *play_font;
+    ALLEGRO_FONT *play_font;
 	State state;
 	Image image;
 	LogicGates lGates;
@@ -73,3 +78,5 @@ void ValidaMovimento(Player *player);
 void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev);
 void createKeys(Keys *keys);
 void movePlayer(Keys *keys, Player *player);
+
+#endif

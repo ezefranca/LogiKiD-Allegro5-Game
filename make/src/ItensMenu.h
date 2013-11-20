@@ -1,3 +1,6 @@
+#ifndef ITEMS_MENU_H
+#define ITEMS_MENU_H
+
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -14,3 +17,5 @@
 typedef enum { AND, OR, NAND, NOR, XOR, XNOR, NOT }Gates;
 
 Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player);
+
+#endif

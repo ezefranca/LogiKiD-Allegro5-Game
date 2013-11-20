@@ -2,36 +2,42 @@
 #include "fase2.h"
 #include "../../Player.h"
 
-/*void logicLevelDois(bool gateOne, bool gateTwo, bool gateThree, Player *player){
-	if ((player->state.y > 54 && player->state.y < 122) &&
-		(player->state.x > 40 && player->state.x < 46))
+void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player)
+{
+	if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
 	{
-		if(gateOne == false)
-		{
-			gateOne = true;
+		if(*gateOne == false){
+			*gateOne = true;
+			printf("False para true\n");
 		}
-		else gateOne = false;
-		printf("Mudando porta 1\n");
+		else{
+			*gateOne = false;
+			printf("True para false\n");
+		}
 	}
-	if((player->state.y > 150 && player->state.y < 218) &&
-		(player->state.x > 40 && player->state.x < 46))
+	if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 123 && player->state.y < 206))
 	{
-		if(gateTwo == false){
-			gateTwo = true;
+		if(*gateTwo == false){
+			*gateTwo = true;
+			printf("False para true\n");
 		}
-		else gateTwo = false;
-		printf("Mudando porta 2\n");
+		else{
+			*gateTwo = false;
+			printf("True para false\n");
+		}
 	}
-	if((player->state.y > 246 && player->state.y < 310) &&
-		(player->state.x > 40 && player->state.x < 46))
+	if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 222 && player->state.y < 306))
 	{
-		if(gateThree == false){
-			gateThree = true;
+		if(*gateThree == false){
+			*gateThree = true;
+			printf("False para true\n");
 		}
-		else gateThree = false;
-		printf("Mudando porta 3\n");
+		else{
+			*gateThree = false;
+			printf("True para false\n");
+		}
 	}
-}*/
+}
 
 void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *levelDois, bool *complete){
 	levelDois->circ6 = al_load_bitmap("./data/levels/fase2/circ_off.png");

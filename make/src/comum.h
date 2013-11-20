@@ -4,6 +4,9 @@
  * Autor: Alexandre Savelli Bencz
  */
 
+#ifndef COMUM_H
+#define COMUM_H
+
 #include <stdio.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
@@ -35,3 +38,5 @@ struct Game
 struct Game game;
 
 bool inicializar();
+
+#endif

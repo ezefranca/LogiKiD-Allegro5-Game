@@ -1,3 +1,6 @@
+#ifndef TEXTBOX_H
+#define TEXTBOX_H
+
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -21,3 +24,5 @@ typedef struct {
 void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[]);
 void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[], int textYPos);
 void createDialogs(Dialogs *dialog);
+
+#endif

@@ -49,7 +49,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
     Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
-	logicLevelZero(inputs[0], levelZero);
+	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
 	//al_start_timer(game.timer);
@@ -135,141 +135,22 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 0)
 				{
-					if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
-					{
-						if(inputs[0] == false)
-						{
-							inputs[0] = true;
-							complete = true;
-						}
-						else inputs[0] = false;
-						printf("Mudando porta 1\n");
-					}
-					logicLevelZero(inputs[0], levelZero);
+					logicLevelZero(&inputs[0], &complete, levelZero, player);
 				}
-
-
 				if(game.level == 1)
-				{
-					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
-					{
-						if(inputs[0] == false){
-							inputs[0] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[0] = false;
-							printf("True para false\n");
-						}
-					}
-					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
-					{
-						if(inputs[1] == false){
-							inputs[1] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[1] = false;
-							printf("True para false\n");
-						}
-					}
-					if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
-					{
-						if(inputs[2] == false){
-							inputs[2] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[2] = false;
-							printf("True para false\n");
-						}
-					}
+				{	
+					logicLevelOne(&inputs[0], &inputs[1], &inputs[2], player);
 					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 				}
 				if(game.level == 2)
 				{
-					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
-					{
-						if(inputs[0] == false){
-							inputs[0] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[0] = false;
-							printf("True para false\n");
-						}
-					}
-					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 123 && player->state.y < 206))
-					{
-						if(inputs[1] == false){
-							inputs[1] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[1] = false;
-							printf("True para false\n");
-						}
-					}
-					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 222 && player->state.y < 306))
-					{
-						if(inputs[2] == false){
-							inputs[2] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[2] = false;
-							printf("True para false\n");
-						}
-					}
+					logicLevelDois(&inputs[0], &inputs[1], &inputs[2], player);
 					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
 				}
 				if(game.level == 3)
-				{
-					if((player->state.x > 0 && player->state.x < 20) && (player->state.y > 40 && player->state.y < 70))
-					{
-						if(inputs[0] == false){
-							inputs[0] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[0] = false;
-							printf("True para false\n");
-						}
-					}
-					if ((player->state.y > 100 && player->state.y < 120) && (player->state.x > 0 && player->state.x < 20))
-					{
-						if(inputs[1] == false){
-							inputs[1] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[1] = false;
-							printf("True para false\n");
-						}
-					}
-					if ((player->state.y > 200 && player->state.y < 220) && (player->state.x > 0 && player->state.x < 20))
-					{
-						if(inputs[2] == false){
-							inputs[2] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[2] = false;
-							printf("True para false\n");
-						}
-					}
-					if ((player->state.y > 260 && player->state.y < 280) && (player->state.x > 0 && player->state.x < 20))
-					{
-						if(inputs[3] == false){
-							inputs[3] = true;
-							printf("False para true\n");
-						}
-						else{
-							inputs[3] = false;
-							printf("True para false\n");
-						}
-					}
-					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
+				{					
+					logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
+					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 				}
 
 				if(game.level == 4)

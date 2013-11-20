@@ -2,32 +2,55 @@
 #include "fase3.h"
 #include "../../Player.h"
 
-void logicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, Player *player){
-
-	if ((player->state.y > 40 && player->state.y < 60) && (player->state.x > 0 && player->state.x < 20))
+void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFour, Player *player)
+{
+	if((player->state.x > 0 && player->state.x < 20) && (player->state.y > 40 && player->state.y < 70))
 	{
-		gateOne = !gateOne;
-		printf("Alavanca 1 %d \n", gateOne);
+		if(*gateOne == false){
+			*gateOne = true;
+			printf("False para true\n");
+		}
+		else{
+			*gateOne = false;
+			printf("True para false\n");
+		}
 	}
 	if ((player->state.y > 100 && player->state.y < 120) && (player->state.x > 0 && player->state.x < 20))
 	{
-		gateTwo = !gateTwo;
-		printf("Alavanca 2 %d \n", gateTwo);
+		if(*gateTwo == false){
+			*gateTwo = true;
+			printf("False para true\n");
+		}
+		else{
+			*gateTwo = false;
+			printf("True para false\n");
+		}
 	}
 	if ((player->state.y > 200 && player->state.y < 220) && (player->state.x > 0 && player->state.x < 20))
 	{
-		gateThree = !gateThree;
-		printf("Alavanca 3 %d \n", gateFour);
+		if(*gateThree == false){
+			*gateThree = true;
+			printf("False para true\n");
+		}
+		else{
+			*gateThree = false;
+			printf("True para false\n");
+		}
 	}
 	if ((player->state.y > 260 && player->state.y < 280) && (player->state.x > 0 && player->state.x < 20))
 	{
-		gateFour = !gateFour;
-		printf("Alavanca 4 %d \n", gateFour);
+		if(*gateFour == false){
+			*gateFour = true;
+			printf("False para true\n");
+		}
+		else{
+			*gateFour = false;
+			printf("True para false\n");
+		}
 	}
-
 }
 
-void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, LevelTres *levelTres){
+void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, bool *complete, LevelTres *levelTres){
 	al_draw_bitmap(levelTres->portas, 0, 0 , 0);
 	if(gateOne)  levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-1XXX.png");
 	if(gateTwo)  levelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-X1XX.png");
@@ -49,10 +72,14 @@ void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFou
 	if(gateThree && !gateFour) levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX10.png");
 	if(gateThree && gateFour)  levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX11.png");
 
-	if(!gateOne && gateTwo && (!gateThree || !gateFour)) levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-UM.png");
+	if(!gateOne && gateTwo && (!gateThree || !gateFour))
+	{
+		levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-UM.png");
+		*complete = true;
+	} 
 	else levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-ZERO.png");
 
-       levelTres->chances++;
+    levelTres->chances++;
 
 }
 

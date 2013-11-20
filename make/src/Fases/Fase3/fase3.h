@@ -1,8 +1,12 @@
+#ifndef FASE3_H
+#define FASE3_H
+
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
 
+#include "../../Player.h"
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_image.h>
@@ -21,8 +25,10 @@ typedef struct {
 	int chances;
 } LevelTres;
 
-//void logicLevelTres(bool gateOne, bool gateTwo, bool gateThree, Player *player);
+void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFour, Player *player);
 void initDrawGatesLevelTres(LevelTres *LevelTres);
 void drawLevelTres(LevelTres *LevelTres);
-void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, LevelTres *LevelTres);
+void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, bool *complete, LevelTres *LevelTres);
 void destroyLevelTres(LevelTres *LevelTres);
+
+#endif
