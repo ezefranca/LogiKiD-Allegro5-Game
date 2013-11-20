@@ -29,5 +29,6 @@ void apaga_config(lista *l, char *var);
 
 void imprime_config(lista *l);
 
+bool load_configuracao();
 
 #endif
