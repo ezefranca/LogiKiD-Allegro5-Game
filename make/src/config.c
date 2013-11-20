@@ -3,6 +3,7 @@
 #include "config.h"
 
 config arquivo_configuracao;
+int loaded = 0;
 
 config *aloca() {
     config *l = malloc(sizeof (config));
@@ -103,6 +104,19 @@ void libera_string(char *string) {
     }
 }
 
-bool load_configuracao(){
+bool load_configuracao(config *l, char *config_file){
+    FILE *entrada;
+    entrada = fopen(config_file. "r");
+    if(!entrada) {
+	fprint(stderr, "erro na leitura do arquivo de configuração.\n");
+        return false;
+    }
     
+    loaded = 1;
+}
+
+char *get_configuracao(char *var) {
+    if(loaded == 1) {
+        return retorna_config(&arquivo_configuracao, var);
+    }
 }
