@@ -3,28 +3,32 @@
  * Inicio: 13/10/2013
  * Autor: Gabriel Fontenelle Senno Silva
  */
-<<<<<<< HEAD
  
-=======
-
 #ifndef CONFIG_H
 #define CONFIG_H
->>>>>>> tales
-typedef struct {
-	char *local_padrao;
-	char *idioma;
-	
 
-} Config;
+typedef struct _elemento {
+  char *string;
+  char *var;
+  struct _elemento *proximo;
+} elemento;
 
 typedef struct {
-	char *AA00;
-	char *AA01;
-	
-<<<<<<< HEAD
-} Idioma;
-=======
-} Idioma;
+  elemento *inicio;
+} config;
+
+config *aloca();
+
+void libera_config(config *l);
+
+void insere_config(config *l, char *var, char *string);
+
+char *retorna_config(config *l, char *var);
+
+void apaga_config(lista *l, char *var);
+
+void imprime_config(lista *l);
+
+void libera_string(char *string);
 
 #endif
->>>>>>> tales
