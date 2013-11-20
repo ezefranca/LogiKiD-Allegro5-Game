@@ -23,5 +23,5 @@ typedef struct {
 //void logicLevelDois(bool gateOne, bool gateTwo, bool gateThree, Player *player);
 void initDrawGatesLevelDois(LevelDois *LevelDois);
 void drawLevelDois(LevelDois *LevelDois);
-void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *LevelDois);
+void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *LevelDois, bool *complete);
 void destroyLevelDois(LevelDois *LevelDois);

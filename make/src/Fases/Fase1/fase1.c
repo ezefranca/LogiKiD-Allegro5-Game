@@ -2,7 +2,7 @@
 #include "fase1.h"
 #include "../../Player.h"
 
-void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player)
+/*void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player)
 {
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 	{
@@ -37,9 +37,9 @@ void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player)
 			printf("True para false\n");
 		}
 	}
-}
+}*/
 
-void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne){
+void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete){
 	levelOne->portas = al_load_bitmap("./data/levels/fase1/circ_off.png");
 	if(gateOne)
 	{
@@ -78,6 +78,7 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 	{
 		levelOne->circ5 = al_load_bitmap("./data/levels/fase1/circ5_on.png");
 		levelOne->isOn[4] = true;
+		*complete = true;
 	}
 	else
 	{
