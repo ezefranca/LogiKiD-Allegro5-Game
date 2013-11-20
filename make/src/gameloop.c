@@ -431,12 +431,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             }
         }
 
-bool GameOverScreen() {
-	//al_draw_bitmap("./data/levels/blackscreen.png", 0, 0, 0);
-	al_destroy_sample_instance(game.songInstance);
-	return true;
-}
-
         //AQUI TODA ITERAÇÃO CARREGA IMAGEM. PRECISA CORRIGIR
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
@@ -454,9 +448,6 @@ bool GameOverScreen() {
 			drawLevelDois(levelDois);
 		}
 		if (game.level == 3) {
-			if (levelTres->chances == 0){
-				sair = GameOverScreen();
-			}
 			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelTres(levelTres);
 		}
