@@ -30,6 +30,7 @@ struct Game
 	ALLEGRO_EVENT_QUEUE *fila_eventos;
 	ALLEGRO_SAMPLE *song;
     ALLEGRO_SAMPLE_INSTANCE *songInstance;
+    ALLEGRO_FONT *fonteKeys;
 };
 
 struct Game game;

@@ -435,6 +435,16 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		//al_draw_bitmap(circuito, 0, 0 , 0);
 		if (game.level == 0){
 		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			if (player->state.y > 300){
+				al_draw_text(game.fonte_menu, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTRE, "Utilize as teclas:");
+				al_draw_text(game.fonteKeys, al_map_rgb(0, 0, 0), 350, 20, ALLEGRO_ALIGN_CENTRE, "A S D F");
+				al_draw_text(game.fonte_menu, al_map_rgb(255, 255, 255), 400, 80, ALLEGRO_ALIGN_CENTRE, "Para movimentação");
+			}
+			if (player->state.y < 300){
+				al_draw_text(game.fonte_menu, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTRE, "Utilize a tecla");
+				al_draw_text(game.fonteKeys, al_map_rgb(0, 0, 0), 350, 20, ALLEGRO_ALIGN_CENTRE, "SPACE");
+				al_draw_text(game.fonte_menu, al_map_rgb(255, 255, 255), 400, 80, ALLEGRO_ALIGN_CENTRE, "Para acionar o dispositivo");
+			}
 			drawLevelZero(levelZero);
 		}
 		if (game.level == 1){
