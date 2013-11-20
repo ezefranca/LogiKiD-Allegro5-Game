@@ -21,7 +21,7 @@ struct Game
 {
 	int mute;
 	int level;
-	ALLEGRO_SAMPLE *som; 
+	ALLEGRO_SAMPLE *som;
 	ALLEGRO_FONT *fonte;
 	ALLEGRO_FONT *fonte_menu;
 	ALLEGRO_FONT *fonte_logo;

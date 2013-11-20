@@ -55,7 +55,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
-
 		al_wait_for_event(game.fila_eventos, &ev);
 		setKeys(keys, player, &ev);
 
@@ -436,10 +435,22 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
 		//al_draw_bitmap(circuito, 0, 0 , 0);
-		if (game.level == 0) drawLevelZero(levelZero);
-		if (game.level == 1) drawLevelOne(levelOne);
-		if (game.level == 2) drawLevelDois(levelDois);
-		if (game.level == 3) drawLevelTres(levelTres);
+		if (game.level == 0){
+		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			drawLevelZero(levelZero);
+		}
+		if (game.level == 1){
+		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			drawLevelOne(levelOne);
+		}
+		if (game.level == 2){
+             //      al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			drawLevelDois(levelDois);
+		}
+		if (game.level == 3) {
+			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			drawLevelTres(levelTres);
+		}
 		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);

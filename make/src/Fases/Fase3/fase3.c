@@ -52,6 +52,8 @@ void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFou
 	if(!gateOne && gateTwo && (!gateThree || !gateFour)) levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-UM.png");
 	else levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-ZERO.png");
 
+       levelTres->chances--;
+
 }
 
 void initDrawGatesLevelTres(LevelTres *LevelTres){
@@ -67,7 +69,8 @@ void initDrawGatesLevelTres(LevelTres *LevelTres){
 	LevelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX0X.png");
 	LevelTres->circ4 = al_load_bitmap("./data/levels/fase3/DES1-XXX0.png");
 	LevelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-ZERO.png");
-	printf("iniciou\n");
+	LevelTres->chances = 4;
+	printf("iniciou com %d chances\n", LevelTres->chances);
 }
 void drawLevelTres(LevelTres *LevelTres){
 	al_draw_bitmap(LevelTres->circ4, 0, 0 , 0);
