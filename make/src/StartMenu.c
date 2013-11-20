@@ -60,7 +60,9 @@ void StartMenu()
 				if(MenuPosition == 0)
 				{
 					GameLoop_Fase1(ev);
-					PrintMenu(0);
+					sair = true;
+					break;
+					//PrintMenu(0);
 				}
 				else{
 					sair = true;

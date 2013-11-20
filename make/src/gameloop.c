@@ -63,7 +63,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		if(player->state.y + player->image.frameHeight > 600) player->state.y = 600 - player->image.frameHeight;
 		if(player->state.y < 0) player->state.y = 0;
 
-		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+		if((ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE))
 		{
 			//drawCirc = false;
 			sair = true;
@@ -444,11 +444,16 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			drawLevelOne(levelOne);
 		}
 		if (game.level == 2){
-             //      al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelDois(levelDois);
 		}
 		if (game.level == 3) {
-			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			if (levelTres->chances == 0){
+				sair = true;
+				game.level = 1;
+				al_destroy_sample_instance(game.songInstance);
+			}
+			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelTres(levelTres);
 		}
 		//drawLevelOne(levelOne);
