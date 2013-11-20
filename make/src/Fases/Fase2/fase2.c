@@ -2,7 +2,7 @@
 #include "fase2.h"
 #include "../../Player.h"
 
-void logicLevelDois(bool gateOne, bool gateTwo, bool gateThree, Player *player){
+/*void logicLevelDois(bool gateOne, bool gateTwo, bool gateThree, Player *player){
 	if ((player->state.y > 54 && player->state.y < 122) &&
 		(player->state.x > 40 && player->state.x < 46))
 	{
@@ -31,9 +31,9 @@ void logicLevelDois(bool gateOne, bool gateTwo, bool gateThree, Player *player){
 		else gateThree = false;
 		printf("Mudando porta 3\n");
 	}
-}
+}*/
 
-void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *levelDois){
+void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *levelDois, bool *complete){
 	levelDois->circ6 = al_load_bitmap("./data/levels/fase2/circ_off.png");
 	levelDois->portas = al_load_bitmap("./data/levels/fase2/portas.png");
 	if(gateOne)
@@ -73,6 +73,7 @@ void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *l
 	{
 		levelDois->circ5 = al_load_bitmap("./data/levels/fase2/circ5_on.png");
 		levelDois->isOn[4] = true;
+		*complete = true;
 	}
 	else
 	{

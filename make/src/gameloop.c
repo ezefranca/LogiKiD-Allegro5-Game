@@ -46,7 +46,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
 	createDialogs(dialog);
-      Gates gate;
+    Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
 	logicLevelZero(inputs[0], levelZero);
@@ -102,7 +102,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				musicPlayer(game.mute);
 				//drawCirc = true;
 				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-				drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+				drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 			break;
 
 			case ALLEGRO_KEY_4:
@@ -156,7 +156,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						if(inputs[0] == false){
 							inputs[0] = true;
 							printf("False para true\n");
-							complete = true;
 						}
 						else{
 							inputs[0] = false;
@@ -185,7 +184,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							printf("True para false\n");
 						}
 					}
-					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 				}
 				if(game.level == 2)
 				{
@@ -194,7 +193,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						if(inputs[0] == false){
 							inputs[0] = true;
 							printf("False para true\n");
-							complete = true;
 						}
 						else{
 							inputs[0] = false;
@@ -223,7 +221,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							printf("True para false\n");
 						}
 					}
-					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
+					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
 				}
 				if(game.level == 3)
 				{
@@ -232,7 +230,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						if(inputs[0] == false){
 							inputs[0] = true;
 							printf("False para true\n");
-							complete = true;
 						}
 						else{
 							inputs[0] = false;
@@ -296,6 +293,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 			break;
 
 			case ALLEGRO_KEY_ENTER:
+				printf("%d\n", complete);
 				if(complete){
 					if(game.level == 2){
 						game.level = 3;
@@ -328,7 +326,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						inputs[2] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelDois(levelDois);
-						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois);
+						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
 						printf("Objetivo completo\n");
 						complete = false;
 					}
@@ -343,7 +341,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						inputs[0] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelOne(levelOne);
-						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne);
+						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 						printf("Objetivo completo\n");
 						complete = false;
 					}

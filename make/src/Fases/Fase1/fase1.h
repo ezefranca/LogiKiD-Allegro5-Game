@@ -20,7 +20,7 @@ typedef struct {
 } LevelOne;
 
 //void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player);
-void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne);
+void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete);
 void drawLevelOne(LevelOne *levelOne);
 void destroyLevelOne(LevelOne *levelOne);
 void initDrawGatesLevelOne(LevelOne *levelOne);
