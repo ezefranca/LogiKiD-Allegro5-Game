@@ -49,7 +49,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
     Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
+<<<<<<< HEAD
 	logicLevelZero(inputs[0], levelZero);
+=======
+	logicLevelZero(&inputs[0], &complete, levelZero, player);
+>>>>>>> tales
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
 	//al_start_timer(game.timer);
@@ -135,6 +139,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				if(game.level == 0)
 				{
+<<<<<<< HEAD
 					if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
 					{
 						if(inputs[0] == false)
@@ -184,10 +189,18 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							printf("True para false\n");
 						}
 					}
+=======
+					logicLevelZero(&inputs[0], &complete, levelZero, player);
+				}
+				if(game.level == 1)
+				{	
+					logicLevelOne(&inputs[0], &inputs[1], &inputs[2], player);
+>>>>>>> tales
 					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 				}
 				if(game.level == 2)
 				{
+<<<<<<< HEAD
 					if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
 					{
 						if(inputs[0] == false){
@@ -270,6 +283,15 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						}
 					}
 					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], levelTres);
+=======
+					logicLevelDois(&inputs[0], &inputs[1], &inputs[2], player);
+					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
+				}
+				if(game.level == 3)
+				{					
+					logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
+					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
+>>>>>>> tales
 				}
 
 				if(game.level == 4)
@@ -435,6 +457,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		//al_draw_bitmap(circuito, 0, 0 , 0);
 		if (game.level == 0){
 		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+<<<<<<< HEAD
 			if (player->state.y > 300){
 				al_draw_text(game.fonte_menu, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTRE, "Utilize as teclas:");
 				al_draw_text(game.fonteKeys, al_map_rgb(0, 0, 0), 350, 20, ALLEGRO_ALIGN_CENTRE, "A S D F");
@@ -445,6 +468,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				al_draw_text(game.fonteKeys, al_map_rgb(0, 0, 0), 350, 20, ALLEGRO_ALIGN_CENTRE, "SPACE");
 				al_draw_text(game.fonte_menu, al_map_rgb(255, 255, 255), 400, 80, ALLEGRO_ALIGN_CENTRE, "Para acionar o dispositivo");
 			}
+=======
+>>>>>>> tales
 			drawLevelZero(levelZero);
 		}
 		if (game.level == 1){

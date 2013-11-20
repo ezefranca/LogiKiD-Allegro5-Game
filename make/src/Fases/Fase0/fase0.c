@@ -1,12 +1,31 @@
 #include "../../comum.h"
 #include "fase0.h"
 
+<<<<<<< HEAD
 void logicLevelZero(bool gateOne, LevelZero *levelZero){
 	if(gateOne)
 	{
 		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_on.png");
 	}
 	if(!gateOne)
+=======
+void logicLevelZero(bool *gateOne, bool *complete, LevelZero *levelZero, Player *player){
+	if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
+	{
+		if(*gateOne == false)
+		{
+			*gateOne  = true;
+		}
+		else *gateOne = false;
+		printf("Mudando porta 1\n");
+	}
+	if(*gateOne)
+	{
+		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_on.png");
+		*complete = true;
+	}
+	if(!*gateOne)
+>>>>>>> tales
 	{
 		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_off.png");
 	}
