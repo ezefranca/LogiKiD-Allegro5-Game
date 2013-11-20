@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.29)  17 NOV 2013 17:31
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.10.29)  17 NOV 2013 17:42
 entering extended mode
  %&-line parsing enabled.
-**main.tex
-(./main.tex
+**artigo.tex
+(./artigo.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -334,8 +334,8 @@ Now handling font encoding U ...
    defining Unicode char U+2026 (decimal 8230)
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
-)) (./main.aux)
-\openout1 = `main.aux'.
+)) (./artigo.aux)
+\openout1 = `artigo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
@@ -452,20 +452,40 @@ File: fig2.jpg Graphic file (type jpg)
  <use fig2.jpg>
 <table.jpg, id=13, 365.2044pt x 217.2918pt>
 File: table.jpg Graphic file (type jpg)
- <use table.jpg> [2 <./fig1.jpg> <./fig2.jpg>] (./main.bbl) [3 <./table.jpg>] (
-./main.aux)
+ <use table.jpg>
+
+LaTeX Warning: Citation `knuth:84' on page 2 undefined on input line 119.
+
+
+LaTeX Warning: Citation `boulic:91' on page 2 undefined on input line 120.
+
+
+LaTeX Warning: Citation `smith:99' on page 2 undefined on input line 120.
+
+
+LaTeX Warning: Citation `barbosa:97' on page 2 undefined on input line 120.
+
+
+LaTeX Warning: Citation `rau:11' on page 2 undefined on input line 120.
+
+
+LaTeX Warning: Citation `kishimoto:08' on page 2 undefined on input line 121.
+
+[2 <./fig1.jpg> <./fig2.jpg>]
+No file artigo.bbl.
+[3 <./table.jpg>] (./artigo.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 2521 strings out of 495061
- 31751 string characters out of 1182620
- 91904 words of memory out of 3000000
- 5666 multiletter control sequences out of 15000+50000
+ 2523 strings out of 495061
+ 31796 string characters out of 1182620
+ 91885 words of memory out of 3000000
+ 5670 multiletter control sequences out of 15000+50000
  21033 words of font info for 44 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 30i,8n,28p,443b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 30i,8n,28p,445b,310s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type
 1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhv
@@ -473,7 +493,7 @@ b8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/
 texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts
 /type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on main.pdf (3 pages, 205883 bytes).
+Output written on artigo.pdf (3 pages, 204840 bytes).
 PDF statistics:
  44 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
