@@ -29,6 +29,5 @@ void apaga_config(lista *l, char *var);
 
 void imprime_config(lista *l);
 
-void libera_string(char *string);
 
 #endif
