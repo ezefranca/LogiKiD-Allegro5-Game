@@ -431,6 +431,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             }
         }
 
+bool GameOverScreen() {
+	//al_draw_bitmap("./data/levels/blackscreen.png", 0, 0, 0);
+	al_destroy_sample_instance(game.songInstance);
+	return true;
+}
+
         //AQUI TODA ITERAÇÃO CARREGA IMAGEM. PRECISA CORRIGIR
 		//Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
@@ -449,13 +455,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 3) {
 			if (levelTres->chances == 0){
-				sair = true;
-				game.level = 1;
-				al_destroy_sample_instance(game.songInstance);
+				sair = GameOverScreen();
 			}
 			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelTres(levelTres);
 		}
+
 		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
@@ -564,7 +569,6 @@ bool isCollidingGlobal(Player *player, int level){
 	else return false;
 */
 }
-
 void musicPlayer(int mute){
 	if (mute == 0){
 		printf("***************MUTE*****************\n");

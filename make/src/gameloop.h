@@ -5,3 +5,4 @@
 #include <allegro5/allegro_primitives.h>
 
 void GameLoop_Fase1(ALLEGRO_EVENT ev);
+bool GameOverScreen ();
