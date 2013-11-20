@@ -1,18 +1,13 @@
-<<<<<<< HEAD
-=======
 #ifndef FASE1_H
 #define FASE1_H
 
->>>>>>> tales
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
 #include <stdio.h>
 
-<<<<<<< HEAD
-=======
+
 #include "../../Player.h"
->>>>>>> tales
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_image.h>
@@ -28,14 +23,7 @@ typedef struct {
 
 	bool isOn[5];
 } LevelOne;
-<<<<<<< HEAD
 
-//void logicLevelOne(bool gateOne, bool gateTwo, bool gateThree, Player *player);
-void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete);
-void drawLevelOne(LevelOne *levelOne);
-void destroyLevelOne(LevelOne *levelOne);
-void initDrawGatesLevelOne(LevelOne *levelOne);
-=======
 //O que eu quero fazer é usar essa função aqui
 void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete);
@@ -44,4 +32,3 @@ void destroyLevelOne(LevelOne *levelOne);
 void initDrawGatesLevelOne(LevelOne *levelOne);
 
 #endif
->>>>>>> tales
