@@ -17,7 +17,7 @@ config *aloca() {
 void libera_config(config *l) {
     elemento *e, *temp;
 
-    e = l->comeco;
+    e = l->inicio;
     while (e != NULL) {
         temp = e->proximo;
         libera_string(e->string);
@@ -101,6 +101,7 @@ void imprime_config(config *l) {
 }
 
 void libera_string(char *string) {
+    int i;
     for (i = 0; i < strlen(string); i++) {
         free(string[i]);
     }
@@ -123,7 +124,7 @@ bool load_config(char *config_file, int type){
             exit(EXIT_FAILURE);
     }
 
-    entrada = fopen(config_file. "r");
+    entrada = fopen(config_file, "r");
     
     if(!entrada) {
 	fprint(stderr, "erro na leitura do arquivo de configuração.\n");
@@ -199,13 +200,13 @@ bool load_idioma(char *config_file) {
 
 char *get_configuracao(char *var) {
     if(loaded_config == 1) {
-        return retorna_config(arquivo_configuracao, var);
+        return retorna_config(&arquivo_configuracao, var);
     }
 }
 
 char *get_idioma(char *var) {
     if(loaded_idioma == 1) {
-        return retorna_config(arquivo_idioma, var);
+        return retorna_config(&arquivo_idioma, var);
     }
 }
 
