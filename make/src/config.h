@@ -36,4 +36,9 @@ void limpa_idioma();
 void apaga_configuracao(char *var);
 
 void apaga_idioma(char *var);
+
+void imprime_idioma();
+
+void imprime_configuracao();
+
 #endif

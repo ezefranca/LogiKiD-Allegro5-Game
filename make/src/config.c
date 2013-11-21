@@ -240,6 +240,14 @@ void apaga_idioma(char *var){
     apaga_config(&arquivo_idioma, char *var);
 }
 
-void apaga_config(char *var){
+void apaga_configuracao(char *var){
     apaga_config(&arquivo_configuracao, char *var);
+}
+
+void imprime_idioma(char *var){
+    imprime_config(&arquivo_idioma);
+}
+
+void imprime_configuracao(char *var){
+    imprime_config(&arquivo_configuracao);
 }
