@@ -235,3 +235,11 @@ void limpa_config() {
 void limpa_idioma() {
     libera_config(&arquivo_idioma);
 }
+
+void apaga_idioma(char *var){
+    apaga_config(&arquivo_idioma, char *var);
+}
+
+void apaga_config(char *var){
+    apaga_config(&arquivo_configuracao, char *var);
+}

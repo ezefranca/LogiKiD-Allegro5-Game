@@ -19,18 +19,21 @@ typedef struct {
   elemento *inicio;
 } config;
 
-config *aloca();
+void imprime_config(config *l);
 
-void libera_config(config *l);
+bool load_configuracao(char *config_file);
 
-void insere_config(config *l, char *var, char *string);
+bool load_idioma(char *config_file);
 
-char *retorna_config(config *l, char *var);
+char *get_configuracao(char *var);
 
-void apaga_config(lista *l, char *var);
+char *get_idioma(char *var);
 
-void imprime_config(lista *l);
+void limpa_config();
 
-bool load_configuracao();
+void limpa_idioma();
 
+void apaga_configuracao(char *var);
+
+void apaga_idioma(char *var);
 #endif
