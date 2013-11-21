@@ -152,6 +152,7 @@ bool load_config(char *config_file, int type){
                 break;
         }
     }
+    fclose(entrada);
     
     switch(type){
         case CONFIG:
