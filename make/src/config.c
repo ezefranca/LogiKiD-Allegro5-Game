@@ -111,30 +111,36 @@ int conta_linhas(FILE *entrada) {
     int lines;
     char caracter;
     lines = 1;
-    
-    while ((caracter=fgetc(entrada)) != EOF){
-        if (caracter=='\n')
-           lines++;
+
+    while ((caracter = fgetc(entrada)) != EOF) {
+        if (caracter == '\n')
+            lines++;
     }
     //Retorna o ponteiro para inicio do arquivo.
     rewind(entrada);
     return lines;
 }
 
-int conta_until(FILE *entrada, char until){
+int conta_until(FILE *entrada, char until) {
     int count;
     char caracter;
-    
-    for(count = 0; (caracter = fgetc(entrada)) != until && caracter != EOF; count++);
+
+    for (count = 0; (caracter = fgetc(entrada)) != until && caracter != EOF; count++);
+    //melhorar essa parte
+    if (until == '\n' && caracter != EOF) {
+        return --count;
+    }
     return count;
 }
 
-bool load_config(char *config_file, int type){
+bool load_config(char *config_file, int type) {
     char **var, **string;
     FILE *entrada;
-    int i, linhas, t;
-    
-    switch(type){
+    int i, linhas, count, before;
+    int *tstring, *tvar;
+    char c;
+
+    switch (type) {
         case CONFIG:
             aloca(&arquivo_configuracao);
             break;
@@ -147,28 +153,36 @@ bool load_config(char *config_file, int type){
     }
 
     entrada = fopen(config_file, "r");
-    
-    if(!entrada) {
-	fprintf(stderr, "erro na leitura do arquivo de configuração.\n");
+
+    if (!entrada) {
+        fprintf(stderr, "erro na leitura do arquivo de configuração.\n");
         return false;
     }
 
     linhas = conta_linhas(entrada);
-    var = malloc(linhas * sizeof(char));
-    string = malloc(linhas * sizeof(char));
-    
-    for(i = 0; i < linhas; i++) {
-        var[i] = malloc(t * sizeof(char));
-        string[i] = malloc(conta_until(entrada, '\n') * sizeof(char));
+    var = malloc(linhas * sizeof (char));
+    string = malloc(linhas * sizeof (char));
+    tvar = malloc(linhas * sizeof (int));
+    tstring = malloc(linhas * sizeof (int));
+
+    for (i = 0; i < linhas; i++) {
+        tvar[i] = conta_until(entrada, '=');
+        tstring[i] = conta_until(entrada, '\n');
+
+        var[i] = malloc(tvar[i] * sizeof (char));
+        string[i] = malloc(tstring[i] * sizeof (char));
     }
     rewind(entrada);
-    
-    for(i = 0; i < linhas; i++) {
-        fgets(var[i], sizeof(var[i]), entrada);
-        //Consome o sinal de igual.
-        getc(entrada);
-        fgets(string[i], sizeof(string[i]), entrada);
-        switch(type){
+
+    for (i = 0; i < linhas; i++) {
+        fgets(var[i], tvar[i] + 1, entrada);
+        fgetc(entrada);
+        fgets(string[i], tstring[i] + 1, entrada);
+        do {
+            fscanf(entrada, "%c", &c);
+        } while (c != '\n');
+
+        switch (type) {
             case CONFIG:
                 insere_config(&arquivo_configuracao, var[i], string[i]);
                 break;
@@ -178,8 +192,8 @@ bool load_config(char *config_file, int type){
         }
     }
     fclose(entrada);
-    
-    switch(type){
+
+    switch (type) {
         case CONFIG:
             loaded_config = 1;
             break;
@@ -187,11 +201,9 @@ bool load_config(char *config_file, int type){
             loaded_idioma = 1;
             break;
     }
-    
+
     return true;
 }
-
-
 
 
 //Utilizar no projeto as funções abaixo.
@@ -205,21 +217,21 @@ bool load_idioma(char *config_file) {
 }
 
 char *get_configuracao(char *var) {
-    if(loaded_config == 1) {
+    if (loaded_config == 1) {
         return retorna_config(&arquivo_configuracao, var);
     }
 }
 
 char *get_idioma(char *var) {
-    if(loaded_idioma == 1) {
+    if (loaded_idioma == 1) {
         return retorna_config(&arquivo_idioma, var);
     }
 }
 
-void limpa_config(){
+void limpa_config() {
     libera_config(&arquivo_configuracao);
 }
 
-void limpa_idioma(){
+void limpa_idioma() {
     libera_config(&arquivo_idioma);
 }
