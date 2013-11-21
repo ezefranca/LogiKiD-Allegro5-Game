@@ -12,7 +12,9 @@ void createLevelOne(LevelOne *levelOne){
 	levelOne->circ1_off = al_load_bitmap("./data/levels/fase1/circ1_off.png");
 	levelOne->circ2_off = al_load_bitmap("./data/levels/fase1/circ2_off.png");
 	levelOne->circ3_off = al_load_bitmap("./data/levels/fase1/circ3_off.png");
+	levelOne->teste = 25;
 }
+
 
 void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player)
 {	
@@ -103,8 +105,6 @@ void initDrawGatesLevelOne(LevelOne *levelOne){
 	for(i = 0; i < 5; i++){
 		levelOne->isOn[i] = false;
 	}
-	levelOne->circ4 = al_load_bitmap("./data/levels/fase1/circ4_on.png");
-	levelOne->circ5 = al_load_bitmap("./data/levels/fase1/circ5_on.png");
 }
 
 void drawLevelOne(LevelOne *levelOne){

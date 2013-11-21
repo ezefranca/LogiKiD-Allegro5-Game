@@ -31,10 +31,13 @@ typedef struct {
 
 	ALLEGRO_BITMAP *portas;
 
+	int teste;
+
 	bool isOn[5];
 } LevelOne;
 
 //O que eu quero fazer é usar essa função aqui
+void createLevelOne(LevelOne *levelOne);
 void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete);
 void drawLevelOne(LevelOne *levelOne);
