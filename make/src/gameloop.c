@@ -221,14 +221,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						player->state.idleB = true;
 						inputs[0] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						createLevelOne(levelOne);
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 						printf("Objetivo completo\n");
 						complete = false;
 					}
-
 				}
-
 			}
 		}
 
