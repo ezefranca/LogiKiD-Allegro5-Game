@@ -16,7 +16,7 @@ $(ODIR)/%.o: $(SRCDIR)/%.c
 	@$(call make_dir)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(OUTPUTDIR)/ProjetoPI2: $(OBJ) 
+$(OUTPUTDIR)/logiKid: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 	$(info ************  COMPILADO COM SUCESSO ************)
 
@@ -31,6 +31,6 @@ define make_dir
 endef
 
 .PHONY: clean
-    
+
 clean:
 	rm -f $(ODIR)/*.o *~ allegro.log $(SRCDIR)/*~ $(OUTPUTDIR)/*
