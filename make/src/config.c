@@ -103,8 +103,28 @@ void imprime_config(config *l) {
 void libera_string(char *string) {
     int i;
     for (i = 0; i < strlen(string); i++) {
-        free(string[i]);
+        free(&string[i]);
     }
+}
+
+int conta_linhas(FILE *entrada) {
+    int caracter, lines;
+    lines = 0;
+    
+    while (EOF !=(caracter=fgetc(entrada))) {
+        if (caracter=='\n')
+           lines++;
+    }
+    //Retorna o ponteiro para inicio do arquivo.
+    rewind(entrada);
+    return lines;
+}
+
+int conta_until(FILE *entrada, char until){
+    int count;
+    
+    for(count=0; getc(entrada) != until;count++);
+    return count;
 }
 
 bool load_config(char *config_file, int type){
@@ -127,15 +147,15 @@ bool load_config(char *config_file, int type){
     entrada = fopen(config_file, "r");
     
     if(!entrada) {
-	fprint(stderr, "erro na leitura do arquivo de configuração.\n");
+	fprintf(stderr, "erro na leitura do arquivo de configuração.\n");
         return false;
     }
 
     linhas = conta_linhas(entrada);
     var = malloc(linhas * sizeof(char));
     for(i = 0; i < linhas; i++) {
-        var[i] = malloc(conta_until(&entrada, '=') * sizeof(char));
-        string[i] = malloc(conta_until(&entrada, '\n') * sizeof(char));
+        var[i] = malloc(conta_until(entrada, '=') * sizeof(char));
+        string[i] = malloc(conta_until(entrada, '\n') * sizeof(char));
     }
     rewind(entrada);
     
@@ -167,25 +187,7 @@ bool load_config(char *config_file, int type){
     return true;
 }
 
-int conta_linhas(FILE *entrada) {
-    int caracter, lines;
-    lines = 0;
-    
-    while (EOF !=(caracter=fgetc(entrada))) {
-        if (caracter=='\n')
-           lines++;
-    }
-    //Retorna o ponteiro para inicio do arquivo.
-    rewind(entrada);
-    return lines;
-}
 
-int conta_until(FILE *entrada, char until){
-    int count;
-    
-    for(count=0; getc(entrada) != until;count++);
-    return count;
-}
 
 
 //Utilizar no projeto as funções abaixo.

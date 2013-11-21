@@ -6,9 +6,8 @@
  
 #ifndef CONFIG_H
 #define CONFIG_H
-
-#DEFINE CONFIG 0
-#DEFINE IDIOMA 1
+#define CONFIG 0
+#define IDIOMA 1
 
 typedef struct _elemento {
   char *string;
