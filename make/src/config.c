@@ -108,10 +108,11 @@ void libera_string(char *string) {
 }
 
 int conta_linhas(FILE *entrada) {
-    int caracter, lines;
-    lines = 0;
+    int lines;
+    char caracter;
+    lines = 1;
     
-    while (EOF !=(caracter=fgetc(entrada))) {
+    while ((caracter=fgetc(entrada)) != EOF){
         if (caracter=='\n')
            lines++;
     }
@@ -122,15 +123,16 @@ int conta_linhas(FILE *entrada) {
 
 int conta_until(FILE *entrada, char until){
     int count;
+    char caracter;
     
-    for(count=0; getc(entrada) != until;count++);
+    for(count = 0; (caracter = fgetc(entrada)) != until && caracter != EOF; count++);
     return count;
 }
 
 bool load_config(char *config_file, int type){
     char **var, **string;
     FILE *entrada;
-    int i, linhas;
+    int i, linhas, t;
     
     switch(type){
         case CONFIG:
@@ -153,8 +155,10 @@ bool load_config(char *config_file, int type){
 
     linhas = conta_linhas(entrada);
     var = malloc(linhas * sizeof(char));
+    string = malloc(linhas * sizeof(char));
+    
     for(i = 0; i < linhas; i++) {
-        var[i] = malloc(conta_until(entrada, '=') * sizeof(char));
+        var[i] = malloc(t * sizeof(char));
         string[i] = malloc(conta_until(entrada, '\n') * sizeof(char));
     }
     rewind(entrada);
