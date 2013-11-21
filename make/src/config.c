@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "config.h"
 
@@ -104,19 +105,62 @@ void libera_string(char *string) {
     }
 }
 
-bool load_configuracao(config *l, char *config_file){
+bool load_configuracao(char *config_file){
+    char **var, **string;
     FILE *entrada;
+    int i, linhas;
+    
+    aloca(&arquivo_configuracao);
+    
     entrada = fopen(config_file. "r");
+    
     if(!entrada) {
 	fprint(stderr, "erro na leitura do arquivo de configuração.\n");
         return false;
     }
+
+    linhas = conta_linhas(entrada);
+    var = malloc(linhas * sizeof(char));
+    for(i = 0; i < linhas; i++) {
+        var[i] = malloc(conta_until(&entrada, '=') * sizeof(char));
+        string[i] = malloc(conta_until(&entrada, '\n') * sizeof(char));
+    }
+    rewind(entrada);
+    
+    for(i = 0; i < linhas; i++) {
+        fgets(var[i], sizeof(var[i]), entrada);
+        //Consome o sinal de igual.
+        getc(entrada);
+        fgets(string[i], sizeof(string[i]), entrada);
+        insere_config(&lista, var[i], string[i]);
+    }
     
     loaded = 1;
+    return true;
 }
 
 char *get_configuracao(char *var) {
     if(loaded == 1) {
-        return retorna_config(&arquivo_configuracao, var);
+        return retorna_config(arquivo_configuracao, var);
     }
+}
+
+int conta_linhas(FILE *entrada) {
+    int caracter, lines;
+    lines = 0;
+    
+    while (EOF !=(caracter=fgetc(entrada))) {
+        if (caracter=='\n')
+           lines++;
+    }
+    //Retorna o ponteiro para inicio do arquivo.
+    rewind(entrada);
+    return lines;
+}
+
+int conta_until(FILE *entrada, char until){
+    int count;
+    
+    for(count=0; getc(entrada) != until;count++);
+    return count;
 }
