@@ -7,6 +7,9 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
+#DEFINE CONFIG 0
+#DEFINE IDIOMA 1
+
 typedef struct _elemento {
   char *string;
   char *var;

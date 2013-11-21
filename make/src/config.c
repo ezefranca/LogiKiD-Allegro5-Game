@@ -4,7 +4,9 @@
 #include "config.h"
 
 config arquivo_configuracao;
-int loaded = 0;
+config arquivo_idioma;
+int loaded_config = 0;
+int loaded_idioma = 0;
 
 config *aloca() {
     config *l = malloc(sizeof (config));
@@ -14,7 +16,6 @@ config *aloca() {
 
 void libera_config(config *l) {
     elemento *e, *temp;
-    int i;
 
     e = l->comeco;
     while (e != NULL) {
@@ -105,13 +106,23 @@ void libera_string(char *string) {
     }
 }
 
-bool load_configuracao(char *config_file){
+bool load_config(char *config_file, int type){
     char **var, **string;
     FILE *entrada;
     int i, linhas;
     
-    aloca(&arquivo_configuracao);
-    
+    switch(type){
+        case CONFIG:
+            aloca(&arquivo_configuracao);
+            break;
+        case IDIOMA:
+            aloca(&arquivo_idioma);
+            break;
+        default:
+            fprintf(stderr, "Tipo incorreto de configuração\n");
+            exit(EXIT_FAILURE);
+    }
+
     entrada = fopen(config_file. "r");
     
     if(!entrada) {
@@ -132,17 +143,26 @@ bool load_configuracao(char *config_file){
         //Consome o sinal de igual.
         getc(entrada);
         fgets(string[i], sizeof(string[i]), entrada);
-        insere_config(&lista, var[i], string[i]);
+        switch(type){
+            case CONFIG:
+                insere_config(&arquivo_configuracao, var[i], string[i]);
+                break;
+            case IDIOMA:
+                insere_config(&arquivo_idioma, var[i], string[i]);
+                break;
+        }
     }
     
-    loaded = 1;
-    return true;
-}
-
-char *get_configuracao(char *var) {
-    if(loaded == 1) {
-        return retorna_config(arquivo_configuracao, var);
+    switch(type){
+        case CONFIG:
+            loaded_config = 1;
+            break;
+        case IDIOMA:
+            loaded_idioma = 1;
+            break;
     }
+    
+    return true;
 }
 
 int conta_linhas(FILE *entrada) {
@@ -163,4 +183,35 @@ int conta_until(FILE *entrada, char until){
     
     for(count=0; getc(entrada) != until;count++);
     return count;
+}
+
+
+//Utilizar no projeto as funções abaixo.
+
+bool load_configuracao(char *config_file) {
+    return load_config(config_file, CONFIG);
+}
+
+bool load_idioma(char *config_file) {
+    return load_config(config_file, IDIOMA);
+}
+
+char *get_configuracao(char *var) {
+    if(loaded_config == 1) {
+        return retorna_config(arquivo_configuracao, var);
+    }
+}
+
+char *get_idioma(char *var) {
+    if(loaded_idioma == 1) {
+        return retorna_config(arquivo_idioma, var);
+    }
+}
+
+void limpa_config(){
+    libera_config(&arquivo_configuracao);
+}
+
+void limpa_idioma(){
+    libera_config(&arquivo_idioma);
 }
