@@ -117,7 +117,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 				}*/
 
-				if(game.level == 42)
+				/*if(game.level == 42)
 				{
 						textBox = al_load_bitmap("data/images/textbox.png");
 						al_draw_bitmap(textBox, 0, 450, 0);
@@ -125,7 +125,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						{
 							TextBoxLoad_matriz(&ev, dialog->texto_generico[i], 472 + i*25);
 						}
-				}
+				}*/
 			break;
 
 			case ALLEGRO_KEY_ENTER:

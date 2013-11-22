@@ -102,7 +102,7 @@ bool inicializar()
         return false;
     }
 
-    if(!load_configuracao("data/config/config.conf")){
+    /*if(!load_configuracao("data/config/config.conf")){
         fprintf(stderr, "Falha ao carregar configuração!\n");
         return false;
     }
@@ -111,7 +111,7 @@ bool inicializar()
     if(!load_idioma("data/idiomas/pt_br.conf")){
         fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
         return false;
-    }
+    }*/
      
      
         
