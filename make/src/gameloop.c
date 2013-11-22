@@ -73,10 +73,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if((ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE))
 		{
-			//drawCirc = false;
 			sair = true;
-			game.level = 1;
-			al_destroy_sample_instance(game.songInstance);
+			//al_destroy_sample_instance(game.songInstance);
 		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
@@ -88,8 +86,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				{
 					gate = MenuLoad(&ev, player);
 				}
-			break;*/			
+			break;*/
 
+			case ALLEGRO_KEY_ESCAPE:
+				sair = true;
+			break;
+			
 			case ALLEGRO_KEY_SPACE:
 
 				if(game.level == 0)
@@ -232,7 +234,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 2)
 		{
-            printf("Nao sei\n");
             //al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelDois(levelDois);
 			if(isDestroyed == false)
@@ -292,6 +293,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
         	al_flip_display();
       	}
 	}
+	al_destroy_sample_instance(game.songInstance);
 	free(keys);
 	free(player);
 	free(dialog);
@@ -393,6 +395,5 @@ void musicPlayer(int mute){
         al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
         al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
         al_play_sample_instance(game.songInstance);
-
 	}
 }
