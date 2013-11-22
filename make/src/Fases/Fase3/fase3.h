@@ -25,6 +25,7 @@ typedef struct {
 	int chances;
 } LevelTres;
 
+
 void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFour, Player *player);
 void initDrawGatesLevelTres(LevelTres *LevelTres);
 void drawLevelTres(LevelTres *LevelTres);

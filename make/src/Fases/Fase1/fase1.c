@@ -1,10 +1,11 @@
-#include "fase1.h"
 #include "../../comum.h"
+#include "fase1.h"
+#include "../../Player.h"
 
 void createLevelOne(LevelOne *levelOne){
 	levelOne->portas = al_load_bitmap("./data/levels/fase1/circ_off.png");
-	levelOne->circ1_on = al_load_bitmap("./data/levels/fase1/circ1_on.png");	
-	levelOne->circ2_on = al_load_bitmap("./data/levels/fase1/circ2_on.png");	
+	levelOne->circ1_on = al_load_bitmap("./data/levels/fase1/circ1_on.png");
+	levelOne->circ2_on = al_load_bitmap("./data/levels/fase1/circ2_on.png");
 	levelOne->circ3_on = al_load_bitmap("./data/levels/fase1/circ3_on.png");
 	levelOne->circ4_on = al_load_bitmap("./data/levels/fase1/circ4_on.png");
 	levelOne->circ5_on = al_load_bitmap("./data/levels/fase1/circ5_on.png");
@@ -17,7 +18,7 @@ void createLevelOne(LevelOne *levelOne){
 
 
 void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player)
-{	
+{
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 	{
 		if(*gateOne == false){
@@ -75,8 +76,9 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 		levelOne->circ3 = levelOne->circ3_on;
 	}
 	else
-	{ 
+	{
 		levelOne->circ3 = levelOne->circ3_off;
+
 	}
 	if(gateOne && gateTwo)
 	{
@@ -97,6 +99,8 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 	{
 		levelOne->isOn[4] = false;
 	}
+	levelOne->circ4 = al_load_bitmap("./data/levels/fase1/circ4_on.png");
+	levelOne->circ5 = al_load_bitmap("./data/levels/fase1/circ5_on.png");
 }
 
 void initDrawGatesLevelOne(LevelOne *levelOne){

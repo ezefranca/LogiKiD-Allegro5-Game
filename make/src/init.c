@@ -5,6 +5,7 @@
  */
 
 #include "comum.h"
+#include "config.h"
 
 
 bool inicializar()
@@ -72,10 +73,10 @@ bool inicializar()
         return -1;
     }
 
-    game.fonte = al_load_font("data/circuito.ttf", 50, 10);
-    game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 20);
-    game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
-
+     game.fonte = al_load_font("data/circuito.ttf", 50, 10);
+     game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 20);
+     game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
+     game.fonteKeys = al_load_font("data/keys.otf", 50, 10);
 
     if (!game.fonte)
     {
@@ -101,6 +102,19 @@ bool inicializar()
         return false;
     }
 
+    if(!load_configuracao("data/config/config.conf")){
+        fprintf(stderr, "Falha ao carregar configuração!\n");
+        return false;
+    }
+     
+    //Carrega idioma padrão. 
+    if(!load_idioma("data/idiomas/pt_br.conf")){
+        fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
+        return false;
+    }
+     
+     
+        
     game.mute = 1;
     //Aqui você pode implementar um savestate
     // 42 é o valor do tutorial (instrucoes de jogo)

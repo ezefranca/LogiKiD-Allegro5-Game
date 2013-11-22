@@ -2,6 +2,7 @@
 #include "fase3.h"
 #include "../../Player.h"
 
+
 void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFour, Player *player)
 {
 	if((player->state.x > 0 && player->state.x < 20) && (player->state.y > 40 && player->state.y < 70))
@@ -51,6 +52,7 @@ void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFou
 }
 
 void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFour, bool *complete, LevelTres *levelTres){
+
 	al_draw_bitmap(levelTres->portas, 0, 0 , 0);
 	if(gateOne)  levelTres->circ1 = al_load_bitmap("./data/levels/fase3/DES1-1XXX.png");
 	if(gateTwo)  levelTres->circ2 = al_load_bitmap("./data/levels/fase3/DES1-X1XX.png");
@@ -72,11 +74,12 @@ void drawLogicLevelTres(bool gateOne, bool gateTwo, bool gateThree, bool gateFou
 	if(gateThree && !gateFour) levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX10.png");
 	if(gateThree && gateFour)  levelTres->circ3 = al_load_bitmap("./data/levels/fase3/DES1-XX11.png");
 
+
 	if(!gateOne && gateTwo && (!gateThree || !gateFour))
 	{
 		levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-UM.png");
 		*complete = true;
-	} 
+	}
 	else levelTres->circ5 = al_load_bitmap("./data/levels/fase3/DES1-ZERO.png");
 
     levelTres->chances++;

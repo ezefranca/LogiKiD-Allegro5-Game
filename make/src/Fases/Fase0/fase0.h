@@ -1,5 +1,7 @@
+
 #ifndef LEVELZERO_H
 #define LEVELZERO_H
+
 
 #include <string.h>
 #include <stdlib.h>
@@ -10,8 +12,8 @@
 #include <allegro5/allegro_ttf.h>
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_primitives.h>
-
 #include "../../Player.h"
+
 
 typedef struct {
 
@@ -33,3 +35,4 @@ void destroyLevelZero(LevelZero *levelZero);
 void initDrawGatesLevelZero(LevelZero *levelZero);
 
 #endif
+

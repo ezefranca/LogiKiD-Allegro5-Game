@@ -50,12 +50,20 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
 	createDialogs(dialog);
+<<<<<<< HEAD
     Gates gate;
 	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIconOn = al_load_bitmap("./data/images/icons/som.png");
 	ALLEGRO_BITMAP *soundIconOff = al_load_bitmap("./data/images/icons/sem_som.png");
 	ALLEGRO_BITMAP *soundIcon = soundIconOn;
 	
+=======
+      Gates gate;
+	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
+	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
+
+
+>>>>>>> master
 	createLevelZero(levelZero);
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
@@ -88,7 +96,12 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				{
 					gate = MenuLoad(&ev, player);
 				}
+<<<<<<< HEAD
 			break;*/			
+=======
+
+			break;
+>>>>>>> master
 
 			case ALLEGRO_KEY_SPACE:
 
@@ -97,7 +110,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					logicLevelZero(&inputs[0], &complete, levelZero, player);
 				}
 				if(game.level == 1)
-				{	
+				{
 					logicLevelOne(&inputs[0], &inputs[1], &inputs[2], player);
 					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 				}
@@ -107,15 +120,33 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
 				}
 				if(game.level == 3)
-				{					
+				{
 					logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
 					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 				}
+<<<<<<< HEAD
 
+=======
+				if(game.level == 4)
+				{
+
+				}
+
+				if(game.level == 42)
+				{
+						textBox = al_load_bitmap("data/images/textbox.png");
+						al_draw_bitmap(textBox, 0, 450, 0);
+						for(i = 0; i < 2; i++)
+						{
+							TextBoxLoad_matriz(&ev, dialog->texto_generico[i], 472 + i*25);
+						}
+				}
+>>>>>>> master
 			break;
 
 			case ALLEGRO_KEY_ENTER:
 				printf("%d\n", complete);
+<<<<<<< HEAD
 				if(complete){
 
 					isDestroyed = false;
@@ -133,6 +164,25 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					if(game.level == 2){
 						levelTres = malloc(sizeof(LevelTres));
 						game.level = 3;
+=======
+
+				if(complete)
+				{
+					if(game.level == 2){
+						levelTres = malloc(sizeof(LevelTres));
+						game.level = 3;
+						player->state.x = 350;
+						player->state.y = 20;
+						player->state.idleE = false;
+						player->state.idleD = false;
+						player->state.idleC = false;
+						player->state.idleB = true;
+
+						inputs[0] = true;
+						inputs[1] = false;
+						inputs[2] = false;
+						inputs[3] = false;
+>>>>>>> master
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelTres(levelTres);
 						drawLevelTres(levelTres);
@@ -140,6 +190,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						complete = false;
 						//free(levelDois);
 					}
+
 					if(game.level == 1){
 						levelDois = malloc(sizeof(LevelDois));
 						game.level = 2;
@@ -153,6 +204,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					if(game.level == 0){
 						levelOne = malloc(sizeof(LevelOne));
 						game.level = 1;
+<<<<<<< HEAD
+=======
+						inputs[0] = false;
+>>>>>>> master
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelOne(levelOne);
 						initDrawGatesLevelOne(levelOne);
@@ -166,6 +221,10 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
 			if(!isCollidingGlobal(player, game.level))
 			{
 				movePlayer(keys, player);
@@ -174,22 +233,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 		}
 
 	    //IMPLEMENTACAO MOUSE PARA TIRAR O SOM
-        // Se o evento foi de movimentação do mouse
-        /*if (ev.type == ALLEGRO_EVENT_MOUSE_AXES)
-        {
-        	printf("%d X %d Y \n", ev.mouse.x, ev.mouse.y);
-            // Verificamos se ele está sobre a região do botao de mute
-            if (ev.mouse.x > 750 && ev.mouse.x <= 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
-            {
-                //em cima do mute
-            }
-            else
-            {
-                //fora do mute
-            }
-        }*/
-
-        // Ou se o evento foi um clique do mouse
+          // Se o evento foi um clique do mouse
         if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
         {
         	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
@@ -254,8 +298,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				isDestroyed = true;
 			}
 		}
-
-		//drawLevelOne(levelOne);
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
 
@@ -370,7 +412,8 @@ void musicPlayer(int mute){
 	} else if(mute == 1){
 			if (game.songInstance != NULL)
 			al_destroy_sample_instance(game.songInstance);
-		printf("***************PLAY*****************\n");
+		      printf("***************PLAY*****************\n");
+
 		switch (game.level){
 			case 0:
 			game.song = launch_song;
@@ -392,7 +435,7 @@ void musicPlayer(int mute){
 			break;
 		}
 
-			game.songInstance = al_create_sample_instance(game.song);
+		    game.songInstance = al_create_sample_instance(game.song);
                 al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
                 al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
                 al_play_sample_instance(game.songInstance);
