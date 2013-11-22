@@ -1,3 +1,4 @@
+#include "config.h"
 
 config arquivo_configuracao;
 config arquivo_idioma;
