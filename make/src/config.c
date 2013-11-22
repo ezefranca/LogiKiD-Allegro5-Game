@@ -14,7 +14,7 @@ config *aloca() {
     return l;
 }
 
-void libera_config(config *l) {
+void libera_config(config *l, type) {
     elemento *e, *temp;
 
     e = l->inicio;
@@ -27,6 +27,12 @@ void libera_config(config *l) {
         e = temp;
     }
     free(l);
+    if(type == CONFIG) {
+        loaded_config = 0;
+    }
+    else if(type == IDIOMA) {
+        loaded_idioma = 0;
+    }
 }
 
 void insere_config(config *l, char *var, char *string) {
@@ -234,11 +240,11 @@ char *get_idioma(char *var) {
 }
 
 void limpa_config() {
-    libera_config(&arquivo_configuracao);
+    libera_config(&arquivo_configuracao, CONFIG);
 }
 
 void limpa_idioma() {
-    libera_config(&arquivo_idioma);
+    libera_config(&arquivo_idioma, IDIOMA);
 }
 
 void apaga_idioma(char *var){
