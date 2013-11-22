@@ -73,6 +73,7 @@ char *retorna_config(config *l, char *var) {
         if (atual != NULL) {
             return (atual->string);
         }
+        return "failed";
     }
 
 }
