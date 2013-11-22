@@ -108,7 +108,7 @@ bool inicializar()
     }
      
     //Carrega idioma padrão. 
-    if(!load_configuracao("data/idiomas/pt_br.conf")){
+    if(!load_idioma("data/idiomas/pt_br.conf")){
         fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
         return false;
     }
