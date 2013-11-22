@@ -244,10 +244,10 @@ void apaga_configuracao(char *var){
     apaga_config(&arquivo_configuracao, char *var);
 }
 
-void imprime_idioma(char *var){
+void imprime_idioma(){
     imprime_config(&arquivo_idioma);
 }
 
-void imprime_configuracao(char *var){
+void imprime_configuracao(){
     imprime_config(&arquivo_configuracao);
 }
