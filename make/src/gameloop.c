@@ -20,7 +20,6 @@ int i;
 bool isDestroyed = false;
 bool redraw = false;
 bool complete = false;
-//bool drawCirc = false;
 ALLEGRO_BITMAP *textBox;
 bool inputs[8] = {false, false, false, false, false, false, false, false};
 
@@ -50,20 +49,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
 	createDialogs(dialog);
-<<<<<<< HEAD
+
     Gates gate;
 	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIconOn = al_load_bitmap("./data/images/icons/som.png");
 	ALLEGRO_BITMAP *soundIconOff = al_load_bitmap("./data/images/icons/sem_som.png");
 	ALLEGRO_BITMAP *soundIcon = soundIconOn;
 	
-=======
-      Gates gate;
-	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
-	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
-
-
->>>>>>> master
 	createLevelZero(levelZero);
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
@@ -96,12 +88,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				{
 					gate = MenuLoad(&ev, player);
 				}
-<<<<<<< HEAD
 			break;*/			
-=======
-
-			break;
->>>>>>> master
 
 			case ALLEGRO_KEY_SPACE:
 
@@ -124,13 +111,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
 					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 				}
-<<<<<<< HEAD
 
-=======
-				if(game.level == 4)
+				/*if(game.level == 4)
 				{
 
-				}
+				}*/
 
 				if(game.level == 42)
 				{
@@ -141,12 +126,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 							TextBoxLoad_matriz(&ev, dialog->texto_generico[i], 472 + i*25);
 						}
 				}
->>>>>>> master
 			break;
 
 			case ALLEGRO_KEY_ENTER:
 				printf("%d\n", complete);
-<<<<<<< HEAD
+
 				if(complete){
 
 					isDestroyed = false;
@@ -164,25 +148,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					if(game.level == 2){
 						levelTres = malloc(sizeof(LevelTres));
 						game.level = 3;
-=======
-
-				if(complete)
-				{
-					if(game.level == 2){
-						levelTres = malloc(sizeof(LevelTres));
-						game.level = 3;
-						player->state.x = 350;
-						player->state.y = 20;
-						player->state.idleE = false;
-						player->state.idleD = false;
-						player->state.idleC = false;
-						player->state.idleB = true;
-
-						inputs[0] = true;
-						inputs[1] = false;
-						inputs[2] = false;
-						inputs[3] = false;
->>>>>>> master
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						initDrawGatesLevelTres(levelTres);
 						drawLevelTres(levelTres);
@@ -204,10 +169,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					if(game.level == 0){
 						levelOne = malloc(sizeof(LevelOne));
 						game.level = 1;
-<<<<<<< HEAD
-=======
-						inputs[0] = false;
->>>>>>> master
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelOne(levelOne);
 						initDrawGatesLevelOne(levelOne);
@@ -221,10 +182,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 			if(!isCollidingGlobal(player, game.level))
 			{
 				movePlayer(keys, player);
@@ -254,10 +211,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             }
         }
 
-        //AQUI TODA ITERAÇÃO CARREGA IMAGEM. PRECISA CORRIGIR
-		//Exibe fundo
+        //Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
-		//al_draw_bitmap(circuito, 0, 0 , 0);
 		if (game.level == 0)
 		{
 		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
@@ -434,11 +389,10 @@ void musicPlayer(int mute){
 			game.song = synth_song;
 			break;
 		}
-
-		    game.songInstance = al_create_sample_instance(game.song);
-                al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
-                al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
-                al_play_sample_instance(game.songInstance);
+		game.songInstance = al_create_sample_instance(game.song);
+        al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+        al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+        al_play_sample_instance(game.songInstance);
 
 	}
 }
