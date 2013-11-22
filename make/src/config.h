@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include "comum.h"
 
 #define CONFIG_H
 #define CONFIG 0
