@@ -12,7 +12,7 @@ void createLevelDois(LevelDois *levelDois){
 	levelDois->circ1_off = al_load_bitmap("./data/levels/fase2/circ1_off.png");
 	levelDois->circ2_off = al_load_bitmap("./data/levels/fase2/circ2_off.png");
 	levelDois->circ3_off = al_load_bitmap("./data/levels/fase2/circ3_off.png");
-	
+
 	levelDois->circ6 = al_load_bitmap("./data/levels/fase2/circ_off.png");
 	levelDois->portas = al_load_bitmap("./data/levels/fase2/portas.png");
 }
@@ -57,7 +57,7 @@ void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *playe
 void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *levelDois, bool *complete){
 	if(gateOne)
 	{
-		levelDois->circ1 = levelDois->circ1_on; 
+		levelDois->circ1 = levelDois->circ1_on;
 	}
 	else
 	{
@@ -76,13 +76,8 @@ void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *l
 		levelDois->circ3 = levelDois->circ3_on;
 	}
 	else
-<<<<<<< HEAD
 	{
-		levelDois->circ3 = al_load_bitmap("./data/levels/fase2/circ3_off.png");
-=======
-	{ 
 		levelDois->circ3 = levelDois->circ3_off;
->>>>>>> tales
 	}
 	if(gateOne && gateTwo)
 	{

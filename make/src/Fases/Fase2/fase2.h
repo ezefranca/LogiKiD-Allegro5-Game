@@ -22,7 +22,7 @@ typedef struct {
 	ALLEGRO_BITMAP *circ1_off;
 	ALLEGRO_BITMAP *circ2_off;
 	ALLEGRO_BITMAP *circ3_off;
-	
+
 	ALLEGRO_BITMAP *circ1;
 	ALLEGRO_BITMAP *circ2;
 	ALLEGRO_BITMAP *circ3;
@@ -36,11 +36,8 @@ typedef struct {
 
 } LevelDois;
 
-<<<<<<< HEAD
 
-=======
 void createLevelDois(LevelDois *levelDois);
->>>>>>> tales
 void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void initDrawGatesLevelDois(LevelDois *LevelDois);
 void drawLevelDois(LevelDois *LevelDois);

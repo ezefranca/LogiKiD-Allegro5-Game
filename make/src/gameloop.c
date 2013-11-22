@@ -46,11 +46,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
       Gates gate;
 	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
-<<<<<<< HEAD
 
-=======
+
 	createLevelZero(levelZero);
->>>>>>> tales
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
@@ -82,42 +80,8 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 				{
 					gate = MenuLoad(&ev, player);
 				}
-<<<<<<< HEAD
-			break;
 
-			case ALLEGRO_KEY_1:
-				game.level = 1;
-				//drawCirc = false;
-				musicPlayer(game.mute);
-				fundo = SetBackGroundImage("./data/levels/fase1/faseone_with_girl.png");
 			break;
-
-			case ALLEGRO_KEY_2:
-				game.level = 2;
-			//	drawCirc = false;
-				musicPlayer(game.mute);
-				fundo = SetBackGroundImage("./data/levels/fase2/fundo-fase2.png");
-			break;
-
-			case ALLEGRO_KEY_3:
-				game.level = 3;
-				initDrawGatesLevelOne(levelOne);
-				musicPlayer(game.mute);
-				//drawCirc = true;
-				fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-				drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-			break;
-
-			case ALLEGRO_KEY_4:
-				game.level = 4;
-				//fundo = al_load_bitmap("./data/levels/fase0/faseruavermelho.png");
-				musicPlayer(game.mute);
-				fundo = SetBackGroundImage("./data/levels/fase0/faseruavermelho.png");
-				//drawCirc = false;
-			break;
-=======
-			break;			
->>>>>>> tales
 
 			case ALLEGRO_KEY_SPACE:
 
@@ -158,49 +122,19 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 			case ALLEGRO_KEY_ENTER:
 				printf("%d\n", complete);
-<<<<<<< HEAD
-					if(complete){
-=======
-				if(complete){
+
+				if(complete)
+				{
 					if(game.level == 2){
 						levelTres = malloc(sizeof(LevelTres));
 						game.level = 3;
 						player->state.x = 350;
 						player->state.y = 20;
->>>>>>> tales
 						player->state.idleE = false;
 						player->state.idleD = false;
 						player->state.idleC = false;
 						player->state.idleB = true;
-<<<<<<< HEAD
-						player->state.x = 350;
-						player->state.y = 20;
 
-						if(game.level == 2){
-							game.level = 3;
-							inputs[0] = true;
-							inputs[1] = false;
-							inputs[2] = false;
-							inputs[3] = false;
-							//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-							initDrawGatesLevelTres(levelTres);
-							drawLevelTres(levelTres);
-							printf("Objetivo completo\n");
-							complete = false;
-						}
-						if(game.level == 1){
-							game.level = 2;
-							inputs[0] = false;
-							inputs[1] = false;
-							inputs[2] = false;
-							//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-							initDrawGatesLevelDois(levelDois);
-							drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-							printf("Objetivo completo\n");
-							complete = false;
-						}
-						if(game.level == 0){
-=======
 						inputs[0] = true;
 						inputs[1] = false;
 						inputs[2] = false;
@@ -212,6 +146,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						complete = false;
 						free(levelDois);
 					}
+
 					if(game.level == 1){
 						levelDois = malloc(sizeof(LevelDois));
 						game.level = 2;
@@ -235,7 +170,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					}
 					if(game.level == 0){
 						levelOne = malloc(sizeof(LevelOne));
->>>>>>> tales
 						game.level = 1;
 						inputs[0] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");

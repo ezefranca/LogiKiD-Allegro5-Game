@@ -4,8 +4,8 @@
 
 void createLevelOne(LevelOne *levelOne){
 	levelOne->portas = al_load_bitmap("./data/levels/fase1/circ_off.png");
-	levelOne->circ1_on = al_load_bitmap("./data/levels/fase1/circ1_on.png");	
-	levelOne->circ2_on = al_load_bitmap("./data/levels/fase1/circ2_on.png");	
+	levelOne->circ1_on = al_load_bitmap("./data/levels/fase1/circ1_on.png");
+	levelOne->circ2_on = al_load_bitmap("./data/levels/fase1/circ2_on.png");
 	levelOne->circ3_on = al_load_bitmap("./data/levels/fase1/circ3_on.png");
 	levelOne->circ4_on = al_load_bitmap("./data/levels/fase1/circ4_on.png");
 	levelOne->circ5_on = al_load_bitmap("./data/levels/fase1/circ5_on.png");
@@ -76,13 +76,9 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 		levelOne->circ3 = levelOne->circ3_on;
 	}
 	else
-<<<<<<< HEAD
 	{
-		levelOne->circ3 = al_load_bitmap("./data/levels/fase1/circ3_off.png");
-=======
-	{ 
 		levelOne->circ3 = levelOne->circ3_off;
->>>>>>> tales
+
 	}
 	if(gateOne && gateTwo)
 	{
