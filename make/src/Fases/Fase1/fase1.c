@@ -117,10 +117,15 @@ void drawLevelOne(LevelOne *levelOne){
 }
 
 void destroyLevelOne(LevelOne *levelOne){
-	al_destroy_bitmap(levelOne->circ1);
-	al_destroy_bitmap(levelOne->circ2);
-	al_destroy_bitmap(levelOne->circ3);
-	al_destroy_bitmap(levelOne->circ4);
-	al_destroy_bitmap(levelOne->circ5);
-	al_destroy_bitmap(levelOne->portas);
+	al_destroy_bitmap(levelOne->circ1_on);
+	al_destroy_bitmap(levelOne->circ2_on);
+	al_destroy_bitmap(levelOne->circ3_on);
+	al_destroy_bitmap(levelOne->circ4_on);
+	al_destroy_bitmap(levelOne->circ5_on);
+
+	al_destroy_bitmap(levelOne->circ1_off);
+	al_destroy_bitmap(levelOne->circ2_off);
+	al_destroy_bitmap(levelOne->circ3_off);
+
+	//al_destroy_bitmap(levelOne->portas);
 }

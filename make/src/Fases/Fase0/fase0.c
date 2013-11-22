@@ -33,6 +33,8 @@ void drawLevelZero(LevelZero *levelZero){
 }
 
 void destroyLevelZero(LevelZero *levelZero){
-	al_destroy_bitmap(levelZero->circ1);
-	al_destroy_bitmap(levelZero->portas);
+	al_destroy_bitmap(levelZero->circ1_on);
+	al_destroy_bitmap(levelZero->circ1_off);
+	//al_destroy_bitmap(levelZero->circ1);
+	//al_destroy_bitmap(levelZero->portas);
 }

@@ -119,10 +119,15 @@ void drawLevelDois(LevelDois *LevelDois){
 }
 
 void destroyLevelDois(LevelDois *LevelDois){
-	al_destroy_bitmap(LevelDois->circ1);
-	al_destroy_bitmap(LevelDois->circ2);
-	al_destroy_bitmap(LevelDois->circ3);
-	al_destroy_bitmap(LevelDois->circ4);
-	al_destroy_bitmap(LevelDois->circ5);
+	al_destroy_bitmap(LevelDois->circ1_on);
+	al_destroy_bitmap(LevelDois->circ2_on);
+	al_destroy_bitmap(LevelDois->circ3_on);
+	al_destroy_bitmap(LevelDois->circ4_on);
+	al_destroy_bitmap(LevelDois->circ5_on);
+
+	al_destroy_bitmap(LevelDois->circ1_off);
+	al_destroy_bitmap(LevelDois->circ2_off);
+	al_destroy_bitmap(LevelDois->circ3_off);
+
 	al_destroy_bitmap(LevelDois->portas);
 }

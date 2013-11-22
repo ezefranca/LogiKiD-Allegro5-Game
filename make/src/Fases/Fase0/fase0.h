@@ -21,7 +21,7 @@ typedef struct {
 	ALLEGRO_BITMAP *circ1_on;
 	ALLEGRO_BITMAP *circ1_off;
 
-	ALLEGRO_BITMAP *portas;
+	//ALLEGRO_BITMAP *portas;
 
 	bool isOn[5];
 } LevelZero;
