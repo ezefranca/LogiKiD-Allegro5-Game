@@ -5,9 +5,14 @@
  */
  
 #ifndef CONFIG_H
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include "config.h"
 #define CONFIG_H
 #define CONFIG 0
 #define IDIOMA 1
+
 
 typedef struct _elemento {
   char *string;

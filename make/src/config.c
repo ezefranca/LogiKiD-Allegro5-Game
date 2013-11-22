@@ -1,7 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include "config.h"
 
 config arquivo_configuracao;
 config arquivo_idioma;
