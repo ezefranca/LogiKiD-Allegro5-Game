@@ -102,13 +102,14 @@ bool inicializar()
         return false;
     }
 
-    if(!load_configuracao("Fases/config.conf")){
-        fprintf(stderr, "Falha ao carregar configuração");
+    if(!load_configuracao("data/config/config.conf")){
+        fprintf(stderr, "Falha ao carregar configuração!\n");
         return false;
     }
+     
     //Carrega idioma padrão. 
-    if(!load_configuracao("Idiomas/pt_br.conf")){
-        fprintf(stderr, "Falha ao carregar idioma padrão");
+    if(!load_configuracao("data/idiomas/pt_br.conf")){
+        fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
         return false;
     }
      
