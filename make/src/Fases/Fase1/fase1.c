@@ -2,6 +2,21 @@
 #include "fase1.h"
 #include "../../Player.h"
 
+void createLevelOne(LevelOne *levelOne){
+	levelOne->portas = al_load_bitmap("./data/levels/fase1/circ_off.png");
+	levelOne->circ1_on = al_load_bitmap("./data/levels/fase1/circ1_on.png");
+	levelOne->circ2_on = al_load_bitmap("./data/levels/fase1/circ2_on.png");
+	levelOne->circ3_on = al_load_bitmap("./data/levels/fase1/circ3_on.png");
+	levelOne->circ4_on = al_load_bitmap("./data/levels/fase1/circ4_on.png");
+	levelOne->circ5_on = al_load_bitmap("./data/levels/fase1/circ5_on.png");
+
+	levelOne->circ1_off = al_load_bitmap("./data/levels/fase1/circ1_off.png");
+	levelOne->circ2_off = al_load_bitmap("./data/levels/fase1/circ2_off.png");
+	levelOne->circ3_off = al_load_bitmap("./data/levels/fase1/circ3_off.png");
+	levelOne->teste = 25;
+}
+
+
 void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player)
 {
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
@@ -40,34 +55,34 @@ void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player
 }
 
 void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete){
-	levelOne->portas = al_load_bitmap("./data/levels/fase1/circ_off.png");
 	if(gateOne)
 	{
-		levelOne->circ1 = al_load_bitmap("./data/levels/fase1/circ1_on.png");
+		levelOne->circ1 = levelOne->circ1_on;
 	}
 	else
 	{
-		levelOne->circ1 = al_load_bitmap("./data/levels/fase1/circ1_off.png");
+		levelOne->circ1 = levelOne->circ1_off;
 	}
 	if(gateTwo)
 	{
-		levelOne->circ2 = al_load_bitmap("./data/levels/fase1/circ2_on.png");
+		levelOne->circ2 = levelOne->circ2_on;
 	}
 	else
 	{
-		levelOne->circ2 = al_load_bitmap("./data/levels/fase1/circ2_off.png");
+		levelOne->circ2 = levelOne->circ2_off;
 	}
 	if(gateThree)
 	{
-		levelOne->circ3 = al_load_bitmap("./data/levels/fase1/circ3_on.png");
+		levelOne->circ3 = levelOne->circ3_on;
 	}
 	else
 	{
-		levelOne->circ3 = al_load_bitmap("./data/levels/fase1/circ3_off.png");
+		levelOne->circ3 = levelOne->circ3_off;
+
 	}
 	if(gateOne && gateTwo)
 	{
-		levelOne->circ4 = al_load_bitmap("./data/levels/fase1/circ4_on.png");
+		levelOne->circ4 = levelOne->circ4_on;
 		levelOne->isOn[3] = true;
 	}
 	else
@@ -76,7 +91,7 @@ void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *lev
 	}
 	if((gateOne && gateTwo) && gateThree)
 	{
-		levelOne->circ5 = al_load_bitmap("./data/levels/fase1/circ5_on.png");
+		levelOne->circ5 = levelOne->circ5_on;
 		levelOne->isOn[4] = true;
 		*complete = true;
 	}
@@ -94,8 +109,6 @@ void initDrawGatesLevelOne(LevelOne *levelOne){
 	for(i = 0; i < 5; i++){
 		levelOne->isOn[i] = false;
 	}
-	levelOne->circ4 = al_load_bitmap("./data/levels/fase1/circ4_on.png");
-	levelOne->circ5 = al_load_bitmap("./data/levels/fase1/circ5_on.png");
 }
 
 void drawLevelOne(LevelOne *levelOne){

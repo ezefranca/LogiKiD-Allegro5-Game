@@ -1,6 +1,12 @@
 #include "../../comum.h"
 #include "fase0.h"
 
+void createLevelZero(LevelZero *levelZero)
+{
+	levelZero->circ1_on = al_load_bitmap("./data/levels/fase0/circ1_on.png");
+	levelZero->circ1_off = al_load_bitmap("./data/levels/fase0/circ1_off.png");
+}
+
 
 void logicLevelZero(bool *gateOne, bool *complete, LevelZero *levelZero, Player *player){
 	if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
@@ -14,30 +20,17 @@ void logicLevelZero(bool *gateOne, bool *complete, LevelZero *levelZero, Player 
 	}
 	if(*gateOne)
 	{
-		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_on.png");
+		levelZero->circ1 = levelZero->circ1_on;
 		*complete = true;
 	}
 	if(!*gateOne)
 	{
-		levelZero->circ1 = al_load_bitmap("./data/levels/fase0/circ1_off.png");
+		levelZero->circ1 = levelZero->circ1_off;
 	}
 }
-
-
-void initDrawGatesLevelZero(LevelZero *levelZero){
-	int i;
-	for(i = 0; i < 5; i++){
-		levelZero->isOn[i] = false;
-	}
-	levelZero->circ1 = al_load_bitmap("./data/levels/fase0/bus_zero_zero.png");
-}
-
 
 void drawLevelZero(LevelZero *levelZero){
 	al_draw_bitmap(levelZero->circ1, 0, 0 , 0);
-	//al_draw_bitmap(levelZero->circ2, 0, 0 , 0);
-	//if(levelZero->isOn[3])al_draw_bitmap(levelZero->circ4, 0, 0 , 0);
-	//if(levelZero->isOn[4])al_draw_bitmap(levelZero->circ5, 0, 0 , 0);
 }
 
 void destroyLevelZero(LevelZero *levelZero){

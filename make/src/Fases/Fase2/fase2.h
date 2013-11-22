@@ -13,11 +13,22 @@
 #include <allegro5/allegro_primitives.h>
 
 typedef struct {
+	ALLEGRO_BITMAP *circ1_on;
+	ALLEGRO_BITMAP *circ2_on;
+	ALLEGRO_BITMAP *circ3_on;
+	ALLEGRO_BITMAP *circ4_on;
+	ALLEGRO_BITMAP *circ5_on;
+
+	ALLEGRO_BITMAP *circ1_off;
+	ALLEGRO_BITMAP *circ2_off;
+	ALLEGRO_BITMAP *circ3_off;
+
 	ALLEGRO_BITMAP *circ1;
 	ALLEGRO_BITMAP *circ2;
 	ALLEGRO_BITMAP *circ3;
 	ALLEGRO_BITMAP *circ4;
 	ALLEGRO_BITMAP *circ5;
+
 	ALLEGRO_BITMAP *circ6;
 	ALLEGRO_BITMAP *portas;
 
@@ -26,6 +37,7 @@ typedef struct {
 } LevelDois;
 
 
+void createLevelDois(LevelDois *levelDois);
 void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void initDrawGatesLevelDois(LevelDois *LevelDois);
 void drawLevelDois(LevelDois *LevelDois);
