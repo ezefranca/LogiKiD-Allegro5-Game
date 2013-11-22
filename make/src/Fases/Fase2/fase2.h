@@ -45,4 +45,3 @@ void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *L
 void destroyLevelDois(LevelDois *LevelDois);
 
 #endif
-

@@ -130,6 +130,4 @@ void destroyLevelOne(LevelOne *levelOne){
 	al_destroy_bitmap(levelOne->circ1_off);
 	al_destroy_bitmap(levelOne->circ2_off);
 	al_destroy_bitmap(levelOne->circ3_off);
-
-	//al_destroy_bitmap(levelOne->portas);
 }

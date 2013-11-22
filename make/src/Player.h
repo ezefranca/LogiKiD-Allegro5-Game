@@ -13,8 +13,6 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_primitives.h>
-//
-// Praticamente vcs não mudaram no player nao
 
 typedef struct
 {
@@ -61,7 +59,6 @@ typedef struct{
 	bool keyLeft;
 	bool keyRight;
 }Keys;
-
 
 void CreatePlayer(Player *player, int hStartPosition, int wStartPosition);
 void moveDireita(Player *player);

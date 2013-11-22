@@ -29,7 +29,6 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->footstep = al_load_sample("./data/sound/footstep.wav");
 }
 
-
 void moveDireita(Player *player)
 {
 	if(++player->image.frameCount >= player->image.frameDelay)
@@ -297,5 +296,4 @@ void movePlayer(Keys *keys, Player *player){
 		ProcessaMovimentoDireita(player);
 		moveDireita(player);
 	}
-	//al_play_sample(player->footstep, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 }

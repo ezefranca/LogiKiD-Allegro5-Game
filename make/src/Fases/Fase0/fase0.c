@@ -7,7 +7,6 @@ void createLevelZero(LevelZero *levelZero)
 	levelZero->circ1_off = al_load_bitmap("./data/levels/fase0/circ1_off.png");
 }
 
-
 void logicLevelZero(bool *gateOne, bool *complete, LevelZero *levelZero, Player *player){
 	if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
 	{
@@ -36,6 +35,4 @@ void drawLevelZero(LevelZero *levelZero){
 void destroyLevelZero(LevelZero *levelZero){
 	al_destroy_bitmap(levelZero->circ1_on);
 	al_destroy_bitmap(levelZero->circ1_off);
-	//al_destroy_bitmap(levelZero->circ1);
-	//al_destroy_bitmap(levelZero->portas);
 }

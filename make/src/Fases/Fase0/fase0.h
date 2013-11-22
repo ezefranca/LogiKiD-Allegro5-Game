@@ -35,4 +35,3 @@ void destroyLevelZero(LevelZero *levelZero);
 void initDrawGatesLevelZero(LevelZero *levelZero);
 
 #endif
-

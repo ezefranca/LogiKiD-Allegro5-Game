@@ -45,9 +45,6 @@ void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[], int textYPos)
 {
 	bool sair = false;
 	int i = 0;
-	//ALLEGRO_BITMAP *textBox;
-	//textBox = al_load_bitmap("data/images/textbox.png");
-	//al_draw_bitmap(textBox, 0, 450, 0);
 	while(!sair)
 	{
 		al_draw_text(game.fonte_menu, al_map_rgb(0, 0, 0), 15, textYPos, ALLEGRO_ALIGN_LEFT, dialog);
