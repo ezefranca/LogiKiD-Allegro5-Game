@@ -5,6 +5,7 @@
  */
 
 #include "comum.h"
+#include "config.h"
 
 
 bool inicializar()
@@ -101,6 +102,18 @@ bool inicializar()
         return false;
     }
 
+    if(!load_configuracao("Fases/config.conf")){
+        fprintf(stderr, "Falha ao carregar configuração");
+        return false;
+    }
+    //Carrega idioma padrão. 
+    if(!load_configuracao("Idiomas/pt_br.conf")){
+        fprintf(stderr, "Falha ao carregar idioma padrão");
+        return false;
+    }
+     
+     
+        
     game.mute = 1;
     //Aqui você pode implementar um savestate
     // 42 é o valor do tutorial (instrucoes de jogo)
