@@ -55,10 +55,12 @@ void insere_config(config *l, char *var, char *string) {
 
 char *retorna_config(config *l, char *var) {
     elemento *anterior, *atual;
+    char *failed = {"Failed"};
+    
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list empty\n");
-        return "failed";
+        return failed;
     }
     else if (strcmp(var, anterior->var) == 0) {
         l->inicio = anterior->proximo;
@@ -73,7 +75,7 @@ char *retorna_config(config *l, char *var) {
         if (atual != NULL) {
             return (atual->string);
         }
-        return "failed";
+        return failed;
     }
 
 }
