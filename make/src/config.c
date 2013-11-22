@@ -47,9 +47,9 @@ char *retorna_config(config *l, char *var) {
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list empty\n");
-        exit(EXIT_FAILURE);
+        return "failed";
     }
-    if (strcmp(var, anterior->var) == 0) {
+    else if (strcmp(var, anterior->var) == 0) {
         l->inicio = anterior->proximo;
         return (anterior->string);
     } else {
@@ -71,9 +71,8 @@ void apaga_config(config *l, char *var) {
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list already empty\n");
-        exit(EXIT_FAILURE);
     }
-    if (strcmp(var, anterior->var) == 0) {
+    else if (strcmp(var, anterior->var) == 0) {
         l->inicio = anterior->proximo;
         libera_string(anterior->var);
         libera_string(anterior->string);
@@ -149,7 +148,7 @@ bool load_config(char *config_file, int type) {
             break;
         default:
             fprintf(stderr, "Tipo incorreto de configuração\n");
-            exit(EXIT_FAILURE);
+            return false;
     }
 
     entrada = fopen(config_file, "r");
@@ -210,9 +209,15 @@ bool load_config(char *config_file, int type) {
 
 bool load_configuracao(char *config_file) {
     return load_config(config_file, CONFIG);
+    if(loaded_config == 1) {
+        return false;
+    }
 }
 
 bool load_idioma(char *config_file) {
+    if(loaded_idioma == 1) {
+        return false;
+    }
     return load_config(config_file, IDIOMA);
 }
 
