@@ -1,9 +1,17 @@
 #include "config.h"
+#include "comum.h"
 
 config arquivo_configuracao;
 config arquivo_idioma;
 int loaded_config = 0;
 int loaded_idioma = 0;
+
+void libera_string(char *string) {
+    int i;
+    for (i = 0; i < strlen(string); i++) {
+        free(&string[i]);
+    }
+}
 
 config *aloca() {
     config *l = malloc(sizeof (config));
@@ -11,7 +19,7 @@ config *aloca() {
     return l;
 }
 
-void libera_config(config *l, type) {
+void libera_config(config *l, int type) {
     elemento *e, *temp;
 
     e = l->inicio;
@@ -100,13 +108,6 @@ void imprime_config(config *l) {
     elemento *e;
     for (e = l->inicio; e != NULL; e = e->proximo)
         printf("%s = %s\n", e->var, e->string);
-}
-
-void libera_string(char *string) {
-    int i;
-    for (i = 0; i < strlen(string); i++) {
-        free(&string[i]);
-    }
 }
 
 int conta_linhas(FILE *entrada) {
@@ -245,11 +246,11 @@ void limpa_idioma() {
 }
 
 void apaga_idioma(char *var){
-    apaga_config(&arquivo_idioma, char *var);
+    apaga_config(&arquivo_idioma, var);
 }
 
 void apaga_configuracao(char *var){
-    apaga_config(&arquivo_configuracao, char *var);
+    apaga_config(&arquivo_configuracao, var);
 }
 
 void imprime_idioma(){

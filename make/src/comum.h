@@ -7,7 +7,7 @@
 #ifndef COMUM_H
 #define COMUM_H
 
-#include <stdbool>
+//#include <stdbool>
 #include <stdio.h>
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_ttf.h>
