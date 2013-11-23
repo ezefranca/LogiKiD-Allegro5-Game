@@ -25,7 +25,7 @@ typedef struct {
   elemento *inicio;
 } config;
 
-//void imprime_config(config *l);
+void imprime_config(config *l, FILE *file);
 
 bool load_configuracao(char *config_file);
 
@@ -43,13 +43,13 @@ void apaga_configuracao(char *var);
 
 void apaga_idioma(char *var);
 
-//void imprime_idioma();
+void imprime_idioma();
 
-//void imprime_configuracao();
+void imprime_configuracao();
 
 char *get_config_user(char *var);
 
-//void imprime_config_user();
+void imprime_config_user(); 
 
 void apaga_config_user(char *var);
 
