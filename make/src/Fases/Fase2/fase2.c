@@ -2,7 +2,8 @@
 #include "fase2.h"
 #include "../../Player.h"
 
-void createLevelDois(LevelDois *levelDois){
+void createLevelDois(LevelDois *levelDois,  Player *player){
+	player->chances = 0;
 	levelDois->circ1_on = al_load_bitmap("./data/levels/fase2/circ1_on.png");
 	levelDois->circ2_on = al_load_bitmap("./data/levels/fase2/circ2_on.png");
 	levelDois->circ3_on = al_load_bitmap("./data/levels/fase2/circ3_on.png");
@@ -21,6 +22,7 @@ void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *playe
 {
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 	{
+		player->chances++;
 		if(*gateOne == false){
 			*gateOne = true;
 			printf("False para true\n");
@@ -32,6 +34,7 @@ void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *playe
 	}
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
 	{
+		player->chances++;
 		if(*gateTwo == false){
 			*gateTwo = true;
 			printf("False para true\n");
@@ -43,6 +46,7 @@ void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *playe
 	}
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
 	{
+		player->chances++;
 		if(*gateThree == false){
 			*gateThree = true;
 			printf("False para true\n");

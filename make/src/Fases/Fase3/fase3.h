@@ -26,7 +26,7 @@ typedef struct {
 	ALLEGRO_BITMAP *circ4_on;
 	ALLEGRO_BITMAP *circ5_on;
 	ALLEGRO_BITMAP *circ6_on;
-	
+
 	ALLEGRO_BITMAP *circ1_off;
 	ALLEGRO_BITMAP *circ2_off;
 	ALLEGRO_BITMAP *circ3_off;
@@ -42,7 +42,7 @@ typedef struct {
 	int chances;
 } LevelTres;
 
-void createLevelTres(LevelTres *levelTres);
+void createLevelTres(LevelTres *levelTres,  Player *player);
 void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFour, Player *player);
 void initDrawGatesLevelTres(LevelTres *LevelTres);
 void drawLevelTres(LevelTres *LevelTres);

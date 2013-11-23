@@ -34,9 +34,9 @@ void GameLoop(ALLEGRO_EVENT ev)
 	LevelOne *levelOne;
 	LevelDois *levelDois;
 	LevelTres *levelTres;
-	
+
 	launch_song = al_load_sample("./data/sound/music/Lunch.ogg");
-	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");	
+	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -55,8 +55,8 @@ void GameLoop(ALLEGRO_EVENT ev)
 	ALLEGRO_BITMAP *soundIconOn = al_load_bitmap("./data/images/icons/som.png");
 	ALLEGRO_BITMAP *soundIconOff = al_load_bitmap("./data/images/icons/sem_som.png");
 	ALLEGRO_BITMAP *soundIcon = soundIconOn;
-	
-	createLevelZero(levelZero);
+
+	createLevelZero(levelZero, player);
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
@@ -91,7 +91,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			case ALLEGRO_KEY_ESCAPE:
 				sair = true;
 			break;
-			
+
 			case ALLEGRO_KEY_SPACE:
 
 				if(game.level == 0)
@@ -152,7 +152,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 						game.level = 3;
 						inputs[3] = true;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelTres(levelTres);
+						createLevelTres(levelTres, player);
 						initDrawGatesLevelTres(levelTres);
 						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 						printf("Objetivo completo\n");
@@ -164,7 +164,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 						levelDois = malloc(sizeof(LevelDois));
 						game.level = 2;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelDois(levelDois);
+						createLevelDois(levelDois, player);
 						initDrawGatesLevelDois(levelDois);
 						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
 						printf("Objetivo completo \n");
@@ -174,7 +174,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 						levelOne = malloc(sizeof(LevelOne));
 						game.level = 1;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelOne(levelOne);
+						createLevelOne(levelOne, player);
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 						printf("Objetivo completo \n");
@@ -219,12 +219,12 @@ void GameLoop(ALLEGRO_EVENT ev)
 		al_draw_bitmap(fundo, 0, 0, 0);
 		if (game.level == 0)
 		{
-		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+		      al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelZero(levelZero);
 		}
 		if (game.level == 1)
 		{
-			//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelOne(levelOne);
 			if(isDestroyed == false)
 			{
@@ -236,7 +236,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 2)
 		{
-            //al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelDois(levelDois);
 			if(isDestroyed == false)
 			{
@@ -247,7 +247,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 3)
 		{
-			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelTres(levelTres);
 			if(isDestroyed == false)
 			{
@@ -343,7 +343,7 @@ bool isCollidingGlobal(Player *player, int level){
 	    if (isColliding(163, 110, 55, 35, player)   ||
 	    	isColliding(163, 206, 55, 35, player)   ||
 	    	isColliding(163, 269, 55, 35, player)   ||
-	    	isColliding(163, 368, 55, 35, player))		    
+	    	isColliding(163, 368, 55, 35, player))
 	    {
 	    	return true;
 	    }

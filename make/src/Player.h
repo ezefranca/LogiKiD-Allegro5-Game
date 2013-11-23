@@ -17,7 +17,7 @@
 typedef struct
 {
 	ALLEGRO_BITMAP *image;
-    
+
 	int posInSprite;
 	int maxFrame;
 	int curFrame;
@@ -46,10 +46,11 @@ typedef struct
 typedef struct
 {
 	ALLEGRO_SAMPLE *footstep;
-    ALLEGRO_FONT *play_font;
+       ALLEGRO_FONT *play_font;
 	State state;
 	Image image;
 	LogicGates lGates;
+	int chances;
 }Player;
 
 

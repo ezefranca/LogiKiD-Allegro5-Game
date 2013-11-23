@@ -23,7 +23,7 @@ typedef struct {
 	ALLEGRO_BITMAP *circ1_off;
 	ALLEGRO_BITMAP *circ2_off;
 	ALLEGRO_BITMAP *circ3_off;
-	
+
 	ALLEGRO_BITMAP *circ1;
 	ALLEGRO_BITMAP *circ2;
 	ALLEGRO_BITMAP *circ3;
@@ -37,7 +37,7 @@ typedef struct {
 	bool isOn[5];
 } LevelOne;
 
-void createLevelOne(LevelOne *levelOne);
+void createLevelOne(LevelOne *levelOne,  Player *player);
 void logicLevelOne(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void drawLogicLevelOne(bool gateOne, bool gateTwo, bool gateThree, LevelOne *levelOne, bool *complete);
 void drawLevelOne(LevelOne *levelOne);

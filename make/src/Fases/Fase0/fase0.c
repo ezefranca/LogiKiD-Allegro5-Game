@@ -1,8 +1,10 @@
 #include "../../comum.h"
+#include "../../Player.h"
 #include "fase0.h"
 
-void createLevelZero(LevelZero *levelZero)
+void createLevelZero(LevelZero *levelZero, Player *player)
 {
+	player->chances = 0;
 	levelZero->circ1_on = al_load_bitmap("./data/levels/fase0/circ1_on.png");
 	levelZero->circ1_off = al_load_bitmap("./data/levels/fase0/circ1_off.png");
 }
@@ -10,6 +12,7 @@ void createLevelZero(LevelZero *levelZero)
 void logicLevelZero(bool *gateOne, bool *complete, LevelZero *levelZero, Player *player){
 	if ((player->state.x > 200 && player->state.x < 318) && (player->state.y > 185 && player->state.y < 275))
 	{
+		player->chances++;
 		if(*gateOne == false)
 		{
 			*gateOne  = true;
