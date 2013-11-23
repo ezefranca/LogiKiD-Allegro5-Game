@@ -6,8 +6,8 @@ void createLevelDois(LevelDois *levelDois){
 	levelDois->circ1_on = al_load_bitmap("./data/levels/fase2/circ1_on.png");
 	levelDois->circ2_on = al_load_bitmap("./data/levels/fase2/circ2_on.png");
 	levelDois->circ3_on = al_load_bitmap("./data/levels/fase2/circ3_on.png");
-	levelDois->circ4_on = al_load_bitmap("./data/levels/fase2/circ4_on.png");
-	levelDois->circ5_on = al_load_bitmap("./data/levels/fase2/circ5_on.png");
+	levelDois->circ4 = al_load_bitmap("./data/levels/fase2/circ4_on.png");
+	levelDois->circ5 = al_load_bitmap("./data/levels/fase2/circ5_on.png");
 
 	levelDois->circ1_off = al_load_bitmap("./data/levels/fase2/circ1_off.png");
 	levelDois->circ2_off = al_load_bitmap("./data/levels/fase2/circ2_off.png");
@@ -19,7 +19,7 @@ void createLevelDois(LevelDois *levelDois){
 
 void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player)
 {
-	if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 33 && player->state.y < 122))
+	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 	{
 		if(*gateOne == false){
 			*gateOne = true;
@@ -30,7 +30,7 @@ void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *playe
 			printf("True para false\n");
 		}
 	}
-	if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 123 && player->state.y < 206))
+	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
 	{
 		if(*gateTwo == false){
 			*gateTwo = true;
@@ -41,7 +41,7 @@ void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *playe
 			printf("True para false\n");
 		}
 	}
-	if((player->state.x > 73 && player->state.x < 198) && (player->state.y > 222 && player->state.y < 306))
+	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
 	{
 		if(*gateThree == false){
 			*gateThree = true;
@@ -81,7 +81,7 @@ void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *l
 	}
 	if(gateOne && gateTwo)
 	{
-		levelDois->circ4 = levelDois->circ4_on;
+		//levelDois->circ4 = levelDois->circ4_on;
 		levelDois->isOn[3] = true;
 	}
 	else
@@ -90,7 +90,7 @@ void drawLogicLevelDois(bool gateOne, bool gateTwo, bool gateThree, LevelDois *l
 	}
 	if((gateOne && gateTwo) || gateThree)
 	{
-		levelDois->circ5 = levelDois->circ5_on;
+		//levelDois->circ5 = levelDois->circ5_on;
 		levelDois->isOn[4] = true;
 		*complete = true;
 	}
@@ -109,21 +109,21 @@ void initDrawGatesLevelDois(LevelDois *LevelDois){
 }
 
 void drawLevelDois(LevelDois *LevelDois){
-	al_draw_bitmap(LevelDois->circ6, 0, 0 , 0);
-	al_draw_bitmap(LevelDois->circ1, 0, 0 , 0);
-	al_draw_bitmap(LevelDois->circ2, 0, 0 , 0);
-	al_draw_bitmap(LevelDois->circ3, 0, 0 , 0);
-	if(LevelDois->isOn[3])al_draw_bitmap(LevelDois->circ4, 0, 0 , 0);
-	if(LevelDois->isOn[4])al_draw_bitmap(LevelDois->circ5, 0, 0 , 0);
-	al_draw_bitmap(LevelDois->portas, 0, 0 , 0);
+	al_draw_bitmap(LevelDois->circ6, 32, 32, 0);
+	al_draw_bitmap(LevelDois->circ1, 32, 32, 0);
+	al_draw_bitmap(LevelDois->circ2, 32, 32, 0);
+	al_draw_bitmap(LevelDois->circ3, 32, 32, 0);
+	if(LevelDois->isOn[3])al_draw_bitmap(LevelDois->circ4, 32, 32, 0);
+	if(LevelDois->isOn[4])al_draw_bitmap(LevelDois->circ5, 32, 32, 0);
+	al_draw_bitmap(LevelDois->portas, 32, 32, 0);
 }
 
 void destroyLevelDois(LevelDois *LevelDois){
 	al_destroy_bitmap(LevelDois->circ1_on);
 	al_destroy_bitmap(LevelDois->circ2_on);
 	al_destroy_bitmap(LevelDois->circ3_on);
-	al_destroy_bitmap(LevelDois->circ4_on);
-	al_destroy_bitmap(LevelDois->circ5_on);
+	al_destroy_bitmap(LevelDois->circ4);
+	al_destroy_bitmap(LevelDois->circ5);
 
 	al_destroy_bitmap(LevelDois->circ1_off);
 	al_destroy_bitmap(LevelDois->circ2_off);

@@ -13,7 +13,6 @@ void createLevelOne(LevelOne *levelOne){
 	levelOne->circ1_off = al_load_bitmap("./data/levels/fase1/circ1_off.png");
 	levelOne->circ2_off = al_load_bitmap("./data/levels/fase1/circ2_off.png");
 	levelOne->circ3_off = al_load_bitmap("./data/levels/fase1/circ3_off.png");
-	levelOne->teste = 25;
 }
 
 

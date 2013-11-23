@@ -56,7 +56,7 @@ void StartMenu()
 			case ALLEGRO_KEY_ENTER:
 				if(MenuPosition == 0)
 				{
-					GameLoop_Fase1(ev);
+					GameLoop(ev);
 					sair = true;
 					break;
 					//PrintMenu(0);

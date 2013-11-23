@@ -23,7 +23,7 @@ bool complete = false;
 ALLEGRO_BITMAP *textBox;
 bool inputs[8] = {false, false, false, false, false, false, false, false};
 
-void GameLoop_Fase1(ALLEGRO_EVENT ev)
+void GameLoop(ALLEGRO_EVENT ev)
 {
 	game.level = 0;
 	bool sair = false;
@@ -142,7 +142,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					player->state.idleD = false;
 					player->state.idleC = false;
 					player->state.idleB = true;
-					inputs[0] = true;
+					inputs[0] = false;
 					inputs[1] = false;
 					inputs[2] = false;
 					inputs[3] = false;
@@ -150,9 +150,11 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					if(game.level == 2){
 						levelTres = malloc(sizeof(LevelTres));
 						game.level = 3;
+						inputs[3] = true;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						createLevelTres(levelTres);
 						initDrawGatesLevelTres(levelTres);
-						drawLevelTres(levelTres);
+						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 						printf("Objetivo completo\n");
 						complete = false;
 						//free(levelDois);
@@ -165,7 +167,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						createLevelDois(levelDois);
 						initDrawGatesLevelDois(levelDois);
 						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-						printf("Objetivo completo teste\n");
+						printf("Objetivo completo \n");
 						complete = false;
 					}
 					if(game.level == 0){
@@ -175,7 +177,7 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						createLevelOne(levelOne);
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-						printf("Objetivo completo %d\n", levelOne->teste);
+						printf("Objetivo completo \n");
 						complete = false;
 					}
 				}
@@ -293,7 +295,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
         	al_flip_display();
       	}
 	}
-	al_destroy_sample_instance(game.songInstance);
+	//destroyLevelTres(levelTres);
+	//al_destroy_sample_instance(game.songInstance);
+	//free(levelTres);
 	free(keys);
 	free(player);
 	free(dialog);
@@ -325,7 +329,7 @@ bool isCollidingGlobal(Player *player, int level){
 		else return false;
 	}
 
-	if(level == 1){
+	if(level == 1 || level == 2){
 		if (isColliding(165, 150, 55, 35, player)    ||
 			isColliding(165, 238, 55, 35, player)   ||
 			isColliding(165, 335, 55, 35, player))
@@ -334,31 +338,18 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
-	if(level == 2)
+	if(level == 3)
 	{
-		if (isColliding(133, 118, 55, 35, player)    ||
-			isColliding(133, 202, 55, 35, player)   ||
-			isColliding(133, 302, 55, 35, player))
-		{
-			return true;
-		}
-		else return false;
-	}
-	//if(level == 3)
-		/*
-	   	{
-	    if (isColliding(98, 108, 60, 42, player)   ||
-	    	isColliding(98, 206, 60, 42, player)   ||
-	    	isColliding(98, 301, 60, 42, player)   ||
-	    	isColliding(450, 130, 64, 64, player)   ||
-	      isColliding(450, 291, 64, 64, player))
+	    if (isColliding(163, 110, 55, 35, player)   ||
+	    	isColliding(163, 206, 55, 35, player)   ||
+	    	isColliding(163, 269, 55, 35, player)   ||
+	    	isColliding(163, 368, 55, 35, player))		    
 	    {
 	    	return true;
 	    }
 	    else return false;
 	}
-	else return false;
-*/	return false;
+	return false;
 }
 void musicPlayer(int mute){
 	if (mute == 0){
