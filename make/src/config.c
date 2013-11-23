@@ -270,11 +270,11 @@ void apaga_configuracao(char *var) {
 }
 
 void imprime_idioma() {
-    imprime_config(&arquivo_idioma, );
+    imprime_config(&arquivo_idioma, stdout);
 }
 
 void imprime_configuracao() {
-    imprime_config(&arquivo_configuracao, );
+    imprime_config(&arquivo_configuracao, stdout);
 }
 
 char *get_config_user(char *var) {
@@ -284,7 +284,7 @@ char *get_config_user(char *var) {
 }
 
 void imprime_config_user() {
-    imprime_config(&arquivo_config_user, );
+    imprime_config(&arquivo_config_user, stdout);
 }
 
 void apaga_config_user(char *var) {
@@ -308,11 +308,26 @@ bool load_config_user(char *config_file) {
     if (loaded_config_user == 1) {
         return true;
     }
-    return load_config(config_file, CONFIG_USER);
+    if(load_config(config_file, CONFIG_USER)){
+        return true;
+    }
+    return create_config_user(config_file);
 }
 
-
-bool salva_config_user() {
+bool create_config_user(config_file){
     
+}
+
+bool salva_config_user(char *config_file) {
+    FILE *entrada;
+    
+    entrada = fopen(config_file, "w");
+    if(!entrada)
+        return false;
+    
+    imprime_config(&arquivo_config_user, entrada);
+    
+    fclose(entrada);
+    return true;
 }
 
