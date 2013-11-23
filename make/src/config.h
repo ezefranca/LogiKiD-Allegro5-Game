@@ -3,8 +3,7 @@
  * Inicio: 13/10/2013
  * Autor: Gabriel Fontenelle Senno Silva
  */
- 
- /*
+
 #ifndef CONFIG_H
 #include <stdlib.h>
 #include <stdio.h>
@@ -49,4 +48,3 @@ void imprime_idioma();
 void imprime_configuracao();
 
 #endif
-*/

@@ -4,6 +4,7 @@
 #include "ItensMenu.h"
 #include "textBox.h"
 #include "pontuacao.h"
+#include "config.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
 #include "../src/Fases/Fase2/fase2.h"
@@ -58,6 +59,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 	ALLEGRO_BITMAP *soundIcon = soundIconOn;
 
 	createLevelZero(levelZero, player);
+	TextBoxLoad(&ev, get_idioma("AA00"));
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);

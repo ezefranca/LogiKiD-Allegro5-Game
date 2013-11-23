@@ -1,4 +1,4 @@
-/*#include "config.h"
+#include "config.h"
 #include "comum.h"
 
 config arquivo_configuracao;
@@ -55,7 +55,7 @@ void insere_config(config *l, char *var, char *string) {
 
 char *retorna_config(config *l, char *var) {
     elemento *anterior, *atual;
-    
+
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list empty\n");
@@ -122,7 +122,7 @@ int conta_linhas(FILE *entrada) {
         last_caracter = caracter;
     }
     if(last_caracter == '\n' || caracter == '\0') --lines;
-    
+
     //Retorna o ponteiro para inicio do arquivo.
     rewind(entrada);
     return lines;
@@ -264,4 +264,4 @@ void imprime_idioma(){
 void imprime_configuracao(){
     imprime_config(&arquivo_configuracao);
 }
-*/
+

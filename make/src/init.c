@@ -102,19 +102,19 @@ bool inicializar()
         return false;
     }
 
-    /*if(!load_configuracao("data/config/config.conf")){
+    if(!load_configuracao("data/config/config.conf")){
         fprintf(stderr, "Falha ao carregar configuração!\n");
         return false;
     }
-     
-    //Carrega idioma padrão. 
+
+    //Carrega idioma padrão.
     if(!load_idioma("data/idiomas/pt_br.conf")){
         fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
         return false;
-    }*/
-     
-     
-        
+    }
+
+
+
     game.mute = 1;
     //Aqui você pode implementar um savestate
     // 42 é o valor do tutorial (instrucoes de jogo)
