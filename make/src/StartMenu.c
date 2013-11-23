@@ -1,5 +1,6 @@
 #include "StartMenu.h"
 #include "comum.h"
+#include "config.h"
 #include "gameloop.h"
 #include "selecaomenu.h"
 
@@ -24,8 +25,8 @@ void PrintMenu(int MenuPosition)
 		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("STM05"));
 		break;
 	case 1:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("STM06"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("STM06"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("STM07"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("STM07"));
 		break;
 	}
 }
