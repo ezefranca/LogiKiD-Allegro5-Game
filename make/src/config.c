@@ -304,6 +304,29 @@ void limpa_config_user() {
     libera_config(&arquivo_config_user, CONFIG_USER);
 }
 
+bool create_config_user(char *config_file){
+    //Configuracoes padrao para o usuario
+    FILE *entrada;
+    
+    entrada = fopen(config_file, "ab+");
+    if(!entrada)
+        return false;
+    fclose(entrada);
+    //Adicionar as configuracoes padroes em:
+    
+    //adiciona_config_user(string, var);
+    //adiciona_config_user(string, var);
+    //adiciona_config_user(string, var);
+    //adiciona_config_user(string, var);
+    //adiciona_config_user(string, var);
+    
+    if(arquivo_config_user->inicio != NULL) {
+        loaded_config_user = 1;
+        return true;
+    }
+    return false;
+}
+
 bool load_config_user(char *config_file) {
     if (loaded_config_user == 1) {
         return true;
@@ -314,16 +337,14 @@ bool load_config_user(char *config_file) {
     return create_config_user(config_file);
 }
 
-bool create_config_user(config_file){
-    
-}
-
 bool salva_config_user(char *config_file) {
     FILE *entrada;
     
     entrada = fopen(config_file, "w");
     if(!entrada)
         return false;
+    
+    aloca(&arquivo_config_user);
     
     imprime_config(&arquivo_config_user, entrada);
     
