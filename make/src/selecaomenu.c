@@ -84,47 +84,32 @@ void DrawImages(lgImages *lgDados, Player *player)
 
 Personagem GetPersonagem(lgImages *lgDados, Player *player)
 {
-	switch(lgDados->currGate)
+	Personagem person;
+	switch(lgDados->itmSelX)
 	{
-	case PER1:
-		if(player->lGates.lgAND > 0)
-			player->lGates.lgAND -= 1;
-		else
-			lgDados->currGate = 66;
+	case 70:
+		person = 1;
 		break;
-	case PER2:
-		if(player->lGates.lgOR > 0)
-			player->lGates.lgOR -= 1;
-		else
-			lgDados->currGate = 66;
+	case 140:
+		person = 2;
 		break;
-	case PER4:
-		if(player->lGates.lgNAND > 0)
-			player->lGates.lgNAND -= 1;
-		else
-			lgDados->currGate = 66;
+	case 210:
+		person = 3;
 		break;
-	case PER5:
-		if(player->lGates.lgNOR > 0)
-			player->lGates.lgNOR -= 1;
-		else
-			lgDados->currGate = 66;
+	case 280:
+		person = 4;
 		break;
-	case PER6:
-		if(player->lGates.lgXOR > 0)
-			player->lGates.lgXOR -= 1;
-		else
-			lgDados->currGate = 66;
+	case 350:
+		person = 5;
 		break;
-	case  PER7:
-		if(player->lGates.lgXNOR > 0)
-			player->lGates.lgXNOR -= 1;
-		else
-			lgDados->currGate = 66;
+	case 420:
+		person = 6;
+		break;
+	case 490:
+		person = 7;
 		break;
 	}
-
-	return lgDados->currGate;
+	return person;
 }
 
 Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)

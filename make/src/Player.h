@@ -51,6 +51,7 @@ typedef struct
 	Image image;
 	LogicGates lGates;
 	int chances;
+	int
 }Player;
 
 
@@ -61,7 +62,7 @@ typedef struct{
 	bool keyRight;
 }Keys;
 
-void CreatePlayer(Player *player, int hStartPosition, int wStartPosition);
+void CreatePlayer(Player *player, int hStartPosition, int wStartPosition, int spritePersonagem);
 void moveDireita(Player *player);
 void moveEsquerda(Player *player);
 void moveCima(Player *player);

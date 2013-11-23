@@ -3,7 +3,7 @@
 #include "ItensMenu.h"
 #include <stdio.h>
 
-void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
+void CreatePlayer(Player *player, int hStartPosition, int wStartPosition, int spritePersonagem)
 {
 	player->state.direita = false;
 	player->state.esquerda = false;
@@ -14,7 +14,6 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->state.idleC = false;
 	player->state.idleB = false;
 	player->state.speed = 4;
-	
 	player->image.posInSprite = 10;
 	player->state.x = hStartPosition;
 	player->state.y = wStartPosition;
@@ -24,7 +23,21 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition)
 	player->image.frameDelay = 3;
 	player->image.frameWidth = 57;
 	player->image.frameHeight = 79;
-	player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+
+	if (spritePersonagem == 1)
+		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+	if (spritePersonagem == 2)
+		player->image.image = al_load_bitmap("./data/images/Player/menina.png");
+	if (spritePersonagem == 3)
+		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+	if (spritePersonagem == 4)
+		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+	if (spritePersonagem == 5)
+		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+	if (spritePersonagem == 6)
+		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+	if (spritePersonagem == 7)
+		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
 	player->play_font = al_load_font("data/circuito.ttf", 50, 10);
 	player->footstep = al_load_sample("./data/sound/footstep.wav");
 }
@@ -37,7 +50,7 @@ void moveDireita(Player *player)
 			player->image.curFrame = 0;
 
 		player->image.frameCount = 0;
-	}	
+	}
 	printf("x: %d, y: %d - Game Level: %d\n", player->state.x, player->state.y, game.level);
 }
 
@@ -63,7 +76,7 @@ void moveCima(Player *player)
 		player->image.frameCount = 0;
 	}
 	printf("x: %d, y: %d - Game Level: %d\n", player->state.x, player->state.y, game.level);
-	
+
 }
 
 void moveBaixo(Player *player)
@@ -84,7 +97,7 @@ void ProcessaMovimentoEsquerda(Player *player)
 	{
 		player->image.posInSprite = player->image.frameHeight*3;
 		player->state.esquerda = true;
-		
+
 		player->state.idleE = false;
 		player->state.idleD = false;
 		player->state.idleB = false;
@@ -98,7 +111,7 @@ void ProcessaMovimentoDireita(Player *player)
 	{
 		player->image.posInSprite = player->image.frameHeight;
 		player->state.direita = true;
-		
+
 		player->state.idleC = false;
 		player->state.idleB = false;
 		player->state.idleE = false;
@@ -167,17 +180,17 @@ void ValidaMovimento_CK_UP(Player *player)
 		player->state.idleE = false;
 		player->state.idleD = false;
 		player->state.sobe = false;
-		
+
 		// reseta os valores dos sprites
 		player->image.curFrame = 0;
-		player->image.frameCount = 0;	
-		
-		
+		player->image.frameCount = 0;
+
+
 	}
 	if(player->state.desce == true)
 	{
 		player->state.idleB = true;
-		player->state.idleC = false;		
+		player->state.idleC = false;
 		player->state.idleD = false;
 		player->state.idleE = false;
 		player->state.desce = false;
@@ -189,7 +202,7 @@ void ValidaMovimento_CK_UP(Player *player)
 }
 
 void ValidaMovimento(Player *player)
-{	
+{
 	if(player->state.idleD == true)
 		al_draw_bitmap_region(player->image.image, player->image.frameWidth, player->image.frameHeight, player->image.frameWidth, player->image.frameHeight, player->state.x, player->state.y, 0);
 	else if(player->state.idleE == true)
@@ -215,7 +228,7 @@ void createKeys(Keys *keys)
 }
 
 void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
-{	
+{
 	if(ev->type == ALLEGRO_EVENT_KEY_DOWN)
 	{
 		switch(ev->keyboard.keycode)

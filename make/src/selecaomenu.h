@@ -34,7 +34,7 @@ typedef struct
 	ALLEGRO_SAMPLE *menuSoundOpen;
 }lgImages;
 
-typedef enum { PER1, PER2, PER3, PER4, PER5, PER6, PER7 } Personagem;
+typedef enum { PERS1, PERS2, PERS3, PERS4, PERS5, PERS6, PERS7 } Personagem;
 void menuSelecaox();
 Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player);
 

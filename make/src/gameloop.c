@@ -52,12 +52,15 @@ void GameLoop(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
-	CreatePlayer(player, 213, 450);
+       Personagem person;
+       person = MenuLoadPerson(&ev, player);
+
+	CreatePlayer(player, 213, 450, person);
 	createKeys(keys);
 	createDialogs(dialog);
 
     //Gates gate;
-    Personagem person;
+
 	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIconOn = al_load_bitmap("./data/images/icons/som.png");
 	ALLEGRO_BITMAP *soundIconOff = al_load_bitmap("./data/images/icons/sem_som.png");
@@ -65,7 +68,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 
 	createLevelZero(levelZero, player);
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
-	person = MenuLoadPerson(&ev, player);
+
 	TextBoxLoad(&ev, get_idioma("AA00"));
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
