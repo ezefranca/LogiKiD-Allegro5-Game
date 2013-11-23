@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="nor_sheet" tilewidth="32" tileheight="32">
+  <image source="../nor_sheet.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="17" name="sheet_nand" tilewidth="32" tileheight="32">
+  <image source="../sheet_nand.png" width="64" height="96"/>
+ </tileset>
+ <tileset firstgid="23" name="tile_alavancas" tilewidth="32" tileheight="32">
+  <image source="../tile_alavancas.png" width="128" height="64"/>
+ </tileset>
+ <tileset firstgid="31" name="tile_circ" tilewidth="32" tileheight="32">
+  <image source="../tile_circ.png" width="224" height="256"/>
+ </tileset>
+ <layer name="Camada de Tiles 1" width="25" height="19" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAS0BAAdsAAE=
+  </data>
+ </layer>
+ <layer name="entradas" width="25" height="19" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFgx2IA7EEje2QBmIZGttBDzAaVsSD0bAaBaOAfgAAR0sBMw==
+  </data>
+ </layer>
+ <layer name="circbase" width="25" height="19" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowABFBgYFiBjmLgqECtDsSoV7ZNnYDgAs0cHiLWgWIeKdiig2rcAxlZGwshivsSbCw8nRQhOUEALNy0kjCwWQqzjMe08QKZWogG2MKIUKKClKwUsYTQKRsFwBgAuYxOL
+  </data>
+ </layer>
+ <layer name="portas" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFowA34ARiLhrbwQvEfDS2AxnoA7EBEl8EixilwAyIzZH4YljEBjOgdnhgA0MpPEbBKKAUAADS5gK9
+  </data>
+ </layer>
+ <layer name="complementoporta1" width="25" height="19" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4AwUKaDHVp0sAMZyDMwLFCAYhracYDWdijQymAkoEIHO7TpYMcoGAUDBQBmVgVb
+  </data>
+ </layer>
+ <layer name="complemento2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4AwEKaDHaJ0sGOggNBAO2AUjIJRMKAAABovADs=
+  </data>
+ </layer>
+ <layer name="sobrescrever" width="25" height="19" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAS0BAAdsAAE=
+  </data>
+ </layer>
+ <layer name="sobrescrever2" width="25" height="19" visible="0">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjIJRMApGAS0BAAdsAAE=
+  </data>
+ </layer>
+</map>
