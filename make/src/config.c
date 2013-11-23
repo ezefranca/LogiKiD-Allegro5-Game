@@ -111,11 +111,12 @@ void apaga_config(config *l, char *var) {
     }
 }
 
+/*
 void imprime_config(config *l, FILE *file) {
     elemento *e;
     for (e = l->inicio; e != NULL; e = e->proximo)
         fprintf(file, "%s=%s\n", e->var, e->string);
-}
+} */
 
 int conta_linhas(FILE *entrada) {
     int lines;
@@ -269,13 +270,15 @@ void apaga_configuracao(char *var) {
     apaga_config(&arquivo_configuracao, var);
 }
 
+/*
 void imprime_idioma() {
     imprime_config(&arquivo_idioma, stdout);
 }
+*/
 
-void imprime_configuracao() {
+/*void imprime_configuracao() {
     imprime_config(&arquivo_configuracao, stdout);
-}
+}*/
 
 char *get_config_user(char *var) {
     if (loaded_config_user == 1) {
@@ -283,10 +286,11 @@ char *get_config_user(char *var) {
     }
 }
 
+/*
 void imprime_config_user() {
     imprime_config(&arquivo_config_user, stdout);
 }
-
+*/
 void apaga_config_user(char *var) {
     apaga_config(&arquivo_config_user, var);
 }
@@ -322,10 +326,12 @@ bool create_config_user(char *config_file) {
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);
 
+/*
     if (arquivo_config_user->inicio != NULL) {
         loaded_config_user = 1;
         return true;
     }
+    */
     return false;
 }
 
@@ -342,17 +348,20 @@ bool load_config_user(char *config_file) {
 bool salva_config_user(char *config_file) {
     FILE *entrada;
 
+/*
     if (loadead_config_user == 1) {
         entrada = fopen(config_file, "w");
+
         if (!entrada)
             return false;
 
-        imprime_config(&arquivo_config_user, entrada);
+     //   imprime_config(&arquivo_config_user, entrada);
 
         fclose(entrada);
         return true;
     } else {
         return false;
     }
+    */
 }
 
