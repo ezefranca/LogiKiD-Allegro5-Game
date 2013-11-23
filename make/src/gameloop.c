@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "ItensMenu.h"
 #include "textBox.h"
+#include "pontuacao.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
 #include "../src/Fases/Fase2/fase2.h"
@@ -134,7 +135,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 				printf("%d\n", complete);
 
 				if(complete){
-
+					qualificaJogador (player, game.level);
 					isDestroyed = false;
 					player->state.x = 350;
 					player->state.y = 20;
