@@ -22,7 +22,7 @@ void menuSelecaox()
 void mk_right(lgImages *lgDados)
 {
 	al_draw_bitmap(lgDados->Seletor2,  lgDados->itmSelX,  lgDados->itmSelY, 0);
-	if(lgDados->itmSelX == 750){
+	if(lgDados->itmSelX == 490){
 		lgDados->itmSelX = 70;
 	} else{
 		lgDados->itmSelX += 70;
@@ -34,7 +34,7 @@ void mk_left(lgImages *lgDados)
 	al_draw_bitmap(lgDados->Seletor2,  lgDados->itmSelX,  lgDados->itmSelY, 0);
 	if(lgDados->itmSelX == 70)
 	{
-		lgDados->itmSelX = 750;
+		lgDados->itmSelX = 490;
 	}
 	else
 	{
