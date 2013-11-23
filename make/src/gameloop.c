@@ -147,7 +147,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 				printf("%d\n", complete);
 
 				if(complete){
-					qualificaJogador (player, game.level);
+					qualificaJogador (player, game.level, &ev);
 					isDestroyed = false;
 					player->state.x = 350;
 					player->state.y = 20;

@@ -14,7 +14,19 @@
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
 
-int qualificaJogador (Player *player, int gameLevel);
+typedef struct
+{
+
+	ALLEGRO_BITMAP *imageExcelente;
+	ALLEGRO_BITMAP *imageBom;
+	ALLEGRO_BITMAP *imageRegular;
+	ALLEGRO_SAMPLE *somExcelente;
+	ALLEGRO_SAMPLE *somBom;
+	ALLEGRO_SAMPLE *somRegular;
+
+}Ranked;
+
+int qualificaJogador (Player *player, int gameLevel, ALLEGRO_EVENT_TYPE *ev);
 
 
 #endif

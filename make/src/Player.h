@@ -51,7 +51,6 @@ typedef struct
 	Image image;
 	LogicGates lGates;
 	int chances;
-	int
 }Player;
 
 
