@@ -7,11 +7,8 @@ SRCDIRS = $(shell find $(SRCDIR) -type d | sed 's/$(SRCDIR)/./g' )
 ODIR=obj
 LIBS=-lallegro -lallegro_audio -lallegro_acodec -lallegro_image -lallegro_font -lallegro_main -lallegro_ttf -lallegro_primitives -lm
 
-<<<<<<< HEAD
-_OBJ =  selecaomenu.o main.o init.o Player.o StartMenu.o  ItensMenu.o pontuacao.o config.o Fases/Fase0/fase0.o Fases/Fase1/fase1.o Fases/Fase2/fase2.o Fases/Fase3/fase3.o textBox.o gameloop.o
-=======
-_OBJ = main.o init.o Player.o StartMenu.o ItensMenu.o pontuacao.o config.o Fases/Fase0/fase0.o Fases/Fase1/fase1.o Fases/Fase2/fase2.o Fases/Fase3/fase3.o Fases/Fase4/fase4.o textBox.o gameloop.o
->>>>>>> tales
+_OBJ = selecaomenu.o main.o init.o Player.o StartMenu.o ItensMenu.o pontuacao.o config.o Fases/Fase0/fase0.o Fases/Fase1/fase1.o Fases/Fase2/fase2.o Fases/Fase3/fase3.o Fases/Fase4/fase4.o textBox.o gameloop.o
+
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 OUTPUTDIR = ../bin
@@ -22,7 +19,7 @@ $(ODIR)/%.o: $(SRCDIR)/%.c
 
 $(OUTPUTDIR)/logiKid: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
-	$(info ************  COMPILADO COM SUCESSO ************)
+	$(info *************************************** COMPILADO COM SUCESSO ******************************************************)
 
 all: $(OUTPUTDIR)/ProjetoPI2
 

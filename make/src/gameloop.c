@@ -38,12 +38,9 @@ void GameLoop(ALLEGRO_EVENT ev)
 	LevelOne *levelOne;
 	LevelDois *levelDois;
 	LevelTres *levelTres;
-<<<<<<< HEAD
-
-=======
 	LevelQuatro *levelQuatro;
-	
->>>>>>> tales
+
+
 	launch_song = al_load_sample("./data/sound/music/Lunch.ogg");
 	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");
 	/* Adiciona a quantidade de portas logicas... */
@@ -168,19 +165,17 @@ void GameLoop(ALLEGRO_EVENT ev)
 						initDrawGatesLevelQuatro(levelQuatro);
 						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
 						printf("Objetivo completo\n");
-						complete = false;	
+						complete = false;
 					}
 
 					if(game.level == 2){
 						levelTres = malloc(sizeof(LevelTres));
 						game.level = 3;
 						inputs[3] = true;
-<<<<<<< HEAD
+
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelTres(levelTres, player);
-=======
-						createLevelTres(levelTres);
->>>>>>> tales
+
 						initDrawGatesLevelTres(levelTres);
 						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 						printf("Objetivo completo\n");
@@ -190,12 +185,8 @@ void GameLoop(ALLEGRO_EVENT ev)
 					if(game.level == 1){
 						levelDois = malloc(sizeof(LevelDois));
 						game.level = 2;
-<<<<<<< HEAD
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelDois(levelDois, player);
-=======
-						createLevelDois(levelDois);
->>>>>>> tales
 						initDrawGatesLevelDois(levelDois);
 						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
 						printf("Objetivo completo \n");
@@ -204,12 +195,8 @@ void GameLoop(ALLEGRO_EVENT ev)
 					if(game.level == 0){
 						levelOne = malloc(sizeof(LevelOne));
 						game.level = 1;
-<<<<<<< HEAD
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelOne(levelOne, player);
-=======
-						createLevelOne(levelOne);
->>>>>>> tales
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
 						printf("Objetivo completo \n");
@@ -400,7 +387,7 @@ bool isCollidingGlobal(Player *player, int level){
 	    if (isColliding(163, 110, 55, 35, player)   ||
 	    	isColliding(163, 206, 55, 35, player)   ||
 	    	isColliding(163, 269, 55, 35, player)   ||
-	    	isColliding(163, 368, 55, 35, player))		    
+	    	isColliding(163, 368, 55, 35, player))
 	    {
 	    	return true;
 	    }
