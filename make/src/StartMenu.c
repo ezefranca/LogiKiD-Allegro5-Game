@@ -2,8 +2,6 @@
 #include "comum.h"
 #include "gameloop.h"
 
-
-
 void PrintMenu(int MenuPosition)
 {
 	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu/BG3.png");
@@ -20,15 +18,14 @@ void PrintMenu(int MenuPosition)
 
 	switch(MenuPosition)
 	{
-
-		case 0:
-			al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, "--Iniciar jogo--");
-			al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, "--Iniciar jogo--");
-			break;
-		case 1:
-    		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, "--Sair--");
-    		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, "--Sair--");
-    		break;
+	case 0:
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, "--Iniciar jogo--");
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, "--Iniciar jogo--");
+		break;
+	case 1:
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, "--Sair--");
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, "--Sair--");
+		break;
 	}
 }
 
@@ -59,7 +56,7 @@ void StartMenu()
 			case ALLEGRO_KEY_ENTER:
 				if(MenuPosition == 0)
 				{
-					GameLoop_Fase1(ev);
+					GameLoop(ev);
 					sair = true;
 					break;
 					//PrintMenu(0);

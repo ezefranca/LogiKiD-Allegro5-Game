@@ -12,15 +12,18 @@ ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player);
 bool isCollidingGlobal(Player *player, int level);
 void musicPlayer(int mute);
+ALLEGRO_SAMPLE *launch_song; //	= al_load_sample("./data/sound/music/Lunch.ogg");
+ALLEGRO_SAMPLE *synth_song;// = al_load_sample("./data/sound/music/Syntheticity.ogg");
 
 int i;
+
+bool isDestroyed = false;
 bool redraw = false;
 bool complete = false;
-//bool drawCirc = false;
 ALLEGRO_BITMAP *textBox;
 bool inputs[8] = {false, false, false, false, false, false, false, false};
 
-void GameLoop_Fase1(ALLEGRO_EVENT ev)
+void GameLoop(ALLEGRO_EVENT ev)
 {
 	game.level = 0;
 	bool sair = false;
@@ -31,6 +34,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	LevelOne *levelOne;
 	LevelDois *levelDois;
 	LevelTres *levelTres;
+	
+	launch_song = al_load_sample("./data/sound/music/Lunch.ogg");
+	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");	
 	/* Adiciona a quantidade de portas logicas... */
 	player->lGates.lgAND = 2;
 	player->lGates.lgOR = 3;
@@ -43,11 +49,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 	CreatePlayer(player, 213, 450);
 	createKeys(keys);
 	createDialogs(dialog);
-      Gates gate;
-	ALLEGRO_BITMAP *fundo = SetBackGroundImage("./data/levels/tutorial/tutorialbase.png");
-	ALLEGRO_BITMAP *soundIcon = al_load_bitmap("./data/images/icons/som.png");
 
-
+    Gates gate;
+	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
+	ALLEGRO_BITMAP *soundIconOn = al_load_bitmap("./data/images/icons/som.png");
+	ALLEGRO_BITMAP *soundIconOff = al_load_bitmap("./data/images/icons/sem_som.png");
+	ALLEGRO_BITMAP *soundIcon = soundIconOn;
+	
 	createLevelZero(levelZero);
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
@@ -65,24 +73,25 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if((ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE))
 		{
-			//drawCirc = false;
 			sair = true;
-			game.level = 1;
-			al_destroy_sample_instance(game.songInstance);
+			//al_destroy_sample_instance(game.songInstance);
 		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
 			switch(ev.keyboard.keycode)
 			{
 
-			case ALLEGRO_KEY_M:
+			/*case ALLEGRO_KEY_M:
 				if(keys->keyUp == false && keys->keyDown == false && keys->keyLeft == false && keys->keyRight == false)
 				{
 					gate = MenuLoad(&ev, player);
 				}
+			break;*/
 
+			case ALLEGRO_KEY_ESCAPE:
+				sair = true;
 			break;
-
+			
 			case ALLEGRO_KEY_SPACE:
 
 				if(game.level == 0)
@@ -104,12 +113,13 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 					logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
 					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 				}
-				if(game.level == 4)
+
+				/*if(game.level == 4)
 				{
 
-				}
+				}*/
 
-				if(game.level == 42)
+				/*if(game.level == 42)
 				{
 						textBox = al_load_bitmap("data/images/textbox.png");
 						al_draw_bitmap(textBox, 0, 450, 0);
@@ -117,68 +127,58 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 						{
 							TextBoxLoad_matriz(&ev, dialog->texto_generico[i], 472 + i*25);
 						}
-				}
+				}*/
 			break;
 
 			case ALLEGRO_KEY_ENTER:
 				printf("%d\n", complete);
 
-				if(complete)
-				{
+				if(complete){
+
+					isDestroyed = false;
+					player->state.x = 350;
+					player->state.y = 20;
+					player->state.idleE = false;
+					player->state.idleD = false;
+					player->state.idleC = false;
+					player->state.idleB = true;
+					inputs[0] = false;
+					inputs[1] = false;
+					inputs[2] = false;
+					inputs[3] = false;
+
 					if(game.level == 2){
 						levelTres = malloc(sizeof(LevelTres));
 						game.level = 3;
-						player->state.x = 350;
-						player->state.y = 20;
-						player->state.idleE = false;
-						player->state.idleD = false;
-						player->state.idleC = false;
-						player->state.idleB = true;
-
-						inputs[0] = true;
-						inputs[1] = false;
-						inputs[2] = false;
-						inputs[3] = false;
+						inputs[3] = true;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+						createLevelTres(levelTres);
 						initDrawGatesLevelTres(levelTres);
-						drawLevelTres(levelTres);
+						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
 						printf("Objetivo completo\n");
 						complete = false;
-						free(levelDois);
+						//free(levelDois);
 					}
 
 					if(game.level == 1){
 						levelDois = malloc(sizeof(LevelDois));
 						game.level = 2;
-						player->state.x = 350;
-						player->state.y = 20;
-						player->state.idleE = false;
-						player->state.idleD = false;
-						player->state.idleC = false;
-						player->state.idleB = true;
-						inputs[0] = false;
-						inputs[1] = false;
-						inputs[2] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelDois(levelDois);
 						initDrawGatesLevelDois(levelDois);
 						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-						printf("Objetivo completo\n");
+						printf("Objetivo completo \n");
 						complete = false;
-						//destroyLevelOne(levelOne);
-						free(levelOne);
 					}
 					if(game.level == 0){
 						levelOne = malloc(sizeof(LevelOne));
 						game.level = 1;
-						inputs[0] = false;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
 						createLevelOne(levelOne);
 						initDrawGatesLevelOne(levelOne);
 						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-						printf("Objetivo completo %d\n", levelOne->teste);
+						printf("Objetivo completo \n");
 						complete = false;
-						free(levelZero);
 					}
 				}
 			}
@@ -186,7 +186,6 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
 
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
-
 			if(!isCollidingGlobal(player, game.level))
 			{
 				movePlayer(keys, player);
@@ -204,38 +203,58 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
             {
             	if (game.mute == 0){
                    	game.mute = 1;
-                   	soundIcon = al_load_bitmap("./data/images/icons/som.png");
+                   	soundIcon = soundIconOn;
                    	musicPlayer(game.mute);
             	}
             	else
             	{
             	   	game.mute = 0;
-            	   	soundIcon = al_load_bitmap("./data/images/icons/sem_som.png");
+            	   	soundIcon = soundIconOff;
             	   	musicPlayer(game.mute);
             	}
             }
         }
 
-        //AQUI TODA ITERAÇÃO CARREGA IMAGEM. PRECISA CORRIGIR
-		//Exibe fundo
+        //Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
-		//al_draw_bitmap(circuito, 0, 0 , 0);
-		if (game.level == 0){
+		if (game.level == 0)
+		{
 		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelZero(levelZero);
 		}
-		if (game.level == 1){
-		//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+		if (game.level == 1)
+		{
+			//	al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelOne(levelOne);
-			//free(levelZero);
+			if(isDestroyed == false)
+			{
+				destroyLevelZero(levelZero);
+				free(levelZero);
+				isDestroyed = true;
+				printf("Liberou\n");
+			}
 		}
-		if (game.level == 2){
-            al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+		if (game.level == 2)
+		{
+            //al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelDois(levelDois);
+			if(isDestroyed == false)
+			{
+				destroyLevelOne(levelOne);
+				free(levelOne);
+				isDestroyed = true;
+			}
 		}
-		if (game.level == 3) {
+		if (game.level == 3)
+		{
 			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
 			drawLevelTres(levelTres);
+			if(isDestroyed == false)
+			{
+				destroyLevelDois(levelDois);
+				free(levelDois);
+				isDestroyed = true;
+			}
 		}
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
@@ -276,6 +295,9 @@ void GameLoop_Fase1(ALLEGRO_EVENT ev)
         	al_flip_display();
       	}
 	}
+	//destroyLevelTres(levelTres);
+	//al_destroy_sample_instance(game.songInstance);
+	//free(levelTres);
 	free(keys);
 	free(player);
 	free(dialog);
@@ -307,7 +329,7 @@ bool isCollidingGlobal(Player *player, int level){
 		else return false;
 	}
 
-	if(level == 1){
+	if(level == 1 || level == 2){
 		if (isColliding(165, 150, 55, 35, player)    ||
 			isColliding(165, 238, 55, 35, player)   ||
 			isColliding(165, 335, 55, 35, player))
@@ -316,31 +338,18 @@ bool isCollidingGlobal(Player *player, int level){
 		}
 		else return false;
 	}
-	if(level == 2)
+	if(level == 3)
 	{
-		if (isColliding(133, 118, 55, 35, player)    ||
-			isColliding(133, 202, 55, 35, player)   ||
-			isColliding(133, 302, 55, 35, player))
-		{
-			return true;
-		}
-		else return false;
-	}
-	//if(level == 3)
-		/*
-	   	{
-	    if (isColliding(98, 108, 60, 42, player)   ||
-	    	isColliding(98, 206, 60, 42, player)   ||
-	    	isColliding(98, 301, 60, 42, player)   ||
-	    	isColliding(450, 130, 64, 64, player)   ||
-	      isColliding(450, 291, 64, 64, player))
+	    if (isColliding(163, 110, 55, 35, player)   ||
+	    	isColliding(163, 206, 55, 35, player)   ||
+	    	isColliding(163, 269, 55, 35, player)   ||
+	    	isColliding(163, 368, 55, 35, player))		    
 	    {
 	    	return true;
 	    }
 	    else return false;
 	}
-	else return false;
-*/	return false;
+	return false;
 }
 void musicPlayer(int mute){
 	if (mute == 0){
@@ -355,34 +364,27 @@ void musicPlayer(int mute){
 
 		switch (game.level){
 			case 0:
-			game.song = al_load_sample("./data/sound/music/Lunch.ogg");
+			game.song = launch_song;
 			break;
 			case 1:
-			game.song = al_load_sample("./data/sound/music/Lunch.ogg");
+			game.song = launch_song;
 			break;
 			case 2:
-			game.song = al_load_sample("./data/sound/music/Syntheticity.ogg");
+			game.song = synth_song;
 			break;
 			case 3:
-			game.song = al_load_sample("./data/sound/music/Lunch.ogg");
+			game.song = launch_song;
 			break;
 			case 4:
-			game.song = al_load_sample("./data/sound/music/Syntheticity.ogg");
+			game.song = synth_song;
 			break;
 			case 42:
-			game.song = al_load_sample("./data/sound/music/Syntheticity.ogg");
+			game.song = synth_song;
 			break;
 		}
-
-		    game.songInstance = al_create_sample_instance(game.song);
-                al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
-                al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
-                al_play_sample_instance(game.songInstance);
-
+		game.songInstance = al_create_sample_instance(game.song);
+        al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+        al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+        al_play_sample_instance(game.songInstance);
 	}
-}
-
-ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path)
-{
-	return al_load_bitmap(bk_path);
 }

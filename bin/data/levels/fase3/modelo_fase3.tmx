@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="25" height="19" tilewidth="32" tileheight="32">
+ <tileset firstgid="1" name="nor_sheet" tilewidth="32" tileheight="32">
+  <image source="../nor_sheet.png" width="128" height="128"/>
+ </tileset>
+ <tileset firstgid="17" name="saidas_zer_um" tilewidth="32" tileheight="32">
+  <image source="../saidas_zer_um.png" width="64" height="32"/>
+ </tileset>
+ <tileset firstgid="19" name="sheet_nand" tilewidth="32" tileheight="32">
+  <image source="../sheet_nand.png" width="64" height="96"/>
+ </tileset>
+ <tileset firstgid="25" name="tile_alavancas" tilewidth="32" tileheight="32">
+  <image source="../tile_alavancas.png" width="128" height="64"/>
+ </tileset>
+ <tileset firstgid="33" name="tile_circ" tilewidth="32" tileheight="32">
+  <image source="../tile_circ.png" width="224" height="256"/>
+ </tileset>
+ <layer name="Camada de Tiles 1" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFlABpIJahsR3yQKwAxJoMDAtA2BbItgNiJSAbhBUZGBJo7AQGoB0LaG3HKBgFo2AUDFcAAO3LBUo=
+  </data>
+ </layer>
+ <layer name="circ2" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A+QBqIZfDIazAwHKDUDnkgVgBiTQaGBdiwBqUWjIJRMApGARkAALCABj0=
+  </data>
+ </layer>
+ <layer name="circ3" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUkAIkgViKxnbIArEcECsxMCSAsC2QbQfEmgwMC0BYAyhGYycwaEDtorU9o2AUjAQAAFwYBZk=
+  </data>
+ </layer>
+ <layer name="circ4" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUjALaAEkglsIjr8HAcECTgWEBJXbIArEcECsBzQFhWyDbDohB5oKwBiWGj4JRQCUAAL+1Bdk=
+  </data>
+ </layer>
+ <layer name="portas" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A4YAjERjS2wwKILWlsBzYwnP1GCdAHYgMa22EGxOY0tmMUjIKBBgAckgJ1
+  </data>
+ </layer>
+ <layer name="circ5" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A0oArF6jS0QweK9WhoBwwoMjAsgLFB/vKnjR0HYGyQv8JoYIcSDcyEAVicq9HQDlic69LQjlEwCgYKAAANqQSn
+  </data>
+ </layer>
+ <layer name="circ6" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo4A0oALFpjS0QxuKbWhoBwxoMDAsoIM1o2AUjIIRDAC/wAHY
+  </data>
+ </layer>
+ <layer name="circ7" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AU0BpoMDAcoLUdmjQ0WwWKTWhohzYUW9PQjlEwCgYKAABu8QIf
+  </data>
+ </layer>
+ <layer name="saida" width="25" height="19">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUwIAKEDvS2A5tIPagsR2jYBSMgsEFAIYpANk=
+  </data>
+ </layer>
+</map>

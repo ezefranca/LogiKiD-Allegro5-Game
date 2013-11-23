@@ -1,4 +1,4 @@
-#include "config.h"
+/*#include "config.h"
 #include "comum.h"
 
 config arquivo_configuracao;
@@ -263,3 +263,4 @@ void imprime_idioma(){
 void imprime_configuracao(){
     imprime_config(&arquivo_configuracao);
 }
+*/
