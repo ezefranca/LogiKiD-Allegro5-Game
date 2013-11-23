@@ -41,7 +41,7 @@ typedef struct {
 } LevelQuatro;
 
 
-void createLevelQuatro(LevelQuatro *levelQuatro);
+void createLevelQuatro(LevelQuatro *levelQuatro, Player *player);
 void logicLevelQuatro(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void initDrawGatesLevelQuatro(LevelQuatro *LevelQuatro);
 void drawLevelQuatro(LevelQuatro *LevelQuatro);
