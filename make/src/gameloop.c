@@ -8,6 +8,7 @@
 #include "../src/Fases/Fase2/fase2.h"
 #include "../src/Fases/Fase3/fase3.h"
 #include "../src/Fases/Fase4/fase4.h"
+#include "../src/Fases/Fase5/fase5.h"
 
 ALLEGRO_BITMAP *SetBackGroundImage(const char *bk_path);
 bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player);
@@ -36,6 +37,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 	LevelDois *levelDois;
 	LevelTres *levelTres;
 	LevelQuatro *levelQuatro;
+	LevelCinco *levelCinco;
 	
 	launch_song = al_load_sample("./data/sound/music/Lunch.ogg");
 	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");	
@@ -121,6 +123,11 @@ void GameLoop(ALLEGRO_EVENT ev)
 					logicLevelQuatro(&inputs[0], &inputs[1], &inputs[2], player);
 					drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
 				}
+				if(game.level == 5)
+				{
+					logicLevelCinco(&inputs[0], &inputs[1], player);
+					drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
+				}
 
 				/*if(game.level == 42)
 				{
@@ -150,10 +157,22 @@ void GameLoop(ALLEGRO_EVENT ev)
 					inputs[2] = false;
 					inputs[3] = false;
 
+					if(game.level == 4)
+					{
+						levelCinco = malloc(sizeof(LevelCinco));
+						game.level = 5;
+						createLevelCinco(levelCinco);
+						initDrawGatesLevelCinco(levelCinco);
+						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
+						printf("Objetivo completo\n");
+						complete = false;	
+					}
+
 					if(game.level == 3)
 					{
 						levelQuatro = malloc(sizeof(LevelQuatro));
 						game.level = 4;
+						inputs[1] = true;
 						createLevelQuatro(levelQuatro);
 						initDrawGatesLevelQuatro(levelQuatro);
 						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
@@ -277,6 +296,17 @@ void GameLoop(ALLEGRO_EVENT ev)
 				isDestroyed = true;
 			}
 		}
+		if (game.level == 5)
+		{
+            //al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+			drawLevelCinco(levelCinco);
+			if(isDestroyed == false)
+			{
+				destroyLevelQuatro(levelQuatro);
+				free(levelQuatro);
+				isDestroyed = true;
+			}
+		}
 		ValidaMovimento(player);
 		al_draw_bitmap(soundIcon, 750, 20, 0);
 
@@ -370,16 +400,13 @@ bool isCollidingGlobal(Player *player, int level){
 	    }
 	    else return false;
 	}
-	if(level == 3)
+	if(level == 5)
 	{
-	    if (isColliding(163, 110, 55, 35, player)   ||
-	    	isColliding(163, 206, 55, 35, player)   ||
-	    	isColliding(163, 269, 55, 35, player)   ||
-	    	isColliding(163, 368, 55, 35, player))		    
-	    {
-	    	return true;
-	    }
-	    else return false;
+		if (isColliding(101, 112, 55, 90, player))
+		{
+			return true;
+		}
+		else return false;
 	}
 	return false;
 }
