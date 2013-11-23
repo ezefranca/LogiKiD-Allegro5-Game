@@ -164,7 +164,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 					{
 						levelQuatro = malloc(sizeof(LevelQuatro));
 						game.level = 4;
-						createLevelQuatro(levelQuatro);
+						createLevelQuatro(levelQuatro, player);
 						initDrawGatesLevelQuatro(levelQuatro);
 						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
 						printf("Objetivo completo\n");
@@ -261,7 +261,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 2)
 		{
-                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
+                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelDois(levelDois);
 			if(isDestroyed == false)
 			{
@@ -272,7 +272,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 3)
 		{
-			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
+			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelTres(levelTres);
 			if(isDestroyed == false)
 			{
@@ -283,7 +283,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 4)
 		{
-            //al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelQuatro(levelQuatro);
 			if(isDestroyed == false)
 			{
