@@ -3,9 +3,8 @@
 #include "pontuacao.h"
 #include <string.h>
 
-void criaQualificacao() {
-	Ranked *ranking = malloc(sizeof(Ranked));
-	ranking->imageExcelente =  al_load_bitmap("data/images/Personagem/PER4.png");
+void criaQualificacao(Ranked *ranking) {
+	ranking->imageExcelente =  al_load_bitmap("./data/levels/menu/BG3.png");
 	ranking->imageBom = al_load_bitmap("data/images/Personagem/PER4.png");
 	ranking->imageRegular= al_load_bitmap("data/images/Personagem/PER4.png");
 	ranking->somExcelente = al_load_sample("./data/sound/menu_open.wav");
@@ -15,6 +14,7 @@ void criaQualificacao() {
 
 void loopQualifica(ALLEGRO_EVENT *ev){
 	bool sair = false;
+	al_flip_display();
 	while(!sair)
 	{
 		printf("passou\n");
@@ -42,10 +42,13 @@ int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT_TYPE *ev){
 
 	if (gameLevel == 0)
 	{
-		criaQualificacao();
-		if (player->chances == 1){
+		Ranked *ranking;
+		ranking = malloc(sizeof(Ranked));
+		criaQualificacao(ranking);
+		if (player->chances != 0){
+				al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
 				loopQualifica(ev);
-				printf("excelente\n");
+				printf("excelente entrou nesse caraio\n");
 			}
 	}
 

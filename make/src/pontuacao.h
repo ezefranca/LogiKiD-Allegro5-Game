@@ -25,7 +25,8 @@ typedef struct
 	ALLEGRO_SAMPLE *somRegular;
 
 }Ranked;
-
+void loopQualifica(ALLEGRO_EVENT *ev);
+void criaQualificacao(Ranked *ranking);
 int qualificaJogador (Player *player, int gameLevel, ALLEGRO_EVENT_TYPE *ev);
 
 
