@@ -114,7 +114,7 @@ void apaga_config(config *l, char *var) {
 void imprime_config(config *l, FILE *file) {
     elemento *e;
     for (e = l->inicio; e != NULL; e = e->proximo)
-        fprintf(file, "%s = %s\n", e->var, e->string);
+        fprintf(file, "%s=%s\n", e->var, e->string);
 }
 
 int conta_linhas(FILE *entrada) {
