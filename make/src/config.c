@@ -55,15 +55,14 @@ void insere_config(config *l, char *var, char *string) {
 
 char *retorna_config(config *l, char *var) {
     elemento *anterior, *atual;
-    char *failed = {"Failed"};
     
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list empty\n");
-        return failed;
+        return var;
     }
-    else if (strcmp(var, anterior->var) == 0) {
-        l->inicio = anterior->proximo;
+    else if (strcmp(var, anterior->var) == 0){
+        //l->inicio = anterior->proximo;
         return (anterior->string);
     } else {
         atual = anterior->proximo;
@@ -72,12 +71,11 @@ char *retorna_config(config *l, char *var) {
             atual = anterior->proximo;
         }
 
-        if (atual != NULL) {
+        if (atual != NULL){
             return (atual->string);
         }
-        return failed;
+        return var;
     }
-
 }
 
 void apaga_config(config *l, char *var) {
@@ -115,13 +113,16 @@ void imprime_config(config *l) {
 
 int conta_linhas(FILE *entrada) {
     int lines;
-    char caracter;
+    char caracter, last_caracter;
     lines = 1;
 
-    while ((caracter = fgetc(entrada)) != EOF) {
-        if (caracter == '\n')
+    while((caracter = fgetc(entrada)) != EOF) {
+        if (caracter == '\n' || caracter == '\0')
             lines++;
+        last_caracter = caracter;
     }
+    if(last_caracter == '\n' || caracter == '\0') --lines;
+    
     //Retorna o ponteiro para inicio do arquivo.
     rewind(entrada);
     return lines;
@@ -142,7 +143,7 @@ int conta_until(FILE *entrada, char until) {
 bool load_config(char *config_file, int type) {
     char **var, **string;
     FILE *entrada;
-    int i, linhas, count, before;
+    int i, linhas;
     int *tstring, *tvar;
     char c;
 
