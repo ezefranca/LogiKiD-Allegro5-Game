@@ -5,6 +5,7 @@
 #include "textBox.h"
 #include "pontuacao.h"
 #include "config.h"
+#include "selecaomenu.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
 #include "../src/Fases/Fase2/fase2.h"
@@ -52,15 +53,17 @@ void GameLoop(ALLEGRO_EVENT ev)
 	createKeys(keys);
 	createDialogs(dialog);
 
-    Gates gate;
+    //Gates gate;
+    Personagem person;
 	ALLEGRO_BITMAP *fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
 	ALLEGRO_BITMAP *soundIconOn = al_load_bitmap("./data/images/icons/som.png");
 	ALLEGRO_BITMAP *soundIconOff = al_load_bitmap("./data/images/icons/sem_som.png");
 	ALLEGRO_BITMAP *soundIcon = soundIconOn;
 
 	createLevelZero(levelZero, player);
-	TextBoxLoad(&ev, get_idioma("AA00"));
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
+	person = MenuLoadPerson(&ev, player);
+	TextBoxLoad(&ev, get_idioma("AA00"));
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
 	//al_start_timer(game.timer);

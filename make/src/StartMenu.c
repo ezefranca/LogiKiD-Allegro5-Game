@@ -1,6 +1,7 @@
 #include "StartMenu.h"
 #include "comum.h"
 #include "gameloop.h"
+#include "selecaomenu.h"
 
 void PrintMenu(int MenuPosition)
 {
@@ -56,6 +57,7 @@ void StartMenu()
 			case ALLEGRO_KEY_ENTER:
 				if(MenuPosition == 0)
 				{
+					menuSelecaox();
 					GameLoop(ev);
 					sair = true;
 					break;

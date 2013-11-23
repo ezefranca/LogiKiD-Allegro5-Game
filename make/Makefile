@@ -1,13 +1,13 @@
 IDIR =.
 CC=gcc -std=c99
-CFLAGS=-I$(IDIR) -Wall -g
+CFLAGS=-I$(IDIR) -W -Wall -g
 
 SRCDIR=src
 SRCDIRS = $(shell find $(SRCDIR) -type d | sed 's/$(SRCDIR)/./g' )
 ODIR=obj
 LIBS=-lallegro -lallegro_audio -lallegro_acodec -lallegro_image -lallegro_font -lallegro_main -lallegro_ttf -lallegro_primitives -lm
 
-_OBJ = main.o init.o Player.o StartMenu.o ItensMenu.o pontuacao.o config.o Fases/Fase0/fase0.o Fases/Fase1/fase1.o Fases/Fase2/fase2.o Fases/Fase3/fase3.o textBox.o gameloop.o
+_OBJ =  selecaomenu.o main.o init.o Player.o StartMenu.o  ItensMenu.o pontuacao.o config.o Fases/Fase0/fase0.o Fases/Fase1/fase1.o Fases/Fase2/fase2.o Fases/Fase3/fase3.o textBox.o gameloop.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 OUTPUTDIR = ../bin
