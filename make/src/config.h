@@ -13,7 +13,7 @@
 #define CONFIG_H
 #define CONFIG 0
 #define IDIOMA 1
-
+#define CONFIG_USER 2
 
 typedef struct _elemento {
   char *string;
@@ -47,4 +47,21 @@ void imprime_idioma();
 
 void imprime_configuracao();
 
+char *get_config_user(char *var);
+
+void imprime_config_user(); 
+
+void apaga_config_user(char *var);
+
+void adiciona_config_user(char *string, char *var);
+
+void update_config_user(char *string, char *var);
+
+void limpa_config_user();
+
+bool create_config_user(char *config_file);
+
+bool load_config_user(char *config_file);
+
+bool salva_config_user(char *config_file);
 #endif
