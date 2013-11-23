@@ -113,6 +113,11 @@ bool inicializar()
         return false;
     }
 
+    //Carrega configuracao de usuario.
+    if(!load_config_user("data/config/user.conf")){
+        fprintf(stderr, "Falha ao carregar configuração de usuário!\n");
+        return false;
+    }
 
 
     game.mute = 1;
