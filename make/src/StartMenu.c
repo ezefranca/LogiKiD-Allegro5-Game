@@ -9,24 +9,24 @@ void PrintMenu(int MenuPosition)
 	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu/BG4.png");
 	al_draw_bitmap(menu_fundo, 0, 0, 0);
 	//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 302, ALLEGRO_ALIGN_CENTRE, get_idioma("STM01"));
-	al_draw_text(game.fonte, al_map_rgb(0, 255, 0), 800 / 2, 305, ALLEGRO_ALIGN_CENTRE, get_idioma("STM01"));
-	al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 800 / 2, 330, ALLEGRO_ALIGN_CENTRE, get_idioma("STM02"));
-	al_draw_text(game.fonte_logo, al_map_rgb(0, 255, 0), 800 / 2, 336, ALLEGRO_ALIGN_CENTRE, get_idioma("STM02"));
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("STM03"));
-	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("STM03"));
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("STM04"));
-	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("STM04"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 302, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
+	al_draw_text(game.fonte, al_map_rgb(0, 255, 0), 800 / 2, 305, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
+	al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 800 / 2, 330, ALLEGRO_ALIGN_CENTRE, get_idioma("LogiKid"));
+	al_draw_text(game.fonte_logo, al_map_rgb(0, 255, 0), 800 / 2, 336, ALLEGRO_ALIGN_CENTRE, get_idioma("LogiKid"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Start game"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("Start game"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
 
 	switch(MenuPosition)
 	{
 		case 0:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("STM05"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("STM05"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("--Start game--"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("--Start game--"));
 		break;
 		case 1:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("STM07"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("STM07"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
 		break;
 	}
 }
