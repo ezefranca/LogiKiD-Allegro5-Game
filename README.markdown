@@ -2,7 +2,7 @@ ProjetoPI2 - Desenvolvimento de um jogo utilizando a Allegro 5.
 ====================
 LogiKiD
 ====================
-![My image](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
+![My image](https://raw.github.com/senacbcc/BCC-2s13-PI2-LOGIKID/master/bin/data/images/intro/intro.png)
 
 Sobre
 ---------------------
