@@ -1,0 +1,303 @@
+.
+.1 bin.
+.2 data.
+.3 256BYTES.TTF.
+.3 BORON2.TTF.
+.3 circuito.ttf.
+.3 config.
+.4 config.conf.
+.5 user.conf.
+.3 fases_logikid.
+.4 Desafio1_NAND_e_outros.circ.
+.4 Desafio2_OR_e_GND.circ.
+.4 Fase0_not.circ.
+.4 Fase1_and_three_inputs.circ.
+.4 Fase2_or_three_inputs.circ.
+.4 Fase3_NAND.circ.
+.3 idiomas.
+.4 pt_br.conf.
+.3 images.
+.4 Gates.
+.5 AND.png.
+.5 ItemSelector.png.
+.5 NAND.png.
+.5 NOR.png.
+.5 NOT.png.
+.5 OR.png.
+.5 XNOR.png.
+.5 XOR.png.
+.4 icons.
+.5 estrela1.png.
+.5 estrela2.png.
+.5 estrela3.png.
+.5 nosound.png.
+.5 sem_som.png.
+.5 som.png.
+.5 sound.png.
+.4 intro.
+.5 allegro.png.
+.5 github.png.
+.5 pi.png.
+.5 senac.png.
+.4 Objects.
+.5 PC.png.
+.4 Personagem.
+.5 ItemSelector2.png.
+.5 ItemSelector.png.
+.5 PER1.png.
+.5 PER2.png.
+.5 PER3.png.
+.5 PER4.png.
+.5 PER5.png.
+.5 PER6.png.
+.5 PER7.png.
+.4 Player.
+.5 base_terno.png.
+.5 body.png.
+.5 boy_2.png.
+.5 boy2.png.
+.5 boy3.png.
+.5 boy.png.
+.5 girl.png.
+.5 menina.png.
+.5 PlayerMenu.png.
+.5 xboy.png.
+.5 textbox.png.
+.3 keys.otf.
+.3 keys.ttf.
+.3 levels.
+.4 backup.
+.5 fase0.
+.6 bus_um_um.png.
+.6 bus_um_zero.png.
+.6 bus_zero_um.png.
+.6 bus_zero_zero.png.
+.6 faseruaverde.png.
+.6 faseruavermelho.png.
+.5 table.gif.
+.6 teste.png.
+.5 fase1.
+.6 circ1_off.png.
+.6 circ1_on.png.
+.6 circ2_off.png.
+.6 circ2_on.png.
+.6 circ3_off.png.
+.6 circ3_on.png.
+.6 circ4_off.png.
+.6 circ4_on.png.
+.6 circ5_off.png.
+.6 circ5_on.png.
+.6 fase1.tmx.
+│   .5 faseone.png
+│   .5 faseone_with_girl.png
+│   .5 portas.png
+│   .5 somenteobjetos.png
+│   .5 teste.png
+│   .5teste.xcf
+.5 fase2
+│   .5fundo-fase2.png
+.5fase3
+│   │   │   │       ├── AND_um_um.png
+│   │   │   │       ├── AND_um_zero.png
+│   │   │   │       ├── AND_zero_um.png
+│   │   │   │       └── AND_zero_zero.png
+.4 blackscreen.png
+.4 fase0
+.5 circ1_off.png
+.5circ1_on.png
+.4 fase1
+.5 circ1_off.png
+.5 circ1_on.png
+.5 circ2_off.png
+.5 circ2_on.png
+.5 circ3_off.png
+.5 circ3_on.png
+.5 circ4_off.png
+.5 circ4_on.png
+.5 circ5_off.png
+.5 circ5_on.png
+.5circ_off.png
+.4 fase2
+.5 circ1_off.png
+.5 circ1_on.png
+.5 circ2_off.png
+.5 circ2_on.png
+.5 circ3_off.png
+.5 circ3_on.png
+.5 circ4_off.png
+.5 circ4_on.png
+.5 circ5_off.png
+.5 circ5_on.png
+.5 circ_off.png
+.5 fase2.tmx
+.5 fundo-fase2.png
+.5portas.png
+.4 fase3
+.5 circ1_off.png
+.5 circ1_on.png
+.5 circ2_off.png
+.5 circ2_on.png
+.5 circ3_off.png
+.5 circ3_on.png
+.5 circ4_off.png
+.5 circ4_on.png
+.5 circ5_on.png
+.5 circ6_on.png
+.5 circ_off.png
+.5 modelo_fase3.tmx
+.5 portas.png
+.5saida_on.png
+.4 fase4
+.5 circ1_off.png
+.5 circ1_on.png
+.5 circ2_off.png
+.5 circ2_on.png
+.5 circ3_off.png
+.5 circ3_on.png
+.5 circ4_on.png
+.5 circ5_on.png
+.5 circ6_on.png
+.5 circ7_on.png
+.5 circ_off.png
+.5 portas.png
+.5untitled.tmx
+.4 fundo640.png
+.4 menu
+.5 BG2.png
+.5 BG3.png
+.5BG.png
+.4 menu_fundo.png
+.4 nor_sheet.png
+.4 saidas_zer_um.png
+.4 selecao.png
+.4 sheet_nand.png
+.4 tile_alavancas.png
+.4 tile_circ.png
+.4 tutorial
+.5tutorialbase.png
+│   .2 untitled.tmx
+.3 PC.png
+.3 Personagem
+.4 ItemSelector2.png
+.4 ItemSelector.png
+.4 PER1.png
+.4 PER2.png
+.4 PER3.png
+.4 PER4.png
+.4 PER5.png
+.4 PER6.png
+│   .2 PER7.png
+.3 sega.ttf
+.3 sound
+.4 badfeeling.wav
+.4 doh.wav
+.4 footstep.wav
+.4 forcebewith.wav
+.4 menu_open.wav
+.4 music
+.5 Lunch.ogg
+.5Syntheticity.ogg
+│   .2 yesmaster.wav
+.3 sourcecode.ttf
+.2 terminal.ttf
+│   └── logiKid
+├── doc
+.2allegro-5.0.10-manual.pdf
+.2latex
+.3 artigo.aux
+.3 artigo.log
+.3 artigo.pdf
+.3 artigo.synctex.gz
+.3 artigo.tex
+.3 caption2.sty
+.3 fig1.jpg
+.3 fig2.jpg
+.3 main.aux
+.3 main.bbl
+.3 main.blg
+.3 main.log
+.3 main.pdf
+.3 main.synctex.gz
+.3 main.tex
+.3 sbc.bst
+.3 sbc-template.bib
+.3 sbc-template.sty
+.2 table.jpg
+.2main.pdf
+│   └── todo
+├── font.gksm
+├── LICENSE
+├── LICENSE.htm
+├── make
+.2Makefile
+.2nbproject
+.3 configurations.xml
+.2 private
+│   │       └── configurations.xml
+.2obj
+.3 config.o
+.3 Fases
+.4 Fase0
+.5fase0.o
+.4 Fase1
+.5fase1.o
+.4 Fase2
+.5fase2.o
+.4 Fase3
+.5fase3.o
+│   .2 Fase4
+│   │   │       └── fase4.o
+.3 gameloop.o
+.3 init.o
+.3 ItensMenu.o
+.3 main.o
+.3 Player.o
+.3 pontuacao.o
+.3 selecaomenu.o
+.3 StartMenu.o
+.2 textBox.o
+│   └── src
+│       ├── comum.h
+│       ├── config.c
+│       ├── config.h
+│       ├── Fases
+│       .2Fase0
+│       .3 fase0.c
+│       .2 fase0.h
+│       .2Fase1
+│       .3 fase1.c
+│       .2 fase1.h
+│       .2Fase2
+│       .3 fase2.c
+│       .2 fase2.h
+│       .2Fase3
+│       .3 fase3.c
+│       .2 fase3.h
+│       │   └── Fase4
+│       │       ├── fase4.c
+│       │       └── fase4.h
+│       ├── gameloop.c
+│       ├── gameloop.h
+│       ├── init.c
+│       ├── ItensMenu.c
+│       ├── ItensMenu.h
+│       ├── main.c
+│       ├── Player.c
+│       ├── Player.h
+│       ├── pontuacao.c
+│       ├── pontuacao.h
+│       ├── selecaomenu.c
+│       ├── selecaomenu.h
+│       ├── StartMenu.c
+│       ├── StartMenu.h
+│       ├── textBox.c
+│       └── textBox.h
+├── README.markdown
+├── README.md
+├── tamanho_objetos.txt
+├── tree.txt
+└── web
+    └── DB
+        └── create.sql
+
+49 directories, 254 files

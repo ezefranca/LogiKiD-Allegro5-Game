@@ -29,15 +29,15 @@ void CreatePlayer(Player *player, int hStartPosition, int wStartPosition, int sp
 	if (spritePersonagem == 2)
 		player->image.image = al_load_bitmap("./data/images/Player/menina.png");
 	if (spritePersonagem == 3)
-		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+		player->image.image = al_load_bitmap("./data/images/Player/soldado.png");
 	if (spritePersonagem == 4)
-		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+		player->image.image = al_load_bitmap("./data/images/Player/careca.png");
 	if (spritePersonagem == 5)
-		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+		player->image.image = al_load_bitmap("./data/images/Player/mulher.png");
 	if (spritePersonagem == 6)
-		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+		player->image.image = al_load_bitmap("./data/images/Player/mago.png");
 	if (spritePersonagem == 7)
-		player->image.image = al_load_bitmap("./data/images/Player/boy.png");
+		player->image.image = al_load_bitmap("./data/images/Player/cabeludo.png");
 	player->play_font = al_load_font("data/circuito.ttf", 50, 10);
 	player->footstep = al_load_sample("./data/sound/footstep.wav");
 }

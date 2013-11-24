@@ -20,11 +20,11 @@ void PrintMenu(int MenuPosition)
 
 	switch(MenuPosition)
 	{
-	case 0:
+		case 0:
 		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("STM05"));
 		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("STM05"));
 		break;
-	case 1:
+		case 1:
 		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("STM07"));
 		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("STM07"));
 		break;
@@ -45,17 +45,17 @@ void StartMenu()
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(game.fila_eventos, &ev);
 
-        if (ev.type == ALLEGRO_EVENT_KEY_DOWN)
-        {
-	        game.som = al_load_sample("./data/sound/menu_open.wav");
-	        al_play_sample(game.som, 2.0, 0.0,1,ALLEGRO_PLAYMODE_ONCE,NULL);
+		if (ev.type == ALLEGRO_EVENT_KEY_DOWN)
+		{
+			game.som = al_load_sample("./data/sound/menu_open.wav");
+			al_play_sample(game.som, 2.0, 0.0,1,ALLEGRO_PLAYMODE_ONCE,NULL);
 	       // al_rest(0.4); // causa um micro delay, apenas para sincronizar o audio...
-        	switch(ev.keyboard.keycode)
-            {
-            case ALLEGRO_KEY_ESCAPE:
+			switch(ev.keyboard.keycode)
+			{
+				case ALLEGRO_KEY_ESCAPE:
 				sair = true;
 				break;
-			case ALLEGRO_KEY_ENTER:
+				case ALLEGRO_KEY_ENTER:
 				if(MenuPosition == 0)
 				{
 					menuSelecaox();
@@ -68,41 +68,39 @@ void StartMenu()
 					sair = true;
 				}
 				break;
-            case ALLEGRO_KEY_UP:
-            	tecla = 1;
-            	if(MenuPosition == 0)
-	            	MenuPosition = 1;
-	            else if(MenuPosition == 1)
-	            	MenuPosition = 0;
-            	else
-            		MenuPosition++;
-                break;
-            case ALLEGRO_KEY_DOWN:
-            	tecla = 2;
-            	if(MenuPosition == 1)
-	            	MenuPosition = 0;
-	            else if(MenuPosition == 0)
-	            	MenuPosition = 1;
-            	else
-            		MenuPosition--;
-                break;
-            }
-        }
-        else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
-        {
-        	sair = true;
-        }
+				case ALLEGRO_KEY_UP:
+				tecla = 1;
+				if(MenuPosition == 0)
+					MenuPosition = 1;
+				else if(MenuPosition == 1)
+					MenuPosition = 0;
+				else
+					MenuPosition++;
+				break;
+				case ALLEGRO_KEY_DOWN:
+				tecla = 2;
+				if(MenuPosition == 1)
+					MenuPosition = 0;
+				else if(MenuPosition == 0)
+					MenuPosition = 1;
+				else
+					MenuPosition--;
+				break;
+			}
+		}
+		else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+		{
+			sair = true;
+		}
 
-        if (tecla)
-        {
-            al_clear_to_color(al_map_rgb(0, 0, 0));
-
-            PrintMenu(MenuPosition);
-
-            tecla = 0;
-        }
+		if (tecla)
+		{
+			al_clear_to_color(al_map_rgb(0, 0, 0));
+			PrintMenu(MenuPosition);
+			tecla = 0;
+		}
 
 
-        al_flip_display();
+		al_flip_display();
 	}
 }
