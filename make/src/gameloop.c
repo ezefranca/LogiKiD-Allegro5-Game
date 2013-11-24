@@ -91,7 +91,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			limpa_config();
 			limpa_idioma();
 			limpa_config_user();
-			//al_destroy_sample_instance(game.songInstance);
+			al_destroy_sample_instance(game.songInstance);
 		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
 		{
@@ -176,7 +176,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 					{
 						levelCinco = malloc(sizeof(LevelCinco));
 						game.level = 5;
-						createLevelCinco(levelCinco);
+						createLevelCinco(levelCinco, player);
 						initDrawGatesLevelCinco(levelCinco);
 						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
 						printf("Objetivo completo\n");
