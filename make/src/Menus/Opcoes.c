@@ -1,13 +1,12 @@
-#include "StartMenu.h"
 #include "Opcoes.h"
 #include "../../src/comum.h"
 #include "../../src/config.h"
 #include "../../src/gameloop.h"
 #include "selecaomenu.h"
 
-void PrintMenu(int MenuPosition)
+void PrintOpcoes(int MenuPosition)
 {
-	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu/BG4.png");
+	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
 	al_draw_bitmap(menu_fundo, 0, 0, 0);
 	//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 302, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
@@ -38,7 +37,7 @@ void PrintMenu(int MenuPosition)
 	}
 }
 
-void StartMenu()
+void OpcoesMenu()
 {
 	bool sair = false;
 	int tecla = 0;
@@ -63,21 +62,18 @@ void StartMenu()
 				sair = true;
 				break;
 				case ALLEGRO_KEY_ENTER:
-					if(MenuPosition == 0)
-					{
-						menuSelecaox();
-						//GameLoop(ev);
-						sair = true;
-						//PrintMenu(0);
-					}
-					else if(MenuPosition == 1) {
-						OpcoesMenu();
-						tecla = 3;
-					}
-					else{
-						sair = true;
-					}
+				if(MenuPosition == 0)
+				{
+					menuSelecaox();
+					//GameLoop(ev);
+					sair = true;
 					break;
+					//PrintMenu(0);
+				}
+				else{
+					sair = true;
+				}
+				break;
 				case ALLEGRO_KEY_UP:
 				tecla = 1;
 					//Posição inicial
@@ -107,7 +103,7 @@ void StartMenu()
 		if (tecla)
 		{
 			al_clear_to_color(al_map_rgb(0, 0, 0));
-			PrintMenu(MenuPosition);
+			PrintOpcoes(MenuPosition);
 			tecla = 0;
 		}
 
