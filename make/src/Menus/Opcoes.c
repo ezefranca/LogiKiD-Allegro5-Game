@@ -9,30 +9,36 @@ void PrintOpcoes(int MenuPosition)
 	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/tutorial/tutorialbase.png");
 	al_draw_bitmap(menu_fundo, 0, 0, 0);
 	//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 302, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
-	al_draw_text(game.fonte, al_map_rgb(0, 255, 0), 800 / 2, 305, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
-	al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 800 / 2, 330, ALLEGRO_ALIGN_CENTRE, get_idioma("LogiKid"));
-	al_draw_text(game.fonte_logo, al_map_rgb(0, 255, 0), 800 / 2, 336, ALLEGRO_ALIGN_CENTRE, get_idioma("LogiKid"));
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Start game"));
-	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("Start game"));
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("Options"));
-	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("Options"));
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 250, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
-	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 252, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
+	//al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 200, 302, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
+	//al_draw_text(game.fonte, al_map_rgb(0, 255, 0), 200, 305, ALLEGRO_ALIGN_CENTRE, get_idioma("--------------------------"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Options"));
+	al_draw_text(game.fonte, al_map_rgb(150, 150, 150), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("Options"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 250, ALLEGRO_ALIGN_CENTRE, get_idioma("Language"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 252, ALLEGRO_ALIGN_CENTRE, get_idioma("Language"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 350, ALLEGRO_ALIGN_CENTRE, get_idioma("Save and Go back"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 352, ALLEGRO_ALIGN_CENTRE, get_idioma("Save and Go back"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 450, ALLEGRO_ALIGN_CENTRE, get_idioma("Just Go back"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 452, ALLEGRO_ALIGN_CENTRE, get_idioma("Just Go back"));
 
 	switch(MenuPosition)
 	{
 		case 0:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("--Start game--"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("--Start game--"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
 		break;
 		case 1:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("--Options--"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("--Options--"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 250, ALLEGRO_ALIGN_CENTRE, get_idioma("Language"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 252, ALLEGRO_ALIGN_CENTRE, get_idioma("Language"));
 		break;
 		case 2:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 250, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 252, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 350, ALLEGRO_ALIGN_CENTRE, get_idioma("Save and Go back"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 352, ALLEGRO_ALIGN_CENTRE, get_idioma("Save and Go back"));
+		break;
+		case 3:
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 450, ALLEGRO_ALIGN_CENTRE, get_idioma("Just Go back"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 452, ALLEGRO_ALIGN_CENTRE, get_idioma("Just Go back"));
 		break;
 	}
 }
@@ -43,7 +49,7 @@ void OpcoesMenu()
 	int tecla = 0;
 	int MenuPosition = 0;
 
-	PrintMenu(0);
+	PrintOpcoes(0);
 
 	al_start_timer(game.timer);
 	while(!sair)
@@ -79,7 +85,7 @@ void OpcoesMenu()
 					//Posição inicial
 					if(MenuPosition == 0)
 						//ultima posição disponivel
-						MenuPosition = 2;
+						MenuPosition = 3;
 					else
 						MenuPosition--;
 					break;
@@ -87,7 +93,7 @@ void OpcoesMenu()
 				case ALLEGRO_KEY_DOWN:
 				tecla = 2;
 				//ultima posição disponivel
-					if(MenuPosition == 2)
+					if(MenuPosition == 3)
 						//Posição inicial
 						MenuPosition = 0;
 					else
