@@ -13,7 +13,7 @@ void menuSelecaox()
 {
 	ALLEGRO_BITMAP *menufundo = al_load_bitmap("./data/levels/selecao.png");
 	al_draw_bitmap(menufundo, 0, 0, 0);
-	al_draw_text(game.fonte, al_map_rgb(255,  0,  0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, "Escolha o seu  personagem");
+	al_draw_text(game.fonte, al_map_rgb(255,  0,  0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
 	//al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, "Sair");
 
 }
