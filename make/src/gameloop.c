@@ -314,7 +314,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 5)
 		{
-            //al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 10, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , levelTres->chances);
+                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelCinco(levelCinco);
 			if(isDestroyed == false)
 			{

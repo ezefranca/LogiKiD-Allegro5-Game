@@ -3,6 +3,8 @@
 #include "pontuacao.h"
 #include <string.h>
 
+Ranked *ranking;
+
 void criaQualificacao(Ranked *ranking) {
 	ranking->imageExcelente =  al_load_bitmap("./data/levels/menu/BG3.png");
 	ranking->imageBom = al_load_bitmap("data/images/Personagem/PER4.png");
@@ -38,11 +40,10 @@ void loopQualifica(ALLEGRO_EVENT *ev){
 	}
 }
 
-int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT_TYPE *ev){
+int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT *ev){
 
 	if (gameLevel == 0)
 	{
-		Ranked *ranking;
 		ranking = malloc(sizeof(Ranked));
 		criaQualificacao(ranking);
 		if (player->chances != 0){
@@ -54,21 +55,91 @@ int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT_TYPE *ev){
 
 	if (gameLevel == 1)
 	{
-		if (player->chances > 1)
-			printf("excelente");
+
+		if (player->chances == 3){
+		       al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 3 &&  player->chances < 10){
+		       al_draw_bitmap(ranking->imageRegular, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 10){
+		       al_draw_bitmap(ranking->imageBom, 0, 0, 0);
+			loopQualifica(ev);
+		}
 	}
 
 	if (gameLevel == 2)
 	{
-		if (player->chances > 2)
-			printf("excelente");
+		if (player->chances == 1){
+		       al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 1 &&  player->chances < 3){
+		       al_draw_bitmap(ranking->imageRegular, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 3){
+		       al_draw_bitmap(ranking->imageBom, 0, 0, 0);
+			loopQualifica(ev);
+		}
 	}
 
 	if (gameLevel == 3)
 	{
-		if (player->chances == 2)
-			printf("excelente");
+		if (player->chances == 3){
+		       al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 3 &&  player->chances < 10){
+		       al_draw_bitmap(ranking->imageRegular, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 10){
+		       al_draw_bitmap(ranking->imageBom, 0, 0, 0);
+			loopQualifica(ev);
+		}
 	}
+	if(gameLevel == 4){
+			if (player->chances == 3){
+		       al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 3 &&  player->chances < 10){
+		       al_draw_bitmap(ranking->imageRegular, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 10){
+		       al_draw_bitmap(ranking->imageBom, 0, 0, 0);
+			loopQualifica(ev);
+		}
+	}
+	if(gameLevel == 5){
+			if (player->chances == 3){
+		       al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 3 &&  player->chances < 10){
+		       al_draw_bitmap(ranking->imageRegular, 0, 0, 0);
+			loopQualifica(ev);
+		}
+
+		if (player->chances > 10){
+		       al_draw_bitmap(ranking->imageBom, 0, 0, 0);
+			loopQualifica(ev);
+		}
+	}
+
 
 	return 1;
 
