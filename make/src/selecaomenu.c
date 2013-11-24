@@ -150,10 +150,10 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 				break;
 			}
 		}
-
-		DrawImages(lgDados);
-
-		al_flip_display();
+		if(al_is_event_queue_empty(game.fila_eventos)) {
+			DrawImages(lgDados);
+			al_flip_display();
+		}
 	}
 
 	free(lgDados);
