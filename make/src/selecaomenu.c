@@ -44,7 +44,7 @@ void mk_left(lgImages *lgDados)
 	}
 }
 
-void DrawImages(lgImages *lgDados, Player *player)
+void DrawImages(lgImages *lgDados)
 {
 	printf("ENTROU NO DrawImages");
 //	al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
@@ -178,7 +178,7 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 			}
 		}
 
-		DrawImages(lgDados, player);
+		DrawImages(lgDados);
 
 		al_flip_display();
 	}
