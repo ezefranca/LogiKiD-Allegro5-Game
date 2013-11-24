@@ -121,25 +121,16 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 	lgDados->itmSelX = 70;
 	lgDados->itmSelY = 460;
 	lgDados->currGate = 0;
-	printf("----\n");
 	lgDados->ImagemMenu = al_load_bitmap("data/levels/selecao.png");
 	lgDados->PER1 = al_load_bitmap("data/images/Personagem/PER1.png");
-	printf("1\n");
 	lgDados->PER2 = al_load_bitmap("data/images/Personagem/PER2.png");
-	printf("2\n");
 	lgDados->PER3 = al_load_bitmap("data/images/Personagem/PER3.png");
-	printf("3\n");
 	lgDados->PER4 = al_load_bitmap("data/images/Personagem/PER4.png");
-	printf("4\n");
 	lgDados->PER5 = al_load_bitmap("data/images/Personagem/PER5.png");
-	printf("5\n");
 	lgDados->PER6 = al_load_bitmap("data/images/Personagem/PER6.png");
-	printf("6\n");
 	lgDados->PER7 = al_load_bitmap("data/images/Personagem/PER7.png");
-	printf("passou\n");
 	lgDados->Seletor = al_load_bitmap("data/images/Personagem/ItemSelector.png");
 	lgDados->Seletor2 = al_load_bitmap("data/images/Personagem/ItemSelector2.png");
-       printf("seletor\n");
 	lgDados->menuSoundOpen = al_load_sample("./data/sound/menu_open.wav");
 	al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 
@@ -147,7 +138,6 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 
 	while(!sair)
 	{
-		printf("passou\n");
 		al_wait_for_event(game.fila_eventos, ev);
 
 		if (ev->type == ALLEGRO_EVENT_DISPLAY_CLOSE)
