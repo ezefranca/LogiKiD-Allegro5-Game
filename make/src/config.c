@@ -49,7 +49,6 @@ void libera_config(config *l, int type) {
 }
 
 void insere_config(config *l, char *var, char *string) {
-    elemento *f;
     elemento *e = malloc(sizeof (elemento));
     e->var = var;
     e->string = string;
@@ -174,7 +173,7 @@ bool load_config(char *config_file, int type) {
     entrada = fopen(config_file, "r");
 
     if (!entrada) {
-        fprintf(stderr, "erro na leitura do arquivo de configuração.\n");
+        fprintf(stderr, "erro na leitura do arquivo de configuração tipo %d.\n", type);
         return false;
     }
 
@@ -216,6 +215,11 @@ bool load_config(char *config_file, int type) {
     }
     fclose(entrada);
 
+    free(string);
+    free(var);
+
+    free(tstring);
+    free(tvar);
 
     switch (type) {
         case CONFIG:
@@ -315,18 +319,20 @@ void limpa_config_user() {
     libera_config(&arquivo_config_user, CONFIG_USER);
 }
 
-bool salva_config_user(char *config_file) {
+bool salva_config(config *l, char *config_file){
     FILE *entrada;
-    
-    if (loaded_config_user == 1) {
-        entrada = fopen(config_file, "w");
-        if (!entrada)
+    entrada = fopen(config_file, "w");
+    if (!entrada)
             return false;
 
-        imprime_config(&arquivo_config_user, entrada);
+    imprime_config(l, entrada);
+    fclose(entrada);
+    return true;
+}
 
-        fclose(entrada);
-        return true;
+bool salva_config_user(char *config_file) {
+    if (loaded_config_user == 1) {
+        return salva_config(&arquivo_config_user, config_file);
     } else {
         return false;
     }
@@ -346,12 +352,14 @@ bool create_config_user(char *config_file) {
 
     adiciona_config_user("0", "last_phase");
     adiciona_config_user("1", "personagem");
+
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);
-    if(!salva_config_user(config_file)) return false;
-    if (arquivo_config_user.inicio != NULL) {
+
+    if (arquivo_config_user.inicio != NULL){
         loaded_config_user = 1;
+        if(!salva_config_user(config_file)) return false;
         return true;
     }
     return false;

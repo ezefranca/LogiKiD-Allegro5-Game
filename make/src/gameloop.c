@@ -40,8 +40,15 @@ void GameLoop(ALLEGRO_EVENT ev)
 	LevelDois *levelDois;
 	LevelTres *levelTres;
 	LevelQuatro *levelQuatro;
+<<<<<<< HEAD
 	LevelCinco *levelCinco;
 
+=======
+
+
+	LevelCinco *levelCinco;
+	
+>>>>>>> 7493db9f5dc0beb3eb677b3e7aec2c29bd43d8d2
 	launch_song = al_load_sample("./data/sound/music/Lunch.ogg");
 	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");
 	/* Adiciona a quantidade de portas logicas... */
@@ -183,8 +190,13 @@ void GameLoop(ALLEGRO_EVENT ev)
 					{
 						levelQuatro = malloc(sizeof(LevelQuatro));
 						game.level = 4;
+<<<<<<< HEAD
                                         inputs[1] = true;
 						createLevelQuatro(levelQuatro, player);
+=======
+						createLevelQuatro(levelQuatro, player);
+						inputs[1] = true;
+>>>>>>> 7493db9f5dc0beb3eb677b3e7aec2c29bd43d8d2
 						initDrawGatesLevelQuatro(levelQuatro);
 						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
 						printf("Objetivo completo\n");
@@ -418,12 +430,26 @@ bool isCollidingGlobal(Player *player, int level){
 	}
 	if(level == 5)
 	{
+<<<<<<< HEAD
+=======
+	    if (isColliding(163, 110, 55, 35, player)   ||
+	    	isColliding(163, 206, 55, 35, player)   ||
+	    	isColliding(163, 269, 55, 35, player)   ||
+	    	isColliding(163, 368, 55, 35, player))
+	    {
+	    	return true;
+	    }
+	    else return false;
+>>>>>>> 7493db9f5dc0beb3eb677b3e7aec2c29bd43d8d2
 		if (isColliding(101, 112, 55, 90, player))
 		{
 			return true;
 		}
 		else return false;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 7493db9f5dc0beb3eb677b3e7aec2c29bd43d8d2
 	}
 	return false;
 }
