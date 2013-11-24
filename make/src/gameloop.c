@@ -262,14 +262,15 @@ void GameLoop(ALLEGRO_EVENT ev)
 
         //Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
+		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 20, ALLEGRO_ALIGN_CENTRE, "Level: %d" , game.level);
+		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 		if (game.level == 0)
 		{
-		      al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
+
 			drawLevelZero(levelZero);
 		}
 		if (game.level == 1)
 		{
-			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 600, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelOne(levelOne);
 			if(isDestroyed == false)
 			{
@@ -281,8 +282,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 2)
 		{
-                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
-			drawLevelDois(levelDois);
+                    drawLevelDois(levelDois);
 			if(isDestroyed == false)
 			{
 				destroyLevelOne(levelOne);
@@ -292,7 +292,6 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 3)
 		{
-			al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelTres(levelTres);
 			if(isDestroyed == false)
 			{
@@ -303,7 +302,6 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 4)
 		{
-                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelQuatro(levelQuatro);
 			if(isDestroyed == false)
 			{
@@ -314,7 +312,6 @@ void GameLoop(ALLEGRO_EVENT ev)
 		}
 		if (game.level == 5)
 		{
-                    al_draw_textf(game.fonte_menu, al_map_rgb(255, 255, 255), 650, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
 			drawLevelCinco(levelCinco);
 			if(isDestroyed == false)
 			{
