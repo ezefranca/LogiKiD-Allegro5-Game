@@ -70,7 +70,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 	createLevelZero(levelZero, player);
 	logicLevelZero(&inputs[0], &complete, levelZero, player);
 
-	TextBoxLoad(&ev, get_idioma("AA00"));
+	TextBoxLoad(&ev, get_idioma("Welcome to LogiKid"));
 	//ALLEGRO_BITMAP *circuito = logicLevelOne(inputs[0], inputs[1], circuito);
 	musicPlayer(game.mute);
 	//al_start_timer(game.timer);
@@ -262,8 +262,8 @@ void GameLoop(ALLEGRO_EVENT ev)
 
         //Exibe fundo
 		al_draw_bitmap(fundo, 0, 0, 0);
-		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 20, ALLEGRO_ALIGN_CENTRE, "Level: %d" , game.level);
-		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, "Movimentos: %d" , player->chances);
+		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 20, ALLEGRO_ALIGN_CENTRE, get_idioma("Level: %d") , game.level);
+		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, get_idioma("Moves: %d") , player->chances);
 		if (game.level == 0)
 		{
 
