@@ -21,7 +21,7 @@ void fadeout(int velocidade)
     al_set_target_bitmap(buffer);
     al_draw_bitmap(al_get_backbuffer(game.janela), 0, 0, 0);
     al_set_target_bitmap(al_get_backbuffer(game.janela));
- 
+
     if (velocidade <= 0)
     {
         velocidade = 1;
@@ -29,8 +29,8 @@ void fadeout(int velocidade)
     else if (velocidade > 15)
     {
         velocidade = 15;
-    }            
- 
+    }
+
     int alfa;
     for (alfa = 0; alfa <= 255; alfa += velocidade)
     {
@@ -39,10 +39,10 @@ void fadeout(int velocidade)
         al_flip_display();
         al_rest(0.005); // Não é necessário caso haja controle de FPS
     }
- 
+
     al_destroy_bitmap(buffer);
 }
- 
+
 void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
 {
     if (velocidade < 0)
@@ -53,7 +53,7 @@ void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
     {
         velocidade = 15;
     }
- 
+
     int alfa;
     for (alfa = 0; alfa <= 255; alfa += velocidade)
     {
@@ -70,7 +70,7 @@ void InitScreens()
 	fadein(temp, 7);
 	al_rest(2.0);
     fadeout(8);
-    
+
     temp = al_load_bitmap("data/images/intro/pi.png");
 	fadein(temp, 7);
 	al_rest(2.0);
@@ -93,8 +93,8 @@ int main(void)
 
 	if (!inicializar())
 		return -1;
-	//Animação inicial		
-	//InitScreens();
+	//Animação inicial
+	InitScreens();
 	StartMenu();
 	//GameLoop();
 
