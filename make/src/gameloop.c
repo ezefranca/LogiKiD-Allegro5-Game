@@ -87,6 +87,10 @@ void GameLoop(ALLEGRO_EVENT ev)
 		if((ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE))
 		{
 			sair = true;
+			salva_config_user("data/config/user.conf");
+			limpa_config();
+			limpa_idioma();
+			limpa_config_user();
 			//al_destroy_sample_instance(game.songInstance);
 		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
