@@ -41,7 +41,7 @@ bool inicializar()
         fprintf(stderr, "Falha ao criar janela.\n");
         return false;
     }
-    al_set_window_title(game.janela, "Projeto Integrador II - SENAC - BCC");
+    al_set_window_title(game.janela, get_idioma("Integrator Project II - Senac - CCB"));
 
     game.fila_eventos = al_create_event_queue();
     if (!game.fila_eventos)
