@@ -46,40 +46,23 @@ void mk_left(lgImages *lgDados)
 
 void DrawImages(lgImages *lgDados)
 {
-	printf("ENTROU NO DrawImages");
 //	al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
-	printf("printou menu");
 	// draw the item selector...
 	al_draw_bitmap(lgDados->Seletor,  lgDados->itmSelX,  lgDados->itmSelY, 0);
-	printf("printou seletor");
 	// show gates and the gate count...
 	al_draw_bitmap(lgDados->PER1, 70, 460, 0);
-		printf("printou per 1");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 197, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgAND));
-
 	al_draw_bitmap(lgDados->PER2, 140, 460, 0);
-		printf("2");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 297, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgOR));
-
 	al_draw_bitmap(lgDados->PER3, 210, 460, 0);
-		printf("3");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 397, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNAND));
-
 	al_draw_bitmap(lgDados->PER4, 280, 460, 0);
-		printf("4");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 497, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOR));
-
-	// next line...
 	al_draw_bitmap(lgDados->PER5, 350, 460, 0);
-		printf("5");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 197, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgXOR));
-
 	al_draw_bitmap(lgDados->PER6, 420, 460, 0);
-		printf("6");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 297, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgXNOR));
-
 	al_draw_bitmap(lgDados->PER7, 490, 460, 0);
-		printf("7\n");
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 397, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOT));
 }
 
