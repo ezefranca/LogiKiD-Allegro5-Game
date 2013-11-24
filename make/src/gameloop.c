@@ -40,13 +40,8 @@ void GameLoop(ALLEGRO_EVENT ev)
 	LevelDois *levelDois;
 	LevelTres *levelTres;
 	LevelQuatro *levelQuatro;
-<<<<<<< HEAD
-
-
-=======
 	LevelCinco *levelCinco;
-	
->>>>>>> tales
+
 	launch_song = al_load_sample("./data/sound/music/Lunch.ogg");
 	synth_song = al_load_sample("./data/sound/music/Syntheticity.ogg");
 	/* Adiciona a quantidade de portas logicas... */
@@ -158,7 +153,9 @@ void GameLoop(ALLEGRO_EVENT ev)
 				printf("%d\n", complete);
 
 				if(complete){
+					musicPlayer(0);
 					qualificaJogador (player, game.level, &ev);
+					musicPlayer(1);
 					isDestroyed = false;
 					player->state.x = 350;
 					player->state.y = 20;
@@ -179,19 +176,15 @@ void GameLoop(ALLEGRO_EVENT ev)
 						initDrawGatesLevelCinco(levelCinco);
 						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
 						printf("Objetivo completo\n");
-						complete = false;	
+						complete = false;
 					}
 
 					if(game.level == 3)
 					{
 						levelQuatro = malloc(sizeof(LevelQuatro));
 						game.level = 4;
-<<<<<<< HEAD
+                                        inputs[1] = true;
 						createLevelQuatro(levelQuatro, player);
-=======
-						inputs[1] = true;
-						createLevelQuatro(levelQuatro);
->>>>>>> tales
 						initDrawGatesLevelQuatro(levelQuatro);
 						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
 						printf("Objetivo completo\n");
@@ -425,22 +418,12 @@ bool isCollidingGlobal(Player *player, int level){
 	}
 	if(level == 5)
 	{
-<<<<<<< HEAD
-	    if (isColliding(163, 110, 55, 35, player)   ||
-	    	isColliding(163, 206, 55, 35, player)   ||
-	    	isColliding(163, 269, 55, 35, player)   ||
-	    	isColliding(163, 368, 55, 35, player))
-	    {
-	    	return true;
-	    }
-	    else return false;
-=======
 		if (isColliding(101, 112, 55, 90, player))
 		{
 			return true;
 		}
 		else return false;
->>>>>>> tales
+
 	}
 	return false;
 }

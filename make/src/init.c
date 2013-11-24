@@ -75,7 +75,7 @@ bool inicializar()
 
      game.fonte = al_load_font("data/circuito.ttf", 50, 10);
      game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 20);
-     game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
+     game.fonte_logo = al_load_font("data/256BYTES.TTF", 150, 10);
      game.fonteKeys = al_load_font("data/keys.otf", 50, 10);
 
     if (!game.fonte)

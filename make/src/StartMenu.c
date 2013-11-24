@@ -6,13 +6,13 @@
 
 void PrintMenu(int MenuPosition)
 {
-	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu/BG3.png");
+	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu/BG4.png");
 	al_draw_bitmap(menu_fundo, 0, 0, 0);
 	//al_draw_scaled_bitmap(fundo, 0, 0, 640, 480, 0, 0, 800, 600, 0);
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 302, ALLEGRO_ALIGN_CENTRE, get_idioma("STM01"));
 	al_draw_text(game.fonte, al_map_rgb(0, 255, 0), 800 / 2, 305, ALLEGRO_ALIGN_CENTRE, get_idioma("STM01"));
-	al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 800 / 2, 350, ALLEGRO_ALIGN_CENTRE, get_idioma("STM02"));
-	al_draw_text(game.fonte_logo, al_map_rgb(0, 255, 0), 800 / 2, 356, ALLEGRO_ALIGN_CENTRE, get_idioma("STM02"));
+	al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 800 / 2, 330, ALLEGRO_ALIGN_CENTRE, get_idioma("STM02"));
+	al_draw_text(game.fonte_logo, al_map_rgb(0, 255, 0), 800 / 2, 336, ALLEGRO_ALIGN_CENTRE, get_idioma("STM02"));
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("STM03"));
 	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("STM03"));
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("STM04"));
