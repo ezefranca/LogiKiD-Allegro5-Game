@@ -19,24 +19,26 @@ void loopQualifica(ALLEGRO_EVENT *ev){
 	al_flip_display();
 	while(!sair)
 	{
-		printf("passou\n");
-		al_wait_for_event(game.fila_eventos, ev);
 
+		al_wait_for_event(game.fila_eventos, ev);
+	//if(al_is_event_queue_empty(game.fila_eventos)){
 		if (ev->type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			sair = true;
 
-		if(ev->type == ALLEGRO_EVENT_KEY_DOWN)
-		{
-			switch(ev->keyboard.keycode)
+			if(ev->type == ALLEGRO_EVENT_KEY_DOWN)
 			{
-			case ALLEGRO_KEY_ESCAPE:
-				sair = true;
-				break;
-			case ALLEGRO_KEY_ENTER:
-				sair = true;
-				break;
+				switch(ev->keyboard.keycode)
+				{
+					case ALLEGRO_KEY_ESCAPE:
+					sair = true;
+					break;
+					case ALLEGRO_KEY_ENTER:
+					sair = true;
+					break;
+				}
 			}
-		}
+
+	//	}
 	}
 }
 
