@@ -1,7 +1,7 @@
 #include "StartMenu.h"
-#include "../src/comum.h"
-#include "../src/config.h"
-#include "../src/gameloop.h"
+#include "../../src/comum.h"
+#include "../../src/config.h"
+#include "../../src/gameloop.h"
 #include "selecaomenu.h"
 
 void PrintMenu(int MenuPosition)
@@ -65,7 +65,7 @@ void StartMenu()
 				if(MenuPosition == 0)
 				{
 					menuSelecaox();
-					GameLoop(ev);
+					//GameLoop(ev);
 					sair = true;
 					break;
 					//PrintMenu(0);
