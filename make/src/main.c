@@ -5,7 +5,7 @@
  */
 
 #include "comum.h"
-#include "StartMenu.h"
+#include "../src/Menus/StartMenu.h"
 
 void QuitGame()
 {

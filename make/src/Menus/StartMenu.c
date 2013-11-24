@@ -1,7 +1,7 @@
 #include "StartMenu.h"
-#include "comum.h"
-#include "config.h"
-#include "gameloop.h"
+#include "../src/comum.h"
+#include "../src/config.h"
+#include "../src/gameloop.h"
 #include "selecaomenu.h"
 
 void PrintMenu(int MenuPosition)

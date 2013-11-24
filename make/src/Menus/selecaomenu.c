@@ -1,9 +1,9 @@
-#include "Player.h"
-#include "comum.h"
-#include "config.h"
-#include "pontuacao.h"
+#include "../../src/Player.h"
+#include "../../src/comum.h"
+#include "../../src/config.h"
+#include "../../src/pontuacao.h"
 #include "StartMenu.h"
-#include "gameloop.h"
+#include "../../src/gameloop.h"
 #include "selecaomenu.h"
 #include <string.h>
 

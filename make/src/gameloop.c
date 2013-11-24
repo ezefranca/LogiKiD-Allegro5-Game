@@ -5,7 +5,7 @@
 #include "textBox.h"
 #include "pontuacao.h"
 #include "config.h"
-#include "selecaomenu.h"
+#include "../src/Menus/selecaomenu.h"
 #include "../src/Fases/Fase0/fase0.h"
 #include "../src/Fases/Fase1/fase1.h"
 #include "../src/Fases/Fase2/fase2.h"
