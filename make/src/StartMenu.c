@@ -15,8 +15,10 @@ void PrintMenu(int MenuPosition)
 	al_draw_text(game.fonte_logo, al_map_rgb(0, 255, 0), 800 / 2, 336, ALLEGRO_ALIGN_CENTRE, get_idioma("LogiKid"));
 	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Start game"));
 	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("Start game"));
-	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
-	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("Options"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("Options"));
+	al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 250, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
+	al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 252, ALLEGRO_ALIGN_CENTRE, get_idioma("Exit"));
 
 	switch(MenuPosition)
 	{
@@ -25,8 +27,12 @@ void PrintMenu(int MenuPosition)
 		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 52, ALLEGRO_ALIGN_CENTRE, get_idioma("--Start game--"));
 		break;
 		case 1:
-		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
-		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 150, ALLEGRO_ALIGN_CENTRE, get_idioma("--Options--"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, get_idioma("--Options--"));
+		break;
+		case 2:
+		al_draw_text(game.fonte, al_map_rgb(0, 0, 0), 800 / 2, 250, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
+		al_draw_text(game.fonte, al_map_rgb(255, 255, 0), 800 / 2, 252, ALLEGRO_ALIGN_CENTRE, get_idioma("--Exit--"));
 		break;
 	}
 }
@@ -70,21 +76,22 @@ void StartMenu()
 				break;
 				case ALLEGRO_KEY_UP:
 				tecla = 1;
-				if(MenuPosition == 0)
-					MenuPosition = 1;
-				else if(MenuPosition == 1)
-					MenuPosition = 0;
-				else
-					MenuPosition++;
+					//Posição inicial
+					if(MenuPosition == 0)
+						//ultima posição disponivel
+						MenuPosition = 2;
+					else
+						MenuPosition--;
+					break;
 				break;
 				case ALLEGRO_KEY_DOWN:
 				tecla = 2;
-				if(MenuPosition == 1)
-					MenuPosition = 0;
-				else if(MenuPosition == 0)
-					MenuPosition = 1;
-				else
-					MenuPosition--;
+				//ultima posição disponivel
+					if(MenuPosition == 2)
+						//Posição inicial
+						MenuPosition = 0;
+					else
+						MenuPosition++;
 				break;
 			}
 		}
