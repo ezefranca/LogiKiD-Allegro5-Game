@@ -1,8 +1,10 @@
 #include "Opcoes.h"
+#include "Idioma.h"
+#include "Selecao.h"
 #include "../../src/comum.h"
 #include "../../src/config.h"
 #include "../../src/gameloop.h"
-#include "selecaomenu.h"
+//#include "selecaomenu.h"
 
 void PrintOpcoes(int MenuPosition)
 {
@@ -70,11 +72,16 @@ void OpcoesMenu()
 				case ALLEGRO_KEY_ENTER:
 				if(MenuPosition == 0)
 				{
-					menuSelecaox();
-					//GameLoop(ev);
+					SelecaoMenu();
+					tecla = 4;
+				}
+				else if(MenuPosition == 1){
+					IdiomaMenu();
+					tecla = 3;
+				}
+				else if(MenuPosition == 2){
+					salva_config_user("data/config/user.conf");
 					sair = true;
-					break;
-					//PrintMenu(0);
 				}
 				else{
 					sair = true;
