@@ -419,16 +419,6 @@ bool isCollidingGlobal(Player *player, int level){
 	}
 	if(level == 5)
 	{
-
-	    if (isColliding(163, 110, 55, 35, player)   ||
-	    	isColliding(163, 206, 55, 35, player)   ||
-	    	isColliding(163, 269, 55, 35, player)   ||
-	    	isColliding(163, 368, 55, 35, player))
-	    {
-	    	return true;
-	    }
-	    else return false;
-
 		if (isColliding(101, 112, 55, 90, player))
 		{
 			return true;
