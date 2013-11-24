@@ -1,5 +1,6 @@
 #include "Player.h"
 #include "comum.h"
+#include "config.h"
 #include "pontuacao.h"
 #include "StartMenu.h"
 #include "gameloop.h"
