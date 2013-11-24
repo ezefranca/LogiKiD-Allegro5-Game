@@ -39,4 +39,20 @@ Recursos
 http://www.freesfx.co.uk/
 http://freemusicarchive.org/
 
+Requisitos
+----------------------
+
+Allegro 5.x instalado no sistema
+
+Como compilar
+----------------------
+
+Utilizando Makefile:
+
+-> Entrar na pasta make e escrever make:
+```
+$ cd LogiKid/make ; make
+```
+
+```
 

@@ -17,6 +17,7 @@
 *.out
 *.app
 ProjetoPI2
+logiKid
 
 # Temporarios
 *.c~
