@@ -1,0 +1,13 @@
+digraph "J:/SENAC/logikid3/make" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_ad3f7dd8cd3a0663613b15e9106bfc3e {
+    graph [ bgcolor="#ddddee", pencolor="black", label="logikid3" fontname="Helvetica", fontsize="10", URL="dir_ad3f7dd8cd3a0663613b15e9106bfc3e.html"]
+  subgraph clusterdir_60068393f7c9ca0e0fad2ef44e9f9f90 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_60068393f7c9ca0e0fad2ef44e9f9f90.html"];
+    dir_60068393f7c9ca0e0fad2ef44e9f9f90 [shape=plaintext label="make"];
+    dir_d9446775b0f0a02df3c9c46c449cbd66 [shape=box label="src" color="red" fillcolor="white" style="filled" URL="dir_d9446775b0f0a02df3c9c46c449cbd66.html"];
+  }
+  }
+}

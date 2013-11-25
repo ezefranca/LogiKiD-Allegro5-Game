@@ -1,0 +1,499 @@
+\contentsline {chapter}{\numberline {1}Projeto\discretionary {-}{}{}P\discretionary {-}{}{}I2 -\/ Desenvolvimento de um jogo utilizando a Allegro 5.}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}Data Structure Index}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Data Structures}{3}{section.2.1}
+\contentsline {chapter}{\numberline {3}File Index}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}File List}{5}{section.3.1}
+\contentsline {chapter}{\numberline {4}Data Structure Documentation}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}\discretionary {-}{}{}\_\discretionary {-}{}{}elemento Struct Reference}{7}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{7}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Field Documentation}{7}{subsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.2.1}proximo}{7}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.2}string}{7}{subsubsection.4.1.2.2}
+\contentsline {subsubsection}{\numberline {4.1.2.3}var}{7}{subsubsection.4.1.2.3}
+\contentsline {section}{\numberline {4.2}config Struct Reference}{8}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{8}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Field Documentation}{8}{subsection.4.2.2}
+\contentsline {subsubsection}{\numberline {4.2.2.1}inicio}{8}{subsubsection.4.2.2.1}
+\contentsline {section}{\numberline {4.3}Dialogs Struct Reference}{8}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{8}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Field Documentation}{8}{subsection.4.3.2}
+\contentsline {subsubsection}{\numberline {4.3.2.1}computador\discretionary {-}{}{}\_\discretionary {-}{}{}texto\discretionary {-}{}{}\_\discretionary {-}{}{}1}{8}{subsubsection.4.3.2.1}
+\contentsline {subsubsection}{\numberline {4.3.2.2}menina\discretionary {-}{}{}\_\discretionary {-}{}{}texto}{8}{subsubsection.4.3.2.2}
+\contentsline {subsubsection}{\numberline {4.3.2.3}menina\discretionary {-}{}{}\_\discretionary {-}{}{}texto\discretionary {-}{}{}\_\discretionary {-}{}{}1}{9}{subsubsection.4.3.2.3}
+\contentsline {subsubsection}{\numberline {4.3.2.4}texto\discretionary {-}{}{}\_\discretionary {-}{}{}generico}{9}{subsubsection.4.3.2.4}
+\contentsline {section}{\numberline {4.4}Game Struct Reference}{9}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{9}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Field Documentation}{9}{subsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.2.1}fila\discretionary {-}{}{}\_\discretionary {-}{}{}eventos}{9}{subsubsection.4.4.2.1}
+\contentsline {subsubsection}{\numberline {4.4.2.2}fonte}{9}{subsubsection.4.4.2.2}
+\contentsline {subsubsection}{\numberline {4.4.2.3}fonte\discretionary {-}{}{}\_\discretionary {-}{}{}logo}{9}{subsubsection.4.4.2.3}
+\contentsline {subsubsection}{\numberline {4.4.2.4}fonte\discretionary {-}{}{}\_\discretionary {-}{}{}menu}{10}{subsubsection.4.4.2.4}
+\contentsline {subsubsection}{\numberline {4.4.2.5}fonte\discretionary {-}{}{}Keys}{10}{subsubsection.4.4.2.5}
+\contentsline {subsubsection}{\numberline {4.4.2.6}janela}{10}{subsubsection.4.4.2.6}
+\contentsline {subsubsection}{\numberline {4.4.2.7}level}{10}{subsubsection.4.4.2.7}
+\contentsline {subsubsection}{\numberline {4.4.2.8}mute}{10}{subsubsection.4.4.2.8}
+\contentsline {subsubsection}{\numberline {4.4.2.9}som}{10}{subsubsection.4.4.2.9}
+\contentsline {subsubsection}{\numberline {4.4.2.10}song}{10}{subsubsection.4.4.2.10}
+\contentsline {subsubsection}{\numberline {4.4.2.11}song\discretionary {-}{}{}Instance}{10}{subsubsection.4.4.2.11}
+\contentsline {subsubsection}{\numberline {4.4.2.12}timer}{10}{subsubsection.4.4.2.12}
+\contentsline {section}{\numberline {4.5}Image Struct Reference}{10}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{11}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Field Documentation}{11}{subsection.4.5.2}
+\contentsline {subsubsection}{\numberline {4.5.2.1}cur\discretionary {-}{}{}Frame}{11}{subsubsection.4.5.2.1}
+\contentsline {subsubsection}{\numberline {4.5.2.2}frame\discretionary {-}{}{}Count}{11}{subsubsection.4.5.2.2}
+\contentsline {subsubsection}{\numberline {4.5.2.3}frame\discretionary {-}{}{}Delay}{11}{subsubsection.4.5.2.3}
+\contentsline {subsubsection}{\numberline {4.5.2.4}frame\discretionary {-}{}{}Height}{11}{subsubsection.4.5.2.4}
+\contentsline {subsubsection}{\numberline {4.5.2.5}frame\discretionary {-}{}{}Width}{11}{subsubsection.4.5.2.5}
+\contentsline {subsubsection}{\numberline {4.5.2.6}image}{11}{subsubsection.4.5.2.6}
+\contentsline {subsubsection}{\numberline {4.5.2.7}max\discretionary {-}{}{}Frame}{11}{subsubsection.4.5.2.7}
+\contentsline {subsubsection}{\numberline {4.5.2.8}pos\discretionary {-}{}{}In\discretionary {-}{}{}Sprite}{11}{subsubsection.4.5.2.8}
+\contentsline {section}{\numberline {4.6}Keys Struct Reference}{11}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Detailed Description}{12}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.2}Field Documentation}{12}{subsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.2.1}key\discretionary {-}{}{}Down}{12}{subsubsection.4.6.2.1}
+\contentsline {subsubsection}{\numberline {4.6.2.2}key\discretionary {-}{}{}Left}{12}{subsubsection.4.6.2.2}
+\contentsline {subsubsection}{\numberline {4.6.2.3}key\discretionary {-}{}{}Right}{12}{subsubsection.4.6.2.3}
+\contentsline {subsubsection}{\numberline {4.6.2.4}key\discretionary {-}{}{}Up}{12}{subsubsection.4.6.2.4}
+\contentsline {section}{\numberline {4.7}Level\discretionary {-}{}{}Cinco Struct Reference}{12}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Detailed Description}{13}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Field Documentation}{13}{subsection.4.7.2}
+\contentsline {subsubsection}{\numberline {4.7.2.1}circ1}{13}{subsubsection.4.7.2.1}
+\contentsline {subsubsection}{\numberline {4.7.2.2}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}{13}{subsubsection.4.7.2.2}
+\contentsline {subsubsection}{\numberline {4.7.2.3}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}{13}{subsubsection.4.7.2.3}
+\contentsline {subsubsection}{\numberline {4.7.2.4}circ2}{13}{subsubsection.4.7.2.4}
+\contentsline {subsubsection}{\numberline {4.7.2.5}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}{13}{subsubsection.4.7.2.5}
+\contentsline {subsubsection}{\numberline {4.7.2.6}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}{13}{subsubsection.4.7.2.6}
+\contentsline {subsubsection}{\numberline {4.7.2.7}circ3}{13}{subsubsection.4.7.2.7}
+\contentsline {subsubsection}{\numberline {4.7.2.8}circ\discretionary {-}{}{}\_\discretionary {-}{}{}base}{13}{subsubsection.4.7.2.8}
+\contentsline {subsubsection}{\numberline {4.7.2.9}is\discretionary {-}{}{}On}{13}{subsubsection.4.7.2.9}
+\contentsline {section}{\numberline {4.8}Level\discretionary {-}{}{}Dois Struct Reference}{13}{section.4.8}
+\contentsline {subsection}{\numberline {4.8.1}Detailed Description}{14}{subsection.4.8.1}
+\contentsline {subsection}{\numberline {4.8.2}Field Documentation}{14}{subsection.4.8.2}
+\contentsline {subsubsection}{\numberline {4.8.2.1}circ1}{14}{subsubsection.4.8.2.1}
+\contentsline {subsubsection}{\numberline {4.8.2.2}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}{14}{subsubsection.4.8.2.2}
+\contentsline {subsubsection}{\numberline {4.8.2.3}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}{14}{subsubsection.4.8.2.3}
+\contentsline {subsubsection}{\numberline {4.8.2.4}circ2}{14}{subsubsection.4.8.2.4}
+\contentsline {subsubsection}{\numberline {4.8.2.5}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}{14}{subsubsection.4.8.2.5}
+\contentsline {subsubsection}{\numberline {4.8.2.6}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}{14}{subsubsection.4.8.2.6}
+\contentsline {subsubsection}{\numberline {4.8.2.7}circ3}{15}{subsubsection.4.8.2.7}
+\contentsline {subsubsection}{\numberline {4.8.2.8}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}{15}{subsubsection.4.8.2.8}
+\contentsline {subsubsection}{\numberline {4.8.2.9}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}{15}{subsubsection.4.8.2.9}
+\contentsline {subsubsection}{\numberline {4.8.2.10}circ4}{15}{subsubsection.4.8.2.10}
+\contentsline {subsubsection}{\numberline {4.8.2.11}circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}{15}{subsubsection.4.8.2.11}
+\contentsline {subsubsection}{\numberline {4.8.2.12}circ5}{15}{subsubsection.4.8.2.12}
+\contentsline {subsubsection}{\numberline {4.8.2.13}circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}{15}{subsubsection.4.8.2.13}
+\contentsline {subsubsection}{\numberline {4.8.2.14}circ6}{15}{subsubsection.4.8.2.14}
+\contentsline {subsubsection}{\numberline {4.8.2.15}is\discretionary {-}{}{}On}{15}{subsubsection.4.8.2.15}
+\contentsline {subsubsection}{\numberline {4.8.2.16}portas}{15}{subsubsection.4.8.2.16}
+\contentsline {section}{\numberline {4.9}Level\discretionary {-}{}{}One Struct Reference}{15}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Detailed Description}{16}{subsection.4.9.1}
+\contentsline {subsection}{\numberline {4.9.2}Field Documentation}{16}{subsection.4.9.2}
+\contentsline {subsubsection}{\numberline {4.9.2.1}circ1}{16}{subsubsection.4.9.2.1}
+\contentsline {subsubsection}{\numberline {4.9.2.2}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}{16}{subsubsection.4.9.2.2}
+\contentsline {subsubsection}{\numberline {4.9.2.3}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}{16}{subsubsection.4.9.2.3}
+\contentsline {subsubsection}{\numberline {4.9.2.4}circ2}{16}{subsubsection.4.9.2.4}
+\contentsline {subsubsection}{\numberline {4.9.2.5}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}{16}{subsubsection.4.9.2.5}
+\contentsline {subsubsection}{\numberline {4.9.2.6}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}{16}{subsubsection.4.9.2.6}
+\contentsline {subsubsection}{\numberline {4.9.2.7}circ3}{17}{subsubsection.4.9.2.7}
+\contentsline {subsubsection}{\numberline {4.9.2.8}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}{17}{subsubsection.4.9.2.8}
+\contentsline {subsubsection}{\numberline {4.9.2.9}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}{17}{subsubsection.4.9.2.9}
+\contentsline {subsubsection}{\numberline {4.9.2.10}circ4}{17}{subsubsection.4.9.2.10}
+\contentsline {subsubsection}{\numberline {4.9.2.11}circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}{17}{subsubsection.4.9.2.11}
+\contentsline {subsubsection}{\numberline {4.9.2.12}circ5}{17}{subsubsection.4.9.2.12}
+\contentsline {subsubsection}{\numberline {4.9.2.13}circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}{17}{subsubsection.4.9.2.13}
+\contentsline {subsubsection}{\numberline {4.9.2.14}is\discretionary {-}{}{}On}{17}{subsubsection.4.9.2.14}
+\contentsline {subsubsection}{\numberline {4.9.2.15}portas}{17}{subsubsection.4.9.2.15}
+\contentsline {subsubsection}{\numberline {4.9.2.16}teste}{17}{subsubsection.4.9.2.16}
+\contentsline {section}{\numberline {4.10}Level\discretionary {-}{}{}Quatro Struct Reference}{17}{section.4.10}
+\contentsline {subsection}{\numberline {4.10.1}Detailed Description}{18}{subsection.4.10.1}
+\contentsline {subsection}{\numberline {4.10.2}Field Documentation}{18}{subsection.4.10.2}
+\contentsline {subsubsection}{\numberline {4.10.2.1}circ1}{18}{subsubsection.4.10.2.1}
+\contentsline {subsubsection}{\numberline {4.10.2.2}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}{18}{subsubsection.4.10.2.2}
+\contentsline {subsubsection}{\numberline {4.10.2.3}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}{18}{subsubsection.4.10.2.3}
+\contentsline {subsubsection}{\numberline {4.10.2.4}circ2}{18}{subsubsection.4.10.2.4}
+\contentsline {subsubsection}{\numberline {4.10.2.5}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}{18}{subsubsection.4.10.2.5}
+\contentsline {subsubsection}{\numberline {4.10.2.6}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}{18}{subsubsection.4.10.2.6}
+\contentsline {subsubsection}{\numberline {4.10.2.7}circ3}{19}{subsubsection.4.10.2.7}
+\contentsline {subsubsection}{\numberline {4.10.2.8}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}{19}{subsubsection.4.10.2.8}
+\contentsline {subsubsection}{\numberline {4.10.2.9}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}{19}{subsubsection.4.10.2.9}
+\contentsline {subsubsection}{\numberline {4.10.2.10}circ4}{19}{subsubsection.4.10.2.10}
+\contentsline {subsubsection}{\numberline {4.10.2.11}circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}{19}{subsubsection.4.10.2.11}
+\contentsline {subsubsection}{\numberline {4.10.2.12}circ5}{19}{subsubsection.4.10.2.12}
+\contentsline {subsubsection}{\numberline {4.10.2.13}circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}{19}{subsubsection.4.10.2.13}
+\contentsline {subsubsection}{\numberline {4.10.2.14}circ6}{19}{subsubsection.4.10.2.14}
+\contentsline {subsubsection}{\numberline {4.10.2.15}circ6\discretionary {-}{}{}\_\discretionary {-}{}{}on}{19}{subsubsection.4.10.2.15}
+\contentsline {subsubsection}{\numberline {4.10.2.16}circ7}{19}{subsubsection.4.10.2.16}
+\contentsline {subsubsection}{\numberline {4.10.2.17}circ7\discretionary {-}{}{}\_\discretionary {-}{}{}on}{19}{subsubsection.4.10.2.17}
+\contentsline {subsubsection}{\numberline {4.10.2.18}circ\discretionary {-}{}{}\_\discretionary {-}{}{}base}{19}{subsubsection.4.10.2.18}
+\contentsline {subsubsection}{\numberline {4.10.2.19}is\discretionary {-}{}{}On}{20}{subsubsection.4.10.2.19}
+\contentsline {subsubsection}{\numberline {4.10.2.20}portas}{20}{subsubsection.4.10.2.20}
+\contentsline {section}{\numberline {4.11}Level\discretionary {-}{}{}Tres Struct Reference}{20}{section.4.11}
+\contentsline {subsection}{\numberline {4.11.1}Detailed Description}{20}{subsection.4.11.1}
+\contentsline {subsection}{\numberline {4.11.2}Field Documentation}{20}{subsection.4.11.2}
+\contentsline {subsubsection}{\numberline {4.11.2.1}c\discretionary {-}{}{}Chances}{20}{subsubsection.4.11.2.1}
+\contentsline {subsubsection}{\numberline {4.11.2.2}chances}{21}{subsubsection.4.11.2.2}
+\contentsline {subsubsection}{\numberline {4.11.2.3}circ1}{21}{subsubsection.4.11.2.3}
+\contentsline {subsubsection}{\numberline {4.11.2.4}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}{21}{subsubsection.4.11.2.4}
+\contentsline {subsubsection}{\numberline {4.11.2.5}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}{21}{subsubsection.4.11.2.5}
+\contentsline {subsubsection}{\numberline {4.11.2.6}circ2}{21}{subsubsection.4.11.2.6}
+\contentsline {subsubsection}{\numberline {4.11.2.7}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}{21}{subsubsection.4.11.2.7}
+\contentsline {subsubsection}{\numberline {4.11.2.8}circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}{21}{subsubsection.4.11.2.8}
+\contentsline {subsubsection}{\numberline {4.11.2.9}circ3}{21}{subsubsection.4.11.2.9}
+\contentsline {subsubsection}{\numberline {4.11.2.10}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}{21}{subsubsection.4.11.2.10}
+\contentsline {subsubsection}{\numberline {4.11.2.11}circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}{21}{subsubsection.4.11.2.11}
+\contentsline {subsubsection}{\numberline {4.11.2.12}circ4}{21}{subsubsection.4.11.2.12}
+\contentsline {subsubsection}{\numberline {4.11.2.13}circ4\discretionary {-}{}{}\_\discretionary {-}{}{}off}{21}{subsubsection.4.11.2.13}
+\contentsline {subsubsection}{\numberline {4.11.2.14}circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}{22}{subsubsection.4.11.2.14}
+\contentsline {subsubsection}{\numberline {4.11.2.15}circ5}{22}{subsubsection.4.11.2.15}
+\contentsline {subsubsection}{\numberline {4.11.2.16}circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}{22}{subsubsection.4.11.2.16}
+\contentsline {subsubsection}{\numberline {4.11.2.17}circ6}{22}{subsubsection.4.11.2.17}
+\contentsline {subsubsection}{\numberline {4.11.2.18}circ6\discretionary {-}{}{}\_\discretionary {-}{}{}on}{22}{subsubsection.4.11.2.18}
+\contentsline {subsubsection}{\numberline {4.11.2.19}circ\discretionary {-}{}{}\_\discretionary {-}{}{}off}{22}{subsubsection.4.11.2.19}
+\contentsline {subsubsection}{\numberline {4.11.2.20}is\discretionary {-}{}{}On}{22}{subsubsection.4.11.2.20}
+\contentsline {subsubsection}{\numberline {4.11.2.21}portas}{22}{subsubsection.4.11.2.21}
+\contentsline {subsubsection}{\numberline {4.11.2.22}saida}{22}{subsubsection.4.11.2.22}
+\contentsline {section}{\numberline {4.12}Level\discretionary {-}{}{}Zero Struct Reference}{22}{section.4.12}
+\contentsline {subsection}{\numberline {4.12.1}Detailed Description}{23}{subsection.4.12.1}
+\contentsline {subsection}{\numberline {4.12.2}Field Documentation}{23}{subsection.4.12.2}
+\contentsline {subsubsection}{\numberline {4.12.2.1}chances}{23}{subsubsection.4.12.2.1}
+\contentsline {subsubsection}{\numberline {4.12.2.2}circ1}{23}{subsubsection.4.12.2.2}
+\contentsline {subsubsection}{\numberline {4.12.2.3}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}{23}{subsubsection.4.12.2.3}
+\contentsline {subsubsection}{\numberline {4.12.2.4}circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}{23}{subsubsection.4.12.2.4}
+\contentsline {subsubsection}{\numberline {4.12.2.5}is\discretionary {-}{}{}On}{23}{subsubsection.4.12.2.5}
+\contentsline {section}{\numberline {4.13}lg\discretionary {-}{}{}Images Struct Reference}{23}{section.4.13}
+\contentsline {subsection}{\numberline {4.13.1}Detailed Description}{24}{subsection.4.13.1}
+\contentsline {subsection}{\numberline {4.13.2}Field Documentation}{24}{subsection.4.13.2}
+\contentsline {subsubsection}{\numberline {4.13.2.1}curr\discretionary {-}{}{}Gate}{24}{subsubsection.4.13.2.1}
+\contentsline {subsubsection}{\numberline {4.13.2.2}Imagem\discretionary {-}{}{}Menu}{24}{subsubsection.4.13.2.2}
+\contentsline {subsubsection}{\numberline {4.13.2.3}itm\discretionary {-}{}{}Sel\discretionary {-}{}{}X}{24}{subsubsection.4.13.2.3}
+\contentsline {subsubsection}{\numberline {4.13.2.4}itm\discretionary {-}{}{}Sel\discretionary {-}{}{}Y}{24}{subsubsection.4.13.2.4}
+\contentsline {subsubsection}{\numberline {4.13.2.5}menu\discretionary {-}{}{}Sound\discretionary {-}{}{}Open}{24}{subsubsection.4.13.2.5}
+\contentsline {subsubsection}{\numberline {4.13.2.6}P\discretionary {-}{}{}E\discretionary {-}{}{}R1}{24}{subsubsection.4.13.2.6}
+\contentsline {subsubsection}{\numberline {4.13.2.7}P\discretionary {-}{}{}E\discretionary {-}{}{}R2}{24}{subsubsection.4.13.2.7}
+\contentsline {subsubsection}{\numberline {4.13.2.8}P\discretionary {-}{}{}E\discretionary {-}{}{}R3}{24}{subsubsection.4.13.2.8}
+\contentsline {subsubsection}{\numberline {4.13.2.9}P\discretionary {-}{}{}E\discretionary {-}{}{}R4}{24}{subsubsection.4.13.2.9}
+\contentsline {subsubsection}{\numberline {4.13.2.10}P\discretionary {-}{}{}E\discretionary {-}{}{}R5}{24}{subsubsection.4.13.2.10}
+\contentsline {subsubsection}{\numberline {4.13.2.11}P\discretionary {-}{}{}E\discretionary {-}{}{}R6}{24}{subsubsection.4.13.2.11}
+\contentsline {subsubsection}{\numberline {4.13.2.12}P\discretionary {-}{}{}E\discretionary {-}{}{}R7}{25}{subsubsection.4.13.2.12}
+\contentsline {subsubsection}{\numberline {4.13.2.13}Seletor}{25}{subsubsection.4.13.2.13}
+\contentsline {subsubsection}{\numberline {4.13.2.14}Seletor2}{25}{subsubsection.4.13.2.14}
+\contentsline {section}{\numberline {4.14}Logic\discretionary {-}{}{}Gates Struct Reference}{25}{section.4.14}
+\contentsline {subsection}{\numberline {4.14.1}Detailed Description}{25}{subsection.4.14.1}
+\contentsline {subsection}{\numberline {4.14.2}Field Documentation}{25}{subsection.4.14.2}
+\contentsline {subsubsection}{\numberline {4.14.2.1}lg\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}D}{25}{subsubsection.4.14.2.1}
+\contentsline {subsubsection}{\numberline {4.14.2.2}lg\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}D}{25}{subsubsection.4.14.2.2}
+\contentsline {subsubsection}{\numberline {4.14.2.3}lg\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}R}{25}{subsubsection.4.14.2.3}
+\contentsline {subsubsection}{\numberline {4.14.2.4}lg\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}T}{25}{subsubsection.4.14.2.4}
+\contentsline {subsubsection}{\numberline {4.14.2.5}lg\discretionary {-}{}{}O\discretionary {-}{}{}R}{26}{subsubsection.4.14.2.5}
+\contentsline {subsubsection}{\numberline {4.14.2.6}lg\discretionary {-}{}{}X\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}R}{26}{subsubsection.4.14.2.6}
+\contentsline {subsubsection}{\numberline {4.14.2.7}lg\discretionary {-}{}{}X\discretionary {-}{}{}O\discretionary {-}{}{}R}{26}{subsubsection.4.14.2.7}
+\contentsline {section}{\numberline {4.15}Player Struct Reference}{26}{section.4.15}
+\contentsline {subsection}{\numberline {4.15.1}Detailed Description}{26}{subsection.4.15.1}
+\contentsline {subsection}{\numberline {4.15.2}Field Documentation}{26}{subsection.4.15.2}
+\contentsline {subsubsection}{\numberline {4.15.2.1}chances}{26}{subsubsection.4.15.2.1}
+\contentsline {subsubsection}{\numberline {4.15.2.2}footstep}{26}{subsubsection.4.15.2.2}
+\contentsline {subsubsection}{\numberline {4.15.2.3}image}{26}{subsubsection.4.15.2.3}
+\contentsline {subsubsection}{\numberline {4.15.2.4}l\discretionary {-}{}{}Gates}{27}{subsubsection.4.15.2.4}
+\contentsline {subsubsection}{\numberline {4.15.2.5}play\discretionary {-}{}{}\_\discretionary {-}{}{}font}{27}{subsubsection.4.15.2.5}
+\contentsline {subsubsection}{\numberline {4.15.2.6}state}{27}{subsubsection.4.15.2.6}
+\contentsline {section}{\numberline {4.16}Ranked Struct Reference}{27}{section.4.16}
+\contentsline {subsection}{\numberline {4.16.1}Detailed Description}{27}{subsection.4.16.1}
+\contentsline {subsection}{\numberline {4.16.2}Field Documentation}{27}{subsection.4.16.2}
+\contentsline {subsubsection}{\numberline {4.16.2.1}image\discretionary {-}{}{}Bom}{27}{subsubsection.4.16.2.1}
+\contentsline {subsubsection}{\numberline {4.16.2.2}image\discretionary {-}{}{}Excelente}{27}{subsubsection.4.16.2.2}
+\contentsline {subsubsection}{\numberline {4.16.2.3}image\discretionary {-}{}{}Regular}{27}{subsubsection.4.16.2.3}
+\contentsline {subsubsection}{\numberline {4.16.2.4}som\discretionary {-}{}{}Bom}{27}{subsubsection.4.16.2.4}
+\contentsline {subsubsection}{\numberline {4.16.2.5}som\discretionary {-}{}{}Excelente}{28}{subsubsection.4.16.2.5}
+\contentsline {subsubsection}{\numberline {4.16.2.6}som\discretionary {-}{}{}Regular}{28}{subsubsection.4.16.2.6}
+\contentsline {section}{\numberline {4.17}State Struct Reference}{28}{section.4.17}
+\contentsline {subsection}{\numberline {4.17.1}Detailed Description}{28}{subsection.4.17.1}
+\contentsline {subsection}{\numberline {4.17.2}Field Documentation}{28}{subsection.4.17.2}
+\contentsline {subsubsection}{\numberline {4.17.2.1}desce}{28}{subsubsection.4.17.2.1}
+\contentsline {subsubsection}{\numberline {4.17.2.2}direita}{28}{subsubsection.4.17.2.2}
+\contentsline {subsubsection}{\numberline {4.17.2.3}esquerda}{28}{subsubsection.4.17.2.3}
+\contentsline {subsubsection}{\numberline {4.17.2.4}idle\discretionary {-}{}{}B}{28}{subsubsection.4.17.2.4}
+\contentsline {subsubsection}{\numberline {4.17.2.5}idle\discretionary {-}{}{}C}{29}{subsubsection.4.17.2.5}
+\contentsline {subsubsection}{\numberline {4.17.2.6}idle\discretionary {-}{}{}D}{29}{subsubsection.4.17.2.6}
+\contentsline {subsubsection}{\numberline {4.17.2.7}idle\discretionary {-}{}{}E}{29}{subsubsection.4.17.2.7}
+\contentsline {subsubsection}{\numberline {4.17.2.8}sobe}{29}{subsubsection.4.17.2.8}
+\contentsline {subsubsection}{\numberline {4.17.2.9}speed}{29}{subsubsection.4.17.2.9}
+\contentsline {subsubsection}{\numberline {4.17.2.10}x}{29}{subsubsection.4.17.2.10}
+\contentsline {subsubsection}{\numberline {4.17.2.11}y}{29}{subsubsection.4.17.2.11}
+\contentsline {chapter}{\numberline {5}File Documentation}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/comum.h File Reference}{31}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Macro Definition Documentation}{31}{subsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.1}A\discretionary {-}{}{}L\discretionary {-}{}{}T\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}A}{31}{subsubsection.5.1.1.1}
+\contentsline {subsubsection}{\numberline {5.1.1.2}L\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}G\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}A}{31}{subsubsection.5.1.1.2}
+\contentsline {subsection}{\numberline {5.1.2}Function Documentation}{32}{subsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.2.1}inicializar}{32}{subsubsection.5.1.2.1}
+\contentsline {subsection}{\numberline {5.1.3}Variable Documentation}{32}{subsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.3.1}game}{32}{subsubsection.5.1.3.1}
+\contentsline {section}{\numberline {5.2}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/config.c File Reference}{32}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Function Documentation}{33}{subsection.5.2.1}
+\contentsline {subsubsection}{\numberline {5.2.1.1}adiciona\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{33}{subsubsection.5.2.1.1}
+\contentsline {subsubsection}{\numberline {5.2.1.2}aloca}{33}{subsubsection.5.2.1.2}
+\contentsline {subsubsection}{\numberline {5.2.1.3}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config}{33}{subsubsection.5.2.1.3}
+\contentsline {subsubsection}{\numberline {5.2.1.4}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{33}{subsubsection.5.2.1.4}
+\contentsline {subsubsection}{\numberline {5.2.1.5}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{33}{subsubsection.5.2.1.5}
+\contentsline {subsubsection}{\numberline {5.2.1.6}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{33}{subsubsection.5.2.1.6}
+\contentsline {subsubsection}{\numberline {5.2.1.7}conta\discretionary {-}{}{}\_\discretionary {-}{}{}linhas}{33}{subsubsection.5.2.1.7}
+\contentsline {subsubsection}{\numberline {5.2.1.8}conta\discretionary {-}{}{}\_\discretionary {-}{}{}until}{33}{subsubsection.5.2.1.8}
+\contentsline {subsubsection}{\numberline {5.2.1.9}create\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{33}{subsubsection.5.2.1.9}
+\contentsline {subsubsection}{\numberline {5.2.1.10}get\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{33}{subsubsection.5.2.1.10}
+\contentsline {subsubsection}{\numberline {5.2.1.11}get\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{34}{subsubsection.5.2.1.11}
+\contentsline {subsubsection}{\numberline {5.2.1.12}get\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{34}{subsubsection.5.2.1.12}
+\contentsline {subsubsection}{\numberline {5.2.1.13}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config}{34}{subsubsection.5.2.1.13}
+\contentsline {subsubsection}{\numberline {5.2.1.14}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{34}{subsubsection.5.2.1.14}
+\contentsline {subsubsection}{\numberline {5.2.1.15}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{34}{subsubsection.5.2.1.15}
+\contentsline {subsubsection}{\numberline {5.2.1.16}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{34}{subsubsection.5.2.1.16}
+\contentsline {subsubsection}{\numberline {5.2.1.17}insere\discretionary {-}{}{}\_\discretionary {-}{}{}config}{34}{subsubsection.5.2.1.17}
+\contentsline {subsubsection}{\numberline {5.2.1.18}libera\discretionary {-}{}{}\_\discretionary {-}{}{}config}{34}{subsubsection.5.2.1.18}
+\contentsline {subsubsection}{\numberline {5.2.1.19}libera\discretionary {-}{}{}\_\discretionary {-}{}{}string}{34}{subsubsection.5.2.1.19}
+\contentsline {subsubsection}{\numberline {5.2.1.20}limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config}{34}{subsubsection.5.2.1.20}
+\contentsline {subsubsection}{\numberline {5.2.1.21}limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{34}{subsubsection.5.2.1.21}
+\contentsline {subsubsection}{\numberline {5.2.1.22}limpa\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{34}{subsubsection.5.2.1.22}
+\contentsline {subsubsection}{\numberline {5.2.1.23}load\discretionary {-}{}{}\_\discretionary {-}{}{}config}{35}{subsubsection.5.2.1.23}
+\contentsline {subsubsection}{\numberline {5.2.1.24}load\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{35}{subsubsection.5.2.1.24}
+\contentsline {subsubsection}{\numberline {5.2.1.25}load\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{35}{subsubsection.5.2.1.25}
+\contentsline {subsubsection}{\numberline {5.2.1.26}load\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{35}{subsubsection.5.2.1.26}
+\contentsline {subsubsection}{\numberline {5.2.1.27}retorna\discretionary {-}{}{}\_\discretionary {-}{}{}config}{35}{subsubsection.5.2.1.27}
+\contentsline {subsubsection}{\numberline {5.2.1.28}salva\discretionary {-}{}{}\_\discretionary {-}{}{}config}{35}{subsubsection.5.2.1.28}
+\contentsline {subsubsection}{\numberline {5.2.1.29}salva\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{35}{subsubsection.5.2.1.29}
+\contentsline {subsubsection}{\numberline {5.2.1.30}update\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{35}{subsubsection.5.2.1.30}
+\contentsline {subsection}{\numberline {5.2.2}Variable Documentation}{35}{subsection.5.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.1}arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{35}{subsubsection.5.2.2.1}
+\contentsline {subsubsection}{\numberline {5.2.2.2}arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{35}{subsubsection.5.2.2.2}
+\contentsline {subsubsection}{\numberline {5.2.2.3}arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{35}{subsubsection.5.2.2.3}
+\contentsline {subsubsection}{\numberline {5.2.2.4}loaded\discretionary {-}{}{}\_\discretionary {-}{}{}config}{35}{subsubsection.5.2.2.4}
+\contentsline {subsubsection}{\numberline {5.2.2.5}loaded\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{36}{subsubsection.5.2.2.5}
+\contentsline {subsubsection}{\numberline {5.2.2.6}loaded\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{36}{subsubsection.5.2.2.6}
+\contentsline {section}{\numberline {5.3}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/config.h File Reference}{36}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Macro Definition Documentation}{37}{subsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1.1}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}I\discretionary {-}{}{}G}{37}{subsubsection.5.3.1.1}
+\contentsline {subsubsection}{\numberline {5.3.1.2}C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}I\discretionary {-}{}{}G\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}R}{37}{subsubsection.5.3.1.2}
+\contentsline {subsubsection}{\numberline {5.3.1.3}I\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}M\discretionary {-}{}{}A}{37}{subsubsection.5.3.1.3}
+\contentsline {subsection}{\numberline {5.3.2}Typedef Documentation}{37}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}elemento}{37}{subsubsection.5.3.2.1}
+\contentsline {subsection}{\numberline {5.3.3}Function Documentation}{37}{subsection.5.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.1}adiciona\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{37}{subsubsection.5.3.3.1}
+\contentsline {subsubsection}{\numberline {5.3.3.2}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{37}{subsubsection.5.3.3.2}
+\contentsline {subsubsection}{\numberline {5.3.3.3}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{37}{subsubsection.5.3.3.3}
+\contentsline {subsubsection}{\numberline {5.3.3.4}apaga\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{37}{subsubsection.5.3.3.4}
+\contentsline {subsubsection}{\numberline {5.3.3.5}create\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{37}{subsubsection.5.3.3.5}
+\contentsline {subsubsection}{\numberline {5.3.3.6}get\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{37}{subsubsection.5.3.3.6}
+\contentsline {subsubsection}{\numberline {5.3.3.7}get\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{37}{subsubsection.5.3.3.7}
+\contentsline {subsubsection}{\numberline {5.3.3.8}get\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{38}{subsubsection.5.3.3.8}
+\contentsline {subsubsection}{\numberline {5.3.3.9}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config}{38}{subsubsection.5.3.3.9}
+\contentsline {subsubsection}{\numberline {5.3.3.10}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{38}{subsubsection.5.3.3.10}
+\contentsline {subsubsection}{\numberline {5.3.3.11}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{38}{subsubsection.5.3.3.11}
+\contentsline {subsubsection}{\numberline {5.3.3.12}imprime\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{38}{subsubsection.5.3.3.12}
+\contentsline {subsubsection}{\numberline {5.3.3.13}limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config}{38}{subsubsection.5.3.3.13}
+\contentsline {subsubsection}{\numberline {5.3.3.14}limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{38}{subsubsection.5.3.3.14}
+\contentsline {subsubsection}{\numberline {5.3.3.15}limpa\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{38}{subsubsection.5.3.3.15}
+\contentsline {subsubsection}{\numberline {5.3.3.16}load\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{38}{subsubsection.5.3.3.16}
+\contentsline {subsubsection}{\numberline {5.3.3.17}load\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}{38}{subsubsection.5.3.3.17}
+\contentsline {subsubsection}{\numberline {5.3.3.18}load\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}{38}{subsubsection.5.3.3.18}
+\contentsline {subsubsection}{\numberline {5.3.3.19}salva\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{38}{subsubsection.5.3.3.19}
+\contentsline {subsubsection}{\numberline {5.3.3.20}update\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}{39}{subsubsection.5.3.3.20}
+\contentsline {section}{\numberline {5.4}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase0/fase0.c File Reference}{39}{section.5.4}
+\contentsline {subsection}{\numberline {5.4.1}Function Documentation}{39}{subsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{39}{subsubsection.5.4.1.1}
+\contentsline {subsubsection}{\numberline {5.4.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{39}{subsubsection.5.4.1.2}
+\contentsline {subsubsection}{\numberline {5.4.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{39}{subsubsection.5.4.1.3}
+\contentsline {subsubsection}{\numberline {5.4.1.4}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{39}{subsubsection.5.4.1.4}
+\contentsline {section}{\numberline {5.5}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase0/fase0.h File Reference}{39}{section.5.5}
+\contentsline {subsection}{\numberline {5.5.1}Function Documentation}{40}{subsection.5.5.1}
+\contentsline {subsubsection}{\numberline {5.5.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{40}{subsubsection.5.5.1.1}
+\contentsline {subsubsection}{\numberline {5.5.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{40}{subsubsection.5.5.1.2}
+\contentsline {subsubsection}{\numberline {5.5.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{40}{subsubsection.5.5.1.3}
+\contentsline {subsubsection}{\numberline {5.5.1.4}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{40}{subsubsection.5.5.1.4}
+\contentsline {subsubsection}{\numberline {5.5.1.5}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}{40}{subsubsection.5.5.1.5}
+\contentsline {section}{\numberline {5.6}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase1/fase1.c File Reference}{40}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Function Documentation}{41}{subsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}One}{41}{subsubsection.5.6.1.1}
+\contentsline {subsubsection}{\numberline {5.6.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}One}{41}{subsubsection.5.6.1.2}
+\contentsline {subsubsection}{\numberline {5.6.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}One}{41}{subsubsection.5.6.1.3}
+\contentsline {subsubsection}{\numberline {5.6.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}{41}{subsubsection.5.6.1.4}
+\contentsline {subsubsection}{\numberline {5.6.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}One}{41}{subsubsection.5.6.1.5}
+\contentsline {subsubsection}{\numberline {5.6.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}{41}{subsubsection.5.6.1.6}
+\contentsline {section}{\numberline {5.7}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase1/fase1.h File Reference}{41}{section.5.7}
+\contentsline {subsection}{\numberline {5.7.1}Function Documentation}{42}{subsection.5.7.1}
+\contentsline {subsubsection}{\numberline {5.7.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}One}{42}{subsubsection.5.7.1.1}
+\contentsline {subsubsection}{\numberline {5.7.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}One}{42}{subsubsection.5.7.1.2}
+\contentsline {subsubsection}{\numberline {5.7.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}One}{42}{subsubsection.5.7.1.3}
+\contentsline {subsubsection}{\numberline {5.7.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}{42}{subsubsection.5.7.1.4}
+\contentsline {subsubsection}{\numberline {5.7.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}One}{42}{subsubsection.5.7.1.5}
+\contentsline {subsubsection}{\numberline {5.7.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}{42}{subsubsection.5.7.1.6}
+\contentsline {section}{\numberline {5.8}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase2/fase2.c File Reference}{42}{section.5.8}
+\contentsline {subsection}{\numberline {5.8.1}Function Documentation}{42}{subsection.5.8.1}
+\contentsline {subsubsection}{\numberline {5.8.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{42}{subsubsection.5.8.1.1}
+\contentsline {subsubsection}{\numberline {5.8.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{43}{subsubsection.5.8.1.2}
+\contentsline {subsubsection}{\numberline {5.8.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{43}{subsubsection.5.8.1.3}
+\contentsline {subsubsection}{\numberline {5.8.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{43}{subsubsection.5.8.1.4}
+\contentsline {subsubsection}{\numberline {5.8.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{43}{subsubsection.5.8.1.5}
+\contentsline {subsubsection}{\numberline {5.8.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{43}{subsubsection.5.8.1.6}
+\contentsline {section}{\numberline {5.9}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase2/fase2.h File Reference}{43}{section.5.9}
+\contentsline {subsection}{\numberline {5.9.1}Function Documentation}{44}{subsection.5.9.1}
+\contentsline {subsubsection}{\numberline {5.9.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{44}{subsubsection.5.9.1.1}
+\contentsline {subsubsection}{\numberline {5.9.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{44}{subsubsection.5.9.1.2}
+\contentsline {subsubsection}{\numberline {5.9.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{44}{subsubsection.5.9.1.3}
+\contentsline {subsubsection}{\numberline {5.9.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{44}{subsubsection.5.9.1.4}
+\contentsline {subsubsection}{\numberline {5.9.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{44}{subsubsection.5.9.1.5}
+\contentsline {subsubsection}{\numberline {5.9.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}{44}{subsubsection.5.9.1.6}
+\contentsline {section}{\numberline {5.10}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase3/fase3.c File Reference}{44}{section.5.10}
+\contentsline {subsection}{\numberline {5.10.1}Function Documentation}{44}{subsection.5.10.1}
+\contentsline {subsubsection}{\numberline {5.10.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{44}{subsubsection.5.10.1.1}
+\contentsline {subsubsection}{\numberline {5.10.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{45}{subsubsection.5.10.1.2}
+\contentsline {subsubsection}{\numberline {5.10.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{45}{subsubsection.5.10.1.3}
+\contentsline {subsubsection}{\numberline {5.10.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{45}{subsubsection.5.10.1.4}
+\contentsline {subsubsection}{\numberline {5.10.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{45}{subsubsection.5.10.1.5}
+\contentsline {subsubsection}{\numberline {5.10.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{45}{subsubsection.5.10.1.6}
+\contentsline {section}{\numberline {5.11}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase3/fase3.h File Reference}{45}{section.5.11}
+\contentsline {subsection}{\numberline {5.11.1}Function Documentation}{46}{subsection.5.11.1}
+\contentsline {subsubsection}{\numberline {5.11.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{46}{subsubsection.5.11.1.1}
+\contentsline {subsubsection}{\numberline {5.11.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{46}{subsubsection.5.11.1.2}
+\contentsline {subsubsection}{\numberline {5.11.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{46}{subsubsection.5.11.1.3}
+\contentsline {subsubsection}{\numberline {5.11.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{46}{subsubsection.5.11.1.4}
+\contentsline {subsubsection}{\numberline {5.11.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{46}{subsubsection.5.11.1.5}
+\contentsline {subsubsection}{\numberline {5.11.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}{46}{subsubsection.5.11.1.6}
+\contentsline {section}{\numberline {5.12}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase4/fase4.c File Reference}{46}{section.5.12}
+\contentsline {subsection}{\numberline {5.12.1}Function Documentation}{46}{subsection.5.12.1}
+\contentsline {subsubsection}{\numberline {5.12.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{46}{subsubsection.5.12.1.1}
+\contentsline {subsubsection}{\numberline {5.12.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{47}{subsubsection.5.12.1.2}
+\contentsline {subsubsection}{\numberline {5.12.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{47}{subsubsection.5.12.1.3}
+\contentsline {subsubsection}{\numberline {5.12.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{47}{subsubsection.5.12.1.4}
+\contentsline {subsubsection}{\numberline {5.12.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{47}{subsubsection.5.12.1.5}
+\contentsline {subsubsection}{\numberline {5.12.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{47}{subsubsection.5.12.1.6}
+\contentsline {section}{\numberline {5.13}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase4/fase4.h File Reference}{47}{section.5.13}
+\contentsline {subsection}{\numberline {5.13.1}Function Documentation}{48}{subsection.5.13.1}
+\contentsline {subsubsection}{\numberline {5.13.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{48}{subsubsection.5.13.1.1}
+\contentsline {subsubsection}{\numberline {5.13.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{48}{subsubsection.5.13.1.2}
+\contentsline {subsubsection}{\numberline {5.13.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{48}{subsubsection.5.13.1.3}
+\contentsline {subsubsection}{\numberline {5.13.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{48}{subsubsection.5.13.1.4}
+\contentsline {subsubsection}{\numberline {5.13.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{48}{subsubsection.5.13.1.5}
+\contentsline {subsubsection}{\numberline {5.13.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}{48}{subsubsection.5.13.1.6}
+\contentsline {section}{\numberline {5.14}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase5/fase5.c File Reference}{48}{section.5.14}
+\contentsline {subsection}{\numberline {5.14.1}Function Documentation}{48}{subsection.5.14.1}
+\contentsline {subsubsection}{\numberline {5.14.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{48}{subsubsection.5.14.1.1}
+\contentsline {subsubsection}{\numberline {5.14.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{49}{subsubsection.5.14.1.2}
+\contentsline {subsubsection}{\numberline {5.14.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{49}{subsubsection.5.14.1.3}
+\contentsline {subsubsection}{\numberline {5.14.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{49}{subsubsection.5.14.1.4}
+\contentsline {subsubsection}{\numberline {5.14.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{49}{subsubsection.5.14.1.5}
+\contentsline {subsubsection}{\numberline {5.14.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{49}{subsubsection.5.14.1.6}
+\contentsline {section}{\numberline {5.15}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase5/fase5.h File Reference}{49}{section.5.15}
+\contentsline {subsection}{\numberline {5.15.1}Function Documentation}{49}{subsection.5.15.1}
+\contentsline {subsubsection}{\numberline {5.15.1.1}create\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{49}{subsubsection.5.15.1.1}
+\contentsline {subsubsection}{\numberline {5.15.1.2}destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{50}{subsubsection.5.15.1.2}
+\contentsline {subsubsection}{\numberline {5.15.1.3}draw\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{50}{subsubsection.5.15.1.3}
+\contentsline {subsubsection}{\numberline {5.15.1.4}draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{50}{subsubsection.5.15.1.4}
+\contentsline {subsubsection}{\numberline {5.15.1.5}init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{50}{subsubsection.5.15.1.5}
+\contentsline {subsubsection}{\numberline {5.15.1.6}logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}{50}{subsubsection.5.15.1.6}
+\contentsline {section}{\numberline {5.16}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/gameloop.c File Reference}{50}{section.5.16}
+\contentsline {subsection}{\numberline {5.16.1}Function Documentation}{51}{subsection.5.16.1}
+\contentsline {subsubsection}{\numberline {5.16.1.1}Game\discretionary {-}{}{}Loop}{51}{subsubsection.5.16.1.1}
+\contentsline {subsubsection}{\numberline {5.16.1.2}is\discretionary {-}{}{}Colliding}{51}{subsubsection.5.16.1.2}
+\contentsline {subsubsection}{\numberline {5.16.1.3}is\discretionary {-}{}{}Colliding\discretionary {-}{}{}Global}{51}{subsubsection.5.16.1.3}
+\contentsline {subsubsection}{\numberline {5.16.1.4}music\discretionary {-}{}{}Player}{51}{subsubsection.5.16.1.4}
+\contentsline {subsubsection}{\numberline {5.16.1.5}Set\discretionary {-}{}{}Back\discretionary {-}{}{}Ground\discretionary {-}{}{}Image}{51}{subsubsection.5.16.1.5}
+\contentsline {subsection}{\numberline {5.16.2}Variable Documentation}{51}{subsection.5.16.2}
+\contentsline {subsubsection}{\numberline {5.16.2.1}complete}{51}{subsubsection.5.16.2.1}
+\contentsline {subsubsection}{\numberline {5.16.2.2}i}{51}{subsubsection.5.16.2.2}
+\contentsline {subsubsection}{\numberline {5.16.2.3}inputs}{51}{subsubsection.5.16.2.3}
+\contentsline {subsubsection}{\numberline {5.16.2.4}is\discretionary {-}{}{}Destroyed}{51}{subsubsection.5.16.2.4}
+\contentsline {subsubsection}{\numberline {5.16.2.5}launch\discretionary {-}{}{}\_\discretionary {-}{}{}song}{51}{subsubsection.5.16.2.5}
+\contentsline {subsubsection}{\numberline {5.16.2.6}redraw}{52}{subsubsection.5.16.2.6}
+\contentsline {subsubsection}{\numberline {5.16.2.7}synth\discretionary {-}{}{}\_\discretionary {-}{}{}song}{52}{subsubsection.5.16.2.7}
+\contentsline {subsubsection}{\numberline {5.16.2.8}text\discretionary {-}{}{}Box}{52}{subsubsection.5.16.2.8}
+\contentsline {section}{\numberline {5.17}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/gameloop.h File Reference}{52}{section.5.17}
+\contentsline {subsection}{\numberline {5.17.1}Function Documentation}{52}{subsection.5.17.1}
+\contentsline {subsubsection}{\numberline {5.17.1.1}Game\discretionary {-}{}{}Loop}{52}{subsubsection.5.17.1.1}
+\contentsline {subsubsection}{\numberline {5.17.1.2}Game\discretionary {-}{}{}Over\discretionary {-}{}{}Screen}{52}{subsubsection.5.17.1.2}
+\contentsline {section}{\numberline {5.18}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/init.c File Reference}{52}{section.5.18}
+\contentsline {subsection}{\numberline {5.18.1}Function Documentation}{52}{subsection.5.18.1}
+\contentsline {subsubsection}{\numberline {5.18.1.1}inicializar}{52}{subsubsection.5.18.1.1}
+\contentsline {section}{\numberline {5.19}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Itens\discretionary {-}{}{}Menu.c File Reference}{53}{section.5.19}
+\contentsline {section}{\numberline {5.20}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Itens\discretionary {-}{}{}Menu.h File Reference}{53}{section.5.20}
+\contentsline {section}{\numberline {5.21}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/main.c File Reference}{53}{section.5.21}
+\contentsline {subsection}{\numberline {5.21.1}Function Documentation}{53}{subsection.5.21.1}
+\contentsline {subsubsection}{\numberline {5.21.1.1}fadein}{53}{subsubsection.5.21.1.1}
+\contentsline {subsubsection}{\numberline {5.21.1.2}fadeout}{53}{subsubsection.5.21.1.2}
+\contentsline {subsubsection}{\numberline {5.21.1.3}Init\discretionary {-}{}{}Screens}{53}{subsubsection.5.21.1.3}
+\contentsline {subsubsection}{\numberline {5.21.1.4}main}{53}{subsubsection.5.21.1.4}
+\contentsline {subsubsection}{\numberline {5.21.1.5}Quit\discretionary {-}{}{}Game}{53}{subsubsection.5.21.1.5}
+\contentsline {section}{\numberline {5.22}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Player.c File Reference}{54}{section.5.22}
+\contentsline {subsection}{\numberline {5.22.1}Function Documentation}{54}{subsection.5.22.1}
+\contentsline {subsubsection}{\numberline {5.22.1.1}create\discretionary {-}{}{}Keys}{54}{subsubsection.5.22.1.1}
+\contentsline {subsubsection}{\numberline {5.22.1.2}Create\discretionary {-}{}{}Player}{54}{subsubsection.5.22.1.2}
+\contentsline {subsubsection}{\numberline {5.22.1.3}move\discretionary {-}{}{}Baixo}{54}{subsubsection.5.22.1.3}
+\contentsline {subsubsection}{\numberline {5.22.1.4}move\discretionary {-}{}{}Cima}{54}{subsubsection.5.22.1.4}
+\contentsline {subsubsection}{\numberline {5.22.1.5}move\discretionary {-}{}{}Direita}{54}{subsubsection.5.22.1.5}
+\contentsline {subsubsection}{\numberline {5.22.1.6}move\discretionary {-}{}{}Esquerda}{54}{subsubsection.5.22.1.6}
+\contentsline {subsubsection}{\numberline {5.22.1.7}move\discretionary {-}{}{}Player}{55}{subsubsection.5.22.1.7}
+\contentsline {subsubsection}{\numberline {5.22.1.8}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Baixo}{55}{subsubsection.5.22.1.8}
+\contentsline {subsubsection}{\numberline {5.22.1.9}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Cima}{55}{subsubsection.5.22.1.9}
+\contentsline {subsubsection}{\numberline {5.22.1.10}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Direita}{55}{subsubsection.5.22.1.10}
+\contentsline {subsubsection}{\numberline {5.22.1.11}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Esquerda}{55}{subsubsection.5.22.1.11}
+\contentsline {subsubsection}{\numberline {5.22.1.12}set\discretionary {-}{}{}Keys}{55}{subsubsection.5.22.1.12}
+\contentsline {subsubsection}{\numberline {5.22.1.13}Valida\discretionary {-}{}{}Movimento}{55}{subsubsection.5.22.1.13}
+\contentsline {subsubsection}{\numberline {5.22.1.14}Valida\discretionary {-}{}{}Movimento\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}P}{55}{subsubsection.5.22.1.14}
+\contentsline {section}{\numberline {5.23}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Player.h File Reference}{55}{section.5.23}
+\contentsline {subsection}{\numberline {5.23.1}Function Documentation}{56}{subsection.5.23.1}
+\contentsline {subsubsection}{\numberline {5.23.1.1}create\discretionary {-}{}{}Keys}{56}{subsubsection.5.23.1.1}
+\contentsline {subsubsection}{\numberline {5.23.1.2}Create\discretionary {-}{}{}Player}{56}{subsubsection.5.23.1.2}
+\contentsline {subsubsection}{\numberline {5.23.1.3}move\discretionary {-}{}{}Baixo}{56}{subsubsection.5.23.1.3}
+\contentsline {subsubsection}{\numberline {5.23.1.4}move\discretionary {-}{}{}Cima}{56}{subsubsection.5.23.1.4}
+\contentsline {subsubsection}{\numberline {5.23.1.5}move\discretionary {-}{}{}Direita}{56}{subsubsection.5.23.1.5}
+\contentsline {subsubsection}{\numberline {5.23.1.6}move\discretionary {-}{}{}Esquerda}{56}{subsubsection.5.23.1.6}
+\contentsline {subsubsection}{\numberline {5.23.1.7}move\discretionary {-}{}{}Player}{56}{subsubsection.5.23.1.7}
+\contentsline {subsubsection}{\numberline {5.23.1.8}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Baixo}{56}{subsubsection.5.23.1.8}
+\contentsline {subsubsection}{\numberline {5.23.1.9}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Cima}{57}{subsubsection.5.23.1.9}
+\contentsline {subsubsection}{\numberline {5.23.1.10}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Direita}{57}{subsubsection.5.23.1.10}
+\contentsline {subsubsection}{\numberline {5.23.1.11}Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Esquerda}{57}{subsubsection.5.23.1.11}
+\contentsline {subsubsection}{\numberline {5.23.1.12}set\discretionary {-}{}{}Keys}{57}{subsubsection.5.23.1.12}
+\contentsline {subsubsection}{\numberline {5.23.1.13}Valida\discretionary {-}{}{}Movimento}{57}{subsubsection.5.23.1.13}
+\contentsline {subsubsection}{\numberline {5.23.1.14}Valida\discretionary {-}{}{}Movimento\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}P}{57}{subsubsection.5.23.1.14}
+\contentsline {section}{\numberline {5.24}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/pontuacao.c File Reference}{57}{section.5.24}
+\contentsline {subsection}{\numberline {5.24.1}Function Documentation}{57}{subsection.5.24.1}
+\contentsline {subsubsection}{\numberline {5.24.1.1}cria\discretionary {-}{}{}Qualificacao}{57}{subsubsection.5.24.1.1}
+\contentsline {subsubsection}{\numberline {5.24.1.2}loop\discretionary {-}{}{}Qualifica}{58}{subsubsection.5.24.1.2}
+\contentsline {subsubsection}{\numberline {5.24.1.3}qualifica\discretionary {-}{}{}Jogador}{58}{subsubsection.5.24.1.3}
+\contentsline {subsection}{\numberline {5.24.2}Variable Documentation}{58}{subsection.5.24.2}
+\contentsline {subsubsection}{\numberline {5.24.2.1}ranking}{58}{subsubsection.5.24.2.1}
+\contentsline {section}{\numberline {5.25}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/pontuacao.h File Reference}{58}{section.5.25}
+\contentsline {subsection}{\numberline {5.25.1}Function Documentation}{58}{subsection.5.25.1}
+\contentsline {subsubsection}{\numberline {5.25.1.1}cria\discretionary {-}{}{}Qualificacao}{58}{subsubsection.5.25.1.1}
+\contentsline {subsubsection}{\numberline {5.25.1.2}loop\discretionary {-}{}{}Qualifica}{58}{subsubsection.5.25.1.2}
+\contentsline {subsubsection}{\numberline {5.25.1.3}qualifica\discretionary {-}{}{}Jogador}{58}{subsubsection.5.25.1.3}
+\contentsline {section}{\numberline {5.26}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/selecaomenu.c File Reference}{59}{section.5.26}
+\contentsline {subsection}{\numberline {5.26.1}Function Documentation}{59}{subsection.5.26.1}
+\contentsline {subsubsection}{\numberline {5.26.1.1}Draw\discretionary {-}{}{}Images}{59}{subsubsection.5.26.1.1}
+\contentsline {subsubsection}{\numberline {5.26.1.2}Get\discretionary {-}{}{}Personagem}{59}{subsubsection.5.26.1.2}
+\contentsline {subsubsection}{\numberline {5.26.1.3}Menu\discretionary {-}{}{}Load\discretionary {-}{}{}Person}{59}{subsubsection.5.26.1.3}
+\contentsline {subsubsection}{\numberline {5.26.1.4}menu\discretionary {-}{}{}Selecaox}{59}{subsubsection.5.26.1.4}
+\contentsline {subsubsection}{\numberline {5.26.1.5}mk\discretionary {-}{}{}\_\discretionary {-}{}{}left}{59}{subsubsection.5.26.1.5}
+\contentsline {subsubsection}{\numberline {5.26.1.6}mk\discretionary {-}{}{}\_\discretionary {-}{}{}right}{59}{subsubsection.5.26.1.6}
+\contentsline {section}{\numberline {5.27}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/selecaomenu.h File Reference}{60}{section.5.27}
+\contentsline {subsection}{\numberline {5.27.1}Enumeration Type Documentation}{60}{subsection.5.27.1}
+\contentsline {subsubsection}{\numberline {5.27.1.1}Personagem}{60}{subsubsection.5.27.1.1}
+\contentsline {subsection}{\numberline {5.27.2}Function Documentation}{60}{subsection.5.27.2}
+\contentsline {subsubsection}{\numberline {5.27.2.1}Menu\discretionary {-}{}{}Load\discretionary {-}{}{}Person}{60}{subsubsection.5.27.2.1}
+\contentsline {subsubsection}{\numberline {5.27.2.2}menu\discretionary {-}{}{}Selecaox}{61}{subsubsection.5.27.2.2}
+\contentsline {section}{\numberline {5.28}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Start\discretionary {-}{}{}Menu.c File Reference}{61}{section.5.28}
+\contentsline {subsection}{\numberline {5.28.1}Function Documentation}{61}{subsection.5.28.1}
+\contentsline {subsubsection}{\numberline {5.28.1.1}Print\discretionary {-}{}{}Menu}{61}{subsubsection.5.28.1.1}
+\contentsline {subsubsection}{\numberline {5.28.1.2}Start\discretionary {-}{}{}Menu}{61}{subsubsection.5.28.1.2}
+\contentsline {section}{\numberline {5.29}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Start\discretionary {-}{}{}Menu.h File Reference}{61}{section.5.29}
+\contentsline {subsection}{\numberline {5.29.1}Function Documentation}{61}{subsection.5.29.1}
+\contentsline {subsubsection}{\numberline {5.29.1.1}Start\discretionary {-}{}{}Menu}{61}{subsubsection.5.29.1.1}
+\contentsline {section}{\numberline {5.30}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/text\discretionary {-}{}{}Box.c File Reference}{61}{section.5.30}
+\contentsline {subsection}{\numberline {5.30.1}Function Documentation}{62}{subsection.5.30.1}
+\contentsline {subsubsection}{\numberline {5.30.1.1}create\discretionary {-}{}{}Dialogs}{62}{subsubsection.5.30.1.1}
+\contentsline {subsubsection}{\numberline {5.30.1.2}Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load}{62}{subsubsection.5.30.1.2}
+\contentsline {subsubsection}{\numberline {5.30.1.3}Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load\discretionary {-}{}{}\_\discretionary {-}{}{}matriz}{62}{subsubsection.5.30.1.3}
+\contentsline {section}{\numberline {5.31}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/text\discretionary {-}{}{}Box.h File Reference}{62}{section.5.31}
+\contentsline {subsection}{\numberline {5.31.1}Function Documentation}{62}{subsection.5.31.1}
+\contentsline {subsubsection}{\numberline {5.31.1.1}create\discretionary {-}{}{}Dialogs}{62}{subsubsection.5.31.1.1}
+\contentsline {subsubsection}{\numberline {5.31.1.2}Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load}{63}{subsubsection.5.31.1.2}
+\contentsline {subsubsection}{\numberline {5.31.1.3}Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load\discretionary {-}{}{}\_\discretionary {-}{}{}matriz}{63}{subsubsection.5.31.1.3}
+\contentsline {section}{\numberline {5.32}J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}M\discretionary {-}{}{}E.markdown File Reference}{63}{section.5.32}
+\contentsline {part}{Index}{64}{section*.76}

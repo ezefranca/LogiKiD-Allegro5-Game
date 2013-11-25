@@ -1,0 +1,1402 @@
+\begin{theindex}
+
+  \item {\discretionary {-}{}{}\_\discretionary {-}{}{}elemento}, 
+		\hyperpage{7}
+    \subitem {proximo}, \hyperpage{7}
+    \subitem {string}, \hyperpage{7}
+    \subitem {var}, \hyperpage{7}
+
+  \indexspace
+
+  \item {A\discretionary {-}{}{}L\discretionary {-}{}{}T\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}A}
+    \subitem {comum.\discretionary {-}{}{}h}, \hyperpage{31}
+  \item {adiciona\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {aloca}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+  \item {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+  \item {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+  \item {arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+  \item {arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+
+  \indexspace
+
+  \item {c\discretionary {-}{}{}Chances}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{20}
+  \item {C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}I\discretionary {-}{}{}G}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}I\discretionary {-}{}{}G\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}R}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {chances}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{20}
+    \subitem {Level\discretionary {-}{}{}Zero}, \hyperpage{23}
+    \subitem {Player}, \hyperpage{26}
+  \item {circ1}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+    \subitem {Level\discretionary {-}{}{}Zero}, \hyperpage{23}
+  \item {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+    \subitem {Level\discretionary {-}{}{}Zero}, \hyperpage{23}
+  \item {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+    \subitem {Level\discretionary {-}{}{}Zero}, \hyperpage{23}
+  \item {circ2}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ3}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{14}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{16}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{18}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ4}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}off}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{21}
+  \item {circ5}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {circ6}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {circ6\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {circ7}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+  \item {circ7\discretionary {-}{}{}\_\discretionary {-}{}{}on}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+  \item {circ\discretionary {-}{}{}\_\discretionary {-}{}{}base}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+  \item {circ\discretionary {-}{}{}\_\discretionary {-}{}{}off}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {complete}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {computador\discretionary {-}{}{}\_\discretionary {-}{}{}texto\discretionary {-}{}{}\_\discretionary {-}{}{}1}
+    \subitem {Dialogs}, \hyperpage{8}
+  \item {comum.\discretionary {-}{}{}h}
+    \subitem {A\discretionary {-}{}{}L\discretionary {-}{}{}T\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}A}, 
+		\hyperpage{31}
+    \subitem {game}, \hyperpage{32}
+    \subitem {inicializar}, \hyperpage{32}
+    \subitem {L\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}G\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}A}, 
+		\hyperpage{31}
+  \item {config}, \hyperpage{8}
+    \subitem {inicio}, \hyperpage{8}
+  \item {config.\discretionary {-}{}{}c}
+    \subitem {adiciona\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{33}
+    \subitem {aloca}, \hyperpage{33}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{33}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{33}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{33}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{33}
+    \subitem {arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{35}
+    \subitem {arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{35}
+    \subitem {arquivo\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{35}
+    \subitem {conta\discretionary {-}{}{}\_\discretionary {-}{}{}linhas}, 
+		\hyperpage{33}
+    \subitem {conta\discretionary {-}{}{}\_\discretionary {-}{}{}until}, 
+		\hyperpage{33}
+    \subitem {create\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{33}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{33}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{33}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{34}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{34}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{34}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{34}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{34}
+    \subitem {insere\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{34}
+    \subitem {libera\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{34}
+    \subitem {libera\discretionary {-}{}{}\_\discretionary {-}{}{}string}, 
+		\hyperpage{34}
+    \subitem {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{34}
+    \subitem {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{34}
+    \subitem {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{34}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{34}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{35}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{35}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{35}
+    \subitem {loaded\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{35}
+    \subitem {loaded\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{35}
+    \subitem {loaded\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{36}
+    \subitem {retorna\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{35}
+    \subitem {salva\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{35}
+    \subitem {salva\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{35}
+    \subitem {update\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{35}
+  \item {config.\discretionary {-}{}{}h}
+    \subitem {adiciona\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{37}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{37}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{37}
+    \subitem {apaga\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{37}
+    \subitem {C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}I\discretionary {-}{}{}G}, 
+		\hyperpage{37}
+    \subitem {C\discretionary {-}{}{}O\discretionary {-}{}{}N\discretionary {-}{}{}F\discretionary {-}{}{}I\discretionary {-}{}{}G\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}R}, 
+		\hyperpage{37}
+    \subitem {create\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{37}
+    \subitem {elemento}, \hyperpage{37}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{37}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{37}
+    \subitem {get\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{37}
+    \subitem {I\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}M\discretionary {-}{}{}A}, 
+		\hyperpage{37}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{38}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{38}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{38}
+    \subitem {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{38}
+    \subitem {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config}, 
+		\hyperpage{38}
+    \subitem {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{38}
+    \subitem {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{38}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{38}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}, 
+		\hyperpage{38}
+    \subitem {load\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}, 
+		\hyperpage{38}
+    \subitem {salva\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{38}
+    \subitem {update\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}, 
+		\hyperpage{38}
+  \item {conta\discretionary {-}{}{}\_\discretionary {-}{}{}linhas}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+  \item {conta\discretionary {-}{}{}\_\discretionary {-}{}{}until}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+  \item {create\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {create\discretionary {-}{}{}Dialogs}
+    \subitem {text\discretionary {-}{}{}Box.\discretionary {-}{}{}c}, 
+		\hyperpage{62}
+    \subitem {text\discretionary {-}{}{}Box.\discretionary {-}{}{}h}, 
+		\hyperpage{62}
+  \item {create\discretionary {-}{}{}Keys}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {create\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}
+    \subitem {fase5.\discretionary {-}{}{}c}, \hyperpage{48}
+    \subitem {fase5.\discretionary {-}{}{}h}, \hyperpage{49}
+  \item {create\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}
+    \subitem {fase2.\discretionary {-}{}{}c}, \hyperpage{42}
+    \subitem {fase2.\discretionary {-}{}{}h}, \hyperpage{44}
+  \item {create\discretionary {-}{}{}Level\discretionary {-}{}{}One}
+    \subitem {fase1.\discretionary {-}{}{}c}, \hyperpage{41}
+    \subitem {fase1.\discretionary {-}{}{}h}, \hyperpage{42}
+  \item {create\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}
+    \subitem {fase4.\discretionary {-}{}{}c}, \hyperpage{46}
+    \subitem {fase4.\discretionary {-}{}{}h}, \hyperpage{48}
+  \item {create\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}
+    \subitem {fase3.\discretionary {-}{}{}c}, \hyperpage{44}
+    \subitem {fase3.\discretionary {-}{}{}h}, \hyperpage{46}
+  \item {create\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}
+    \subitem {fase0.\discretionary {-}{}{}c}, \hyperpage{39}
+    \subitem {fase0.\discretionary {-}{}{}h}, \hyperpage{40}
+  \item {Create\discretionary {-}{}{}Player}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {cria\discretionary {-}{}{}Qualificacao}
+    \subitem {pontuacao.\discretionary {-}{}{}c}, \hyperpage{57}
+    \subitem {pontuacao.\discretionary {-}{}{}h}, \hyperpage{58}
+  \item {cur\discretionary {-}{}{}Frame}
+    \subitem {Image}, \hyperpage{11}
+  \item {curr\discretionary {-}{}{}Gate}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+
+  \indexspace
+
+  \item {desce}
+    \subitem {State}, \hyperpage{28}
+  \item {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}
+    \subitem {fase5.\discretionary {-}{}{}c}, \hyperpage{48}
+    \subitem {fase5.\discretionary {-}{}{}h}, \hyperpage{49}
+  \item {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}
+    \subitem {fase2.\discretionary {-}{}{}c}, \hyperpage{42}
+    \subitem {fase2.\discretionary {-}{}{}h}, \hyperpage{44}
+  \item {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}One}
+    \subitem {fase1.\discretionary {-}{}{}c}, \hyperpage{41}
+    \subitem {fase1.\discretionary {-}{}{}h}, \hyperpage{42}
+  \item {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}
+    \subitem {fase4.\discretionary {-}{}{}c}, \hyperpage{46}
+    \subitem {fase4.\discretionary {-}{}{}h}, \hyperpage{48}
+  \item {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}
+    \subitem {fase3.\discretionary {-}{}{}c}, \hyperpage{44}
+    \subitem {fase3.\discretionary {-}{}{}h}, \hyperpage{46}
+  \item {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}
+    \subitem {fase0.\discretionary {-}{}{}c}, \hyperpage{39}
+    \subitem {fase0.\discretionary {-}{}{}h}, \hyperpage{40}
+  \item {Dialogs}, \hyperpage{8}
+    \subitem {computador\discretionary {-}{}{}\_\discretionary {-}{}{}texto\discretionary {-}{}{}\_\discretionary {-}{}{}1}, 
+		\hyperpage{8}
+    \subitem {menina\discretionary {-}{}{}\_\discretionary {-}{}{}texto}, 
+		\hyperpage{8}
+    \subitem {menina\discretionary {-}{}{}\_\discretionary {-}{}{}texto\discretionary {-}{}{}\_\discretionary {-}{}{}1}, 
+		\hyperpage{8}
+    \subitem {texto\discretionary {-}{}{}\_\discretionary {-}{}{}generico}, 
+		\hyperpage{9}
+  \item {direita}
+    \subitem {State}, \hyperpage{28}
+  \item {Draw\discretionary {-}{}{}Images}
+    \subitem {selecaomenu.\discretionary {-}{}{}c}, \hyperpage{59}
+  \item {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}
+    \subitem {fase5.\discretionary {-}{}{}c}, \hyperpage{49}
+    \subitem {fase5.\discretionary {-}{}{}h}, \hyperpage{50}
+  \item {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}
+    \subitem {fase2.\discretionary {-}{}{}c}, \hyperpage{43}
+    \subitem {fase2.\discretionary {-}{}{}h}, \hyperpage{44}
+  \item {draw\discretionary {-}{}{}Level\discretionary {-}{}{}One}
+    \subitem {fase1.\discretionary {-}{}{}c}, \hyperpage{41}
+    \subitem {fase1.\discretionary {-}{}{}h}, \hyperpage{42}
+  \item {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}
+    \subitem {fase4.\discretionary {-}{}{}c}, \hyperpage{47}
+    \subitem {fase4.\discretionary {-}{}{}h}, \hyperpage{48}
+  \item {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}
+    \subitem {fase3.\discretionary {-}{}{}c}, \hyperpage{45}
+    \subitem {fase3.\discretionary {-}{}{}h}, \hyperpage{46}
+  \item {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}
+    \subitem {fase0.\discretionary {-}{}{}c}, \hyperpage{39}
+    \subitem {fase0.\discretionary {-}{}{}h}, \hyperpage{40}
+  \item {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}
+    \subitem {fase5.\discretionary {-}{}{}c}, \hyperpage{49}
+    \subitem {fase5.\discretionary {-}{}{}h}, \hyperpage{50}
+  \item {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}
+    \subitem {fase2.\discretionary {-}{}{}c}, \hyperpage{43}
+    \subitem {fase2.\discretionary {-}{}{}h}, \hyperpage{44}
+  \item {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}
+    \subitem {fase1.\discretionary {-}{}{}c}, \hyperpage{41}
+    \subitem {fase1.\discretionary {-}{}{}h}, \hyperpage{42}
+  \item {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}
+    \subitem {fase4.\discretionary {-}{}{}c}, \hyperpage{47}
+    \subitem {fase4.\discretionary {-}{}{}h}, \hyperpage{48}
+  \item {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}
+    \subitem {fase3.\discretionary {-}{}{}c}, \hyperpage{45}
+    \subitem {fase3.\discretionary {-}{}{}h}, \hyperpage{46}
+
+  \indexspace
+
+  \item {elemento}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {esquerda}
+    \subitem {State}, \hyperpage{28}
+
+  \indexspace
+
+  \item {fadein}
+    \subitem {main.\discretionary {-}{}{}c}, \hyperpage{53}
+  \item {fadeout}
+    \subitem {main.\discretionary {-}{}{}c}, \hyperpage{53}
+  \item {fase0.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{39}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{39}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{39}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{39}
+  \item {fase0.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{40}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{40}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{40}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{40}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}, 
+		\hyperpage{40}
+  \item {fase1.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{41}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{41}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{41}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{41}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{41}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{41}
+  \item {fase1.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{42}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{42}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{42}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{42}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{42}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}, 
+		\hyperpage{42}
+  \item {fase2.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{42}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{42}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{43}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{43}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{43}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{43}
+  \item {fase2.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{44}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{44}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{44}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{44}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{44}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}, 
+		\hyperpage{44}
+  \item {fase3.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{44}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{44}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{45}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{45}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{45}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{45}
+  \item {fase3.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{46}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{46}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{46}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{46}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{46}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}, 
+		\hyperpage{46}
+  \item {fase4.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{46}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{46}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{47}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{47}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{47}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{47}
+  \item {fase4.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{48}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{48}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{48}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{48}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{48}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}, 
+		\hyperpage{48}
+  \item {fase5.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{48}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{48}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{49}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{49}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{49}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{49}
+  \item {fase5.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{49}
+    \subitem {destroy\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{49}
+    \subitem {draw\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{50}
+    \subitem {draw\discretionary {-}{}{}Logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{50}
+    \subitem {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{50}
+    \subitem {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}, 
+		\hyperpage{50}
+  \item {fila\discretionary {-}{}{}\_\discretionary {-}{}{}eventos}
+    \subitem {Game}, \hyperpage{9}
+  \item {fonte}
+    \subitem {Game}, \hyperpage{9}
+  \item {fonte\discretionary {-}{}{}\_\discretionary {-}{}{}logo}
+    \subitem {Game}, \hyperpage{9}
+  \item {fonte\discretionary {-}{}{}\_\discretionary {-}{}{}menu}
+    \subitem {Game}, \hyperpage{9}
+  \item {fonte\discretionary {-}{}{}Keys}
+    \subitem {Game}, \hyperpage{10}
+  \item {footstep}
+    \subitem {Player}, \hyperpage{26}
+  \item {frame\discretionary {-}{}{}Count}
+    \subitem {Image}, \hyperpage{11}
+  \item {frame\discretionary {-}{}{}Delay}
+    \subitem {Image}, \hyperpage{11}
+  \item {frame\discretionary {-}{}{}Height}
+    \subitem {Image}, \hyperpage{11}
+  \item {frame\discretionary {-}{}{}Width}
+    \subitem {Image}, \hyperpage{11}
+
+  \indexspace
+
+  \item {Game}, \hyperpage{9}
+    \subitem {fila\discretionary {-}{}{}\_\discretionary {-}{}{}eventos}, 
+		\hyperpage{9}
+    \subitem {fonte}, \hyperpage{9}
+    \subitem {fonte\discretionary {-}{}{}\_\discretionary {-}{}{}logo}, 
+		\hyperpage{9}
+    \subitem {fonte\discretionary {-}{}{}\_\discretionary {-}{}{}menu}, 
+		\hyperpage{9}
+    \subitem {fonte\discretionary {-}{}{}Keys}, \hyperpage{10}
+    \subitem {janela}, \hyperpage{10}
+    \subitem {level}, \hyperpage{10}
+    \subitem {mute}, \hyperpage{10}
+    \subitem {som}, \hyperpage{10}
+    \subitem {song}, \hyperpage{10}
+    \subitem {song\discretionary {-}{}{}Instance}, \hyperpage{10}
+    \subitem {timer}, \hyperpage{10}
+  \item {game}
+    \subitem {comum.\discretionary {-}{}{}h}, \hyperpage{32}
+  \item {Game\discretionary {-}{}{}Loop}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+    \subitem {gameloop.\discretionary {-}{}{}h}, \hyperpage{52}
+  \item {Game\discretionary {-}{}{}Over\discretionary {-}{}{}Screen}
+    \subitem {gameloop.\discretionary {-}{}{}h}, \hyperpage{52}
+  \item {gameloop.\discretionary {-}{}{}c}
+    \subitem {complete}, \hyperpage{51}
+    \subitem {Game\discretionary {-}{}{}Loop}, \hyperpage{51}
+    \subitem {i}, \hyperpage{51}
+    \subitem {inputs}, \hyperpage{51}
+    \subitem {is\discretionary {-}{}{}Colliding}, \hyperpage{51}
+    \subitem {is\discretionary {-}{}{}Colliding\discretionary {-}{}{}Global}, 
+		\hyperpage{51}
+    \subitem {is\discretionary {-}{}{}Destroyed}, \hyperpage{51}
+    \subitem {launch\discretionary {-}{}{}\_\discretionary {-}{}{}song}, 
+		\hyperpage{51}
+    \subitem {music\discretionary {-}{}{}Player}, \hyperpage{51}
+    \subitem {redraw}, \hyperpage{51}
+    \subitem {Set\discretionary {-}{}{}Back\discretionary {-}{}{}Ground\discretionary {-}{}{}Image}, 
+		\hyperpage{51}
+    \subitem {synth\discretionary {-}{}{}\_\discretionary {-}{}{}song}, 
+		\hyperpage{52}
+    \subitem {text\discretionary {-}{}{}Box}, \hyperpage{52}
+  \item {gameloop.\discretionary {-}{}{}h}
+    \subitem {Game\discretionary {-}{}{}Loop}, \hyperpage{52}
+    \subitem {Game\discretionary {-}{}{}Over\discretionary {-}{}{}Screen}, 
+		\hyperpage{52}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{33}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {get\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {Get\discretionary {-}{}{}Personagem}
+    \subitem {selecaomenu.\discretionary {-}{}{}c}, \hyperpage{59}
+
+  \indexspace
+
+  \item {i}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {I\discretionary {-}{}{}D\discretionary {-}{}{}I\discretionary {-}{}{}O\discretionary {-}{}{}M\discretionary {-}{}{}A}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{37}
+  \item {idle\discretionary {-}{}{}B}
+    \subitem {State}, \hyperpage{28}
+  \item {idle\discretionary {-}{}{}C}
+    \subitem {State}, \hyperpage{28}
+  \item {idle\discretionary {-}{}{}D}
+    \subitem {State}, \hyperpage{29}
+  \item {idle\discretionary {-}{}{}E}
+    \subitem {State}, \hyperpage{29}
+  \item {Image}, \hyperpage{10}
+    \subitem {cur\discretionary {-}{}{}Frame}, \hyperpage{11}
+    \subitem {frame\discretionary {-}{}{}Count}, \hyperpage{11}
+    \subitem {frame\discretionary {-}{}{}Delay}, \hyperpage{11}
+    \subitem {frame\discretionary {-}{}{}Height}, \hyperpage{11}
+    \subitem {frame\discretionary {-}{}{}Width}, \hyperpage{11}
+    \subitem {image}, \hyperpage{11}
+    \subitem {max\discretionary {-}{}{}Frame}, \hyperpage{11}
+    \subitem {pos\discretionary {-}{}{}In\discretionary {-}{}{}Sprite}, 
+		\hyperpage{11}
+  \item {image}
+    \subitem {Image}, \hyperpage{11}
+    \subitem {Player}, \hyperpage{26}
+  \item {image\discretionary {-}{}{}Bom}
+    \subitem {Ranked}, \hyperpage{27}
+  \item {image\discretionary {-}{}{}Excelente}
+    \subitem {Ranked}, \hyperpage{27}
+  \item {image\discretionary {-}{}{}Regular}
+    \subitem {Ranked}, \hyperpage{27}
+  \item {Imagem\discretionary {-}{}{}Menu}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {imprime\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {inicializar}
+    \subitem {comum.\discretionary {-}{}{}h}, \hyperpage{32}
+    \subitem {init.\discretionary {-}{}{}c}, \hyperpage{52}
+  \item {inicio}
+    \subitem {config}, \hyperpage{8}
+  \item {init.\discretionary {-}{}{}c}
+    \subitem {inicializar}, \hyperpage{52}
+  \item {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}
+    \subitem {fase5.\discretionary {-}{}{}c}, \hyperpage{49}
+    \subitem {fase5.\discretionary {-}{}{}h}, \hyperpage{50}
+  \item {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}
+    \subitem {fase2.\discretionary {-}{}{}c}, \hyperpage{43}
+    \subitem {fase2.\discretionary {-}{}{}h}, \hyperpage{44}
+  \item {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}One}
+    \subitem {fase1.\discretionary {-}{}{}c}, \hyperpage{41}
+    \subitem {fase1.\discretionary {-}{}{}h}, \hyperpage{42}
+  \item {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}
+    \subitem {fase4.\discretionary {-}{}{}c}, \hyperpage{47}
+    \subitem {fase4.\discretionary {-}{}{}h}, \hyperpage{48}
+  \item {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}
+    \subitem {fase3.\discretionary {-}{}{}c}, \hyperpage{45}
+    \subitem {fase3.\discretionary {-}{}{}h}, \hyperpage{46}
+  \item {init\discretionary {-}{}{}Draw\discretionary {-}{}{}Gates\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}
+    \subitem {fase0.\discretionary {-}{}{}h}, \hyperpage{40}
+  \item {Init\discretionary {-}{}{}Screens}
+    \subitem {main.\discretionary {-}{}{}c}, \hyperpage{53}
+  \item {inputs}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {insere\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+  \item {is\discretionary {-}{}{}Colliding}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {is\discretionary {-}{}{}Colliding\discretionary {-}{}{}Global}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {is\discretionary {-}{}{}Destroyed}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {is\discretionary {-}{}{}On}
+    \subitem {Level\discretionary {-}{}{}Cinco}, \hyperpage{13}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{19}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+    \subitem {Level\discretionary {-}{}{}Zero}, \hyperpage{23}
+  \item {itm\discretionary {-}{}{}Sel\discretionary {-}{}{}X}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {itm\discretionary {-}{}{}Sel\discretionary {-}{}{}Y}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+
+  \indexspace
+
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/\discretionary {-}{}{}R\discretionary {-}{}{}E\discretionary {-}{}{}A\discretionary {-}{}{}D\discretionary {-}{}{}M\discretionary {-}{}{}E.\discretionary {-}{}{}markdown}, 
+		\hyperpage{63}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase0/fase0.\discretionary {-}{}{}c}, 
+		\hyperpage{39}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase0/fase0.\discretionary {-}{}{}h}, 
+		\hyperpage{39}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase1/fase1.\discretionary {-}{}{}c}, 
+		\hyperpage{40}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase1/fase1.\discretionary {-}{}{}h}, 
+		\hyperpage{41}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase2/fase2.\discretionary {-}{}{}c}, 
+		\hyperpage{42}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase2/fase2.\discretionary {-}{}{}h}, 
+		\hyperpage{43}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase3/fase3.\discretionary {-}{}{}c}, 
+		\hyperpage{44}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase3/fase3.\discretionary {-}{}{}h}, 
+		\hyperpage{45}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase4/fase4.\discretionary {-}{}{}c}, 
+		\hyperpage{46}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase4/fase4.\discretionary {-}{}{}h}, 
+		\hyperpage{47}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase5/fase5.\discretionary {-}{}{}c}, 
+		\hyperpage{48}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Fases/\discretionary {-}{}{}Fase5/fase5.\discretionary {-}{}{}h}, 
+		\hyperpage{49}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Itens\discretionary {-}{}{}Menu.\discretionary {-}{}{}c}, 
+		\hyperpage{53}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Itens\discretionary {-}{}{}Menu.\discretionary {-}{}{}h}, 
+		\hyperpage{53}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Player.\discretionary {-}{}{}c}, 
+		\hyperpage{54}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Player.\discretionary {-}{}{}h}, 
+		\hyperpage{55}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}c}, 
+		\hyperpage{61}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/\discretionary {-}{}{}Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}h}, 
+		\hyperpage{61}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/comum.\discretionary {-}{}{}h}, 
+		\hyperpage{31}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/config.\discretionary {-}{}{}c}, 
+		\hyperpage{32}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/config.\discretionary {-}{}{}h}, 
+		\hyperpage{36}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/gameloop.\discretionary {-}{}{}c}, 
+		\hyperpage{50}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/gameloop.\discretionary {-}{}{}h}, 
+		\hyperpage{52}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/init.\discretionary {-}{}{}c}, 
+		\hyperpage{52}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/main.\discretionary {-}{}{}c}, 
+		\hyperpage{53}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/pontuacao.\discretionary {-}{}{}c}, 
+		\hyperpage{57}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/pontuacao.\discretionary {-}{}{}h}, 
+		\hyperpage{58}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/selecaomenu.\discretionary {-}{}{}c}, 
+		\hyperpage{59}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/selecaomenu.\discretionary {-}{}{}h}, 
+		\hyperpage{60}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/text\discretionary {-}{}{}Box.\discretionary {-}{}{}c}, 
+		\hyperpage{61}
+  \item {J\discretionary {-}{}{}:/\discretionary {-}{}{}S\discretionary {-}{}{}E\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}C/\discretionary {-}{}{}Logi\discretionary {-}{}{}Kid/make/src/text\discretionary {-}{}{}Box.\discretionary {-}{}{}h}, 
+		\hyperpage{62}
+  \item {janela}
+    \subitem {Game}, \hyperpage{10}
+
+  \indexspace
+
+  \item {key\discretionary {-}{}{}Down}
+    \subitem {Keys}, \hyperpage{12}
+  \item {key\discretionary {-}{}{}Left}
+    \subitem {Keys}, \hyperpage{12}
+  \item {key\discretionary {-}{}{}Right}
+    \subitem {Keys}, \hyperpage{12}
+  \item {key\discretionary {-}{}{}Up}
+    \subitem {Keys}, \hyperpage{12}
+  \item {Keys}, \hyperpage{11}
+    \subitem {key\discretionary {-}{}{}Down}, \hyperpage{12}
+    \subitem {key\discretionary {-}{}{}Left}, \hyperpage{12}
+    \subitem {key\discretionary {-}{}{}Right}, \hyperpage{12}
+    \subitem {key\discretionary {-}{}{}Up}, \hyperpage{12}
+
+  \indexspace
+
+  \item {L\discretionary {-}{}{}A\discretionary {-}{}{}R\discretionary {-}{}{}G\discretionary {-}{}{}U\discretionary {-}{}{}R\discretionary {-}{}{}A}
+    \subitem {comum.\discretionary {-}{}{}h}, \hyperpage{31}
+  \item {l\discretionary {-}{}{}Gates}
+    \subitem {Player}, \hyperpage{26}
+  \item {launch\discretionary {-}{}{}\_\discretionary {-}{}{}song}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {level}
+    \subitem {Game}, \hyperpage{10}
+  \item {Level\discretionary {-}{}{}Cinco}, \hyperpage{12}
+    \subitem {circ1}, \hyperpage{13}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{13}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{13}
+    \subitem {circ2}, \hyperpage{13}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{13}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{13}
+    \subitem {circ3}, \hyperpage{13}
+    \subitem {circ\discretionary {-}{}{}\_\discretionary {-}{}{}base}, 
+		\hyperpage{13}
+    \subitem {is\discretionary {-}{}{}On}, \hyperpage{13}
+  \item {Level\discretionary {-}{}{}Dois}, \hyperpage{13}
+    \subitem {circ1}, \hyperpage{14}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{14}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{14}
+    \subitem {circ2}, \hyperpage{14}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{14}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{14}
+    \subitem {circ3}, \hyperpage{14}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{15}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{15}
+    \subitem {circ4}, \hyperpage{15}
+    \subitem {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{15}
+    \subitem {circ5}, \hyperpage{15}
+    \subitem {circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{15}
+    \subitem {circ6}, \hyperpage{15}
+    \subitem {is\discretionary {-}{}{}On}, \hyperpage{15}
+    \subitem {portas}, \hyperpage{15}
+  \item {Level\discretionary {-}{}{}One}, \hyperpage{15}
+    \subitem {circ1}, \hyperpage{16}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{16}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{16}
+    \subitem {circ2}, \hyperpage{16}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{16}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{16}
+    \subitem {circ3}, \hyperpage{16}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{17}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{17}
+    \subitem {circ4}, \hyperpage{17}
+    \subitem {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{17}
+    \subitem {circ5}, \hyperpage{17}
+    \subitem {circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{17}
+    \subitem {is\discretionary {-}{}{}On}, \hyperpage{17}
+    \subitem {portas}, \hyperpage{17}
+    \subitem {teste}, \hyperpage{17}
+  \item {Level\discretionary {-}{}{}Quatro}, \hyperpage{17}
+    \subitem {circ1}, \hyperpage{18}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{18}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{18}
+    \subitem {circ2}, \hyperpage{18}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{18}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{18}
+    \subitem {circ3}, \hyperpage{18}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{19}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{19}
+    \subitem {circ4}, \hyperpage{19}
+    \subitem {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{19}
+    \subitem {circ5}, \hyperpage{19}
+    \subitem {circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{19}
+    \subitem {circ6}, \hyperpage{19}
+    \subitem {circ6\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{19}
+    \subitem {circ7}, \hyperpage{19}
+    \subitem {circ7\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{19}
+    \subitem {circ\discretionary {-}{}{}\_\discretionary {-}{}{}base}, 
+		\hyperpage{19}
+    \subitem {is\discretionary {-}{}{}On}, \hyperpage{19}
+    \subitem {portas}, \hyperpage{20}
+  \item {Level\discretionary {-}{}{}Tres}, \hyperpage{20}
+    \subitem {c\discretionary {-}{}{}Chances}, \hyperpage{20}
+    \subitem {chances}, \hyperpage{20}
+    \subitem {circ1}, \hyperpage{21}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{21}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{21}
+    \subitem {circ2}, \hyperpage{21}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{21}
+    \subitem {circ2\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{21}
+    \subitem {circ3}, \hyperpage{21}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{21}
+    \subitem {circ3\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{21}
+    \subitem {circ4}, \hyperpage{21}
+    \subitem {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{21}
+    \subitem {circ4\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{21}
+    \subitem {circ5}, \hyperpage{22}
+    \subitem {circ5\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{22}
+    \subitem {circ6}, \hyperpage{22}
+    \subitem {circ6\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{22}
+    \subitem {circ\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{22}
+    \subitem {is\discretionary {-}{}{}On}, \hyperpage{22}
+    \subitem {portas}, \hyperpage{22}
+    \subitem {saida}, \hyperpage{22}
+  \item {Level\discretionary {-}{}{}Zero}, \hyperpage{22}
+    \subitem {chances}, \hyperpage{23}
+    \subitem {circ1}, \hyperpage{23}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}off}, 
+		\hyperpage{23}
+    \subitem {circ1\discretionary {-}{}{}\_\discretionary {-}{}{}on}, 
+		\hyperpage{23}
+    \subitem {is\discretionary {-}{}{}On}, \hyperpage{23}
+  \item {lg\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}D}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{25}
+  \item {lg\discretionary {-}{}{}Images}, \hyperpage{23}
+    \subitem {curr\discretionary {-}{}{}Gate}, \hyperpage{24}
+    \subitem {Imagem\discretionary {-}{}{}Menu}, \hyperpage{24}
+    \subitem {itm\discretionary {-}{}{}Sel\discretionary {-}{}{}X}, 
+		\hyperpage{24}
+    \subitem {itm\discretionary {-}{}{}Sel\discretionary {-}{}{}Y}, 
+		\hyperpage{24}
+    \subitem {menu\discretionary {-}{}{}Sound\discretionary {-}{}{}Open}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R1}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R2}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R3}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R4}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R5}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R6}, 
+		\hyperpage{24}
+    \subitem {P\discretionary {-}{}{}E\discretionary {-}{}{}R7}, 
+		\hyperpage{24}
+    \subitem {Seletor}, \hyperpage{25}
+    \subitem {Seletor2}, \hyperpage{25}
+  \item {lg\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}D}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{25}
+  \item {lg\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}R}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{25}
+  \item {lg\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}T}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{25}
+  \item {lg\discretionary {-}{}{}O\discretionary {-}{}{}R}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{25}
+  \item {lg\discretionary {-}{}{}X\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}R}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{26}
+  \item {lg\discretionary {-}{}{}X\discretionary {-}{}{}O\discretionary {-}{}{}R}
+    \subitem {Logic\discretionary {-}{}{}Gates}, \hyperpage{26}
+  \item {libera\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+  \item {libera\discretionary {-}{}{}\_\discretionary {-}{}{}string}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+  \item {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {limpa\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {load\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{34}
+  \item {load\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {load\discretionary {-}{}{}\_\discretionary {-}{}{}configuracao}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {load\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {loaded\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+  \item {loaded\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+  \item {loaded\discretionary {-}{}{}\_\discretionary {-}{}{}idioma}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{36}
+  \item {Logic\discretionary {-}{}{}Gates}, \hyperpage{25}
+    \subitem {lg\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}D}, 
+		\hyperpage{25}
+    \subitem {lg\discretionary {-}{}{}N\discretionary {-}{}{}A\discretionary {-}{}{}N\discretionary {-}{}{}D}, 
+		\hyperpage{25}
+    \subitem {lg\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}R}, 
+		\hyperpage{25}
+    \subitem {lg\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}T}, 
+		\hyperpage{25}
+    \subitem {lg\discretionary {-}{}{}O\discretionary {-}{}{}R}, 
+		\hyperpage{25}
+    \subitem {lg\discretionary {-}{}{}X\discretionary {-}{}{}N\discretionary {-}{}{}O\discretionary {-}{}{}R}, 
+		\hyperpage{26}
+    \subitem {lg\discretionary {-}{}{}X\discretionary {-}{}{}O\discretionary {-}{}{}R}, 
+		\hyperpage{26}
+  \item {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Cinco}
+    \subitem {fase5.\discretionary {-}{}{}c}, \hyperpage{49}
+    \subitem {fase5.\discretionary {-}{}{}h}, \hyperpage{50}
+  \item {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Dois}
+    \subitem {fase2.\discretionary {-}{}{}c}, \hyperpage{43}
+    \subitem {fase2.\discretionary {-}{}{}h}, \hyperpage{44}
+  \item {logic\discretionary {-}{}{}Level\discretionary {-}{}{}One}
+    \subitem {fase1.\discretionary {-}{}{}c}, \hyperpage{41}
+    \subitem {fase1.\discretionary {-}{}{}h}, \hyperpage{42}
+  \item {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Quatro}
+    \subitem {fase4.\discretionary {-}{}{}c}, \hyperpage{47}
+    \subitem {fase4.\discretionary {-}{}{}h}, \hyperpage{48}
+  \item {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Tres}
+    \subitem {fase3.\discretionary {-}{}{}c}, \hyperpage{45}
+    \subitem {fase3.\discretionary {-}{}{}h}, \hyperpage{46}
+  \item {logic\discretionary {-}{}{}Level\discretionary {-}{}{}Zero}
+    \subitem {fase0.\discretionary {-}{}{}c}, \hyperpage{39}
+    \subitem {fase0.\discretionary {-}{}{}h}, \hyperpage{40}
+  \item {loop\discretionary {-}{}{}Qualifica}
+    \subitem {pontuacao.\discretionary {-}{}{}c}, \hyperpage{57}
+    \subitem {pontuacao.\discretionary {-}{}{}h}, \hyperpage{58}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.\discretionary {-}{}{}c}, \hyperpage{53}
+  \item {main.\discretionary {-}{}{}c}
+    \subitem {fadein}, \hyperpage{53}
+    \subitem {fadeout}, \hyperpage{53}
+    \subitem {Init\discretionary {-}{}{}Screens}, \hyperpage{53}
+    \subitem {main}, \hyperpage{53}
+    \subitem {Quit\discretionary {-}{}{}Game}, \hyperpage{53}
+  \item {max\discretionary {-}{}{}Frame}
+    \subitem {Image}, \hyperpage{11}
+  \item {menina\discretionary {-}{}{}\_\discretionary {-}{}{}texto}
+    \subitem {Dialogs}, \hyperpage{8}
+  \item {menina\discretionary {-}{}{}\_\discretionary {-}{}{}texto\discretionary {-}{}{}\_\discretionary {-}{}{}1}
+    \subitem {Dialogs}, \hyperpage{8}
+  \item {Menu\discretionary {-}{}{}Load\discretionary {-}{}{}Person}
+    \subitem {selecaomenu.\discretionary {-}{}{}c}, \hyperpage{59}
+    \subitem {selecaomenu.\discretionary {-}{}{}h}, \hyperpage{60}
+  \item {menu\discretionary {-}{}{}Selecaox}
+    \subitem {selecaomenu.\discretionary {-}{}{}c}, \hyperpage{59}
+    \subitem {selecaomenu.\discretionary {-}{}{}h}, \hyperpage{60}
+  \item {menu\discretionary {-}{}{}Sound\discretionary {-}{}{}Open}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {mk\discretionary {-}{}{}\_\discretionary {-}{}{}left}
+    \subitem {selecaomenu.\discretionary {-}{}{}c}, \hyperpage{59}
+  \item {mk\discretionary {-}{}{}\_\discretionary {-}{}{}right}
+    \subitem {selecaomenu.\discretionary {-}{}{}c}, \hyperpage{59}
+  \item {move\discretionary {-}{}{}Baixo}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {move\discretionary {-}{}{}Cima}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {move\discretionary {-}{}{}Direita}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {move\discretionary {-}{}{}Esquerda}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {move\discretionary {-}{}{}Player}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{54}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {music\discretionary {-}{}{}Player}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {mute}
+    \subitem {Game}, \hyperpage{10}
+
+  \indexspace
+
+  \item {P\-E\-R\-S1}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\-E\-R\-S2}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\-E\-R\-S3}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\-E\-R\-S4}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\-E\-R\-S5}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\-E\-R\-S6}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\-E\-R\-S7}
+    \subitem {selecaomenu.\-h}, \hyperpage{60}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R1}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R2}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R3}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R4}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R5}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R6}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {P\discretionary {-}{}{}E\discretionary {-}{}{}R7}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{24}
+  \item {Personagem}
+    \subitem {selecaomenu.\discretionary {-}{}{}h}, \hyperpage{60}
+  \item {play\discretionary {-}{}{}\_\discretionary {-}{}{}font}
+    \subitem {Player}, \hyperpage{27}
+  \item {Player}, \hyperpage{26}
+    \subitem {chances}, \hyperpage{26}
+    \subitem {footstep}, \hyperpage{26}
+    \subitem {image}, \hyperpage{26}
+    \subitem {l\discretionary {-}{}{}Gates}, \hyperpage{26}
+    \subitem {play\discretionary {-}{}{}\_\discretionary {-}{}{}font}, 
+		\hyperpage{27}
+    \subitem {state}, \hyperpage{27}
+  \item {Player.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Keys}, \hyperpage{54}
+    \subitem {Create\discretionary {-}{}{}Player}, \hyperpage{54}
+    \subitem {move\discretionary {-}{}{}Baixo}, \hyperpage{54}
+    \subitem {move\discretionary {-}{}{}Cima}, \hyperpage{54}
+    \subitem {move\discretionary {-}{}{}Direita}, \hyperpage{54}
+    \subitem {move\discretionary {-}{}{}Esquerda}, \hyperpage{54}
+    \subitem {move\discretionary {-}{}{}Player}, \hyperpage{54}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Baixo}, 
+		\hyperpage{55}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Cima}, 
+		\hyperpage{55}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Direita}, 
+		\hyperpage{55}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Esquerda}, 
+		\hyperpage{55}
+    \subitem {set\discretionary {-}{}{}Keys}, \hyperpage{55}
+    \subitem {Valida\discretionary {-}{}{}Movimento}, \hyperpage{55}
+    \subitem {Valida\discretionary {-}{}{}Movimento\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}P}, 
+		\hyperpage{55}
+  \item {Player.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Keys}, \hyperpage{56}
+    \subitem {Create\discretionary {-}{}{}Player}, \hyperpage{56}
+    \subitem {move\discretionary {-}{}{}Baixo}, \hyperpage{56}
+    \subitem {move\discretionary {-}{}{}Cima}, \hyperpage{56}
+    \subitem {move\discretionary {-}{}{}Direita}, \hyperpage{56}
+    \subitem {move\discretionary {-}{}{}Esquerda}, \hyperpage{56}
+    \subitem {move\discretionary {-}{}{}Player}, \hyperpage{56}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Baixo}, 
+		\hyperpage{56}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Cima}, 
+		\hyperpage{56}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Direita}, 
+		\hyperpage{57}
+    \subitem {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Esquerda}, 
+		\hyperpage{57}
+    \subitem {set\discretionary {-}{}{}Keys}, \hyperpage{57}
+    \subitem {Valida\discretionary {-}{}{}Movimento}, \hyperpage{57}
+    \subitem {Valida\discretionary {-}{}{}Movimento\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}P}, 
+		\hyperpage{57}
+  \item {pontuacao.\discretionary {-}{}{}c}
+    \subitem {cria\discretionary {-}{}{}Qualificacao}, \hyperpage{57}
+    \subitem {loop\discretionary {-}{}{}Qualifica}, \hyperpage{57}
+    \subitem {qualifica\discretionary {-}{}{}Jogador}, \hyperpage{58}
+    \subitem {ranking}, \hyperpage{58}
+  \item {pontuacao.\discretionary {-}{}{}h}
+    \subitem {cria\discretionary {-}{}{}Qualificacao}, \hyperpage{58}
+    \subitem {loop\discretionary {-}{}{}Qualifica}, \hyperpage{58}
+    \subitem {qualifica\discretionary {-}{}{}Jogador}, \hyperpage{58}
+  \item {portas}
+    \subitem {Level\discretionary {-}{}{}Dois}, \hyperpage{15}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+    \subitem {Level\discretionary {-}{}{}Quatro}, \hyperpage{20}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {pos\discretionary {-}{}{}In\discretionary {-}{}{}Sprite}
+    \subitem {Image}, \hyperpage{11}
+  \item {Print\discretionary {-}{}{}Menu}
+    \subitem {Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}c}, 
+		\hyperpage{61}
+  \item {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Baixo}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Cima}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{56}
+  \item {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Direita}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{57}
+  \item {Processa\discretionary {-}{}{}Movimento\discretionary {-}{}{}Esquerda}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{57}
+  \item {proximo}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}elemento}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {qualifica\discretionary {-}{}{}Jogador}
+    \subitem {pontuacao.\discretionary {-}{}{}c}, \hyperpage{58}
+    \subitem {pontuacao.\discretionary {-}{}{}h}, \hyperpage{58}
+  \item {Quit\discretionary {-}{}{}Game}
+    \subitem {main.\discretionary {-}{}{}c}, \hyperpage{53}
+
+  \indexspace
+
+  \item {Ranked}, \hyperpage{27}
+    \subitem {image\discretionary {-}{}{}Bom}, \hyperpage{27}
+    \subitem {image\discretionary {-}{}{}Excelente}, \hyperpage{27}
+    \subitem {image\discretionary {-}{}{}Regular}, \hyperpage{27}
+    \subitem {som\discretionary {-}{}{}Bom}, \hyperpage{27}
+    \subitem {som\discretionary {-}{}{}Excelente}, \hyperpage{27}
+    \subitem {som\discretionary {-}{}{}Regular}, \hyperpage{28}
+  \item {ranking}
+    \subitem {pontuacao.\discretionary {-}{}{}c}, \hyperpage{58}
+  \item {redraw}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {retorna\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+
+  \indexspace
+
+  \item {saida}
+    \subitem {Level\discretionary {-}{}{}Tres}, \hyperpage{22}
+  \item {salva\discretionary {-}{}{}\_\discretionary {-}{}{}config}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+  \item {salva\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+  \item {selecaomenu.\-h}
+    \subitem {P\-E\-R\-S1}, \hyperpage{60}
+    \subitem {P\-E\-R\-S2}, \hyperpage{60}
+    \subitem {P\-E\-R\-S3}, \hyperpage{60}
+    \subitem {P\-E\-R\-S4}, \hyperpage{60}
+    \subitem {P\-E\-R\-S5}, \hyperpage{60}
+    \subitem {P\-E\-R\-S6}, \hyperpage{60}
+    \subitem {P\-E\-R\-S7}, \hyperpage{60}
+  \item {selecaomenu.\discretionary {-}{}{}c}
+    \subitem {Draw\discretionary {-}{}{}Images}, \hyperpage{59}
+    \subitem {Get\discretionary {-}{}{}Personagem}, \hyperpage{59}
+    \subitem {Menu\discretionary {-}{}{}Load\discretionary {-}{}{}Person}, 
+		\hyperpage{59}
+    \subitem {menu\discretionary {-}{}{}Selecaox}, \hyperpage{59}
+    \subitem {mk\discretionary {-}{}{}\_\discretionary {-}{}{}left}, 
+		\hyperpage{59}
+    \subitem {mk\discretionary {-}{}{}\_\discretionary {-}{}{}right}, 
+		\hyperpage{59}
+  \item {selecaomenu.\discretionary {-}{}{}h}
+    \subitem {Menu\discretionary {-}{}{}Load\discretionary {-}{}{}Person}, 
+		\hyperpage{60}
+    \subitem {menu\discretionary {-}{}{}Selecaox}, \hyperpage{60}
+    \subitem {Personagem}, \hyperpage{60}
+  \item {Seletor}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{25}
+  \item {Seletor2}
+    \subitem {lg\discretionary {-}{}{}Images}, \hyperpage{25}
+  \item {Set\discretionary {-}{}{}Back\discretionary {-}{}{}Ground\discretionary {-}{}{}Image}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{51}
+  \item {set\discretionary {-}{}{}Keys}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{57}
+  \item {sobe}
+    \subitem {State}, \hyperpage{29}
+  \item {som}
+    \subitem {Game}, \hyperpage{10}
+  \item {som\discretionary {-}{}{}Bom}
+    \subitem {Ranked}, \hyperpage{27}
+  \item {som\discretionary {-}{}{}Excelente}
+    \subitem {Ranked}, \hyperpage{27}
+  \item {som\discretionary {-}{}{}Regular}
+    \subitem {Ranked}, \hyperpage{28}
+  \item {song}
+    \subitem {Game}, \hyperpage{10}
+  \item {song\discretionary {-}{}{}Instance}
+    \subitem {Game}, \hyperpage{10}
+  \item {speed}
+    \subitem {State}, \hyperpage{29}
+  \item {Start\discretionary {-}{}{}Menu}
+    \subitem {Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}c}, 
+		\hyperpage{61}
+    \subitem {Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}h}, 
+		\hyperpage{61}
+  \item {Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}c}
+    \subitem {Print\discretionary {-}{}{}Menu}, \hyperpage{61}
+    \subitem {Start\discretionary {-}{}{}Menu}, \hyperpage{61}
+  \item {Start\discretionary {-}{}{}Menu.\discretionary {-}{}{}h}
+    \subitem {Start\discretionary {-}{}{}Menu}, \hyperpage{61}
+  \item {State}, \hyperpage{28}
+    \subitem {desce}, \hyperpage{28}
+    \subitem {direita}, \hyperpage{28}
+    \subitem {esquerda}, \hyperpage{28}
+    \subitem {idle\discretionary {-}{}{}B}, \hyperpage{28}
+    \subitem {idle\discretionary {-}{}{}C}, \hyperpage{28}
+    \subitem {idle\discretionary {-}{}{}D}, \hyperpage{29}
+    \subitem {idle\discretionary {-}{}{}E}, \hyperpage{29}
+    \subitem {sobe}, \hyperpage{29}
+    \subitem {speed}, \hyperpage{29}
+    \subitem {x}, \hyperpage{29}
+    \subitem {y}, \hyperpage{29}
+  \item {state}
+    \subitem {Player}, \hyperpage{27}
+  \item {string}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}elemento}, 
+		\hyperpage{7}
+  \item {synth\discretionary {-}{}{}\_\discretionary {-}{}{}song}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{52}
+
+  \indexspace
+
+  \item {teste}
+    \subitem {Level\discretionary {-}{}{}One}, \hyperpage{17}
+  \item {text\discretionary {-}{}{}Box}
+    \subitem {gameloop.\discretionary {-}{}{}c}, \hyperpage{52}
+  \item {text\discretionary {-}{}{}Box.\discretionary {-}{}{}c}
+    \subitem {create\discretionary {-}{}{}Dialogs}, \hyperpage{62}
+    \subitem {Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load}, 
+		\hyperpage{62}
+    \subitem {Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load\discretionary {-}{}{}\_\discretionary {-}{}{}matriz}, 
+		\hyperpage{62}
+  \item {text\discretionary {-}{}{}Box.\discretionary {-}{}{}h}
+    \subitem {create\discretionary {-}{}{}Dialogs}, \hyperpage{62}
+    \subitem {Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load}, 
+		\hyperpage{62}
+    \subitem {Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load\discretionary {-}{}{}\_\discretionary {-}{}{}matriz}, 
+		\hyperpage{63}
+  \item {Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load}
+    \subitem {text\discretionary {-}{}{}Box.\discretionary {-}{}{}c}, 
+		\hyperpage{62}
+    \subitem {text\discretionary {-}{}{}Box.\discretionary {-}{}{}h}, 
+		\hyperpage{62}
+  \item {Text\discretionary {-}{}{}Box\discretionary {-}{}{}Load\discretionary {-}{}{}\_\discretionary {-}{}{}matriz}
+    \subitem {text\discretionary {-}{}{}Box.\discretionary {-}{}{}c}, 
+		\hyperpage{62}
+    \subitem {text\discretionary {-}{}{}Box.\discretionary {-}{}{}h}, 
+		\hyperpage{63}
+  \item {texto\discretionary {-}{}{}\_\discretionary {-}{}{}generico}
+    \subitem {Dialogs}, \hyperpage{9}
+  \item {timer}
+    \subitem {Game}, \hyperpage{10}
+
+  \indexspace
+
+  \item {update\discretionary {-}{}{}\_\discretionary {-}{}{}config\discretionary {-}{}{}\_\discretionary {-}{}{}user}
+    \subitem {config.\discretionary {-}{}{}c}, \hyperpage{35}
+    \subitem {config.\discretionary {-}{}{}h}, \hyperpage{38}
+
+  \indexspace
+
+  \item {Valida\discretionary {-}{}{}Movimento}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{57}
+  \item {Valida\discretionary {-}{}{}Movimento\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}C\discretionary {-}{}{}K\discretionary {-}{}{}\_\discretionary {-}{}{}\discretionary {-}{}{}U\discretionary {-}{}{}P}
+    \subitem {Player.\discretionary {-}{}{}c}, \hyperpage{55}
+    \subitem {Player.\discretionary {-}{}{}h}, \hyperpage{57}
+  \item {var}
+    \subitem {\discretionary {-}{}{}\_\discretionary {-}{}{}elemento}, 
+		\hyperpage{7}
+
+  \indexspace
+
+  \item {x}
+    \subitem {State}, \hyperpage{29}
+
+  \indexspace
+
+  \item {y}
+    \subitem {State}, \hyperpage{29}
+
+\end{theindex}
