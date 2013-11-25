@@ -4,6 +4,10 @@
 #include "gameloop.h"
 #include "selecaomenu.h"
 
+
+/*
+Imprime o menu inicial
+*/
 void PrintMenu(int MenuPosition)
 {
 	ALLEGRO_BITMAP *menu_fundo = al_load_bitmap("./data/levels/menu/BG4.png");
@@ -37,6 +41,9 @@ void PrintMenu(int MenuPosition)
 	}
 }
 
+/*
+Função "loop" do menu inicial que aguarda uma escolha
+*/
 void StartMenu()
 {
 	bool sair = false;

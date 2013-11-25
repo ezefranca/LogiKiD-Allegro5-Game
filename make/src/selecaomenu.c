@@ -7,9 +7,6 @@
 #include "selecaomenu.h"
 #include <string.h>
 
-
-
-
 void menuSelecaox()
 {
 	ALLEGRO_BITMAP *menufundo = al_load_bitmap("./data/levels/selecao.png");
@@ -46,7 +43,8 @@ void mk_left(lgImages *lgDados)
 
 void DrawImages(lgImages *lgDados)
 {
-//	al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
+	// Os al_draw_text comentando são para inserção do nome de cada personagem
+      //al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
 	// draw the item selector...
 	al_draw_bitmap(lgDados->Seletor,  lgDados->itmSelX,  lgDados->itmSelY, 0);
 	// show gates and the gate count...
@@ -65,6 +63,10 @@ void DrawImages(lgImages *lgDados)
 	al_draw_bitmap(lgDados->PER7, 490, 460, 0);
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 397, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOT));
 }
+
+/*
+Retorna o personagem escolhido. o tipo Personagem é int, vindo de um enum
+*/
 
 Personagem GetPersonagem(lgImages *lgDados, Player *player)
 {

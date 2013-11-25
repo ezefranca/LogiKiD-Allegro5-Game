@@ -7,9 +7,15 @@
 #include "comum.h"
 #include "config.h"
 
+<<<<<<< HEAD
 
  bool inicializar()
  {
+=======
+/*Inicializa recursos do Allegro */
+bool inicializar()
+{
+>>>>>>> 70cc5e6336c0cff54478cca21347d855ed040708
     if (!al_init())
     {
         fprintf(stderr, "Falha ao inicializar a Allegro.\n");
