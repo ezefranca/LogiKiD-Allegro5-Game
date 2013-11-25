@@ -76,8 +76,11 @@ void GameLoop(ALLEGRO_EVENT ev)
 	//al_start_timer(game.timer);
 	while(!sair)
 	{
+
 		al_wait_for_event(game.fila_eventos, &ev);
 		setKeys(keys, player, &ev);
+
+
 
 		if(player->state.x + player->image.frameWidth > 800) player->state.x = 800 - player->image.frameWidth;
 		if(player->state.x < 0) player->state.x = 0;
@@ -141,7 +144,6 @@ void GameLoop(ALLEGRO_EVENT ev)
 					logicLevelCinco(&inputs[0], &inputs[1], player);
 					drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
 				}
-
 				/*if(game.level == 42)
 				{
 						textBox = al_load_bitmap("data/images/textbox.png");
@@ -268,6 +270,12 @@ void GameLoop(ALLEGRO_EVENT ev)
 				al_draw_bitmap(fundo, 0, 0, 0);
 				al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 20, ALLEGRO_ALIGN_CENTRE, get_idioma("Level: %d") , game.level);
 				al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, get_idioma("Moves: %d") , player->chances);
+				if(complete)
+				{
+				al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 400, 150, ALLEGRO_ALIGN_CENTRE, "Complete" );
+				//TextBoxLoad(&ev, get_idioma("Welcome to LogiKid"));
+				al_draw_text(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 500, ALLEGRO_ALIGN_CENTRE, "Aperte Enter para Continuar..." );
+				}
 				if (game.level == 0)
 				{
 

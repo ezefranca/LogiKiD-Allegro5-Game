@@ -22,8 +22,10 @@ void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[])
 	textBox = al_load_bitmap("data/images/textbox.png");
 	al_draw_bitmap(textBox, 0, 450, 0);
 	al_draw_text(game.fonte_menu, al_map_rgb(0, 0, 0), 15, 472, ALLEGRO_ALIGN_LEFT, dialog);
+	al_flip_display();
 	while(!sair)
 	{
+		al_flip_display();
 		al_wait_for_event(game.fila_eventos, ev);
 		if (ev->type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			sair = true;
