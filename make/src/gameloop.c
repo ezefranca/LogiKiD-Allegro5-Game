@@ -91,9 +91,9 @@ void GameLoop(ALLEGRO_EVENT ev)
 		{
 			sair = true;
 			salva_config_user("data/config/user.conf");
-			limpa_config();
-			limpa_idioma();
-			limpa_config_user();
+			//limpa_config();
+			//limpa_idioma();
+			//limpa_config_user();
 			al_destroy_sample_instance(game.songInstance);
 		}
 		if(ev.type == ALLEGRO_EVENT_KEY_DOWN)
@@ -173,7 +173,10 @@ void GameLoop(ALLEGRO_EVENT ev)
 							inputs[1] = false;
 							inputs[2] = false;
 							inputs[3] = false;
-
+							if(game.level == 5) {
+								sair = true;
+								printf("sair = true");
+							}
 							if(game.level == 4)
 							{
 								levelCinco = malloc(sizeof(LevelCinco));
@@ -334,37 +337,6 @@ void GameLoop(ALLEGRO_EVENT ev)
 				}
 				ValidaMovimento(player);
 				al_draw_bitmap(soundIcon, 750, 20, 0);
-
-		//Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
-		//Está comentado pois ainda não está funcionando da forma correta
-		/*switch(gate)
-		{
-		case NOT:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOT");
-			break;
-		case AND:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "AND");
-			break;
-		case OR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "OR");
-			break;
-		case NAND:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NAND");
-			break;
-		case NOR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "NOR");
-			break;
-		case XOR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XOR");
-			break;
-		case XNOR:
-			al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 150, 140, ALLEGRO_ALIGN_CENTRE, "XNOR");
-			break;
-		default:
-			if(gate == 66)
-				al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 400, 240, ALLEGRO_ALIGN_CENTRE, "nao tem mais portas :(");
-			break;
-		}*/
 
 			if(redraw && al_is_event_queue_empty(game.fila_eventos)) {
 				redraw = false;

@@ -16,6 +16,7 @@ void criaQualificacao(Ranked *ranking) {
 	ranking->imageExcelente =  al_load_bitmap("./data/levels/menu/EXCELENTE.png");
 	ranking->imageBom = al_load_bitmap("./data/levels/menu/MUITOBOM.png");
 	ranking->imageRegular= al_load_bitmap("./data/levels/menu/REGULAR.png");
+	ranking->imageGameover= al_load_bitmap("./data/levels/menu/GAMEOVER.png");
  //Futura implementação preve musica exclusiva para ranking
  	//ranking->somExcelente = al_load_sample("./data/sound/menu_open.wav");
  	//ranking->somBom = al_load_sample("./data/sound/menu_open.wav");
@@ -127,12 +128,12 @@ int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT *ev){
 		}
 	}
 	if(gameLevel == 4){
-		if (player->chances == 1){
+		if (player->chances == 2){
 			al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
 			loopQualifica(ev);
 		}
 
-		if (player->chances > 1 &&  player->chances < 4){
+		if (player->chances > 2 &&  player->chances < 4){
 			al_draw_bitmap(ranking->imageBom, 0, 0, 0);
 			loopQualifica(ev);
 		}
@@ -144,17 +145,17 @@ int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT *ev){
 	}
 	if(gameLevel == 5){
 		if (player->chances == 3){
-			al_draw_bitmap(ranking->imageExcelente, 0, 0, 0);
+			al_draw_bitmap(ranking->imageGameover, 0, 0, 0);
 			loopQualifica(ev);
 		}
 
 		if (player->chances > 3 &&  player->chances < 10){
-			al_draw_bitmap(ranking->imageBom, 0, 0, 0);
+			al_draw_bitmap(ranking->imageGameover, 0, 0, 0);
 			loopQualifica(ev);
 		}
 
 		if (player->chances > 10){
-			al_draw_bitmap(ranking->imageRegular, 0, 0, 0);
+			al_draw_bitmap(ranking->imageGameover, 0, 0, 0);
 			loopQualifica(ev);
 		}
 	}

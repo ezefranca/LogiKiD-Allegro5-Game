@@ -20,6 +20,7 @@ typedef struct
 	ALLEGRO_BITMAP *imageExcelente;
 	ALLEGRO_BITMAP *imageBom;
 	ALLEGRO_BITMAP *imageRegular;
+	ALLEGRO_BITMAP *imageGameover;
 	ALLEGRO_SAMPLE *somExcelente;
 	ALLEGRO_SAMPLE *somBom;
 	ALLEGRO_SAMPLE *somRegular;
