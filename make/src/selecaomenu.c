@@ -7,9 +7,6 @@
 #include "selecaomenu.h"
 #include <string.h>
 
-
-
-
 void menuSelecaox()
 {
 	ALLEGRO_BITMAP *menufundo = al_load_bitmap("./data/levels/selecao.png");
@@ -46,7 +43,8 @@ void mk_left(lgImages *lgDados)
 
 void DrawImages(lgImages *lgDados)
 {
-//	al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
+	// Os al_draw_text comentando são para inserção do nome de cada personagem
+      //al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
 	// draw the item selector...
 	al_draw_bitmap(lgDados->Seletor,  lgDados->itmSelX,  lgDados->itmSelY, 0);
 	// show gates and the gate count...
@@ -66,30 +64,34 @@ void DrawImages(lgImages *lgDados)
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 397, 537, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgNOT));
 }
 
+/*
+Retorna o personagem escolhido. o tipo Personagem é int, vindo de um enum
+*/
+
 Personagem GetPersonagem(lgImages *lgDados, Player *player)
 {
 	Personagem person;
 	switch(lgDados->itmSelX)
 	{
-	case 70:
+		case 70:
 		person = 1;
 		break;
-	case 140:
+		case 140:
 		person = 2;
 		break;
-	case 210:
+		case 210:
 		person = 3;
 		break;
-	case 280:
+		case 280:
 		person = 4;
 		break;
-	case 350:
+		case 350:
 		person = 5;
 		break;
-	case 420:
+		case 420:
 		person = 6;
 		break;
-	case 490:
+		case 490:
 		person = 7;
 		break;
 	}
@@ -130,21 +132,21 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 		{
 			switch(ev->keyboard.keycode)
 			{
-			case ALLEGRO_KEY_ESCAPE:
+				case ALLEGRO_KEY_ESCAPE:
 				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 				sair = true;
 				break;
-			case ALLEGRO_KEY_ENTER:
+				case ALLEGRO_KEY_ENTER:
 				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 				return GetPersonagem(lgDados, player);
 				break;
-			case ALLEGRO_KEY_LEFT:
+				case ALLEGRO_KEY_LEFT:
 				mk_left(lgDados);
 				break;
-			case ALLEGRO_KEY_RIGHT:
+				case ALLEGRO_KEY_RIGHT:
 				mk_right(lgDados);
 				break;
-			case ALLEGRO_KEY_M:
+				case ALLEGRO_KEY_M:
 				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 				sair=true;
 				break;

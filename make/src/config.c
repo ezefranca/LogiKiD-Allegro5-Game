@@ -1,3 +1,6 @@
+/*
+Funções de leitura e escirta de arquivos
+*/
 #include "config.h"
 #include "comum.h"
 
@@ -164,7 +167,7 @@ bool load_config(char *config_file, int type) {
             break;
         case CONFIG_USER:
             aloca(&arquivo_config_user);
-            break; 
+            break;
         default:
             fprintf(stderr, "Tipo incorreto de configuração\n");
             return false;

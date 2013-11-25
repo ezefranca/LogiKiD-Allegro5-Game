@@ -7,7 +7,7 @@
 #include "comum.h"
 #include "config.h"
 
-
+/*Inicializa recursos do Allegro */
 bool inicializar()
 {
     if (!al_init())

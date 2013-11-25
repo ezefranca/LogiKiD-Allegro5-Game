@@ -4,6 +4,11 @@
  * Autor: Alexandre Savelli Bencz
  */
 
+/*
+Uma curiosidade deste arquivo é que o Alexandre sempre o usa o "comum", seja comum.h, comum.class,
+ele disse que acha elegante. Bencz Design Pattern...
+*/
+
 #ifndef COMUM_H
 #define COMUM_H
 
