@@ -149,7 +149,7 @@ void IdiomaMenu()
 				case ALLEGRO_KEY_ENTER:
 					//limpa_idioma();
 					load_idioma(id.linguagem[MenuPosition]);
-					update_config_user("idioma", id.linguagem[MenuPosition]);
+					//update_config_user("idioma", id.linguagem[MenuPosition]);
 					sair = true;
 					tecla = 0;
 					break;
