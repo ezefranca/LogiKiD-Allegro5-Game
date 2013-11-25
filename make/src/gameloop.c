@@ -272,7 +272,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 				al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, get_idioma("Moves: %d") , player->chances);
 				if(complete)
 				{
-				al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 400, 150, ALLEGRO_ALIGN_CENTRE, "Complete" );
+				al_draw_text(game.fonte_logo, al_map_rgb(0, 0, 0), 400, 80, ALLEGRO_ALIGN_CENTRE, "Complete" );
 				//TextBoxLoad(&ev, get_idioma("Welcome to LogiKid"));
 				al_draw_text(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 500, ALLEGRO_ALIGN_CENTRE, "Aperte Enter para Continuar..." );
 				}
