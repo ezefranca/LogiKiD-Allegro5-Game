@@ -3,7 +3,7 @@
 #include "config.h"
 #include "gameloop.h"
 #include "selecaomenu.h"
-
+#include "../src/Menus/Opcoes.h"
 
 /*
 Imprime o menu inicial
@@ -77,6 +77,10 @@ void StartMenu()
 					break;
 					//PrintMenu(0);
 				}
+				else if(MenuPosition == 1) {
+						OpcoesMenu();
+						tecla = 3;
+					}
 				else{
 					sair = true;
 				}

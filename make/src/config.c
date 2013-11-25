@@ -13,10 +13,20 @@ int loaded_idioma = 0;
 int loaded_config_user = 0;
 
 void libera_string(char *string) {
-    unsigned int i;
-    for (i = 0; i < strlen(string); i++) {
-        free(&string[i]);
+    int i;
+    //printf("libera string %d", (int) strlen(string));
+    //for (i = 0; i < (int) strlen(string); i++) {
+    for (i = 0; string[i] != '\0' && i < strlen(string); i++){
+       free(&string[i]);
     }
+}
+
+int string_size(char *c) {
+    int i = 0;
+    for(i = 0; c[i] != '\0'; i++){
+        printf("%caqui", c[i]);
+    }
+    return i;
 }
 
 config *aloca() {
@@ -31,11 +41,12 @@ void libera_config(config *l, int type) {
     e = l->inicio;
     while (e != NULL) {
         temp = e->proximo;
-        libera_string(e->string);
-        libera_string(e->var);
-
-        free(e);
-        e = temp;
+        //libera_string(e->string);
+            //libera_string(e->var);
+            free(e->string);
+            free(e->var);
+            free(e);
+            e = temp;
     }
     free(l);
     switch (type) {
@@ -251,9 +262,9 @@ int conta_until(FILE *entrada, char until) {
         }
 
         bool load_idioma(char *config_file) {
-            if (loaded_idioma == 1) {
-                return true;
-            }
+            //if (loaded_idioma == 1) {
+            //    return true;
+            //}
             return load_config(config_file, IDIOMA);
         }
 
@@ -269,6 +280,31 @@ int conta_until(FILE *entrada, char until) {
                 return retorna_config(&arquivo_idioma, var);
             }
             return var;
+        }
+
+        char *get_idioma_formatado(char *var, int quebra_linha){
+            char *formatted;
+            bool quebra = false;
+            unsigned int i;
+
+            if (loaded_idioma == 1) {
+                formatted = retorna_config(&arquivo_idioma, var);
+            }
+            else 
+                formatted = var;
+
+            for(i =0; i < strlen(formatted); i++){
+                if(quebra && formatted[i] == ' '){
+                    printf("true\n");
+                    formatted[i] = '\n';
+                    quebra = false;
+                }
+                if(i % quebra_linha == 0 && i != 0){
+                        quebra = true;
+                }
+                printf("numero %d ", i%quebra_linha);
+            }
+            return formatted;
         }
 
         void limpa_config() {
@@ -314,9 +350,47 @@ int conta_until(FILE *entrada, char until) {
             insere_config(&arquivo_config_user, var, string);
         }
 
-        void update_config_user(char *string, char *var) {
-            apaga_config(&arquivo_config_user, var);
-            adiciona_config_user(string, var);
+        void update_config(config *l, char *string, char *var){
+            elemento *anterior, *atual;
+            anterior = l->inicio;
+            int i;
+            
+            printf("tamanho %d %s %s", strcmp(var, anterior->var), var, l->inicio->var);
+            if (anterior == NULL) {
+                //printf("null\n");
+                anterior = malloc(sizeof(elemento));
+                anterior->string = string;
+                anterior->var = var;
+                anterior->proximo = NULL;
+                l->inicio = anterior;
+            } else if (strcmp(var, anterior->var) == 0) {
+                printf("anterior igual\n");
+                //printf("%s",string);
+                anterior->string = string;
+                l->inicio = anterior;
+            } else {
+                imprime_config_user();
+                //printf("else\n");
+                atual = anterior;
+                while(strcmp(var, atual->var) != 0 && atual->proximo != NULL){
+                    atual = atual->proximo;
+                }
+
+                if (atual == NULL) {
+                    printf("atual é null");
+                    anterior->proximo = atual->proximo;
+                    atual->string = string;
+                }
+                else {
+                    printf("atual é not null");
+                    atual->string = string;
+                }
+                //imprime_config_user();
+            }
+        }
+        void update_config_user(char *var, char *string) {
+            update_config(&arquivo_config_user, string, var);
+            
         }
 
         void limpa_config_user() {
@@ -356,7 +430,7 @@ int conta_until(FILE *entrada, char until) {
 
             adiciona_config_user("0", "last_phase");
             adiciona_config_user("1", "personagem");
-
+            adiciona_config_user("data/idiomas/pt_br.conf", "idioma");
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);

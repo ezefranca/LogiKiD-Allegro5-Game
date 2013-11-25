@@ -35,6 +35,8 @@
 
  char *get_idioma(char *var);
 
+ char *get_idioma_formatado(char *var, int quebra_linha);
+
  void limpa_config();
 
  void limpa_idioma();
@@ -64,4 +66,7 @@
  bool load_config_user(char *config_file);
 
  bool salva_config_user(char *config_file);
+
+ void libera_string(char *string);
+ 
 #endif
