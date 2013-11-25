@@ -20,24 +20,24 @@
 #define ALTURA  800
 #define LARGURA 600
 
-struct Game
-{
-	int mute;
-	int level;
-	ALLEGRO_SAMPLE *som;
-	ALLEGRO_FONT *fonte;
-	ALLEGRO_FONT *fonte_menu;
-	ALLEGRO_FONT *fonte_logo;
-	ALLEGRO_TIMER *timer;
-	ALLEGRO_DISPLAY *janela;
-	ALLEGRO_EVENT_QUEUE *fila_eventos;
-	ALLEGRO_SAMPLE *song;
-    ALLEGRO_SAMPLE_INSTANCE *songInstance;
-    ALLEGRO_FONT *fonteKeys;
-};
+ struct Game
+ {
+ 	int mute;
+ 	int level;
+ 	ALLEGRO_SAMPLE *som;
+ 	ALLEGRO_FONT *fonte;
+ 	ALLEGRO_FONT *fonte_menu;
+ 	ALLEGRO_FONT *fonte_logo;
+ 	ALLEGRO_TIMER *timer;
+ 	ALLEGRO_DISPLAY *janela;
+ 	ALLEGRO_EVENT_QUEUE *fila_eventos;
+ 	ALLEGRO_SAMPLE *song;
+ 	ALLEGRO_SAMPLE_INSTANCE *songInstance;
+ 	ALLEGRO_FONT *fonteKeys;
+ };
 
-struct Game game;
+ struct Game game;
 
-bool inicializar();
+ bool inicializar();
 
 #endif

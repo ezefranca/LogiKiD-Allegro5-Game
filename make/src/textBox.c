@@ -31,8 +31,8 @@ void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[])
 		{
 			switch(ev->keyboard.keycode)
 			{
-			case ALLEGRO_KEY_ENTER:
-			case ALLEGRO_KEY_ESCAPE:
+				case ALLEGRO_KEY_ENTER:
+				case ALLEGRO_KEY_ESCAPE:
 				sair = true;
 				break;
 			}
@@ -55,8 +55,8 @@ void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[], int textYPos)
 		{
 			switch(ev->keyboard.keycode)
 			{
-			case ALLEGRO_KEY_ENTER:
-			case ALLEGRO_KEY_ESCAPE:
+				case ALLEGRO_KEY_ENTER:
+				case ALLEGRO_KEY_ESCAPE:
 				sair = true;
 				break;
 			}

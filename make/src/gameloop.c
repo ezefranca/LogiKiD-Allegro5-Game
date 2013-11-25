@@ -53,8 +53,8 @@ void GameLoop(ALLEGRO_EVENT ev)
 	player->lGates.lgXNOR = 10;
 	player->lGates.lgNOT = 3;
 
-       Personagem person;
-       person = MenuLoadPerson(&ev, player);
+	Personagem person;
+	person = MenuLoadPerson(&ev, player);
 
 	CreatePlayer(player, 213, 450, person);
 	createKeys(keys);
@@ -105,11 +105,11 @@ void GameLoop(ALLEGRO_EVENT ev)
 				}
 			break;*/
 
-			case ALLEGRO_KEY_ESCAPE:
+				case ALLEGRO_KEY_ESCAPE:
 				sair = true;
-			break;
+				break;
 
-			case ALLEGRO_KEY_SPACE:
+				case ALLEGRO_KEY_SPACE:
 
 				if(game.level == 0)
 				{
@@ -151,181 +151,181 @@ void GameLoop(ALLEGRO_EVENT ev)
 							TextBoxLoad_matriz(&ev, dialog->texto_generico[i], 472 + i*25);
 						}
 				}*/
-			break;
+						break;
 
-			case ALLEGRO_KEY_ENTER:
-				printf("%d\n", complete);
+						case ALLEGRO_KEY_ENTER:
+						printf("%d\n", complete);
 
-				if(complete){
-					musicPlayer(0);
-					qualificaJogador (player, game.level, &ev);
-					musicPlayer(1);
-					isDestroyed = false;
-					player->state.x = 350;
-					player->state.y = 20;
-					player->state.idleE = false;
-					player->state.idleD = false;
-					player->state.idleC = false;
-					player->state.idleB = true;
-					inputs[0] = false;
-					inputs[1] = false;
-					inputs[2] = false;
-					inputs[3] = false;
+						if(complete){
+							musicPlayer(0);
+							qualificaJogador (player, game.level, &ev);
+							musicPlayer(1);
+							isDestroyed = false;
+							player->state.x = 350;
+							player->state.y = 20;
+							player->state.idleE = false;
+							player->state.idleD = false;
+							player->state.idleC = false;
+							player->state.idleB = true;
+							inputs[0] = false;
+							inputs[1] = false;
+							inputs[2] = false;
+							inputs[3] = false;
 
-					if(game.level == 4)
-					{
-						levelCinco = malloc(sizeof(LevelCinco));
-						game.level = 5;
-						createLevelCinco(levelCinco, player);
-						initDrawGatesLevelCinco(levelCinco);
-						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
+							if(game.level == 4)
+							{
+								levelCinco = malloc(sizeof(LevelCinco));
+								game.level = 5;
+								createLevelCinco(levelCinco, player);
+								initDrawGatesLevelCinco(levelCinco);
+								drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
+								printf("Objetivo completo\n");
+								complete = false;
+							}
 
-					if(game.level == 3)
-					{
-						levelQuatro = malloc(sizeof(LevelQuatro));
-						game.level = 4;
-                                        inputs[1] = true;
-						createLevelQuatro(levelQuatro, player);
-						initDrawGatesLevelQuatro(levelQuatro);
-						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
+							if(game.level == 3)
+							{
+								levelQuatro = malloc(sizeof(LevelQuatro));
+								game.level = 4;
+								inputs[1] = true;
+								createLevelQuatro(levelQuatro, player);
+								initDrawGatesLevelQuatro(levelQuatro);
+								drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
+								printf("Objetivo completo\n");
+								complete = false;
+							}
 
-					if(game.level == 2){
-						levelTres = malloc(sizeof(LevelTres));
-						game.level = 3;
-						inputs[3] = true;
+							if(game.level == 2){
+								levelTres = malloc(sizeof(LevelTres));
+								game.level = 3;
+								inputs[3] = true;
 
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelTres(levelTres, player);
+								createLevelTres(levelTres, player);
 
-						initDrawGatesLevelTres(levelTres);
-						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
+								initDrawGatesLevelTres(levelTres);
+								drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
+								printf("Objetivo completo\n");
+								complete = false;
+							}
 
-					if(game.level == 1){
-						levelDois = malloc(sizeof(LevelDois));
-						game.level = 2;
+							if(game.level == 1){
+								levelDois = malloc(sizeof(LevelDois));
+								game.level = 2;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelDois(levelDois, player);
-						initDrawGatesLevelDois(levelDois);
-						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-						printf("Objetivo completo \n");
-						complete = false;
-					}
-					if(game.level == 0){
-						levelOne = malloc(sizeof(LevelOne));
-						game.level = 1;
+								createLevelDois(levelDois, player);
+								initDrawGatesLevelDois(levelDois);
+								drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
+								printf("Objetivo completo \n");
+								complete = false;
+							}
+							if(game.level == 0){
+								levelOne = malloc(sizeof(LevelOne));
+								game.level = 1;
 						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelOne(levelOne, player);
-						initDrawGatesLevelOne(levelOne);
-						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-						printf("Objetivo completo \n");
-						complete = false;
+								createLevelOne(levelOne, player);
+								initDrawGatesLevelOne(levelOne);
+								drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
+								printf("Objetivo completo \n");
+								complete = false;
+							}
+						}
 					}
 				}
-			}
-		}
 
-		if(ev.type == ALLEGRO_EVENT_TIMER)
-		{
-			if(!isCollidingGlobal(player, game.level))
-			{
-				movePlayer(keys, player);
-			}
-			redraw = true;
-		}
+				if(ev.type == ALLEGRO_EVENT_TIMER)
+				{
+					if(!isCollidingGlobal(player, game.level))
+					{
+						movePlayer(keys, player);
+					}
+					redraw = true;
+				}
 
 	    //IMPLEMENTACAO MOUSE PARA TIRAR O SOM
           // Se o evento foi um clique do mouse
-        if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
-        {
-        	printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
+				if (ev.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN)
+				{
+					printf("CLICOU EM %d X %d Y \n", ev.mouse.x, ev.mouse.y);
 
-            if (ev.mouse.x > 750 && ev.mouse.x < 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
-            {
-            	if (game.mute == 0){
-                   	game.mute = 1;
-                   	soundIcon = soundIconOn;
-                   	musicPlayer(game.mute);
-            	}
-            	else
-            	{
-            	   	game.mute = 0;
-            	   	soundIcon = soundIconOff;
-            	   	musicPlayer(game.mute);
-            	}
-            }
-        }
+					if (ev.mouse.x > 750 && ev.mouse.x < 780 && ev.mouse.y > 20 && ev.mouse.y < 50 )
+					{
+						if (game.mute == 0){
+							game.mute = 1;
+							soundIcon = soundIconOn;
+							musicPlayer(game.mute);
+						}
+						else
+						{
+							game.mute = 0;
+							soundIcon = soundIconOff;
+							musicPlayer(game.mute);
+						}
+					}
+				}
 
         //Exibe fundo
-		al_draw_bitmap(fundo, 0, 0, 0);
-		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 20, ALLEGRO_ALIGN_CENTRE, get_idioma("Level: %d") , game.level);
-		al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, get_idioma("Moves: %d") , player->chances);
-		if (game.level == 0)
-		{
+				al_draw_bitmap(fundo, 0, 0, 0);
+				al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 20, ALLEGRO_ALIGN_CENTRE, get_idioma("Level: %d") , game.level);
+				al_draw_textf(game.fonte_menu, al_map_rgb(0, 0, 0), 400, 570, ALLEGRO_ALIGN_CENTRE, get_idioma("Moves: %d") , player->chances);
+				if (game.level == 0)
+				{
 
-			drawLevelZero(levelZero);
-		}
-		if (game.level == 1)
-		{
-			drawLevelOne(levelOne);
-			if(isDestroyed == false)
-			{
-				destroyLevelZero(levelZero);
-				free(levelZero);
-				isDestroyed = true;
-				printf("Liberou\n");
-			}
-		}
-		if (game.level == 2)
-		{
-                    drawLevelDois(levelDois);
-			if(isDestroyed == false)
-			{
-				destroyLevelOne(levelOne);
-				free(levelOne);
-				isDestroyed = true;
-			}
-		}
-		if (game.level == 3)
-		{
-			drawLevelTres(levelTres);
-			if(isDestroyed == false)
-			{
-				destroyLevelDois(levelDois);
-				free(levelDois);
-				isDestroyed = true;
-			}
-		}
-		if (game.level == 4)
-		{
-			drawLevelQuatro(levelQuatro);
-			if(isDestroyed == false)
-			{
-				destroyLevelTres(levelTres);
-				free(levelTres);
-				isDestroyed = true;
-			}
-		}
-		if (game.level == 5)
-		{
-			drawLevelCinco(levelCinco);
-			if(isDestroyed == false)
-			{
-				destroyLevelQuatro(levelQuatro);
-				free(levelQuatro);
-				isDestroyed = true;
-			}
-		}
-		ValidaMovimento(player);
-		al_draw_bitmap(soundIcon, 750, 20, 0);
+					drawLevelZero(levelZero);
+				}
+				if (game.level == 1)
+				{
+					drawLevelOne(levelOne);
+					if(isDestroyed == false)
+					{
+						destroyLevelZero(levelZero);
+						free(levelZero);
+						isDestroyed = true;
+						printf("Liberou\n");
+					}
+				}
+				if (game.level == 2)
+				{
+					drawLevelDois(levelDois);
+					if(isDestroyed == false)
+					{
+						destroyLevelOne(levelOne);
+						free(levelOne);
+						isDestroyed = true;
+					}
+				}
+				if (game.level == 3)
+				{
+					drawLevelTres(levelTres);
+					if(isDestroyed == false)
+					{
+						destroyLevelDois(levelDois);
+						free(levelDois);
+						isDestroyed = true;
+					}
+				}
+				if (game.level == 4)
+				{
+					drawLevelQuatro(levelQuatro);
+					if(isDestroyed == false)
+					{
+						destroyLevelTres(levelTres);
+						free(levelTres);
+						isDestroyed = true;
+					}
+				}
+				if (game.level == 5)
+				{
+					drawLevelCinco(levelCinco);
+					if(isDestroyed == false)
+					{
+						destroyLevelQuatro(levelQuatro);
+						free(levelQuatro);
+						isDestroyed = true;
+					}
+				}
+				ValidaMovimento(player);
+				al_draw_bitmap(soundIcon, 750, 20, 0);
 
 		//Aqui exibimos qual a porta lógica escolhida. Se não houver mais portas, exibe "nao tem mais portas"
 		//Está comentado pois ainda não está funcionando da forma correta
@@ -358,109 +358,109 @@ void GameLoop(ALLEGRO_EVENT ev)
 			break;
 		}*/
 
-		if(redraw && al_is_event_queue_empty(game.fila_eventos)) {
-        	redraw = false;
-        	al_flip_display();
-      	}
-	}
+			if(redraw && al_is_event_queue_empty(game.fila_eventos)) {
+				redraw = false;
+				al_flip_display();
+			}
+		}
 	//destroyLevelTres(levelTres);
 	//al_destroy_sample_instance(game.songInstance);
 	//free(levelTres);
-	free(keys);
-	free(player);
-	free(dialog);
-}
-
-bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player)
-{
-	if ((player->state.x + player->image.frameWidth > boxPosX) &&
-    	(player->state.x < boxPosX + boxWidth) &&
-    	(player->state.y + player->image.frameHeight > boxPosY) &&
-    	(player->state.y < boxPosY + boxHeight - (player->image.frameHeight/2)))
-    {
-        if(player->state.idleE == true) player->state.x += 1;
-        if(player->state.idleD == true) player->state.x -= 1;
-        if(player->state.idleC == true) player->state.y += 1;
-        if(player->state.idleB == true) player->state.y -= 1;
-        return true;
-    }
-    else
-    {
- 		return false;
- 	}
-}
-
-bool isCollidingGlobal(Player *player, int level){
-	if(level == 0)
-	{
-		if(isColliding(261, 267, 56, 40, player)) return true;
-		else return false;
+		free(keys);
+		free(player);
+		free(dialog);
 	}
 
-	if(level == 1 || level == 2 || level == 4){
-		if (isColliding(165, 146, 55, 35, player)    ||
-			isColliding(165, 238, 55, 35, player)   ||
-			isColliding(165, 335, 55, 35, player))
+	bool isColliding(int boxPosX, int boxPosY, int boxWidth, int boxHeight, Player *player)
+	{
+		if ((player->state.x + player->image.frameWidth > boxPosX) &&
+			(player->state.x < boxPosX + boxWidth) &&
+			(player->state.y + player->image.frameHeight > boxPosY) &&
+			(player->state.y < boxPosY + boxHeight - (player->image.frameHeight/2)))
 		{
+			if(player->state.idleE == true) player->state.x += 1;
+			if(player->state.idleD == true) player->state.x -= 1;
+			if(player->state.idleC == true) player->state.y += 1;
+			if(player->state.idleB == true) player->state.y -= 1;
 			return true;
 		}
-		else return false;
-	}
-	if(level == 3)
-	{
-	    if (isColliding(163, 110, 55, 35, player)   ||
-	    	isColliding(163, 206, 55, 35, player)   ||
-	    	isColliding(163, 269, 55, 35, player)   ||
-	    	isColliding(163, 368, 55, 35, player))
-	    {
-	    	return true;
-	    }
-	    else return false;
-	}
-	if(level == 5)
-	{
-		if (isColliding(101, 112, 55, 90, player))
+		else
 		{
-			return true;
+			return false;
 		}
-		else return false;
 	}
-	return false;
-}
-void musicPlayer(int mute){
-	if (mute == 0){
-		printf("***************MUTE*****************\n");
-	    al_destroy_sample_instance(game.songInstance);
-	    game.songInstance = NULL;
-	    return;
-	} else if(mute == 1){
-			if (game.songInstance != NULL)
+
+	bool isCollidingGlobal(Player *player, int level){
+		if(level == 0)
+		{
+			if(isColliding(261, 267, 56, 40, player)) return true;
+			else return false;
+		}
+
+		if(level == 1 || level == 2 || level == 4){
+			if (isColliding(165, 146, 55, 35, player)    ||
+				isColliding(165, 238, 55, 35, player)   ||
+				isColliding(165, 335, 55, 35, player))
+			{
+				return true;
+			}
+			else return false;
+		}
+		if(level == 3)
+		{
+			if (isColliding(163, 110, 55, 35, player)   ||
+				isColliding(163, 206, 55, 35, player)   ||
+				isColliding(163, 269, 55, 35, player)   ||
+				isColliding(163, 368, 55, 35, player))
+			{
+				return true;
+			}
+			else return false;
+		}
+		if(level == 5)
+		{
+			if (isColliding(101, 112, 55, 90, player))
+			{
+				return true;
+			}
+			else return false;
+		}
+		return false;
+	}
+	void musicPlayer(int mute){
+		if (mute == 0){
+			printf("***************MUTE*****************\n");
 			al_destroy_sample_instance(game.songInstance);
-		      printf("***************PLAY*****************\n");
+			game.songInstance = NULL;
+			return;
+		} else if(mute == 1){
+			if (game.songInstance != NULL)
+				al_destroy_sample_instance(game.songInstance);
+			printf("***************PLAY*****************\n");
 
-		switch (game.level){
-			case 0:
-			game.song = launch_song;
-			break;
-			case 1:
-			game.song = launch_song;
-			break;
-			case 2:
-			game.song = synth_song;
-			break;
-			case 3:
-			game.song = launch_song;
-			break;
-			case 4:
-			game.song = synth_song;
-			break;
-			case 42:
-			game.song = synth_song;
-			break;
+			switch (game.level){
+				case 0:
+				game.song = launch_song;
+				break;
+				case 1:
+				game.song = launch_song;
+				break;
+				case 2:
+				game.song = synth_song;
+				break;
+				case 3:
+				game.song = launch_song;
+				break;
+				case 4:
+				game.song = synth_song;
+				break;
+				case 42:
+				game.song = synth_song;
+				break;
+			}
+			game.songInstance = al_create_sample_instance(game.song);
+			al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+			al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+			al_play_sample_instance(game.songInstance);
 		}
-		game.songInstance = al_create_sample_instance(game.song);
-        al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
-        al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
-        al_play_sample_instance(game.songInstance);
 	}
-}

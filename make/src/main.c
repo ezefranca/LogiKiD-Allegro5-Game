@@ -7,11 +7,11 @@
 #include "comum.h"
 #include "StartMenu.h"
 
-void QuitGame()
-{
-	al_destroy_event_queue(game.fila_eventos);
-	al_destroy_display(game.janela);
-	al_destroy_font(game.fonte);
+ void QuitGame()
+ {
+   al_destroy_event_queue(game.fila_eventos);
+   al_destroy_display(game.janela);
+   al_destroy_font(game.fonte);
 }
 
 void fadeout(int velocidade)
@@ -73,14 +73,14 @@ void InitScreens()
     al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
     al_play_sample_instance(game.songInstance);
 
-	ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/intro/senac.png");
-	fadein(temp, 7);
-	al_rest(2.0);
+    ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/intro/senac.png");
+    fadein(temp, 7);
+    al_rest(2.0);
     fadeout(8);
 
     temp = al_load_bitmap("data/images/intro/pi.png");
-	fadein(temp, 7);
-	al_rest(2.0);
+    fadein(temp, 7);
+    al_rest(2.0);
     fadeout(8);
 
     temp = al_load_bitmap("data/images/intro/allegro.png");

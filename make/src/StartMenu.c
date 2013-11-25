@@ -77,21 +77,21 @@ void StartMenu()
 				case ALLEGRO_KEY_UP:
 				tecla = 1;
 					//Posição inicial
-					if(MenuPosition == 0)
+				if(MenuPosition == 0)
 						//ultima posição disponivel
-						MenuPosition = 2;
-					else
-						MenuPosition--;
-					break;
+					MenuPosition = 2;
+				else
+					MenuPosition--;
+				break;
 				break;
 				case ALLEGRO_KEY_DOWN:
 				tecla = 2;
 				//ultima posição disponivel
-					if(MenuPosition == 2)
+				if(MenuPosition == 2)
 						//Posição inicial
-						MenuPosition = 0;
-					else
-						MenuPosition++;
+					MenuPosition = 0;
+				else
+					MenuPosition++;
 				break;
 			}
 		}

@@ -37,7 +37,7 @@ typedef struct {
 	ALLEGRO_BITMAP *saida;
 	ALLEGRO_BITMAP *portas;
 
-    char cChances[5];
+	char cChances[5];
 	bool isOn[5];
 	int chances;
 } LevelTres;
