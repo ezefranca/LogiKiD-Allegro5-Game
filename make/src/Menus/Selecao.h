@@ -1,5 +1,5 @@
-#ifndef SELECAOMENU_H
-#define SELECAOMENU_H
+#ifndef SELECAOMENU2_H
+#define SELECAOMENU2_H
 
 #include <string.h>
 #include <stdlib.h>
@@ -13,7 +13,7 @@
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-#include "../src/Player.h"
+#include "../../src/Player.h"
 
 typedef struct
 {
@@ -32,10 +32,12 @@ typedef struct
 	ALLEGRO_BITMAP *Seletor2;
 
 	ALLEGRO_SAMPLE *menuSoundOpen;
-}lgImages;
+} lgImages;
 
 typedef enum { PERS1, PERS2, PERS3, PERS4, PERS5, PERS6, PERS7 } Personagem;
-void menuSelecaox();
+
+void SelecaoMenu();
+
 Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player);
 
 #endif

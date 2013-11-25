@@ -13,7 +13,7 @@
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-#include "../src/Player.h"
+#include "../../src/Player.h"
 
 typedef struct
 {

@@ -10,9 +10,11 @@ int loaded_idioma = 0;
 int loaded_config_user = 0;
 
 void libera_string(char *string) {
-    unsigned int i;
-    for (i = 0; i < strlen(string); i++) {
-        free(&string[i]);
+    int i;
+    //printf("libera string %d", (int) strlen(string));
+    //for (i = 0; i < (int) strlen(string); i++) {
+    for (i = 0; string[i] != '\0'; i++){
+       free(&string[i]);
     }
 }
 
@@ -25,26 +27,46 @@ config *aloca() {
 void libera_config(config *l, int type) {
     elemento *e, *temp;
 
-    e = l->inicio;
-    while (e != NULL) {
-        temp = e->proximo;
-        libera_string(e->string);
-        libera_string(e->var);
+    int avanca = 1;
 
-        free(e);
-        e = temp;
-    }
-    free(l);
-    switch (type) {
+    switch(type){
         case CONFIG:
-            loaded_config = 0;
+            avanca = loaded_config;
             break;
         case IDIOMA:
-            loaded_idioma = 0;
+            avanca = loaded_idioma;
             break;
         case CONFIG_USER:
-            loaded_config_user = 0;
+            avanca = loaded_config_user;
             break;
+    }
+
+    if(avanca){
+        e = l->inicio;
+        while (e != NULL) {
+            temp = e->proximo;
+            //libera_string(e->string);
+            //libera_string(e->var);
+            free(e->string);
+            free(e->var);
+            free(e);
+            e = temp;
+        }
+        //free(l);
+        switch (type) {
+            case CONFIG:
+                loaded_config = 0;
+                printf("conf %d", loaded_config);
+                break;
+            case IDIOMA:
+                loaded_idioma = 0;
+                printf("conf %d", loaded_idioma);
+                break;
+            case CONFIG_USER:
+                loaded_config_user = 0;
+                printf("conf %d", loaded_config_user);
+                break;
+        }
     }
 }
 
@@ -247,9 +269,9 @@ bool load_configuracao(char *config_file) {
 }
 
 bool load_idioma(char *config_file) {
-    if (loaded_idioma == 1) {
+    /*if (loaded_idioma == 1) {
         return true;
-    }
+    }*/
     return load_config(config_file, IDIOMA);
 }
 
@@ -310,9 +332,40 @@ void adiciona_config_user(char *string, char *var) {
     insere_config(&arquivo_config_user, var, string);
 }
 
+void update_config(config *l, char *string, char *var){
+    elemento *anterior, *atual;
+    anterior = l->inicio;
+    if (anterior == NULL) {
+        anterior->string = string;
+        anterior->var = var;
+        anterior->proximo = NULL;
+        l->inicio = anterior;
+    } else if (strcmp(var, anterior->var) == 0) {
+        anterior->var = var;
+        anterior->string = string;
+        l->inicio = anterior;
+    } else {
+        atual = anterior->proximo;
+        while (atual != NULL && strcmp(var, atual->var) != 0) {
+            anterior = atual;
+            atual = anterior->proximo;
+        }
+
+        if (atual != NULL) {
+            anterior->proximo = atual->proximo;
+            atual->string = string;
+        }
+        else {
+            atual->string = string;
+            atual->var = var;
+            atual->proximo = NULL;
+        }
+        l->inicio = atual;
+    }
+}
 void update_config_user(char *string, char *var) {
-    apaga_config(&arquivo_config_user, var);
-    adiciona_config_user(string, var);
+    update_config(&arquivo_config_user, string, var);
+    
 }
 
 void limpa_config_user() {
@@ -352,7 +405,7 @@ bool create_config_user(char *config_file) {
 
     adiciona_config_user("0", "last_phase");
     adiciona_config_user("1", "personagem");
-
+    adiciona_config_user("data/idiomas/pt_br.conf", "idioma");
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);
     //adiciona_config_user(string, var);

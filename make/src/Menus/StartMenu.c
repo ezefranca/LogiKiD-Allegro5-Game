@@ -1,8 +1,9 @@
 #include "StartMenu.h"
-#include "comum.h"
-#include "config.h"
-#include "gameloop.h"
-#include "selecaomenu.h"
+#include "Opcoes.h"
+#include "../../src/comum.h"
+#include "../../src/config.h"
+#include "../../src/gameloop.h"
+#include "Selecao.h"
 
 void PrintMenu(int MenuPosition)
 {
@@ -62,18 +63,21 @@ void StartMenu()
 				sair = true;
 				break;
 				case ALLEGRO_KEY_ENTER:
-				if(MenuPosition == 0)
-				{
-					menuSelecaox();
-					GameLoop(ev);
-					sair = true;
+					if(MenuPosition == 0)
+					{
+						SelecaoMenu();
+						GameLoop(ev);
+						sair = true;
+						//PrintMenu(0);
+					}
+					else if(MenuPosition == 1) {
+						OpcoesMenu();
+						tecla = 3;
+					}
+					else{
+						sair = true;
+					}
 					break;
-					//PrintMenu(0);
-				}
-				else{
-					sair = true;
-				}
-				break;
 				case ALLEGRO_KEY_UP:
 				tecla = 1;
 					//Posição inicial
