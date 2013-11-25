@@ -8,8 +8,9 @@
 #include "config.h"
 
 
-bool inicializar()
-{
+/*Inicializa recursos do Allegro */
+ bool inicializar()
+ {
     if (!al_init())
     {
         fprintf(stderr, "Falha ao inicializar a Allegro.\n");
@@ -41,7 +42,7 @@ bool inicializar()
         fprintf(stderr, "Falha ao criar janela.\n");
         return false;
     }
-    al_set_window_title(game.janela, "Projeto Integrador II - SENAC - BCC");
+    al_set_window_title(game.janela, get_idioma("Integrator Project II - Senac - CCB"));
 
     game.fila_eventos = al_create_event_queue();
     if (!game.fila_eventos)
@@ -73,10 +74,10 @@ bool inicializar()
         return -1;
     }
 
-     game.fonte = al_load_font("data/circuito.ttf", 50, 10);
-     game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 20);
-     game.fonte_logo = al_load_font("data/256BYTES.TTF", 80, 10);
-     game.fonteKeys = al_load_font("data/keys.otf", 50, 10);
+    game.fonte = al_load_font("data/circuito.ttf", 50, 10);
+    game.fonte_menu = al_load_font("data/sourcecode.ttf", 20, 20);
+    game.fonte_logo = al_load_font("data/256BYTES.TTF", 150, 10);
+    game.fonteKeys = al_load_font("data/keys.otf", 50, 10);
 
     if (!game.fonte)
     {
@@ -87,42 +88,51 @@ bool inicializar()
     if(!al_install_audio())
     {
     	fprintf(stderr, "Falha ao inicializar o audio.\n");
-      	return -1;
-   	}
+       return -1;
+   }
 
-    if(!al_init_acodec_addon())
-    {
-      	fprintf(stderr, "Falha ao iniciar o audio codec.!\n");
-    	return -1;
-    }
+   if(!al_init_acodec_addon())
+   {
+       fprintf(stderr, "Falha ao iniciar o audio codec.!\n");
+       return -1;
+   }
 
-    if (!al_reserve_samples(1))
-    {
-        fprintf(stderr, "Falha ao alocar canais de audio.\n");
+   if (!al_reserve_samples(1))
+   {
+    fprintf(stderr, "Falha ao alocar canais de audio.\n");
+    return false;
+}
+
+if(!load_configuracao("data/config/config.conf")){
+    fprintf(stderr, "Falha ao carregar configuração!\n");
+    return false;
+}
+
+    //Carrega configuracao de usuario.
+    if(!load_config_user("data/config/user.conf")){
+        fprintf(stderr, "Falha ao carregar configuração de usuário!\n");
         return false;
     }
 
-    /*if(!load_configuracao("data/config/config.conf")){
-        fprintf(stderr, "Falha ao carregar configuração!\n");
-        return false;
+    if(strcmp(get_config_user("idioma"), "idioma") != 0){
+        load_idioma(get_config_user("idioma"));
     }
-     
-    //Carrega idioma padrão. 
+    else
+    //Carrega idioma padrão.
     if(!load_idioma("data/idiomas/pt_br.conf")){
         fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
         return false;
-    }*/
-     
-     
-        
-    game.mute = 1;
+    }
+
+
+game.mute = 1;
     //Aqui você pode implementar um savestate
     // 42 é o valor do tutorial (instrucoes de jogo)
-    game.level = 42;
-    al_register_event_source(game.fila_eventos, al_get_mouse_event_source());
-    al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
-    al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());
-    al_register_event_source(game.fila_eventos, al_get_display_event_source(game.janela));
+game.level = 42;
+al_register_event_source(game.fila_eventos, al_get_mouse_event_source());
+al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
+al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());
+al_register_event_source(game.fila_eventos, al_get_display_event_source(game.janela));
 
-    return true;
+return true;
 }

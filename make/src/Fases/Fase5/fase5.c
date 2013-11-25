@@ -2,15 +2,16 @@
 #include "fase5.h"
 #include "../../Player.h"
 
-void createLevelCinco(LevelCinco *levelCinco){
+void createLevelCinco(LevelCinco *levelCinco, Player *player){
+	player->chances = 0;
 	levelCinco->circ1_on = al_load_bitmap("./data/levels/fase5/circ1_on.png");
 	levelCinco->circ2_on = al_load_bitmap("./data/levels/fase5/circ2_on.png");
-		
+
 	levelCinco->circ1_off = al_load_bitmap("./data/levels/fase5/circ1_off.png");
 	levelCinco->circ2_off = al_load_bitmap("./data/levels/fase5/circ2_off.png");
-	
+
 	levelCinco->circ3 = al_load_bitmap("./data/levels/fase5/circ3_on.png");
-	
+
 	levelCinco->circ_base = al_load_bitmap("./data/levels/fase5/circ_base.png");
 }
 
@@ -18,6 +19,7 @@ void logicLevelCinco(bool *gateOne, bool *gateTwo, Player *player)
 {
 	if((player->state.x > 40 && player->state.x < 160) && (player->state.y > 30 && player->state.y < 107))
 	{
+		player->chances++;
 		if(*gateOne == false){
 			*gateOne = true;
 			printf("False para true\n");
@@ -29,6 +31,7 @@ void logicLevelCinco(bool *gateOne, bool *gateTwo, Player *player)
 	}
 	if((player->state.x > 40 && player->state.x < 160) && (player->state.y > 106 && player->state.y < 167))
 	{
+		player->chances++;
 		if(*gateTwo == false){
 			*gateTwo = true;
 			printf("False para true\n");
@@ -89,6 +92,8 @@ void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, boo
 	{
 		levelCinco->isOn[3] = false;
 	}
+	if(-1)
+		*complete = true;
 }
 
 void initDrawGatesLevelCinco(LevelCinco *levelCinco){
@@ -112,11 +117,11 @@ void drawLevelCinco(LevelCinco *levelCinco){
 void destroyLevelCinco(LevelCinco *levelCinco){
 	al_destroy_bitmap(levelCinco->circ1_on);
 	al_destroy_bitmap(levelCinco->circ2_on);
-	
+
 	al_destroy_bitmap(levelCinco->circ1_off);
 	al_destroy_bitmap(levelCinco->circ2_off);
-	
-	al_destroy_bitmap(levelCinco->circ3);	
+
+	al_destroy_bitmap(levelCinco->circ3);
 
 	al_destroy_bitmap(levelCinco->circ_base);
 }

@@ -2,12 +2,13 @@
 #include "fase3.h"
 #include "../../Player.h"
 
-void createLevelTres(LevelTres *levelTres){
+void createLevelTres(LevelTres *levelTres,  Player *player){
+	player->chances = 0;
 	levelTres->circ1_on = al_load_bitmap("./data/levels/fase3/circ1_on.png");
 	levelTres->circ2_on = al_load_bitmap("./data/levels/fase3/circ2_on.png");
 	levelTres->circ3_on = al_load_bitmap("./data/levels/fase3/circ3_on.png");
 	levelTres->circ4_on = al_load_bitmap("./data/levels/fase3/circ4_on.png");
-	
+
 	levelTres->circ1_off = al_load_bitmap("./data/levels/fase3/circ1_off.png");
 	levelTres->circ2_off = al_load_bitmap("./data/levels/fase3/circ2_off.png");
 	levelTres->circ3_off = al_load_bitmap("./data/levels/fase3/circ3_off.png");
@@ -23,8 +24,10 @@ void createLevelTres(LevelTres *levelTres){
 
 void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFour, Player *player)
 {
+
 	if((player->state.x > 102 && player->state.x < 222) && (player->state.y > 28 && player->state.y < 110))
 	{
+		player->chances++;
 		if(*gateOne == false)
 		{
 			*gateOne = true;
@@ -37,6 +40,7 @@ void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFou
 	}
 	if((player->state.x > 102 && player->state.x < 222) && (player->state.y > 124 && player->state.y < 199))
 	{
+		player->chances++;
 		if(*gateTwo == false)
 		{
 			*gateTwo = true;
@@ -49,6 +53,7 @@ void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFou
 	}
 	if((player->state.x > 102 && player->state.x < 222) && (player->state.y > 198 && player->state.y < 269))
 	{
+		player->chances++;
 		if(*gateThree == false)
 		{
 			*gateThree = true;
@@ -61,6 +66,7 @@ void logicLevelTres(bool *gateOne, bool *gateTwo, bool *gateThree, bool *gateFou
 	}
 	if((player->state.x > 102 && player->state.x < 222) && (player->state.y > 285 && player->state.y < 369))
 	{
+		player->chances++;
 		if(*gateFour == false)
 		{
 			*gateFour = true;
@@ -157,7 +163,7 @@ void drawLevelTres(LevelTres *levelTres){
 }
 
 void destroyLevelTres(LevelTres *levelTres)
-{	
+{
 	al_destroy_bitmap(levelTres->circ1_on);
 	al_destroy_bitmap(levelTres->circ2_on);
 	al_destroy_bitmap(levelTres->circ3_on);

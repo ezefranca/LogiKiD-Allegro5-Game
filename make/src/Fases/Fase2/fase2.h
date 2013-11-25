@@ -37,7 +37,7 @@ typedef struct {
 } LevelDois;
 
 
-void createLevelDois(LevelDois *levelDois);
+void createLevelDois(LevelDois *levelDois,  Player *player);
 void logicLevelDois(bool *gateOne, bool *gateTwo, bool *gateThree, Player *player);
 void initDrawGatesLevelDois(LevelDois *LevelDois);
 void drawLevelDois(LevelDois *LevelDois);

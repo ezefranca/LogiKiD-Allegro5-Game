@@ -1,16 +1,32 @@
-/*#include "config.h"
+/*
+Funções de leitura e escirta de arquivos
+*/
+#include "config.h"
 #include "comum.h"
 
 config arquivo_configuracao;
 config arquivo_idioma;
+config arquivo_config_user;
+
 int loaded_config = 0;
 int loaded_idioma = 0;
+int loaded_config_user = 0;
 
 void libera_string(char *string) {
     int i;
-    for (i = 0; i < strlen(string); i++) {
-        free(&string[i]);
+    //printf("libera string %d", (int) strlen(string));
+    //for (i = 0; i < (int) strlen(string); i++) {
+    for (i = 0; string[i] != '\0' && i < strlen(string); i++){
+       free(&string[i]);
     }
+}
+
+int string_size(char *c) {
+    int i = 0;
+    for(i = 0; c[i] != '\0'; i++){
+        printf("%caqui", c[i]);
+    }
+    return i;
 }
 
 config *aloca() {
@@ -25,18 +41,24 @@ void libera_config(config *l, int type) {
     e = l->inicio;
     while (e != NULL) {
         temp = e->proximo;
-        libera_string(e->string);
-        libera_string(e->var);
-
-        free(e);
-        e = temp;
+        //libera_string(e->string);
+            //libera_string(e->var);
+            free(e->string);
+            free(e->var);
+            free(e);
+            e = temp;
     }
     free(l);
-    if(type == CONFIG) {
+    switch (type) {
+        case CONFIG:
         loaded_config = 0;
-    }
-    else if(type == IDIOMA) {
+        break;
+        case IDIOMA:
         loaded_idioma = 0;
+        break;
+        case CONFIG_USER:
+        loaded_config_user = 0;
+        break;
     }
 }
 
@@ -51,17 +73,18 @@ void insere_config(config *l, char *var, char *string) {
         e->proximo = l->inicio;
         l->inicio = e;
     }
+
 }
 
 char *retorna_config(config *l, char *var) {
     elemento *anterior, *atual;
+
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list empty\n");
-        return "failed";
-    }
-    else if (strcmp(var, anterior->var) == 0) {
-        l->inicio = anterior->proximo;
+        return var;
+    } else if (strcmp(var, anterior->var) == 0) {
+        //l->inicio = anterior->proximo;
         return (anterior->string);
     } else {
         atual = anterior->proximo;
@@ -73,8 +96,8 @@ char *retorna_config(config *l, char *var) {
         if (atual != NULL) {
             return (atual->string);
         }
+        return var;
     }
-
 }
 
 void apaga_config(config *l, char *var) {
@@ -82,8 +105,7 @@ void apaga_config(config *l, char *var) {
     anterior = l->inicio;
     if (anterior == NULL) {
         fprintf(stderr, "list already empty\n");
-    }
-    else if (strcmp(var, anterior->var) == 0) {
+    } else if (strcmp(var, anterior->var) == 0) {
         l->inicio = anterior->proximo;
         libera_string(anterior->var);
         libera_string(anterior->string);
@@ -104,21 +126,24 @@ void apaga_config(config *l, char *var) {
     }
 }
 
-void imprime_config(config *l) {
+void imprime_config(config *l, FILE *file) {
     elemento *e;
     for (e = l->inicio; e != NULL; e = e->proximo)
-        printf("%s = %s\n", e->var, e->string);
+        fprintf(file, "%s=%s\n", e->var, e->string);
 }
 
 int conta_linhas(FILE *entrada) {
     int lines;
-    char caracter;
+    char caracter, last_caracter;
     lines = 1;
 
     while ((caracter = fgetc(entrada)) != EOF) {
         if (caracter == '\n')
             lines++;
+        last_caracter = caracter;
     }
+    if (last_caracter == '\n') --lines;
+
     //Retorna o ponteiro para inicio do arquivo.
     rewind(entrada);
     return lines;
@@ -130,134 +155,300 @@ int conta_until(FILE *entrada, char until) {
 
     for (count = 0; (caracter = fgetc(entrada)) != until && caracter != EOF; count++);
     //melhorar essa parte
-    if (until == '\n' && caracter != EOF) {
-        return --count;
-    }
-    return count;
-}
 
-bool load_config(char *config_file, int type) {
-    char **var, **string;
-    FILE *entrada;
-    int i, linhas, count, before;
-    int *tstring, *tvar;
-    char c;
-
-    switch (type) {
-        case CONFIG:
-            aloca(&arquivo_configuracao);
-            break;
-        case IDIOMA:
-            aloca(&arquivo_idioma);
-            break;
-        default:
-            fprintf(stderr, "Tipo incorreto de configuração\n");
-            return false;
+        if (until == '\n' && caracter == EOF) {
+        //return --count;
+        }
+        return count;
     }
 
-    entrada = fopen(config_file, "r");
-
-    if (!entrada) {
-        fprintf(stderr, "erro na leitura do arquivo de configuração.\n");
-        return false;
-    }
-
-    linhas = conta_linhas(entrada);
-    var = malloc(linhas * sizeof (char));
-    string = malloc(linhas * sizeof (char));
-    tvar = malloc(linhas * sizeof (int));
-    tstring = malloc(linhas * sizeof (int));
-
-    for (i = 0; i < linhas; i++) {
-        tvar[i] = conta_until(entrada, '=');
-        tstring[i] = conta_until(entrada, '\n');
-
-        var[i] = malloc(tvar[i] * sizeof (char));
-        string[i] = malloc(tstring[i] * sizeof (char));
-    }
-    rewind(entrada);
-
-    for (i = 0; i < linhas; i++) {
-        fgets(var[i], tvar[i] + 1, entrada);
-        fgetc(entrada);
-        fgets(string[i], tstring[i] + 1, entrada);
-        do {
-            fscanf(entrada, "%c", &c);
-        } while (c != '\n');
+    bool load_config(char *config_file, int type) {
+        char **var, **string;
+        FILE *entrada;
+        int i, linhas;
+        int *tstring, *tvar;
+        char c;
 
         switch (type) {
             case CONFIG:
-                insere_config(&arquivo_configuracao, var[i], string[i]);
-                break;
+            aloca(&arquivo_configuracao);
+            break;
             case IDIOMA:
-                insere_config(&arquivo_idioma, var[i], string[i]);
-                break;
+            aloca(&arquivo_idioma);
+            break;
+            case CONFIG_USER:
+            aloca(&arquivo_config_user);
+            break;
+
+            default:
+            fprintf(stderr, "Tipo incorreto de configuração\n");
+            return false;
         }
-    }
-    fclose(entrada);
 
-    switch (type) {
-        case CONFIG:
-            loaded_config = 1;
-            break;
-        case IDIOMA:
-            loaded_idioma = 1;
-            break;
-    }
+        entrada = fopen(config_file, "r");
 
-    return true;
-}
+        if (!entrada) {
+            fprintf(stderr, "erro na leitura do arquivo de configuração tipo %d.\n", type);
+            return false;
+        }
+
+        linhas = conta_linhas(entrada);
+        var = malloc(linhas * sizeof (char *));
+        string = malloc(linhas * sizeof (char *));
+        tvar = malloc(linhas * sizeof (int));
+        tstring = malloc(linhas * sizeof (int));
+
+        for (i = 0; i < linhas; i++) {
+            tvar[i] = conta_until(entrada, '=');
+            tstring[i] = conta_until(entrada, '\n');
+
+            var[i] = malloc(tvar[i] * sizeof (char));
+            string[i] = malloc(tstring[i] * sizeof (char));
+        }
+        rewind(entrada);
+
+        for (i = 0; i < linhas; i++) {
+            fgets(var[i], tvar[i] + 1, entrada);
+            fgetc(entrada);
+            fgets(string[i], tstring[i] + 1, entrada);
+            do {
+                fscanf(entrada, "%c", &c);
+            } while (c != '\n');
+
+            if(strlen(var[i]) > 0 && strlen(string[i]) > 0)
+                switch (type) {
+                    case CONFIG:
+                    insere_config(&arquivo_configuracao, var[i], string[i]);
+                    break;
+                    case IDIOMA:
+                    insere_config(&arquivo_idioma, var[i], string[i]);
+                    break;
+                    case CONFIG_USER:
+                    insere_config(&arquivo_config_user, var[i], string[i]);
+                    break;
+                }
+            }
+            fclose(entrada);
+
+            free(string);
+            free(var);
+
+            free(tstring);
+            free(tvar);
+
+            switch (type) {
+                case CONFIG:
+                loaded_config = 1;
+                break;
+                case IDIOMA:
+                loaded_idioma = 1;
+                break;
+                case CONFIG_USER:
+                loaded_config_user = 1;
+                break;
+            }
+
+            return true;
+        }
 
 
 //Utilizar no projeto as funções abaixo.
 
-bool load_configuracao(char *config_file) {
-    return load_config(config_file, CONFIG);
-    if(loaded_config == 1) {
-        return false;
-    }
-}
+        bool load_configuracao(char *config_file) {
+            if (loaded_config == 1) {
+                return true;
+            }
+            return load_config(config_file, CONFIG);
+        }
 
-bool load_idioma(char *config_file) {
-    if(loaded_idioma == 1) {
-        return false;
-    }
-    return load_config(config_file, IDIOMA);
-}
+        bool load_idioma(char *config_file) {
+            //if (loaded_idioma == 1) {
+            //    return true;
+            //}
+            return load_config(config_file, IDIOMA);
+        }
 
-char *get_configuracao(char *var) {
-    if (loaded_config == 1) {
-        return retorna_config(&arquivo_configuracao, var);
-    }
-}
+        char *get_configuracao(char *var) {
+            if (loaded_config == 1) {
+                return retorna_config(&arquivo_configuracao, var);
+            }
+            return var;
+        }
 
-char *get_idioma(char *var) {
-    if (loaded_idioma == 1) {
-        return retorna_config(&arquivo_idioma, var);
-    }
-}
+        char *get_idioma(char *var) {
+            if (loaded_idioma == 1) {
+                return retorna_config(&arquivo_idioma, var);
+            }
+            return var;
+        }
 
-void limpa_config() {
-    libera_config(&arquivo_configuracao, CONFIG);
-}
+        char *get_idioma_formatado(char *var, int quebra_linha){
+            char *formatted;
+            bool quebra = false;
+            unsigned int i;
 
-void limpa_idioma() {
-    libera_config(&arquivo_idioma, IDIOMA);
-}
+            if (loaded_idioma == 1) {
+                formatted = retorna_config(&arquivo_idioma, var);
+            }
+            else 
+                formatted = var;
 
-void apaga_idioma(char *var){
-    apaga_config(&arquivo_idioma, var);
-}
+            for(i =0; i < strlen(formatted); i++){
+                if(quebra && formatted[i] == ' '){
+                    printf("true\n");
+                    formatted[i] = '\n';
+                    quebra = false;
+                }
+                if(i % quebra_linha == 0 && i != 0){
+                        quebra = true;
+                }
+                printf("numero %d ", i%quebra_linha);
+            }
+            return formatted;
+        }
 
-void apaga_configuracao(char *var){
-    apaga_config(&arquivo_configuracao, var);
-}
+        void limpa_config() {
+            libera_config(&arquivo_configuracao, CONFIG);
+        }
 
-void imprime_idioma(){
-    imprime_config(&arquivo_idioma);
-}
+        void limpa_idioma() {
+            libera_config(&arquivo_idioma, IDIOMA);
+        }
 
-void imprime_configuracao(){
-    imprime_config(&arquivo_configuracao);
-}
-*/
+        void apaga_idioma(char *var) {
+            apaga_config(&arquivo_idioma, var);
+        }
+
+        void apaga_configuracao(char *var) {
+            apaga_config(&arquivo_configuracao, var);
+        }
+
+        void imprime_idioma() {
+            imprime_config(&arquivo_idioma, stdout);
+        }
+
+        void imprime_configuracao() {
+            imprime_config(&arquivo_configuracao, stdout);
+        }
+
+        char *get_config_user(char *var) {
+            if (loaded_config_user == 1) {
+                return retorna_config(&arquivo_config_user, var);
+            }
+            return var;
+        }
+
+        void imprime_config_user() {
+            imprime_config(&arquivo_config_user, stdout);
+        }
+
+        void apaga_config_user(char *var) {
+            apaga_config(&arquivo_config_user, var);
+        }
+
+        void adiciona_config_user(char *string, char *var) {
+            insere_config(&arquivo_config_user, var, string);
+        }
+
+        void update_config(config *l, char *string, char *var){
+            elemento *anterior, *atual;
+            anterior = l->inicio;
+            int i;
+            
+            printf("tamanho %d %s %s", strcmp(var, anterior->var), var, l->inicio->var);
+            if (anterior == NULL) {
+                //printf("null\n");
+                anterior = malloc(sizeof(elemento));
+                anterior->string = string;
+                anterior->var = var;
+                anterior->proximo = NULL;
+                l->inicio = anterior;
+            } else if (strcmp(var, anterior->var) == 0) {
+                printf("anterior igual\n");
+                //printf("%s",string);
+                anterior->string = string;
+                l->inicio = anterior;
+            } else {
+                imprime_config_user();
+                //printf("else\n");
+                atual = anterior;
+                while(strcmp(var, atual->var) != 0 && atual->proximo != NULL){
+                    atual = atual->proximo;
+                }
+
+                if (atual == NULL) {
+                    printf("atual é null");
+                    anterior->proximo = atual->proximo;
+                    atual->string = string;
+                }
+                else {
+                    printf("atual é not null");
+                    atual->string = string;
+                }
+                //imprime_config_user();
+            }
+        }
+        void update_config_user(char *var, char *string) {
+            update_config(&arquivo_config_user, string, var);
+            
+        }
+
+        void limpa_config_user() {
+            libera_config(&arquivo_config_user, CONFIG_USER);
+        }
+
+        bool salva_config(config *l, char *config_file){
+            FILE *entrada;
+            entrada = fopen(config_file, "w");
+            if (!entrada)
+                return false;
+
+            imprime_config(l, entrada);
+            fclose(entrada);
+            return true;
+        }
+
+        bool salva_config_user(char *config_file) {
+            if (loaded_config_user == 1) {
+                return salva_config(&arquivo_config_user, config_file);
+            } else {
+                return false;
+            }
+        }
+
+        bool create_config_user(char *config_file) {
+    //Configuracoes padrao para o usuario
+            FILE *entrada;
+
+            entrada = fopen(config_file, "ab+");
+            if (!entrada)
+                return false;
+            fclose(entrada);
+
+            aloca(&arquivo_config_user);
+    //Adicionar as configuracoes padroes em:
+
+            adiciona_config_user("0", "last_phase");
+            adiciona_config_user("1", "personagem");
+            adiciona_config_user("data/idiomas/pt_br.conf", "idioma");
+    //adiciona_config_user(string, var);
+    //adiciona_config_user(string, var);
+    //adiciona_config_user(string, var);
+
+            if (arquivo_config_user.inicio != NULL){
+                loaded_config_user = 1;
+                if(!salva_config_user(config_file)) return false;
+                return true;
+            }
+            return false;
+        }
+
+        bool load_config_user(char *config_file) {
+            if (loaded_config_user == 1) {
+                return true;
+            }
+            if (load_config(config_file, CONFIG_USER)) {
+                return true;
+            }
+            return create_config_user(config_file);
+        }

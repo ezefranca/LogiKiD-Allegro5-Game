@@ -2,11 +2,12 @@
 #include "fase4.h"
 #include "../../Player.h"
 
-void createLevelQuatro(LevelQuatro *levelQuatro){
+void createLevelQuatro(LevelQuatro *levelQuatro, Player *player){
+	player->chances = 0;
 	levelQuatro->circ1_on = al_load_bitmap("./data/levels/fase4/circ1_on.png");
 	levelQuatro->circ2_on = al_load_bitmap("./data/levels/fase4/circ2_on.png");
 	levelQuatro->circ3_on = al_load_bitmap("./data/levels/fase4/circ3_on.png");
-	
+
 	levelQuatro->circ1_off = al_load_bitmap("./data/levels/fase4/circ1_off.png");
 	levelQuatro->circ2_off = al_load_bitmap("./data/levels/fase4/circ2_off.png");
 	levelQuatro->circ3_off = al_load_bitmap("./data/levels/fase4/circ3_off.png");
@@ -24,6 +25,7 @@ void logicLevelQuatro(bool *gateOne, bool *gateTwo, bool *gateThree, Player *pla
 {
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 65 && player->state.y < 154))
 	{
+		player->chances++;
 		if(*gateOne == false){
 			*gateOne = true;
 			printf("False para true\n");
@@ -35,6 +37,7 @@ void logicLevelQuatro(bool *gateOne, bool *gateTwo, bool *gateThree, Player *pla
 	}
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 155 && player->state.y < 238))
 	{
+		player->chances++;
 		if(*gateTwo == false){
 			*gateTwo = true;
 			printf("False para true\n");
@@ -46,6 +49,7 @@ void logicLevelQuatro(bool *gateOne, bool *gateTwo, bool *gateThree, Player *pla
 	}
 	if((player->state.x > 105 && player->state.x < 230) && (player->state.y > 254 && player->state.y < 338))
 	{
+		player->chances++;
 		if(*gateThree == false){
 			*gateThree = true;
 			printf("False para true\n");
@@ -149,7 +153,7 @@ void destroyLevelQuatro(LevelQuatro *LevelQuatro){
 	al_destroy_bitmap(LevelQuatro->circ4);
 	al_destroy_bitmap(LevelQuatro->circ5);
 	al_destroy_bitmap(LevelQuatro->circ6);
-	al_destroy_bitmap(LevelQuatro->circ7);	
+	al_destroy_bitmap(LevelQuatro->circ7);
 
 	al_destroy_bitmap(LevelQuatro->portas);
 	al_destroy_bitmap(LevelQuatro->circ_base);

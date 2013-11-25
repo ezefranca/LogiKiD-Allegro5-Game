@@ -1,6 +1,6 @@
 #ifndef ITEMS_MENU_H
 #define ITEMS_MENU_H
-
+/*
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
@@ -13,9 +13,9 @@
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_acodec.h>
-  
+
 typedef enum { AND, OR, NAND, NOR, XOR, XNOR, NOT }Gates;
 
 Gates MenuLoad(ALLEGRO_EVENT *ev, Player *player);
-
+*/
 #endif

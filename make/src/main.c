@@ -7,11 +7,11 @@
 #include "comum.h"
 #include "StartMenu.h"
 
-void QuitGame()
-{
-	al_destroy_event_queue(game.fila_eventos);
-	al_destroy_display(game.janela);
-	al_destroy_font(game.fonte);
+ void QuitGame()
+ {
+   al_destroy_event_queue(game.fila_eventos);
+   al_destroy_display(game.janela);
+   al_destroy_font(game.fonte);
 }
 
 void fadeout(int velocidade)
@@ -21,7 +21,7 @@ void fadeout(int velocidade)
     al_set_target_bitmap(buffer);
     al_draw_bitmap(al_get_backbuffer(game.janela), 0, 0, 0);
     al_set_target_bitmap(al_get_backbuffer(game.janela));
- 
+
     if (velocidade <= 0)
     {
         velocidade = 1;
@@ -29,8 +29,8 @@ void fadeout(int velocidade)
     else if (velocidade > 15)
     {
         velocidade = 15;
-    }            
- 
+    }
+
     int alfa;
     for (alfa = 0; alfa <= 255; alfa += velocidade)
     {
@@ -39,10 +39,10 @@ void fadeout(int velocidade)
         al_flip_display();
         al_rest(0.005); // Não é necessário caso haja controle de FPS
     }
- 
+
     al_destroy_bitmap(buffer);
 }
- 
+
 void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
 {
     if (velocidade < 0)
@@ -53,7 +53,7 @@ void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
     {
         velocidade = 15;
     }
- 
+
     int alfa;
     for (alfa = 0; alfa <= 255; alfa += velocidade)
     {
@@ -66,14 +66,21 @@ void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
 
 void InitScreens()
 {
-	ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/intro/senac.png");
-	fadein(temp, 7);
-	al_rest(2.0);
+
+    game.song = al_load_sample("./data/sound/music/Logikid.ogg");
+    game.songInstance = al_create_sample_instance(game.song);
+    al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+    al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+    al_play_sample_instance(game.songInstance);
+
+    ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/intro/senac.png");
+    fadein(temp, 7);
+    al_rest(2.0);
     fadeout(8);
-    
+
     temp = al_load_bitmap("data/images/intro/pi.png");
-	fadein(temp, 7);
-	al_rest(2.0);
+    fadein(temp, 7);
+    al_rest(2.0);
     fadeout(8);
 
     temp = al_load_bitmap("data/images/intro/allegro.png");
@@ -89,12 +96,13 @@ void InitScreens()
 
 int main(void)
 {
+
 	//inputLogic("logic/exemplo.txt");
 
 	if (!inicializar())
 		return -1;
-	//Animação inicial		
-	//InitScreens();
+	//Animação inicial
+	InitScreens();
 	StartMenu();
 	//GameLoop();
 

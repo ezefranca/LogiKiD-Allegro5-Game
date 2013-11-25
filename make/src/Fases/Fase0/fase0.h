@@ -19,7 +19,7 @@ typedef struct {
 
 	int chances;
 	ALLEGRO_BITMAP *circ1;
-	
+
 	ALLEGRO_BITMAP *circ1_on;
 	ALLEGRO_BITMAP *circ1_off;
 
@@ -28,7 +28,7 @@ typedef struct {
 	bool isOn[5];
 } LevelZero;
 
-void createLevelZero(LevelZero *levelZero);
+void createLevelZero(LevelZero *levelZero, Player *player);
 void logicLevelZero(bool *gateOne, bool *complete, LevelZero *levelZero, Player *player);
 void drawLevelZero(LevelZero *levelZero);
 void destroyLevelZero(LevelZero *levelZero);

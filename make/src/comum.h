@@ -4,6 +4,11 @@
  * Autor: Alexandre Savelli Bencz
  */
 
+/*
+Uma curiosidade deste arquivo é que o Alexandre sempre o usa o "comum", seja comum.h, comum.class,
+ele disse que acha elegante. Bencz Design Pattern...
+*/
+
 #ifndef COMUM_H
 #define COMUM_H
 
@@ -17,28 +22,27 @@
 #include <allegro5/allegro_primitives.h>
 //#include <allegro5\allegro_audio.h>
 
-
 #define ALTURA  800
 #define LARGURA 600
 
-struct Game
-{
-	int mute;
-	int level;
-	ALLEGRO_SAMPLE *som;
-	ALLEGRO_FONT *fonte;
-	ALLEGRO_FONT *fonte_menu;
-	ALLEGRO_FONT *fonte_logo;
-	ALLEGRO_TIMER *timer;
-	ALLEGRO_DISPLAY *janela;
-	ALLEGRO_EVENT_QUEUE *fila_eventos;
-	ALLEGRO_SAMPLE *song;
-    ALLEGRO_SAMPLE_INSTANCE *songInstance;
-    ALLEGRO_FONT *fonteKeys;
-};
+ struct Game
+ {
+ 	int mute;
+ 	int level;
+ 	ALLEGRO_SAMPLE *som;
+ 	ALLEGRO_FONT *fonte;
+ 	ALLEGRO_FONT *fonte_menu;
+ 	ALLEGRO_FONT *fonte_logo;
+ 	ALLEGRO_TIMER *timer;
+ 	ALLEGRO_DISPLAY *janela;
+ 	ALLEGRO_EVENT_QUEUE *fila_eventos;
+ 	ALLEGRO_SAMPLE *song;
+ 	ALLEGRO_SAMPLE_INSTANCE *songInstance;
+ 	ALLEGRO_FONT *fonteKeys;
+ };
 
-struct Game game;
+ struct Game game;
 
-bool inicializar();
+ bool inicializar();
 
 #endif
