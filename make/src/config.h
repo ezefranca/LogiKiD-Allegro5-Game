@@ -64,4 +64,7 @@ bool create_config_user(char *config_file);
 bool load_config_user(char *config_file);
 
 bool salva_config_user(char *config_file);
+
+void libera_string(char *string);
+
 #endif

@@ -107,17 +107,23 @@ bool inicializar()
         return false;
     }
 
+    //Carrega configuracao de usuario.
+    if(!load_config_user("data/config/user.conf")){
+        fprintf(stderr, "Falha ao carregar configuração de usuário!\n");
+        return false;
+    }
+
+    if(strcmp(get_config_user("idioma"), "idioma") != 0){
+        load_idioma(get_config_user("idioma"));
+    }
+    else
     //Carrega idioma padrão.
     if(!load_idioma("data/idiomas/pt_br.conf")){
         fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
         return false;
     }
 
-    //Carrega configuracao de usuario.
-    if(!load_config_user("data/config/user.conf")){
-        fprintf(stderr, "Falha ao carregar configuração de usuário!\n");
-        return false;
-    }
+    
 
 
     game.mute = 1;

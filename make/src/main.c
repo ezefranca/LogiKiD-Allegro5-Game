@@ -66,6 +66,13 @@ void fadein(ALLEGRO_BITMAP *imagem, int velocidade)
 
 void InitScreens()
 {
+
+    game.song = al_load_sample("./data/sound/music/Logikid.ogg");
+    game.songInstance = al_create_sample_instance(game.song);
+    al_set_sample_instance_playmode(game.songInstance, ALLEGRO_PLAYMODE_LOOP);
+    al_attach_sample_instance_to_mixer(game.songInstance, al_get_default_mixer());
+    al_play_sample_instance(game.songInstance);
+
 	ALLEGRO_BITMAP *temp = al_load_bitmap("data/images/intro/senac.png");
 	fadein(temp, 7);
 	al_rest(2.0);
@@ -89,6 +96,7 @@ void InitScreens()
 
 int main(void)
 {
+
 	//inputLogic("logic/exemplo.txt");
 
 	if (!inicializar())
