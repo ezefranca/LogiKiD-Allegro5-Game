@@ -120,7 +120,7 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 	lgDados->menuSoundOpen = al_load_sample("./data/sound/menu_open.wav");
 	al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
 
-	al_rest(0.1); // causa um micro delay, apenas para sincronizar o audio...
+	//al_rest(0.1); // causa um micro delay, apenas para sincronizar o audio...
 
 	while(!sair)
 	{
