@@ -118,12 +118,6 @@ void free_idioma(idioma *id){
 	}
 }
 
-int string_size(char *c) {
-	int i = 0;
-	for(i = 0; c[i] != '\0'; i++);
-	return i;
-}
-
 void IdiomaMenu()
 {
 	bool sair = false;
@@ -155,7 +149,7 @@ void IdiomaMenu()
 				case ALLEGRO_KEY_ENTER:
 					//limpa_idioma();
 					load_idioma(id.linguagem[MenuPosition]);
-					//update_config_user("idioma", id.linguagem[MenuPosition]);
+					update_config_user("idioma", id.linguagem[MenuPosition]);
 					sair = true;
 					tecla = 0;
 					break;

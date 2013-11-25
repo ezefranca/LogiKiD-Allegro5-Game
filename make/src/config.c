@@ -18,6 +18,14 @@ void libera_string(char *string) {
     }
 }
 
+int string_size(char *c) {
+    int i = 0;
+    for(i = 0; c[i] != '\0'; i++){
+        printf("%caqui", c[i]);
+    }
+    return i;
+}
+
 config *aloca() {
     config *l = malloc(sizeof (config));
     l->inicio = NULL;
@@ -335,35 +343,42 @@ void adiciona_config_user(char *string, char *var) {
 void update_config(config *l, char *string, char *var){
     elemento *anterior, *atual;
     anterior = l->inicio;
+    int i;
+    
+    printf("tamanho %d %s %s", strcmp(var, anterior->var), var, l->inicio->var);
     if (anterior == NULL) {
+        //printf("null\n");
+        anterior = malloc(sizeof(elemento));
         anterior->string = string;
         anterior->var = var;
         anterior->proximo = NULL;
         l->inicio = anterior;
     } else if (strcmp(var, anterior->var) == 0) {
-        anterior->var = var;
+        printf("anterior igual\n");
+        //printf("%s",string);
         anterior->string = string;
         l->inicio = anterior;
     } else {
-        atual = anterior->proximo;
-        while (atual != NULL && strcmp(var, atual->var) != 0) {
-            anterior = atual;
-            atual = anterior->proximo;
+        imprime_config_user();
+        //printf("else\n");
+        atual = anterior;
+        while(strcmp(var, atual->var) != 0 && atual->proximo != NULL){
+            atual = atual->proximo;
         }
 
-        if (atual != NULL) {
+        if (atual == NULL) {
+            printf("atual é null");
             anterior->proximo = atual->proximo;
             atual->string = string;
         }
         else {
+            printf("atual é not null");
             atual->string = string;
-            atual->var = var;
-            atual->proximo = NULL;
         }
-        l->inicio = atual;
+        //imprime_config_user();
     }
 }
-void update_config_user(char *string, char *var) {
+void update_config_user(char *var, char *string) {
     update_config(&arquivo_config_user, string, var);
     
 }
