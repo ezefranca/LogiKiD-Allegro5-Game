@@ -1,0 +1,109 @@
+\hypertarget{fase5_8h}{\section{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/\-Fases/\-Fase5/fase5.h File Reference}
+\label{fase5_8h}\index{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/\-Fases/\-Fase5/fase5.\-h@{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/\-Fases/\-Fase5/fase5.\-h}}
+}
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$math.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}../../\-Player.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-ttf.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-image.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-primitives.\-h$>$}\\*
+Include dependency graph for fase5.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_level_cinco}{Level\-Cinco}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{fase5_8h_aeb9677d3ecd337bf0e770e6adc017c85}{create\-Level\-Cinco} (\hyperlink{struct_level_cinco}{Level\-Cinco} $\ast$level\-Cinco, \hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{fase5_8h_a05286d0eb927f58c8828a0ab99906593}{logic\-Level\-Cinco} (bool $\ast$gate\-One, bool $\ast$gate\-Two, \hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{fase5_8h_a8eef83af39e4d0d0b74ea4052b53617c}{init\-Draw\-Gates\-Level\-Cinco} (\hyperlink{struct_level_cinco}{Level\-Cinco} $\ast$\hyperlink{struct_level_cinco}{Level\-Cinco})
+\item 
+void \hyperlink{fase5_8h_a5d3d7000649d6985bc3bfb75a01c946e}{draw\-Level\-Cinco} (\hyperlink{struct_level_cinco}{Level\-Cinco} $\ast$\hyperlink{struct_level_cinco}{Level\-Cinco})
+\item 
+void \hyperlink{fase5_8h_aceff701398242ab6bebef53fab9874c0}{draw\-Logic\-Level\-Cinco} (bool gate\-One, bool gate\-Two, \hyperlink{struct_level_cinco}{Level\-Cinco} $\ast$level\-Cinco, bool $\ast$\hyperlink{gameloop_8c_af6b1fef28954e41d75acf35f76bc8d39}{complete})
+\item 
+void \hyperlink{fase5_8h_a582c05b5f70709cf03d3bee5434396ab}{destroy\-Level\-Cinco} (\hyperlink{struct_level_cinco}{Level\-Cinco} $\ast$\hyperlink{struct_level_cinco}{Level\-Cinco})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{fase5_8h_aeb9677d3ecd337bf0e770e6adc017c85}{\index{fase5.\-h@{fase5.\-h}!create\-Level\-Cinco@{create\-Level\-Cinco}}
+\index{create\-Level\-Cinco@{create\-Level\-Cinco}!fase5.h@{fase5.\-h}}
+\subsubsection[{create\-Level\-Cinco}]{\setlength{\rightskip}{0pt plus 5cm}void create\-Level\-Cinco (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-Cinco} $\ast$}]{level\-Cinco, }
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{fase5_8h_aeb9677d3ecd337bf0e770e6adc017c85}
+
+
+Definition at line 5 of file fase5.\-c.
+
+\hypertarget{fase5_8h_a582c05b5f70709cf03d3bee5434396ab}{\index{fase5.\-h@{fase5.\-h}!destroy\-Level\-Cinco@{destroy\-Level\-Cinco}}
+\index{destroy\-Level\-Cinco@{destroy\-Level\-Cinco}!fase5.h@{fase5.\-h}}
+\subsubsection[{destroy\-Level\-Cinco}]{\setlength{\rightskip}{0pt plus 5cm}void destroy\-Level\-Cinco (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-Cinco} $\ast$}]{Level\-Cinco}
+\end{DoxyParamCaption}
+)}}\label{fase5_8h_a582c05b5f70709cf03d3bee5434396ab}
+
+
+Definition at line 115 of file fase5.\-c.
+
+\hypertarget{fase5_8h_a5d3d7000649d6985bc3bfb75a01c946e}{\index{fase5.\-h@{fase5.\-h}!draw\-Level\-Cinco@{draw\-Level\-Cinco}}
+\index{draw\-Level\-Cinco@{draw\-Level\-Cinco}!fase5.h@{fase5.\-h}}
+\subsubsection[{draw\-Level\-Cinco}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Level\-Cinco (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-Cinco} $\ast$}]{Level\-Cinco}
+\end{DoxyParamCaption}
+)}}\label{fase5_8h_a5d3d7000649d6985bc3bfb75a01c946e}
+
+
+Definition at line 105 of file fase5.\-c.
+
+\hypertarget{fase5_8h_aceff701398242ab6bebef53fab9874c0}{\index{fase5.\-h@{fase5.\-h}!draw\-Logic\-Level\-Cinco@{draw\-Logic\-Level\-Cinco}}
+\index{draw\-Logic\-Level\-Cinco@{draw\-Logic\-Level\-Cinco}!fase5.h@{fase5.\-h}}
+\subsubsection[{draw\-Logic\-Level\-Cinco}]{\setlength{\rightskip}{0pt plus 5cm}void draw\-Logic\-Level\-Cinco (
+\begin{DoxyParamCaption}
+\item[{bool}]{gate\-One, }
+\item[{bool}]{gate\-Two, }
+\item[{{\bf Level\-Cinco} $\ast$}]{level\-Cinco, }
+\item[{bool $\ast$}]{complete}
+\end{DoxyParamCaption}
+)}}\label{fase5_8h_aceff701398242ab6bebef53fab9874c0}
+
+
+Definition at line 46 of file fase5.\-c.
+
+\hypertarget{fase5_8h_a8eef83af39e4d0d0b74ea4052b53617c}{\index{fase5.\-h@{fase5.\-h}!init\-Draw\-Gates\-Level\-Cinco@{init\-Draw\-Gates\-Level\-Cinco}}
+\index{init\-Draw\-Gates\-Level\-Cinco@{init\-Draw\-Gates\-Level\-Cinco}!fase5.h@{fase5.\-h}}
+\subsubsection[{init\-Draw\-Gates\-Level\-Cinco}]{\setlength{\rightskip}{0pt plus 5cm}void init\-Draw\-Gates\-Level\-Cinco (
+\begin{DoxyParamCaption}
+\item[{{\bf Level\-Cinco} $\ast$}]{Level\-Cinco}
+\end{DoxyParamCaption}
+)}}\label{fase5_8h_a8eef83af39e4d0d0b74ea4052b53617c}
+
+
+Definition at line 97 of file fase5.\-c.
+
+\hypertarget{fase5_8h_a05286d0eb927f58c8828a0ab99906593}{\index{fase5.\-h@{fase5.\-h}!logic\-Level\-Cinco@{logic\-Level\-Cinco}}
+\index{logic\-Level\-Cinco@{logic\-Level\-Cinco}!fase5.h@{fase5.\-h}}
+\subsubsection[{logic\-Level\-Cinco}]{\setlength{\rightskip}{0pt plus 5cm}void logic\-Level\-Cinco (
+\begin{DoxyParamCaption}
+\item[{bool $\ast$}]{gate\-One, }
+\item[{bool $\ast$}]{gate\-Two, }
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{fase5_8h_a05286d0eb927f58c8828a0ab99906593}
+
+
+Definition at line 18 of file fase5.\-c.
+

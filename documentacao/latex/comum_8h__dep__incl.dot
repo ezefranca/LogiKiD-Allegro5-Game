@@ -1,0 +1,45 @@
+digraph "J:/SENAC/LogiKid/make/src/comum.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="J:/SENAC/LogiKid/make\l/src/comum.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="J:/SENAC/LogiKid/make\l/src/config.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config_8h.html"];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="J:/SENAC/LogiKid/make\l/src/config.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config_8c.html"];
+  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="J:/SENAC/LogiKid/make\l/src/gameloop.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gameloop_8c.html"];
+  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="J:/SENAC/LogiKid/make\l/src/init.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$init_8c.html"];
+  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="J:/SENAC/LogiKid/make\l/src/selecaomenu.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$selecaomenu_8c.html"];
+  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="J:/SENAC/LogiKid/make\l/src/StartMenu.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_start_menu_8c.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="J:/SENAC/LogiKid/make\l/src/Fases/Fase0/fase0.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fase0_8c.html"];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="J:/SENAC/LogiKid/make\l/src/Fases/Fase1/fase1.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fase1_8c.html"];
+  Node1 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="J:/SENAC/LogiKid/make\l/src/Fases/Fase2/fase2.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fase2_8c.html"];
+  Node1 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="J:/SENAC/LogiKid/make\l/src/Fases/Fase3/fase3.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fase3_8c.html"];
+  Node1 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="J:/SENAC/LogiKid/make\l/src/Fases/Fase4/fase4.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fase4_8c.html"];
+  Node1 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node13 [label="J:/SENAC/LogiKid/make\l/src/Fases/Fase5/fase5.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$fase5_8c.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node14 [label="J:/SENAC/LogiKid/make\l/src/ItensMenu.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_itens_menu_8c.html"];
+  Node1 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node15 [label="J:/SENAC/LogiKid/make\l/src/main.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8c.html"];
+  Node1 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node16 [label="J:/SENAC/LogiKid/make\l/src/Player.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_player_8c.html"];
+  Node1 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node17 [label="J:/SENAC/LogiKid/make\l/src/pontuacao.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$pontuacao_8c.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node18 [label="J:/SENAC/LogiKid/make\l/src/textBox.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$text_box_8c.html"];
+}

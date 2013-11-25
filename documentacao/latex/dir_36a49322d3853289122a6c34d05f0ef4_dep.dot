@@ -1,0 +1,9 @@
+digraph "J:/SENAC/LogiKid/make/src/Fases/Fase4" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_bbd3fdad8725debd944cceed78b07011 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Fases" fontname="Helvetica", fontsize="10", URL="dir_bbd3fdad8725debd944cceed78b07011.html"]
+  dir_36a49322d3853289122a6c34d05f0ef4 [shape=box, label="Fase4", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_36a49322d3853289122a6c34d05f0ef4.html"];
+  }
+}

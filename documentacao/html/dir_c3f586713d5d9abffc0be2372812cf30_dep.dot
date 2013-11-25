@@ -1,0 +1,10 @@
+digraph "J:/SENAC" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_c3f586713d5d9abffc0be2372812cf30 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_c3f586713d5d9abffc0be2372812cf30.html"];
+    dir_c3f586713d5d9abffc0be2372812cf30 [shape=plaintext label="SENAC"];
+    dir_fa06a4d52f5b15298e981a3c0a0d12f8 [shape=box label="LogiKid" color="red" fillcolor="white" style="filled" URL="dir_fa06a4d52f5b15298e981a3c0a0d12f8.html"];
+  }
+}

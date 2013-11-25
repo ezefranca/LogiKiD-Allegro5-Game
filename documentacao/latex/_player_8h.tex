@@ -1,0 +1,218 @@
+\hypertarget{_player_8h}{\section{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/\-Player.h File Reference}
+\label{_player_8h}\index{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/\-Player.\-h@{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/\-Player.\-h}}
+}
+{\ttfamily \#include $<$allegro5/allegro.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-ttf.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-audio.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-image.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-acodec.\-h$>$}\\*
+{\ttfamily \#include $<$allegro5/allegro\-\_\-primitives.\-h$>$}\\*
+Include dependency graph for Player.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_image}{Image}
+\item 
+struct \hyperlink{struct_state}{State}
+\item 
+struct \hyperlink{struct_logic_gates}{Logic\-Gates}
+\item 
+struct \hyperlink{struct_player}{Player}
+\item 
+struct \hyperlink{struct_keys}{Keys}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_player_8h_a7f659d7a850e983309c045ce53267dbb}{Create\-Player} (\hyperlink{struct_player}{Player} $\ast$player, int h\-Start\-Position, int w\-Start\-Position, int sprite\-Personagem)
+\item 
+void \hyperlink{_player_8h_ad233b0d85abf03764e74e7f933ff1b0c}{move\-Direita} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a4b19d1399ab9c743670160c2b500cb02}{move\-Esquerda} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a92024e004a41bad1b5948d9820d4dae5}{move\-Cima} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a5ce890c48595cdc0c6851416fd7a032d}{move\-Baixo} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_af62044bbdac8a8cc979c1c985599d631}{Processa\-Movimento\-Esquerda} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a1b71ad189b39bc524eac86eff40a97d3}{Processa\-Movimento\-Direita} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a7818fabe65ca3cd1f93b2e11ed5576bd}{Processa\-Movimento\-Cima} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a810a1e280c408e9d2e761d7a636650c2}{Processa\-Movimento\-Baixo} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_aa798da9e0678f7b5192116e4fc84bdb2}{Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_a6ad1ab4868fdc43ed05c6d6fc66aec1e}{Valida\-Movimento} (\hyperlink{struct_player}{Player} $\ast$player)
+\item 
+void \hyperlink{_player_8h_ad13f1eb062d1c3e46fd77ec9876435b4}{set\-Keys} (\hyperlink{struct_keys}{Keys} $\ast$keys, \hyperlink{struct_player}{Player} $\ast$player, A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T $\ast$ev)
+\item 
+void \hyperlink{_player_8h_a04ca08f12cbf46b5b3069480cbb000d6}{create\-Keys} (\hyperlink{struct_keys}{Keys} $\ast$keys)
+\item 
+void \hyperlink{_player_8h_af51b4b7de9dcf8f526159656e72e82fc}{move\-Player} (\hyperlink{struct_keys}{Keys} $\ast$keys, \hyperlink{struct_player}{Player} $\ast$player)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{_player_8h_a04ca08f12cbf46b5b3069480cbb000d6}{\index{Player.\-h@{Player.\-h}!create\-Keys@{create\-Keys}}
+\index{create\-Keys@{create\-Keys}!Player.h@{Player.\-h}}
+\subsubsection[{create\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}void create\-Keys (
+\begin{DoxyParamCaption}
+\item[{{\bf Keys} $\ast$}]{keys}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a04ca08f12cbf46b5b3069480cbb000d6}
+
+
+Definition at line 260 of file Player.\-c.
+
+\hypertarget{_player_8h_a7f659d7a850e983309c045ce53267dbb}{\index{Player.\-h@{Player.\-h}!Create\-Player@{Create\-Player}}
+\index{Create\-Player@{Create\-Player}!Player.h@{Player.\-h}}
+\subsubsection[{Create\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void Create\-Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player, }
+\item[{int}]{h\-Start\-Position, }
+\item[{int}]{w\-Start\-Position, }
+\item[{int}]{sprite\-Personagem}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a7f659d7a850e983309c045ce53267dbb}
+
+
+Definition at line 10 of file Player.\-c.
+
+\hypertarget{_player_8h_a5ce890c48595cdc0c6851416fd7a032d}{\index{Player.\-h@{Player.\-h}!move\-Baixo@{move\-Baixo}}
+\index{move\-Baixo@{move\-Baixo}!Player.h@{Player.\-h}}
+\subsubsection[{move\-Baixo}]{\setlength{\rightskip}{0pt plus 5cm}void move\-Baixo (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a5ce890c48595cdc0c6851416fd7a032d}
+
+
+Definition at line 99 of file Player.\-c.
+
+\hypertarget{_player_8h_a92024e004a41bad1b5948d9820d4dae5}{\index{Player.\-h@{Player.\-h}!move\-Cima@{move\-Cima}}
+\index{move\-Cima@{move\-Cima}!Player.h@{Player.\-h}}
+\subsubsection[{move\-Cima}]{\setlength{\rightskip}{0pt plus 5cm}void move\-Cima (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a92024e004a41bad1b5948d9820d4dae5}
+
+
+Definition at line 83 of file Player.\-c.
+
+\hypertarget{_player_8h_ad233b0d85abf03764e74e7f933ff1b0c}{\index{Player.\-h@{Player.\-h}!move\-Direita@{move\-Direita}}
+\index{move\-Direita@{move\-Direita}!Player.h@{Player.\-h}}
+\subsubsection[{move\-Direita}]{\setlength{\rightskip}{0pt plus 5cm}void move\-Direita (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_ad233b0d85abf03764e74e7f933ff1b0c}
+
+
+Definition at line 53 of file Player.\-c.
+
+\hypertarget{_player_8h_a4b19d1399ab9c743670160c2b500cb02}{\index{Player.\-h@{Player.\-h}!move\-Esquerda@{move\-Esquerda}}
+\index{move\-Esquerda@{move\-Esquerda}!Player.h@{Player.\-h}}
+\subsubsection[{move\-Esquerda}]{\setlength{\rightskip}{0pt plus 5cm}void move\-Esquerda (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a4b19d1399ab9c743670160c2b500cb02}
+
+
+Definition at line 68 of file Player.\-c.
+
+\hypertarget{_player_8h_af51b4b7de9dcf8f526159656e72e82fc}{\index{Player.\-h@{Player.\-h}!move\-Player@{move\-Player}}
+\index{move\-Player@{move\-Player}!Player.h@{Player.\-h}}
+\subsubsection[{move\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void move\-Player (
+\begin{DoxyParamCaption}
+\item[{{\bf Keys} $\ast$}]{keys, }
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_af51b4b7de9dcf8f526159656e72e82fc}
+
+
+Definition at line 328 of file Player.\-c.
+
+\hypertarget{_player_8h_a810a1e280c408e9d2e761d7a636650c2}{\index{Player.\-h@{Player.\-h}!Processa\-Movimento\-Baixo@{Processa\-Movimento\-Baixo}}
+\index{Processa\-Movimento\-Baixo@{Processa\-Movimento\-Baixo}!Player.h@{Player.\-h}}
+\subsubsection[{Processa\-Movimento\-Baixo}]{\setlength{\rightskip}{0pt plus 5cm}void Processa\-Movimento\-Baixo (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a810a1e280c408e9d2e761d7a636650c2}
+
+
+Definition at line 165 of file Player.\-c.
+
+\hypertarget{_player_8h_a7818fabe65ca3cd1f93b2e11ed5576bd}{\index{Player.\-h@{Player.\-h}!Processa\-Movimento\-Cima@{Processa\-Movimento\-Cima}}
+\index{Processa\-Movimento\-Cima@{Processa\-Movimento\-Cima}!Player.h@{Player.\-h}}
+\subsubsection[{Processa\-Movimento\-Cima}]{\setlength{\rightskip}{0pt plus 5cm}void Processa\-Movimento\-Cima (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a7818fabe65ca3cd1f93b2e11ed5576bd}
+
+
+Definition at line 148 of file Player.\-c.
+
+\hypertarget{_player_8h_a1b71ad189b39bc524eac86eff40a97d3}{\index{Player.\-h@{Player.\-h}!Processa\-Movimento\-Direita@{Processa\-Movimento\-Direita}}
+\index{Processa\-Movimento\-Direita@{Processa\-Movimento\-Direita}!Player.h@{Player.\-h}}
+\subsubsection[{Processa\-Movimento\-Direita}]{\setlength{\rightskip}{0pt plus 5cm}void Processa\-Movimento\-Direita (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a1b71ad189b39bc524eac86eff40a97d3}
+
+
+Definition at line 131 of file Player.\-c.
+
+\hypertarget{_player_8h_af62044bbdac8a8cc979c1c985599d631}{\index{Player.\-h@{Player.\-h}!Processa\-Movimento\-Esquerda@{Processa\-Movimento\-Esquerda}}
+\index{Processa\-Movimento\-Esquerda@{Processa\-Movimento\-Esquerda}!Player.h@{Player.\-h}}
+\subsubsection[{Processa\-Movimento\-Esquerda}]{\setlength{\rightskip}{0pt plus 5cm}void Processa\-Movimento\-Esquerda (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_af62044bbdac8a8cc979c1c985599d631}
+
+
+Definition at line 114 of file Player.\-c.
+
+\hypertarget{_player_8h_ad13f1eb062d1c3e46fd77ec9876435b4}{\index{Player.\-h@{Player.\-h}!set\-Keys@{set\-Keys}}
+\index{set\-Keys@{set\-Keys}!Player.h@{Player.\-h}}
+\subsubsection[{set\-Keys}]{\setlength{\rightskip}{0pt plus 5cm}void set\-Keys (
+\begin{DoxyParamCaption}
+\item[{{\bf Keys} $\ast$}]{keys, }
+\item[{{\bf Player} $\ast$}]{player, }
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T $\ast$}]{ev}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_ad13f1eb062d1c3e46fd77ec9876435b4}
+
+
+Definition at line 272 of file Player.\-c.
+
+\hypertarget{_player_8h_a6ad1ab4868fdc43ed05c6d6fc66aec1e}{\index{Player.\-h@{Player.\-h}!Valida\-Movimento@{Valida\-Movimento}}
+\index{Valida\-Movimento@{Valida\-Movimento}!Player.h@{Player.\-h}}
+\subsubsection[{Valida\-Movimento}]{\setlength{\rightskip}{0pt plus 5cm}void Valida\-Movimento (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_a6ad1ab4868fdc43ed05c6d6fc66aec1e}
+
+
+Definition at line 239 of file Player.\-c.
+
+\hypertarget{_player_8h_aa798da9e0678f7b5192116e4fc84bdb2}{\index{Player.\-h@{Player.\-h}!Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P@{Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P}}
+\index{Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P@{Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P}!Player.h@{Player.\-h}}
+\subsubsection[{Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P}]{\setlength{\rightskip}{0pt plus 5cm}void Valida\-Movimento\-\_\-\-C\-K\-\_\-\-U\-P (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{_player_8h_aa798da9e0678f7b5192116e4fc84bdb2}
+
+
+Definition at line 182 of file Player.\-c.
+

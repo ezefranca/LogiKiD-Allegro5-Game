@@ -1,0 +1,16 @@
+digraph "J:/SENAC/LogiKid/make/src/config.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="J:/SENAC/LogiKid/make\l/src/config.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="J:/SENAC/LogiKid/make\l/src/config.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$config_8c.html"];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="J:/SENAC/LogiKid/make\l/src/gameloop.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$gameloop_8c.html"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="J:/SENAC/LogiKid/make\l/src/init.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$init_8c.html"];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="J:/SENAC/LogiKid/make\l/src/selecaomenu.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$selecaomenu_8c.html"];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="J:/SENAC/LogiKid/make\l/src/StartMenu.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_start_menu_8c.html"];
+}

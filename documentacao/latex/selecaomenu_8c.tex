@@ -1,0 +1,98 @@
+\hypertarget{selecaomenu_8c}{\section{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/selecaomenu.c File Reference}
+\label{selecaomenu_8c}\index{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/selecaomenu.\-c@{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/selecaomenu.\-c}}
+}
+{\ttfamily \#include \char`\"{}Player.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}comum.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pontuacao.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Start\-Menu.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gameloop.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}selecaomenu.\-h\char`\"{}}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+Include dependency graph for selecaomenu.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{selecaomenu_8c_afac8c0f6ffc2959890f33c72a25592d6}{menu\-Selecaox} ()
+\item 
+void \hyperlink{selecaomenu_8c_af65265c1d74522bdb9eecbaaca9e04c1}{mk\-\_\-right} (\hyperlink{structlg_images}{lg\-Images} $\ast$lg\-Dados)
+\item 
+void \hyperlink{selecaomenu_8c_a29b92782466fafb6ff157f8630885577}{mk\-\_\-left} (\hyperlink{structlg_images}{lg\-Images} $\ast$lg\-Dados)
+\item 
+void \hyperlink{selecaomenu_8c_aa61eadcaaa21486471ddda969e739725}{Draw\-Images} (\hyperlink{structlg_images}{lg\-Images} $\ast$lg\-Dados)
+\item 
+\hyperlink{selecaomenu_8h_a399c9f65e07df2315a38c7dba18270d3}{Personagem} \hyperlink{selecaomenu_8c_a5f80722046e22e77639e2f9294610115}{Get\-Personagem} (\hyperlink{structlg_images}{lg\-Images} $\ast$lg\-Dados, \hyperlink{struct_player}{Player} $\ast$player)
+\item 
+\hyperlink{selecaomenu_8h_a399c9f65e07df2315a38c7dba18270d3}{Personagem} \hyperlink{selecaomenu_8c_a16fe83ad6b2db7cb49a389fc80740b49}{Menu\-Load\-Person} (A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T $\ast$ev, \hyperlink{struct_player}{Player} $\ast$player)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{selecaomenu_8c_aa61eadcaaa21486471ddda969e739725}{\index{selecaomenu.\-c@{selecaomenu.\-c}!Draw\-Images@{Draw\-Images}}
+\index{Draw\-Images@{Draw\-Images}!selecaomenu.c@{selecaomenu.\-c}}
+\subsubsection[{Draw\-Images}]{\setlength{\rightskip}{0pt plus 5cm}void Draw\-Images (
+\begin{DoxyParamCaption}
+\item[{{\bf lg\-Images} $\ast$}]{lg\-Dados}
+\end{DoxyParamCaption}
+)}}\label{selecaomenu_8c_aa61eadcaaa21486471ddda969e739725}
+
+
+Definition at line 47 of file selecaomenu.\-c.
+
+\hypertarget{selecaomenu_8c_a5f80722046e22e77639e2f9294610115}{\index{selecaomenu.\-c@{selecaomenu.\-c}!Get\-Personagem@{Get\-Personagem}}
+\index{Get\-Personagem@{Get\-Personagem}!selecaomenu.c@{selecaomenu.\-c}}
+\subsubsection[{Get\-Personagem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personagem} Get\-Personagem (
+\begin{DoxyParamCaption}
+\item[{{\bf lg\-Images} $\ast$}]{lg\-Dados, }
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{selecaomenu_8c_a5f80722046e22e77639e2f9294610115}
+
+
+Definition at line 69 of file selecaomenu.\-c.
+
+\hypertarget{selecaomenu_8c_a16fe83ad6b2db7cb49a389fc80740b49}{\index{selecaomenu.\-c@{selecaomenu.\-c}!Menu\-Load\-Person@{Menu\-Load\-Person}}
+\index{Menu\-Load\-Person@{Menu\-Load\-Person}!selecaomenu.c@{selecaomenu.\-c}}
+\subsubsection[{Menu\-Load\-Person}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Personagem} Menu\-Load\-Person (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T $\ast$}]{ev, }
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{selecaomenu_8c_a16fe83ad6b2db7cb49a389fc80740b49}
+
+
+Definition at line 99 of file selecaomenu.\-c.
+
+\hypertarget{selecaomenu_8c_afac8c0f6ffc2959890f33c72a25592d6}{\index{selecaomenu.\-c@{selecaomenu.\-c}!menu\-Selecaox@{menu\-Selecaox}}
+\index{menu\-Selecaox@{menu\-Selecaox}!selecaomenu.c@{selecaomenu.\-c}}
+\subsubsection[{menu\-Selecaox}]{\setlength{\rightskip}{0pt plus 5cm}void menu\-Selecaox (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{selecaomenu_8c_afac8c0f6ffc2959890f33c72a25592d6}
+
+
+Definition at line 13 of file selecaomenu.\-c.
+
+\hypertarget{selecaomenu_8c_a29b92782466fafb6ff157f8630885577}{\index{selecaomenu.\-c@{selecaomenu.\-c}!mk\-\_\-left@{mk\-\_\-left}}
+\index{mk\-\_\-left@{mk\-\_\-left}!selecaomenu.c@{selecaomenu.\-c}}
+\subsubsection[{mk\-\_\-left}]{\setlength{\rightskip}{0pt plus 5cm}void mk\-\_\-left (
+\begin{DoxyParamCaption}
+\item[{{\bf lg\-Images} $\ast$}]{lg\-Dados}
+\end{DoxyParamCaption}
+)}}\label{selecaomenu_8c_a29b92782466fafb6ff157f8630885577}
+
+
+Definition at line 33 of file selecaomenu.\-c.
+
+\hypertarget{selecaomenu_8c_af65265c1d74522bdb9eecbaaca9e04c1}{\index{selecaomenu.\-c@{selecaomenu.\-c}!mk\-\_\-right@{mk\-\_\-right}}
+\index{mk\-\_\-right@{mk\-\_\-right}!selecaomenu.c@{selecaomenu.\-c}}
+\subsubsection[{mk\-\_\-right}]{\setlength{\rightskip}{0pt plus 5cm}void mk\-\_\-right (
+\begin{DoxyParamCaption}
+\item[{{\bf lg\-Images} $\ast$}]{lg\-Dados}
+\end{DoxyParamCaption}
+)}}\label{selecaomenu_8c_af65265c1d74522bdb9eecbaaca9e04c1}
+
+
+Definition at line 23 of file selecaomenu.\-c.
+

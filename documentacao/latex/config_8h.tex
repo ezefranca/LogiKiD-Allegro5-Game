@@ -1,0 +1,329 @@
+\hypertarget{config_8h}{\section{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/config.h File Reference}
+\label{config_8h}\index{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/config.\-h@{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/config.\-h}}
+}
+{\ttfamily \#include $<$stdlib.\-h$>$}\\*
+{\ttfamily \#include $<$stdio.\-h$>$}\\*
+{\ttfamily \#include $<$string.\-h$>$}\\*
+{\ttfamily \#include \char`\"{}comum.\-h\char`\"{}}\\*
+Include dependency graph for config.\-h\-:
+This graph shows which files directly or indirectly include this file\-:
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct__elemento}{\-\_\-elemento}
+\item 
+struct \hyperlink{structconfig}{config}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{config_8h_a76ea3cf49247a07c54b3db005a3c7f57}{C\-O\-N\-F\-I\-G}~0
+\item 
+\#define \hyperlink{config_8h_a4ae8a18fb285f49887ca0900e0d5e451}{I\-D\-I\-O\-M\-A}~1
+\item 
+\#define \hyperlink{config_8h_af88cc73c5b382cdefba01f24d18d8068}{C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R}~2
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{struct__elemento}{\-\_\-elemento} \hyperlink{config_8h_a264461903d572c81f91bd5c50c7c4859}{elemento}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{config_8h_a28e2dd6662d26f2b55192c71487435c8}{imprime\-\_\-config} (\hyperlink{structconfig}{config} $\ast$l, F\-I\-L\-E $\ast$file)
+\item 
+bool \hyperlink{config_8h_adddd30d9fb270abe3cd1c5de7b020d22}{load\-\_\-configuracao} (char $\ast$config\-\_\-file)
+\item 
+bool \hyperlink{config_8h_a23f3a311568913b589a7840f1c357abd}{load\-\_\-idioma} (char $\ast$config\-\_\-file)
+\item 
+char $\ast$ \hyperlink{config_8h_ad8584a6fe5391bc70138894bcbc7c470}{get\-\_\-configuracao} (char $\ast$var)
+\item 
+char $\ast$ \hyperlink{config_8h_a893915c7ec2f6118ca5e266dd8f5b171}{get\-\_\-idioma} (char $\ast$var)
+\item 
+void \hyperlink{config_8h_a80068d274b6b4895d9c372047e1be582}{limpa\-\_\-config} ()
+\item 
+void \hyperlink{config_8h_afcb7ec818def073f55b2cdc1e763c5e7}{limpa\-\_\-idioma} ()
+\item 
+void \hyperlink{config_8h_a82daf351e3d4197216422467315a72d6}{apaga\-\_\-configuracao} (char $\ast$var)
+\item 
+void \hyperlink{config_8h_a09adde92c454f9d6214e623f6faebb2f}{apaga\-\_\-idioma} (char $\ast$var)
+\item 
+void \hyperlink{config_8h_a93100f3e47b7a83cfb2490b5e11dff1b}{imprime\-\_\-idioma} ()
+\item 
+void \hyperlink{config_8h_a4f65ca9a9d97a1441d2ccb99ce6368f5}{imprime\-\_\-configuracao} ()
+\item 
+char $\ast$ \hyperlink{config_8h_a5620adf6ff9afe27dabecadea6d84a98}{get\-\_\-config\-\_\-user} (char $\ast$var)
+\item 
+void \hyperlink{config_8h_a0da788c93a0a5be4022e0b39f0e0b999}{imprime\-\_\-config\-\_\-user} ()
+\item 
+void \hyperlink{config_8h_a14766b6122857f4bcbe43df71ae561ef}{apaga\-\_\-config\-\_\-user} (char $\ast$var)
+\item 
+void \hyperlink{config_8h_a7ebcbc3406c486456f324aa411c232d3}{adiciona\-\_\-config\-\_\-user} (char $\ast$string, char $\ast$var)
+\item 
+void \hyperlink{config_8h_a35f5c5e6fb3bceb74f6cc73a13df4689}{update\-\_\-config\-\_\-user} (char $\ast$string, char $\ast$var)
+\item 
+void \hyperlink{config_8h_a758c39508548090832a0a4da65d55ea1}{limpa\-\_\-config\-\_\-user} ()
+\item 
+bool \hyperlink{config_8h_ae7617a089e9dc970b6758af48de8647d}{create\-\_\-config\-\_\-user} (char $\ast$config\-\_\-file)
+\item 
+bool \hyperlink{config_8h_a14a089918d8dce9d73c38492bbc48e66}{load\-\_\-config\-\_\-user} (char $\ast$config\-\_\-file)
+\item 
+bool \hyperlink{config_8h_a607ad022133215ad7b6d87812b6ae79e}{salva\-\_\-config\-\_\-user} (char $\ast$config\-\_\-file)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\hypertarget{config_8h_a76ea3cf49247a07c54b3db005a3c7f57}{\index{config.\-h@{config.\-h}!C\-O\-N\-F\-I\-G@{C\-O\-N\-F\-I\-G}}
+\index{C\-O\-N\-F\-I\-G@{C\-O\-N\-F\-I\-G}!config.h@{config.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G~0}}\label{config_8h_a76ea3cf49247a07c54b3db005a3c7f57}
+
+
+Definition at line 14 of file config.\-h.
+
+\hypertarget{config_8h_af88cc73c5b382cdefba01f24d18d8068}{\index{config.\-h@{config.\-h}!C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R@{C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R}}
+\index{C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R@{C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R}!config.h@{config.\-h}}
+\subsubsection[{C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R}]{\setlength{\rightskip}{0pt plus 5cm}\#define C\-O\-N\-F\-I\-G\-\_\-\-U\-S\-E\-R~2}}\label{config_8h_af88cc73c5b382cdefba01f24d18d8068}
+
+
+Definition at line 16 of file config.\-h.
+
+\hypertarget{config_8h_a4ae8a18fb285f49887ca0900e0d5e451}{\index{config.\-h@{config.\-h}!I\-D\-I\-O\-M\-A@{I\-D\-I\-O\-M\-A}}
+\index{I\-D\-I\-O\-M\-A@{I\-D\-I\-O\-M\-A}!config.h@{config.\-h}}
+\subsubsection[{I\-D\-I\-O\-M\-A}]{\setlength{\rightskip}{0pt plus 5cm}\#define I\-D\-I\-O\-M\-A~1}}\label{config_8h_a4ae8a18fb285f49887ca0900e0d5e451}
+
+
+Definition at line 15 of file config.\-h.
+
+
+
+\subsection{Typedef Documentation}
+\hypertarget{config_8h_a264461903d572c81f91bd5c50c7c4859}{\index{config.\-h@{config.\-h}!elemento@{elemento}}
+\index{elemento@{elemento}!config.h@{config.\-h}}
+\subsubsection[{elemento}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf \-\_\-elemento}  {\bf elemento}}}\label{config_8h_a264461903d572c81f91bd5c50c7c4859}
+
+
+\subsection{Function Documentation}
+\hypertarget{config_8h_a7ebcbc3406c486456f324aa411c232d3}{\index{config.\-h@{config.\-h}!adiciona\-\_\-config\-\_\-user@{adiciona\-\_\-config\-\_\-user}}
+\index{adiciona\-\_\-config\-\_\-user@{adiciona\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{adiciona\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void adiciona\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a7ebcbc3406c486456f324aa411c232d3}
+
+
+Definition at line 309 of file config.\-c.
+
+\hypertarget{config_8h_a14766b6122857f4bcbe43df71ae561ef}{\index{config.\-h@{config.\-h}!apaga\-\_\-config\-\_\-user@{apaga\-\_\-config\-\_\-user}}
+\index{apaga\-\_\-config\-\_\-user@{apaga\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{apaga\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void apaga\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a14766b6122857f4bcbe43df71ae561ef}
+
+
+Definition at line 305 of file config.\-c.
+
+\hypertarget{config_8h_a82daf351e3d4197216422467315a72d6}{\index{config.\-h@{config.\-h}!apaga\-\_\-configuracao@{apaga\-\_\-configuracao}}
+\index{apaga\-\_\-configuracao@{apaga\-\_\-configuracao}!config.h@{config.\-h}}
+\subsubsection[{apaga\-\_\-configuracao}]{\setlength{\rightskip}{0pt plus 5cm}void apaga\-\_\-configuracao (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a82daf351e3d4197216422467315a72d6}
+
+
+Definition at line 282 of file config.\-c.
+
+\hypertarget{config_8h_a09adde92c454f9d6214e623f6faebb2f}{\index{config.\-h@{config.\-h}!apaga\-\_\-idioma@{apaga\-\_\-idioma}}
+\index{apaga\-\_\-idioma@{apaga\-\_\-idioma}!config.h@{config.\-h}}
+\subsubsection[{apaga\-\_\-idioma}]{\setlength{\rightskip}{0pt plus 5cm}void apaga\-\_\-idioma (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a09adde92c454f9d6214e623f6faebb2f}
+
+
+Definition at line 278 of file config.\-c.
+
+\hypertarget{config_8h_ae7617a089e9dc970b6758af48de8647d}{\index{config.\-h@{config.\-h}!create\-\_\-config\-\_\-user@{create\-\_\-config\-\_\-user}}
+\index{create\-\_\-config\-\_\-user@{create\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{create\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}bool create\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{config\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{config_8h_ae7617a089e9dc970b6758af48de8647d}
+
+
+Definition at line 341 of file config.\-c.
+
+\hypertarget{config_8h_a5620adf6ff9afe27dabecadea6d84a98}{\index{config.\-h@{config.\-h}!get\-\_\-config\-\_\-user@{get\-\_\-config\-\_\-user}}
+\index{get\-\_\-config\-\_\-user@{get\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{get\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a5620adf6ff9afe27dabecadea6d84a98}
+
+
+Definition at line 294 of file config.\-c.
+
+\hypertarget{config_8h_ad8584a6fe5391bc70138894bcbc7c470}{\index{config.\-h@{config.\-h}!get\-\_\-configuracao@{get\-\_\-configuracao}}
+\index{get\-\_\-configuracao@{get\-\_\-configuracao}!config.h@{config.\-h}}
+\subsubsection[{get\-\_\-configuracao}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-configuracao (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_ad8584a6fe5391bc70138894bcbc7c470}
+
+
+Definition at line 256 of file config.\-c.
+
+\hypertarget{config_8h_a893915c7ec2f6118ca5e266dd8f5b171}{\index{config.\-h@{config.\-h}!get\-\_\-idioma@{get\-\_\-idioma}}
+\index{get\-\_\-idioma@{get\-\_\-idioma}!config.h@{config.\-h}}
+\subsubsection[{get\-\_\-idioma}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ get\-\_\-idioma (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a893915c7ec2f6118ca5e266dd8f5b171}
+
+
+Definition at line 263 of file config.\-c.
+
+\hypertarget{config_8h_a28e2dd6662d26f2b55192c71487435c8}{\index{config.\-h@{config.\-h}!imprime\-\_\-config@{imprime\-\_\-config}}
+\index{imprime\-\_\-config@{imprime\-\_\-config}!config.h@{config.\-h}}
+\subsubsection[{imprime\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void imprime\-\_\-config (
+\begin{DoxyParamCaption}
+\item[{{\bf config} $\ast$}]{l, }
+\item[{F\-I\-L\-E $\ast$}]{file}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a28e2dd6662d26f2b55192c71487435c8}
+
+
+Definition at line 115 of file config.\-c.
+
+\hypertarget{config_8h_a0da788c93a0a5be4022e0b39f0e0b999}{\index{config.\-h@{config.\-h}!imprime\-\_\-config\-\_\-user@{imprime\-\_\-config\-\_\-user}}
+\index{imprime\-\_\-config\-\_\-user@{imprime\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{imprime\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void imprime\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a0da788c93a0a5be4022e0b39f0e0b999}
+
+
+Definition at line 301 of file config.\-c.
+
+\hypertarget{config_8h_a4f65ca9a9d97a1441d2ccb99ce6368f5}{\index{config.\-h@{config.\-h}!imprime\-\_\-configuracao@{imprime\-\_\-configuracao}}
+\index{imprime\-\_\-configuracao@{imprime\-\_\-configuracao}!config.h@{config.\-h}}
+\subsubsection[{imprime\-\_\-configuracao}]{\setlength{\rightskip}{0pt plus 5cm}void imprime\-\_\-configuracao (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a4f65ca9a9d97a1441d2ccb99ce6368f5}
+
+
+Definition at line 290 of file config.\-c.
+
+\hypertarget{config_8h_a93100f3e47b7a83cfb2490b5e11dff1b}{\index{config.\-h@{config.\-h}!imprime\-\_\-idioma@{imprime\-\_\-idioma}}
+\index{imprime\-\_\-idioma@{imprime\-\_\-idioma}!config.h@{config.\-h}}
+\subsubsection[{imprime\-\_\-idioma}]{\setlength{\rightskip}{0pt plus 5cm}void imprime\-\_\-idioma (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a93100f3e47b7a83cfb2490b5e11dff1b}
+
+
+Definition at line 286 of file config.\-c.
+
+\hypertarget{config_8h_a80068d274b6b4895d9c372047e1be582}{\index{config.\-h@{config.\-h}!limpa\-\_\-config@{limpa\-\_\-config}}
+\index{limpa\-\_\-config@{limpa\-\_\-config}!config.h@{config.\-h}}
+\subsubsection[{limpa\-\_\-config}]{\setlength{\rightskip}{0pt plus 5cm}void limpa\-\_\-config (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a80068d274b6b4895d9c372047e1be582}
+
+
+Definition at line 270 of file config.\-c.
+
+\hypertarget{config_8h_a758c39508548090832a0a4da65d55ea1}{\index{config.\-h@{config.\-h}!limpa\-\_\-config\-\_\-user@{limpa\-\_\-config\-\_\-user}}
+\index{limpa\-\_\-config\-\_\-user@{limpa\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{limpa\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void limpa\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a758c39508548090832a0a4da65d55ea1}
+
+
+Definition at line 318 of file config.\-c.
+
+\hypertarget{config_8h_afcb7ec818def073f55b2cdc1e763c5e7}{\index{config.\-h@{config.\-h}!limpa\-\_\-idioma@{limpa\-\_\-idioma}}
+\index{limpa\-\_\-idioma@{limpa\-\_\-idioma}!config.h@{config.\-h}}
+\subsubsection[{limpa\-\_\-idioma}]{\setlength{\rightskip}{0pt plus 5cm}void limpa\-\_\-idioma (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{config_8h_afcb7ec818def073f55b2cdc1e763c5e7}
+
+
+Definition at line 274 of file config.\-c.
+
+\hypertarget{config_8h_a14a089918d8dce9d73c38492bbc48e66}{\index{config.\-h@{config.\-h}!load\-\_\-config\-\_\-user@{load\-\_\-config\-\_\-user}}
+\index{load\-\_\-config\-\_\-user@{load\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{load\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}bool load\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{config\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a14a089918d8dce9d73c38492bbc48e66}
+
+
+Definition at line 368 of file config.\-c.
+
+\hypertarget{config_8h_adddd30d9fb270abe3cd1c5de7b020d22}{\index{config.\-h@{config.\-h}!load\-\_\-configuracao@{load\-\_\-configuracao}}
+\index{load\-\_\-configuracao@{load\-\_\-configuracao}!config.h@{config.\-h}}
+\subsubsection[{load\-\_\-configuracao}]{\setlength{\rightskip}{0pt plus 5cm}bool load\-\_\-configuracao (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{config\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{config_8h_adddd30d9fb270abe3cd1c5de7b020d22}
+
+
+Definition at line 242 of file config.\-c.
+
+\hypertarget{config_8h_a23f3a311568913b589a7840f1c357abd}{\index{config.\-h@{config.\-h}!load\-\_\-idioma@{load\-\_\-idioma}}
+\index{load\-\_\-idioma@{load\-\_\-idioma}!config.h@{config.\-h}}
+\subsubsection[{load\-\_\-idioma}]{\setlength{\rightskip}{0pt plus 5cm}bool load\-\_\-idioma (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{config\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a23f3a311568913b589a7840f1c357abd}
+
+
+Definition at line 249 of file config.\-c.
+
+\hypertarget{config_8h_a607ad022133215ad7b6d87812b6ae79e}{\index{config.\-h@{config.\-h}!salva\-\_\-config\-\_\-user@{salva\-\_\-config\-\_\-user}}
+\index{salva\-\_\-config\-\_\-user@{salva\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{salva\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}bool salva\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{config\-\_\-file}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a607ad022133215ad7b6d87812b6ae79e}
+
+
+Definition at line 333 of file config.\-c.
+
+\hypertarget{config_8h_a35f5c5e6fb3bceb74f6cc73a13df4689}{\index{config.\-h@{config.\-h}!update\-\_\-config\-\_\-user@{update\-\_\-config\-\_\-user}}
+\index{update\-\_\-config\-\_\-user@{update\-\_\-config\-\_\-user}!config.h@{config.\-h}}
+\subsubsection[{update\-\_\-config\-\_\-user}]{\setlength{\rightskip}{0pt plus 5cm}void update\-\_\-config\-\_\-user (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{string, }
+\item[{char $\ast$}]{var}
+\end{DoxyParamCaption}
+)}}\label{config_8h_a35f5c5e6fb3bceb74f6cc73a13df4689}
+
+
+Definition at line 313 of file config.\-c.
+

@@ -1,0 +1,168 @@
+\hypertarget{gameloop_8c}{\section{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/gameloop.c File Reference}
+\label{gameloop_8c}\index{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/gameloop.\-c@{J\-:/\-S\-E\-N\-A\-C/\-Logi\-Kid/make/src/gameloop.\-c}}
+}
+{\ttfamily \#include \char`\"{}gameloop.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}comum.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Player.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Itens\-Menu.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}text\-Box.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}pontuacao.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}config.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}selecaomenu.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../src/\-Fases/\-Fase0/fase0.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../src/\-Fases/\-Fase1/fase1.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../src/\-Fases/\-Fase2/fase2.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../src/\-Fases/\-Fase3/fase3.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../src/\-Fases/\-Fase4/fase4.\-h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../src/\-Fases/\-Fase5/fase5.\-h\char`\"{}}\\*
+Include dependency graph for gameloop.\-c\-:
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-B\-I\-T\-M\-A\-P $\ast$ \hyperlink{gameloop_8c_a256aa8e96e3b5d39f20d74ed1593776c}{Set\-Back\-Ground\-Image} (const char $\ast$bk\-\_\-path)
+\item 
+bool \hyperlink{gameloop_8c_a2fb704491ec4d354978249e60a96345d}{is\-Colliding} (int box\-Pos\-X, int box\-Pos\-Y, int box\-Width, int box\-Height, \hyperlink{struct_player}{Player} $\ast$player)
+\item 
+bool \hyperlink{gameloop_8c_a41ba9d0f6ff15efa1531e22e9ffb07cd}{is\-Colliding\-Global} (\hyperlink{struct_player}{Player} $\ast$player, int level)
+\item 
+void \hyperlink{gameloop_8c_a6adbada83daf4391bcaffece533a48f4}{music\-Player} (int mute)
+\item 
+void \hyperlink{gameloop_8c_a059a937dbd4fad6a8a6cf6ae8d4b40aa}{Game\-Loop} (A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T ev)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-S\-A\-M\-P\-L\-E $\ast$ \hyperlink{gameloop_8c_a4ec079c332833aa0e205b5ddddcc6313}{launch\-\_\-song}
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-S\-A\-M\-P\-L\-E $\ast$ \hyperlink{gameloop_8c_a4dcf1d520a72dbb423d1410f2a11614c}{synth\-\_\-song}
+\item 
+int \hyperlink{gameloop_8c_acb559820d9ca11295b4500f179ef6392}{i}
+\item 
+bool \hyperlink{gameloop_8c_a655e72df92f7146bfd715775c02bee47}{is\-Destroyed} = false
+\item 
+bool \hyperlink{gameloop_8c_a2521de19582330d79e99fbd255d797ba}{redraw} = false
+\item 
+bool \hyperlink{gameloop_8c_af6b1fef28954e41d75acf35f76bc8d39}{complete} = false
+\item 
+A\-L\-L\-E\-G\-R\-O\-\_\-\-B\-I\-T\-M\-A\-P $\ast$ \hyperlink{gameloop_8c_a732bc5999041b57ceadf1007b703ee0f}{text\-Box}
+\item 
+bool \hyperlink{gameloop_8c_afb0e75f46f14681faae0ec776831783e}{inputs} \mbox{[}8\mbox{]} = \{false, false, false, false, false, false, false, false\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{gameloop_8c_a059a937dbd4fad6a8a6cf6ae8d4b40aa}{\index{gameloop.\-c@{gameloop.\-c}!Game\-Loop@{Game\-Loop}}
+\index{Game\-Loop@{Game\-Loop}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{Game\-Loop}]{\setlength{\rightskip}{0pt plus 5cm}void Game\-Loop (
+\begin{DoxyParamCaption}
+\item[{A\-L\-L\-E\-G\-R\-O\-\_\-\-E\-V\-E\-N\-T}]{ev}
+\end{DoxyParamCaption}
+)}}\label{gameloop_8c_a059a937dbd4fad6a8a6cf6ae8d4b40aa}
+
+
+Definition at line 31 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a2fb704491ec4d354978249e60a96345d}{\index{gameloop.\-c@{gameloop.\-c}!is\-Colliding@{is\-Colliding}}
+\index{is\-Colliding@{is\-Colliding}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{is\-Colliding}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Colliding (
+\begin{DoxyParamCaption}
+\item[{int}]{box\-Pos\-X, }
+\item[{int}]{box\-Pos\-Y, }
+\item[{int}]{box\-Width, }
+\item[{int}]{box\-Height, }
+\item[{{\bf Player} $\ast$}]{player}
+\end{DoxyParamCaption}
+)}}\label{gameloop_8c_a2fb704491ec4d354978249e60a96345d}
+
+
+Definition at line 374 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a41ba9d0f6ff15efa1531e22e9ffb07cd}{\index{gameloop.\-c@{gameloop.\-c}!is\-Colliding\-Global@{is\-Colliding\-Global}}
+\index{is\-Colliding\-Global@{is\-Colliding\-Global}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{is\-Colliding\-Global}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Colliding\-Global (
+\begin{DoxyParamCaption}
+\item[{{\bf Player} $\ast$}]{player, }
+\item[{int}]{level}
+\end{DoxyParamCaption}
+)}}\label{gameloop_8c_a41ba9d0f6ff15efa1531e22e9ffb07cd}
+
+
+Definition at line 393 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a6adbada83daf4391bcaffece533a48f4}{\index{gameloop.\-c@{gameloop.\-c}!music\-Player@{music\-Player}}
+\index{music\-Player@{music\-Player}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{music\-Player}]{\setlength{\rightskip}{0pt plus 5cm}void music\-Player (
+\begin{DoxyParamCaption}
+\item[{int}]{mute}
+\end{DoxyParamCaption}
+)}}\label{gameloop_8c_a6adbada83daf4391bcaffece533a48f4}
+
+
+Definition at line 430 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a256aa8e96e3b5d39f20d74ed1593776c}{\index{gameloop.\-c@{gameloop.\-c}!Set\-Back\-Ground\-Image@{Set\-Back\-Ground\-Image}}
+\index{Set\-Back\-Ground\-Image@{Set\-Back\-Ground\-Image}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{Set\-Back\-Ground\-Image}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-B\-I\-T\-M\-A\-P$\ast$ Set\-Back\-Ground\-Image (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{bk\-\_\-path}
+\end{DoxyParamCaption}
+)}}\label{gameloop_8c_a256aa8e96e3b5d39f20d74ed1593776c}
+
+
+\subsection{Variable Documentation}
+\hypertarget{gameloop_8c_af6b1fef28954e41d75acf35f76bc8d39}{\index{gameloop.\-c@{gameloop.\-c}!complete@{complete}}
+\index{complete@{complete}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{complete}]{\setlength{\rightskip}{0pt plus 5cm}bool complete = false}}\label{gameloop_8c_af6b1fef28954e41d75acf35f76bc8d39}
+
+
+Definition at line 27 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_acb559820d9ca11295b4500f179ef6392}{\index{gameloop.\-c@{gameloop.\-c}!i@{i}}
+\index{i@{i}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{i}]{\setlength{\rightskip}{0pt plus 5cm}int i}}\label{gameloop_8c_acb559820d9ca11295b4500f179ef6392}
+
+
+Definition at line 23 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_afb0e75f46f14681faae0ec776831783e}{\index{gameloop.\-c@{gameloop.\-c}!inputs@{inputs}}
+\index{inputs@{inputs}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{inputs}]{\setlength{\rightskip}{0pt plus 5cm}bool inputs\mbox{[}8\mbox{]} = \{false, false, false, false, false, false, false, false\}}}\label{gameloop_8c_afb0e75f46f14681faae0ec776831783e}
+
+
+Definition at line 29 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a655e72df92f7146bfd715775c02bee47}{\index{gameloop.\-c@{gameloop.\-c}!is\-Destroyed@{is\-Destroyed}}
+\index{is\-Destroyed@{is\-Destroyed}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{is\-Destroyed}]{\setlength{\rightskip}{0pt plus 5cm}bool is\-Destroyed = false}}\label{gameloop_8c_a655e72df92f7146bfd715775c02bee47}
+
+
+Definition at line 25 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a4ec079c332833aa0e205b5ddddcc6313}{\index{gameloop.\-c@{gameloop.\-c}!launch\-\_\-song@{launch\-\_\-song}}
+\index{launch\-\_\-song@{launch\-\_\-song}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{launch\-\_\-song}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-S\-A\-M\-P\-L\-E$\ast$ launch\-\_\-song}}\label{gameloop_8c_a4ec079c332833aa0e205b5ddddcc6313}
+
+
+Definition at line 20 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a2521de19582330d79e99fbd255d797ba}{\index{gameloop.\-c@{gameloop.\-c}!redraw@{redraw}}
+\index{redraw@{redraw}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{redraw}]{\setlength{\rightskip}{0pt plus 5cm}bool redraw = false}}\label{gameloop_8c_a2521de19582330d79e99fbd255d797ba}
+
+
+Definition at line 26 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a4dcf1d520a72dbb423d1410f2a11614c}{\index{gameloop.\-c@{gameloop.\-c}!synth\-\_\-song@{synth\-\_\-song}}
+\index{synth\-\_\-song@{synth\-\_\-song}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{synth\-\_\-song}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-S\-A\-M\-P\-L\-E$\ast$ synth\-\_\-song}}\label{gameloop_8c_a4dcf1d520a72dbb423d1410f2a11614c}
+
+
+Definition at line 21 of file gameloop.\-c.
+
+\hypertarget{gameloop_8c_a732bc5999041b57ceadf1007b703ee0f}{\index{gameloop.\-c@{gameloop.\-c}!text\-Box@{text\-Box}}
+\index{text\-Box@{text\-Box}!gameloop.c@{gameloop.\-c}}
+\subsubsection[{text\-Box}]{\setlength{\rightskip}{0pt plus 5cm}A\-L\-L\-E\-G\-R\-O\-\_\-\-B\-I\-T\-M\-A\-P$\ast$ text\-Box}}\label{gameloop_8c_a732bc5999041b57ceadf1007b703ee0f}
+
+
+Definition at line 28 of file gameloop.\-c.
+
