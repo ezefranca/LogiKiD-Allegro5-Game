@@ -4,9 +4,8 @@
 #include "../../src/pontuacao.h"
 #include "StartMenu.h"
 #include "../../src/gameloop.h"
-#include "selecaomenu.h"
 #include <string.h>
-
+#include "Selecao.h"
 
 
 
