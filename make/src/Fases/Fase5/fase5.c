@@ -92,6 +92,8 @@ void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, boo
 	{
 		levelCinco->isOn[3] = false;
 	}
+	if(-1)
+		*complete = true;
 }
 
 void initDrawGatesLevelCinco(LevelCinco *levelCinco){

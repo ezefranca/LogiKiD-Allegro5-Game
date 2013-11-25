@@ -168,11 +168,8 @@ int conta_until(FILE *entrada, char until) {
             case CONFIG_USER:
             aloca(&arquivo_config_user);
             break;
-<<<<<<< HEAD
+
             default:
-=======
-        default:
->>>>>>> 70cc5e6336c0cff54478cca21347d855ed040708
             fprintf(stderr, "Tipo incorreto de configuração\n");
             return false;
         }

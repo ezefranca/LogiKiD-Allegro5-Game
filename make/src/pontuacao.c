@@ -132,7 +132,7 @@ int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT *ev){
 			loopQualifica(ev);
 		}
 
-		if (player->chances > 2 &&  player->chances < 4){
+		if (player->chances > 1 &&  player->chances < 4){
 			al_draw_bitmap(ranking->imageBom, 0, 0, 0);
 			loopQualifica(ev);
 		}

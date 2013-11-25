@@ -70,6 +70,7 @@ Retorna o personagem escolhido. o tipo Personagem é int, vindo de um enum
 
 Personagem GetPersonagem(lgImages *lgDados, Player *player)
 {
+	player->chances = 0;
 	Personagem person;
 	switch(lgDados->itmSelX)
 	{
@@ -101,7 +102,7 @@ Personagem GetPersonagem(lgImages *lgDados, Player *player)
 Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 {
 	bool sair = false;
-
+	player->chances = 0;
 	lgImages *lgDados = malloc(sizeof(lgImages));
 	lgDados->itmSelX = 70;
 	lgDados->itmSelY = 460;

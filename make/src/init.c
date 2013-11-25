@@ -7,15 +7,10 @@
 #include "comum.h"
 #include "config.h"
 
-<<<<<<< HEAD
 
+/*Inicializa recursos do Allegro */
  bool inicializar()
  {
-=======
-/*Inicializa recursos do Allegro */
-bool inicializar()
-{
->>>>>>> 70cc5e6336c0cff54478cca21347d855ed040708
     if (!al_init())
     {
         fprintf(stderr, "Falha ao inicializar a Allegro.\n");
@@ -93,17 +88,17 @@ bool inicializar()
     if(!al_install_audio())
     {
     	fprintf(stderr, "Falha ao inicializar o audio.\n");
-     return -1;
- }
+       return -1;
+   }
 
- if(!al_init_acodec_addon())
- {
-     fprintf(stderr, "Falha ao iniciar o audio codec.!\n");
-     return -1;
- }
+   if(!al_init_acodec_addon())
+   {
+       fprintf(stderr, "Falha ao iniciar o audio codec.!\n");
+       return -1;
+   }
 
- if (!al_reserve_samples(1))
- {
+   if (!al_reserve_samples(1))
+   {
     fprintf(stderr, "Falha ao alocar canais de audio.\n");
     return false;
 }
