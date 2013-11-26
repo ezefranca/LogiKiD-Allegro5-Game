@@ -44,6 +44,7 @@ void logicLevelCinco(bool *gateOne, bool *gateTwo, Player *player)
 }
 
 void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, bool *complete){
+	bool x = false, y = false, w = false, z = false;
 	if(gateOne)
 	{
 		levelCinco->circ1 = levelCinco->circ1_on;
@@ -63,6 +64,7 @@ void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, boo
 	if(!gateOne && !gateTwo)
 	{
 		levelCinco->isOn[0] = true;
+		x = true;
 	}
 	else
 	{
@@ -71,6 +73,7 @@ void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, boo
 	if(gateOne && !gateTwo)
 	{
 		levelCinco->isOn[1] = true;
+		y = true;
 	}
 	else
 	{
@@ -79,6 +82,7 @@ void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, boo
 	if(!gateOne && gateTwo)
 	{
 		levelCinco->isOn[2] = true;
+		w = true;
 	}
 	else
 	{
@@ -87,13 +91,15 @@ void drawLogicLevelCinco(bool gateOne, bool gateTwo, LevelCinco *levelCinco, boo
 	if(gateOne && gateTwo)
 	{
 		levelCinco->isOn[3] = true;
+		z = true;
 	}
 	else
 	{
 		levelCinco->isOn[3] = false;
 	}
-	if(-1)
+	if(x == true && y == true && w == true && z ==true){
 		*complete = true;
+	}
 }
 
 void initDrawGatesLevelCinco(LevelCinco *levelCinco){

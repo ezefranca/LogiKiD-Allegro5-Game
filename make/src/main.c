@@ -102,7 +102,8 @@ int main(void)
 	if (!inicializar())
 		return -1;
 	//Animação inicial
-	InitScreens();
+	//InitScreens();
+    al_flush_event_queue(game.fila_eventos);
 	StartMenu();
 	//GameLoop();
 

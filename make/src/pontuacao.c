@@ -32,12 +32,9 @@ void loopQualifica(ALLEGRO_EVENT *ev){
 	al_flip_display();
 	while(!sair)
 	{
-
 		al_wait_for_event(game.fila_eventos, ev);
-	//if(al_is_event_queue_empty(game.fila_eventos)){
 		if (ev->type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			sair = true;
-
 		if(ev->type == ALLEGRO_EVENT_KEY_DOWN)
 		{
 			switch(ev->keyboard.keycode)
@@ -50,8 +47,6 @@ void loopQualifica(ALLEGRO_EVENT *ev){
 				break;
 			}
 		}
-
-	//	}
 	}
 }
 /*
@@ -144,23 +139,11 @@ int qualificaJogador (Player *player, int gameLevel,  ALLEGRO_EVENT *ev){
 		}
 	}
 	if(gameLevel == 5){
-		if (player->chances == 3){
-			al_draw_bitmap(ranking->imageGameover, 0, 0, 0);
-			loopQualifica(ev);
-		}
-
-		if (player->chances > 3 &&  player->chances < 10){
-			al_draw_bitmap(ranking->imageGameover, 0, 0, 0);
-			loopQualifica(ev);
-		}
-
-		if (player->chances > 10){
+		if (player->chances > 3){
 			al_draw_bitmap(ranking->imageGameover, 0, 0, 0);
 			loopQualifica(ev);
 		}
 	}
-
-
 	return 1;
 
 }
