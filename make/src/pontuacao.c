@@ -30,6 +30,7 @@ Função para exibição da tela de premiação.
 void loopQualifica(ALLEGRO_EVENT *ev){
 	bool sair = false;
 	al_flip_display();
+	system("cd ./data ; ./arduino-serial -b 9600 -p /dev/ttyACM1 -s off");
 	while(!sair)
 	{
 		al_wait_for_event(game.fila_eventos, ev);

@@ -7,9 +7,11 @@
 #include "selecaomenu.h"
 #include <string.h>
 
+ALLEGRO_BITMAP *menufundo;
+
 void menuSelecaox()
 {
-	ALLEGRO_BITMAP *menufundo = al_load_bitmap("./data/levels/selecao.png");
+	menufundo = al_load_bitmap("./data/levels/selecao.png");
 	al_draw_bitmap(menufundo, 0, 0, 0);
 	al_draw_text(game.fonte, al_map_rgb(255,  0,  0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
 	//al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, "Sair");
@@ -19,7 +21,11 @@ void menuSelecaox()
 
 void mk_right(lgImages *lgDados)
 {
-	al_draw_bitmap(lgDados->Seletor2,  lgDados->itmSelX,  lgDados->itmSelY, 0);
+	//al_draw_bitmap(lgDados->Seletor2,  lgDados->itmSelX,  lgDados->itmSelY, 0);
+	//DrawImages(lgDados);
+	//al_draw_bitmap(menufundo, 0, 0, 0);
+	al_draw_text(game.fonte, al_map_rgb(255,  0,  0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
+	//DrawImages(lgDados);
 	if(lgDados->itmSelX == 490){
 		lgDados->itmSelX = 70;
 	} else{
@@ -29,7 +35,11 @@ void mk_right(lgImages *lgDados)
 
 void mk_left(lgImages *lgDados)
 {
-	al_draw_bitmap(lgDados->Seletor2,  lgDados->itmSelX,  lgDados->itmSelY, 0);
+	DrawImages(lgDados);
+	//al_draw_bitmap(lgDados->Seletor2,  lgDados->itmSelX,  lgDados->itmSelY, 0);
+	//al_draw_bitmap(menufundo, 0, 0, 0);
+	al_draw_text(game.fonte, al_map_rgb(255,  0,  0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
+	//DrawImages(lgDados);
 	if(lgDados->itmSelX == 70)
 	{
 		lgDados->itmSelX = 490;
@@ -46,10 +56,10 @@ void DrawImages(lgImages *lgDados)
 	// Os al_draw_text comentando são para inserção do nome de cada personagem
       //al_draw_bitmap(lgDados->ImagemMenu, 150, 460, 0);
 	// draw the item selector...
-	al_draw_bitmap(lgDados->Seletor,  lgDados->itmSelX,  lgDados->itmSelY, 0);
+	al_draw_bitmap(lgDados->Seletor, (lgDados->itmSelX-5),  (lgDados->itmSelY-5), 0);
 	// show gates and the gate count...
 	al_draw_bitmap(lgDados->PER1, 70, 460, 0);
-	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 197, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgAND));
+	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 197, 472, ALLEGRO_ALIGN_CENTER, "LogiKid");
 	al_draw_bitmap(lgDados->PER2, 140, 460, 0);
 	//al_draw_text(game.fonte_menu, al_map_rgb(255, 0, 0), 297, 472, ALLEGRO_ALIGN_CENTER, itoa(player->lGates.lgOR));
 	al_draw_bitmap(lgDados->PER3, 210, 460, 0);
@@ -154,6 +164,7 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 			}
 		}
 		if(al_is_event_queue_empty(game.fila_eventos)) {
+			al_draw_bitmap(menufundo, 0, 0, 0);
 			DrawImages(lgDados);
 			al_flip_display();
 		}

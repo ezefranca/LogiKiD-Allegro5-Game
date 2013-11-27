@@ -23,7 +23,7 @@ ALLEGRO_SAMPLE *launch_song; //	= al_load_sample("./data/sound/music/Lunch.ogg")
 ALLEGRO_SAMPLE *synth_song;// = al_load_sample("./data/sound/music/Syntheticity.ogg");
 
 int i;
-
+bool arduino = true;
 bool isDestroyed = false;
 bool redraw = false;
 bool complete = false;
@@ -266,6 +266,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			drawLevelOne(levelOne);
 			if(isDestroyed == false)
 			{
+				arduino = true;
 				destroyLevelZero(levelZero);
 				free(levelZero);
 					isDestroyed = true;
@@ -277,6 +278,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			drawLevelDois(levelDois);
 			if(isDestroyed == false)
 			{
+				arduino = true;
 				destroyLevelOne(levelOne);
 				free(levelOne);
 				isDestroyed = true;
@@ -287,6 +289,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			drawLevelTres(levelTres);
 			if(isDestroyed == false)
 			{
+				arduino = true;
 				destroyLevelDois(levelDois);
 				free(levelDois);
 				isDestroyed = true;
@@ -297,6 +300,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			drawLevelQuatro(levelQuatro);
 			if(isDestroyed == false)
 			{
+				arduino = true;
 				destroyLevelTres(levelTres);
 				free(levelTres);
 				isDestroyed = true;
@@ -307,6 +311,7 @@ void GameLoop(ALLEGRO_EVENT ev)
 			drawLevelCinco(levelCinco);
 			if(isDestroyed == false)
 			{
+				arduino = true;
 				destroyLevelQuatro(levelQuatro);
 				free(levelQuatro);
 				isDestroyed = true;
@@ -317,6 +322,12 @@ void GameLoop(ALLEGRO_EVENT ev)
 		if(redraw && al_is_event_queue_empty(game.fila_eventos)) {
 			redraw = false;
 			al_flip_display();
+			if(complete)
+				if (arduino == true){
+		      	al_flip_display();
+		      	arduino = false;
+		      	system("cd ./data ; ./arduino-serial -b 9600 -p /dev/ttyACM1 -s on");
+		      }
 		}
 	}
 	//destroyLevelTres(levelTres);
