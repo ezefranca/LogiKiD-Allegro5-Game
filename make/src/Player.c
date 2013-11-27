@@ -291,12 +291,9 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 			case ALLEGRO_KEY_DOWN:
 			keys->keyDown = true;
 			break;
-			case ALLEGRO_KEY_M:
-			printf("Entrou no Menu: \n");
-			break;
 		}
 	}
-	else if(ev->type == ALLEGRO_EVENT_KEY_UP)
+	if(ev->type == ALLEGRO_EVENT_KEY_UP)
 	{
 		ValidaMovimento_CK_UP(player);
 		switch(ev->keyboard.keycode)
@@ -318,6 +315,40 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 			keys->keyDown = false;
 			break;
 		}
+	}
+	if (ev->type == ALLEGRO_EVENT_JOYSTICK_AXIS)
+	{
+		ValidaMovimento_CK_UP(player);
+		if(ev->joystick.axis == 0)
+        {
+            if(ev->joystick.pos > 0){
+            	keys->keyRight = true;
+            }
+            if(ev->joystick.pos < 0)
+            {
+            	keys->keyLeft = true;
+            }
+            if(ev->joystick.pos == 0){
+            	al_flush_event_queue(game.fila_eventos);
+            	keys->keyRight = false;
+            	keys->keyLeft = false;
+            }
+        }
+        else if(ev->joystick.axis == 1)
+        {
+    	    if(ev->joystick.pos > 0){
+            	keys->keyDown = true;
+            }
+            if(ev->joystick.pos < 0)
+            {
+            	keys->keyUp = true;
+            }
+            if(ev->joystick.pos == 0){
+            	al_flush_event_queue(game.fila_eventos);
+            	keys->keyUp = false;
+            	keys->keyDown = false;
+            }
+        }         
 	}
 }
 

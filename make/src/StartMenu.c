@@ -94,7 +94,7 @@ void StartMenu()
 				else
 					MenuPosition--;
 				break;
-				break;
+			
 				case ALLEGRO_KEY_DOWN:
 				tecla = 2;
 				//ultima posição disponivel
@@ -106,9 +106,60 @@ void StartMenu()
 				break;
 			}
 		}
-		else if (ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+		if(ev.type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 		{
 			sair = true;
+		}
+		if (ev.type == ALLEGRO_EVENT_JOYSTICK_AXIS)
+		{
+			game.som = al_load_sample("./data/sound/menu_open.wav");
+			al_play_sample(game.som, 2.0, 0.0,1,ALLEGRO_PLAYMODE_ONCE,NULL);
+			if(ev.joystick.axis == 1)
+        	{
+    	    	if(ev.joystick.pos > 0)
+    	    	{
+            		tecla = 2;
+					//ultima posição disponivel
+					if(MenuPosition == 2)
+						//Posição inicial
+						MenuPosition = 0;
+					else
+					MenuPosition++;
+          		}
+            	if(ev.joystick.pos < 0)
+            	{
+            		tecla = 1;
+					if(MenuPosition == 0)
+						//ultima posição disponivel
+						MenuPosition = 2;
+					else
+						MenuPosition--;
+					
+            	}
+            } 
+		}
+		if(ev.type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN){
+			switch (ev.joystick.button)
+			{
+				case 2:
+				case 9:
+					if(MenuPosition == 0)
+					{
+						menuSelecaox();
+						GameLoop(ev);
+						sair = true;
+						break;
+						//PrintMenu(0);
+					}
+					else if(MenuPosition == 1) {
+							OpcoesMenu();
+							tecla = 3;
+						}
+					else{
+						sair = true;
+					}
+				break;
+			}
 		}
 
 		if (tecla)

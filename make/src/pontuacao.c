@@ -48,6 +48,15 @@ void loopQualifica(ALLEGRO_EVENT *ev){
 				break;
 			}
 		}
+		if(ev->type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN){
+			switch(ev->joystick.button)
+			{
+				case 2:
+				case 9:
+					sair = true;
+				break;
+			}
+		}
 	}
 }
 /*

@@ -15,9 +15,7 @@ void menuSelecaox()
 	al_draw_bitmap(menufundo, 0, 0, 0);
 	al_draw_text(game.fonte, al_map_rgb(255,  0,  0), 800 / 2, 50, ALLEGRO_ALIGN_CENTRE, get_idioma("Choose your character"));
 	//al_draw_text(game.fonte, al_map_rgb(255, 255, 255), 800 / 2, 152, ALLEGRO_ALIGN_CENTRE, "Sair");
-
 }
-
 
 void mk_right(lgImages *lgDados)
 {
@@ -136,7 +134,7 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 	{
 		al_wait_for_event(game.fila_eventos, ev);
 
-		if (ev->type == ALLEGRO_EVENT_DISPLAY_CLOSE)
+		if(ev->type == ALLEGRO_EVENT_DISPLAY_CLOSE)
 			sair = true;
 
 		if(ev->type == ALLEGRO_EVENT_KEY_DOWN)
@@ -144,24 +142,49 @@ Personagem MenuLoadPerson(ALLEGRO_EVENT *ev, Player *player)
 			switch(ev->keyboard.keycode)
 			{
 				case ALLEGRO_KEY_ESCAPE:
-				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
-				sair = true;
+					al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+					sair = true;
 				break;
 				case ALLEGRO_KEY_ENTER:
-				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
-				return GetPersonagem(lgDados, player);
+					al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+					return GetPersonagem(lgDados, player);
 				break;
 				case ALLEGRO_KEY_LEFT:
-				mk_left(lgDados);
+					mk_left(lgDados);
 				break;
 				case ALLEGRO_KEY_RIGHT:
-				mk_right(lgDados);
+					mk_right(lgDados);
 				break;
 				case ALLEGRO_KEY_M:
-				al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
-				sair=true;
+					al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+					sair=true;
 				break;
 			}
+		}
+		if(ev->type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN){
+			switch (ev->joystick.button)
+			{
+				case 2:
+				case 9:
+					al_play_sample(lgDados->menuSoundOpen, 1.0, 0.0,1.3,ALLEGRO_PLAYMODE_ONCE,NULL);
+					return GetPersonagem(lgDados, player);
+				break;
+			}
+		}
+
+		if (ev->type == ALLEGRO_EVENT_JOYSTICK_AXIS)
+		{
+			ValidaMovimento_CK_UP(player);
+			if(ev->joystick.axis == 0)
+    	    {
+	            if(ev->joystick.pos > 0){
+	            	mk_right(lgDados);
+	            }
+	            if(ev->joystick.pos < 0)
+	            {
+	            	mk_left(lgDados);
+	            }
+	        }
 		}
 		if(al_is_event_queue_empty(game.fila_eventos)) {
 			al_draw_bitmap(menufundo, 0, 0, 0);

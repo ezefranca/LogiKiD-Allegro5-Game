@@ -35,6 +35,18 @@
         fprintf(stderr, "Falha ao inicializar o teclado.\n");
         return false;
     }
+    if(!al_install_joystick())
+    {
+        fprintf(stderr, "Falha ao inicializar o joystick.\n");
+        return false;
+    }
+    al_reconfigure_joysticks();
+ 
+    if (al_get_num_joysticks() == 0)
+    {
+        fprintf(stderr, "Nenhum joystick encontrado.\n");
+    }
+    game.joystick = al_get_joystick(al_get_num_joysticks() - 1);
 
     game.janela = al_create_display(ALTURA, LARGURA);
     if (!game.janela)
@@ -43,6 +55,7 @@
         return false;
     }
     al_set_window_title(game.janela, get_idioma("Integrator Project II - Senac - CCB"));
+
 
     game.fila_eventos = al_create_event_queue();
     if (!game.fila_eventos)
@@ -101,38 +114,37 @@
    {
     fprintf(stderr, "Falha ao alocar canais de audio.\n");
     return false;
-}
+    }
 
-if(!load_configuracao("data/config/config.conf")){
-    fprintf(stderr, "Falha ao carregar configuração!\n");
-    return false;
-}
+    if(!load_configuracao("data/config/config.conf")){
+        fprintf(stderr, "Falha ao carregar configuração!\n");
+        return false;
+    }
 
     //Carrega configuracao de usuario.
-    if(!load_config_user("data/config/user.conf")){
-        fprintf(stderr, "Falha ao carregar configuração de usuário!\n");
-        return false;
+    if(!load_config_user("data/config/user.conf"))
+    {
+            fprintf(stderr, "Falha ao carregar configuração de usuário!\n");
+            return false;
     }
 
     if(strcmp(get_config_user("idioma"), "idioma") != 0){
-        load_idioma(get_config_user("idioma"));
+            load_idioma(get_config_user("idioma"));
     }
-    else
-    //Carrega idioma padrão.
-    if(!load_idioma("data/idiomas/pt_br.conf")){
-        fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
-        return false;
+    else if(!load_idioma("data/idiomas/pt_br.conf")){
+            fprintf(stderr, "Falha ao carregar idioma padrão (Português)!\n");
+            return false;
     }
 
 
-game.mute = 1;
+    game.mute = 1;
     //Aqui você pode implementar um savestate
     // 42 é o valor do tutorial (instrucoes de jogo)
-game.level = 42;
-al_register_event_source(game.fila_eventos, al_get_mouse_event_source());
-al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
-al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());
-al_register_event_source(game.fila_eventos, al_get_display_event_source(game.janela));
-
-return true;
+    game.level = 42;
+    al_register_event_source(game.fila_eventos, al_get_mouse_event_source());
+    al_register_event_source(game.fila_eventos, al_get_timer_event_source(game.timer));
+    al_register_event_source(game.fila_eventos, al_get_keyboard_event_source());
+    al_register_event_source(game.fila_eventos, al_get_display_event_source(game.janela));
+    al_register_event_source(game.fila_eventos, al_get_joystick_event_source());
+    return true;
 }

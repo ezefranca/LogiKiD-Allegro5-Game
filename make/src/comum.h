@@ -39,6 +39,7 @@ ele disse que acha elegante. Bencz Design Pattern...
  	ALLEGRO_SAMPLE *song;
  	ALLEGRO_SAMPLE_INSTANCE *songInstance;
  	ALLEGRO_FONT *fonteKeys;
+ 	ALLEGRO_JOYSTICK *joystick;
  };
 
  struct Game game;
