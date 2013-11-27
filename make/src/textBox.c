@@ -39,6 +39,15 @@ void TextBoxLoad(ALLEGRO_EVENT *ev, char dialog[])
 				break;
 			}
 		}
+		if(ev->type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN){
+			switch (ev->joystick.button)
+			{
+				case 2:
+				case 9:
+					sair = true;
+				break;
+			}
+		}
 		al_flip_display();
 	}
 }
@@ -60,6 +69,15 @@ void TextBoxLoad_matriz(ALLEGRO_EVENT *ev, char *dialog[], int textYPos)
 				case ALLEGRO_KEY_ENTER:
 				case ALLEGRO_KEY_ESCAPE:
 				sair = true;
+				break;
+			}
+		}
+		if(ev->type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN){
+			switch (ev->joystick.button)
+			{
+				case 2:
+				case 9:
+					sair = true;
 				break;
 			}
 		}
