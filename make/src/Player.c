@@ -263,6 +263,8 @@ void createKeys(Keys *keys)
 	keys->keyDown = false;
 	keys->keyLeft = false;
 	keys->keyRight = false;
+	keys->keySelect = false;
+	keys->keyStart = false;
 }
 
 /*
@@ -271,25 +273,45 @@ de processamento de I/O  do mapa de teclas.
 */
 void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 {
+	bool isDown = false;
 	if(ev->type == ALLEGRO_EVENT_KEY_DOWN)
 	{
 		switch(ev->keyboard.keycode)
 		{
 			case ALLEGRO_KEY_A:
 			case ALLEGRO_KEY_LEFT:
-			keys->keyLeft = true;
+				keys->keyLeft = true;
 			break;
+		
 			case ALLEGRO_KEY_D:
 			case ALLEGRO_KEY_RIGHT:
-			keys->keyRight = true;
+				keys->keyRight = true;
 			break;
+		
 			case ALLEGRO_KEY_W:
 			case ALLEGRO_KEY_UP:
-			keys->keyUp = true;
+				keys->keyUp = true;
 			break;
+		
 			case ALLEGRO_KEY_S:
 			case ALLEGRO_KEY_DOWN:
-			keys->keyDown = true;
+				keys->keyDown = true;
+			break;
+		
+			case ALLEGRO_KEY_SPACE:
+				if(isDown == false){
+					keys->keySelect = true;
+					isDown = true;
+				}
+				else keys->keySelect = false;
+			break;
+
+			case ALLEGRO_KEY_ENTER:
+				if(isDown == false){
+					keys->keyStart = true;
+					isDown = true;
+				}
+				else keys->keyStart = false;	
 			break;
 		}
 	}
@@ -300,22 +322,70 @@ void setKeys(Keys *keys, Player *player, ALLEGRO_EVENT *ev)
 		{
 			case ALLEGRO_KEY_A:
 			case ALLEGRO_KEY_LEFT:
-			keys->keyLeft = false;
+				keys->keyLeft = false;
 			break;
+		
 			case ALLEGRO_KEY_D:
 			case ALLEGRO_KEY_RIGHT:
-			keys->keyRight = false;
+				keys->keyRight = false;
 			break;
+		
 			case ALLEGRO_KEY_W:
 			case ALLEGRO_KEY_UP:
-			keys->keyUp = false;
+				keys->keyUp = false;
 			break;
+		
 			case ALLEGRO_KEY_S:
 			case ALLEGRO_KEY_DOWN:
-			keys->keyDown = false;
+				keys->keyDown = false;
+			break;
+
+			case ALLEGRO_KEY_SPACE:
+				keys->keySelect = false;
+				isDown = false;
+			break;
+
+			case ALLEGRO_KEY_ENTER:
+				keys->keyStart = false;
+				isDown = false;
 			break;
 		}
 	}
+
+	if(ev->type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN){
+		switch (ev->joystick.button)
+		{
+			case 2:
+				if(isDown == false){
+					keys->keySelect = true;
+					isDown = true;
+				}
+			break;
+
+			case 9:
+				if(isDown == false){
+					keys->keyStart = true;
+					isDown = true;
+				}
+			break;
+		}
+	}
+
+	if(ev->type == ALLEGRO_EVENT_JOYSTICK_BUTTON_UP){
+		switch (ev->joystick.button)
+		{
+			case 2:
+				keys->keySelect = false;
+				isDown = false;
+			break;
+
+			case 9:
+				keys->keyStart = false;
+				isDown: false;
+			break;
+		}
+	}
+
 	if (ev->type == ALLEGRO_EVENT_JOYSTICK_AXIS)
 	{
 		ValidaMovimento_CK_UP(player);

@@ -59,6 +59,8 @@
  	bool keyDown;
  	bool keyLeft;
  	bool keyRight;
+ 	bool keyStart;
+ 	bool keySelect;
  }Keys;
 
  void CreatePlayer(Player *player, int hStartPosition, int wStartPosition, int spritePersonagem);

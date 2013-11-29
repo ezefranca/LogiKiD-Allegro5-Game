@@ -23,6 +23,8 @@ ALLEGRO_SAMPLE *launch_song; //	= al_load_sample("./data/sound/music/Lunch.ogg")
 ALLEGRO_SAMPLE *synth_song;// = al_load_sample("./data/sound/music/Syntheticity.ogg");
 
 int i;
+
+bool isDown = false;
 bool arduino = true;
 bool isDestroyed = false;
 bool redraw = false;
@@ -94,247 +96,123 @@ void GameLoop(ALLEGRO_EVENT ev)
 			//limpa_config_user();
 			al_destroy_sample_instance(game.songInstance);
 		}
-		if(ev.type == ALLEGRO_EVENT_KEY_DOWN || ev.type == ALLEGRO_EVENT_JOYSTICK_BUTTON_DOWN)
-		{	
-		    switch (ev.joystick.button)
-            {
-            	case 2:
-                    if(game.level == 0)
-					{
-						logicLevelZero(&inputs[0], &complete, levelZero, player);
-					}
-					if(game.level == 1)
-					{
-						logicLevelOne(&inputs[0], &inputs[1], &inputs[2], player);
-						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-					}
-					if(game.level == 2)
-					{
-						logicLevelDois(&inputs[0], &inputs[1], &inputs[2], player);
-						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-					}
-					if(game.level == 3)
-					{
-						logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
-						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
-					}
-					if(game.level == 4)
-					{
-						logicLevelQuatro(&inputs[0], &inputs[1], &inputs[2], player);
-						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
-					}
-					if(game.level == 5)
-					{
-						logicLevelCinco(&inputs[0], &inputs[1], player);
-						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
-					}
-				break;
-                
-                case 9:
-                	case ALLEGRO_KEY_ENTER:
-					printf("%d\n", complete);
-
-					if(complete)
-					{
-						musicPlayer(0);
-						qualificaJogador (player, game.level, &ev);
-						musicPlayer(1);
-						isDestroyed = false;
-						player->state.x = 350;
-						player->state.y = 20;
-						player->state.idleE = false;
-						player->state.idleD = false;
-						player->state.idleC = false;
-						player->state.idleB = true;
-						inputs[0] = false;
-						inputs[1] = false;
-						inputs[2] = false;
-						inputs[3] = false;
-						if(game.level == 5)
-						{
-							sair = true;
-							printf("sair = true");
-						}
-						if(game.level == 4)
-						{
-							levelCinco = malloc(sizeof(LevelCinco));
-							game.level = 5;
-							createLevelCinco(levelCinco, player);
-							initDrawGatesLevelCinco(levelCinco);
-							drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
-							printf("Objetivo completo\n");
-							complete = false;
-						}
-						if(game.level == 3)
-						{
-							levelQuatro = malloc(sizeof(LevelQuatro));
-							game.level = 4;
-							inputs[1] = true;
-							createLevelQuatro(levelQuatro, player);
-							initDrawGatesLevelQuatro(levelQuatro);
-							drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
-							printf("Objetivo completo\n");
-							complete = false;
-						}
-						if(game.level == 2)
-						{
-							levelTres = malloc(sizeof(LevelTres));
-							game.level = 3;
-							inputs[3] = true;
-							createLevelTres(levelTres, player);
-							initDrawGatesLevelTres(levelTres);
-							drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
-							printf("Objetivo completo\n");
-							complete = false;
-						}
-						if(game.level == 1)
-						{
-							levelDois = malloc(sizeof(LevelDois));
-							game.level = 2;
-							//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-							createLevelDois(levelDois, player);
-							initDrawGatesLevelDois(levelDois);
-							drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-							printf("Objetivo completo \n");
-							complete = false;
-						}
-						if(game.level == 0)
-						{
-							levelOne = malloc(sizeof(LevelOne));
-							game.level = 1;
-							//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-							createLevelOne(levelOne, player);
-							initDrawGatesLevelOne(levelOne);
-							drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-							printf("Objetivo completo \n");
-							complete = false;
-						}
-					}
-				break;
-                default:
-                    printf("100\n");
-                    break;
-            }
-			
-			switch(ev.keyboard.keycode)
+		
+		if(keys->keySelect)
+		{
+			if(!isDown){
+	            if(game.level == 0)
+				{
+					logicLevelZero(&inputs[0], &complete, levelZero, player);
+				}
+				if(game.level == 1)
+				{
+					logicLevelOne(&inputs[0], &inputs[1], &inputs[2], player);
+					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
+				}
+				if(game.level == 2)
+				{
+					logicLevelDois(&inputs[0], &inputs[1], &inputs[2], player);
+					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
+				}
+				if(game.level == 3)
+				{
+					logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
+					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
+				}
+				if(game.level == 4)
+				{
+					logicLevelQuatro(&inputs[0], &inputs[1], &inputs[2], player);
+					drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
+				}
+				if(game.level == 5)
+				{
+					logicLevelCinco(&inputs[0], &inputs[1], player);
+					drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
+				}
+				isDown = true;
+			}
+		}
+        if(!keys->keySelect) isDown = false;    
+        if(keys->keyStart){
+        	printf("%d\n", complete);
+			if(complete)
 			{
-				case ALLEGRO_KEY_ESCAPE:
+				musicPlayer(0);
+				qualificaJogador (player, game.level, &ev);
+				musicPlayer(1);
+				isDestroyed = false;
+				player->state.x = 350;
+				player->state.y = 20;
+				player->state.idleE = false;
+				player->state.idleD = false;
+				player->state.idleC = false;
+				player->state.idleB = true;
+				inputs[0] = false;
+				inputs[1] = false;
+				inputs[2] = false;
+				inputs[3] = false;
+				if(game.level == 5)
+				{
 					sair = true;
-				break;
-
-				case ALLEGRO_KEY_SPACE:
-					if(game.level == 0)
-					{
-						logicLevelZero(&inputs[0], &complete, levelZero, player);
-					}
-					if(game.level == 1)
-					{
-						logicLevelOne(&inputs[0], &inputs[1], &inputs[2], player);
-						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-					}
-					if(game.level == 2)
-					{
-						logicLevelDois(&inputs[0], &inputs[1], &inputs[2], player);
-						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-					}
-					if(game.level == 3)
-					{
-						logicLevelTres(&inputs[0], &inputs[1], &inputs[2], &inputs[3], player);
-						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
-					}
-					if(game.level == 4)
-					{
-						logicLevelQuatro(&inputs[0], &inputs[1], &inputs[2], player);
-						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
-					}
-					if(game.level == 5)
-					{
-						logicLevelCinco(&inputs[0], &inputs[1], player);
-						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
-					}
-				break;
-
-				case ALLEGRO_KEY_ENTER:
-					printf("%d\n", complete);
-
-					if(complete)
-					{
-						musicPlayer(0);
-						qualificaJogador (player, game.level, &ev);
-						musicPlayer(1);
-						isDestroyed = false;
-						player->state.x = 350;
-						player->state.y = 20;
-						player->state.idleE = false;
-						player->state.idleD = false;
-						player->state.idleC = false;
-						player->state.idleB = true;
-						inputs[0] = false;
-						inputs[1] = false;
-						inputs[2] = false;
-						inputs[3] = false;
-					if(game.level == 5)
-					{
-						sair = true;
-						printf("sair = true");
-					}
-					if(game.level == 4)
-					{
-						levelCinco = malloc(sizeof(LevelCinco));
-						game.level = 5;
-						createLevelCinco(levelCinco, player);
-						initDrawGatesLevelCinco(levelCinco);
-						drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
-					if(game.level == 3)
-					{
-						levelQuatro = malloc(sizeof(LevelQuatro));
-						game.level = 4;
-						inputs[1] = true;
-						createLevelQuatro(levelQuatro, player);
-						initDrawGatesLevelQuatro(levelQuatro);
-						drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
-					if(game.level == 2)
-					{
-						levelTres = malloc(sizeof(LevelTres));
-						game.level = 3;
-						inputs[3] = true;
-						createLevelTres(levelTres, player);
-						initDrawGatesLevelTres(levelTres);
-						drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
-						printf("Objetivo completo\n");
-						complete = false;
-					}
-					if(game.level == 1)
-					{
-						levelDois = malloc(sizeof(LevelDois));
-						game.level = 2;
-						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelDois(levelDois, player);
-						initDrawGatesLevelDois(levelDois);
-						drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
-						printf("Objetivo completo \n");
-						complete = false;
-					}
-					if(game.level == 0)
-					{
-						levelOne = malloc(sizeof(LevelOne));
-						game.level = 1;
-						//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
-						createLevelOne(levelOne, player);
-						initDrawGatesLevelOne(levelOne);
-						drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
-						printf("Objetivo completo \n");
-						complete = false;
-					}
+					printf("sair = true");
+				}
+				if(game.level == 4)
+				{
+					levelCinco = malloc(sizeof(LevelCinco));
+					game.level = 5;
+					createLevelCinco(levelCinco, player);
+					initDrawGatesLevelCinco(levelCinco);
+					drawLogicLevelCinco(inputs[0], inputs[1], levelCinco, &complete);
+					printf("Objetivo completo\n");
+					complete = false;
+				}
+				if(game.level == 3)
+				{
+					levelQuatro = malloc(sizeof(LevelQuatro));
+					game.level = 4;
+					inputs[1] = true;
+					createLevelQuatro(levelQuatro, player);
+					initDrawGatesLevelQuatro(levelQuatro);
+					drawLogicLevelQuatro(inputs[0], inputs[1], inputs[2], levelQuatro, &complete);
+					printf("Objetivo completo\n");
+					complete = false;
+				}
+				if(game.level == 2)
+				{
+					levelTres = malloc(sizeof(LevelTres));
+					game.level = 3;
+					inputs[3] = true;
+					createLevelTres(levelTres, player);
+					initDrawGatesLevelTres(levelTres);
+					drawLogicLevelTres(inputs[0], inputs[1], inputs[2], inputs[3], &complete, levelTres);
+					printf("Objetivo completo\n");
+					complete = false;
+				}
+				if(game.level == 1)
+				{
+					levelDois = malloc(sizeof(LevelDois));
+					game.level = 2;
+					//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+					createLevelDois(levelDois, player);
+					initDrawGatesLevelDois(levelDois);
+					drawLogicLevelDois(inputs[0], inputs[1], inputs[2], levelDois, &complete);
+					printf("Objetivo completo \n");
+					complete = false;
+				}
+				if(game.level == 0)
+				{
+					levelOne = malloc(sizeof(LevelOne));
+					game.level = 1;
+					//fundo = SetBackGroundImage("./data/levels/fase1/teste.png");
+					createLevelOne(levelOne, player);
+					initDrawGatesLevelOne(levelOne);
+					drawLogicLevelOne(inputs[0], inputs[1], inputs[2], levelOne, &complete);
+					printf("Objetivo completo \n");
+					complete = false;
 				}
 			}
 		}
+
 		if(ev.type == ALLEGRO_EVENT_TIMER)
 		{
 			if(!isCollidingGlobal(player, game.level))
