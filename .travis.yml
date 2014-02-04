@@ -1,5 +1,4 @@
-env:
-  global:
+language: c
 before_install:
   - sudo apt-get update -qq
   - cd allegro-install
