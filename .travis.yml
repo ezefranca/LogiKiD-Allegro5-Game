@@ -3,6 +3,7 @@ before_install:
   - sudo apt-get update -qq
   - cd allegro-install
   - bash install.sh -qq
+  - cd ..
   - cd make
 install:
 script:
