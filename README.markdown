@@ -1,6 +1,6 @@
 ProjetoPI2 - Desenvolvimento de um jogo utilizando a Allegro 5.
 ====================
-LogiKiD
+LogiKiD [![Build Status](https://travis-ci.org/senacbcc/BCC-2s13-PI2-LOGIKID.png?branch=master)](https://travis-ci.org/senacbcc/BCC-2s13-PI2-LOGIKID)
 ====================
 ![My image](https://raw.github.com/senacbcc/BCC-2s13-PI2-LOGIKID/master/bin/data/images/intro/intro.png)
 
