@@ -4,7 +4,6 @@ before_install:
   - cd allegro-install
   - bash install.sh -qq
   - cd ..
-  - cd ..
   - cd make
 install:
 script:

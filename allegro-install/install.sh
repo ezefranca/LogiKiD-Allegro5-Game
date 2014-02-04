@@ -24,4 +24,5 @@ git checkout 5.0
 cmake -DCMAKE_INSTALL_PREFIX=/usr .
 make
 sudo make install
+cd ..
 echo "Allegro 5 Instalado"
