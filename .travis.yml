@@ -1,0 +1,14 @@
+env:
+  global:
+before_install:
+  - sudo apt-get update -qq
+  - cd allegro-install
+  - bash install.sh -qq
+install:
+script:
+  - cd make
+  - make
+  - cd ..
+  - cd bin
+  - ./logikid --init-only
+after_script:
