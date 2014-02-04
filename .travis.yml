@@ -3,11 +3,11 @@ before_install:
   - sudo apt-get update -qq
   - cd allegro-install
   - bash install.sh -qq
+  - cd make
 install:
 script:
-  - cd make
   - make
+after_script:
   - cd ..
   - cd bin
   - ./logikid --init-only
-after_script:
