@@ -1,28 +1,24 @@
-ProjetoPI2 - Desenvolvimento de um jogo utilizando a Allegro 5.
-====
+## ProjetoPI2 - Desenvolvimento de um jogo utilizando a Allegro 5.
+
 [![Build Status](https://travis-ci.org/ezefranca/LogiKiD-Allegro5-Game.svg?branch=master)](https://travis-ci.org/ezefranca/LogiKiD-Allegro5-Game)
-LogiKiD 
-===
+
+### LogiKiD 
+
 ![My image](https://raw.github.com/senacbcc/BCC-2s13-PI2-LOGIKID/master/bin/data/images/intro/intro.png)
 
-Sobre
+### Sobre
 ---------------------
 Projeto Integrador do 2º Semestre do Bacharelado em Ciência da Computação do Centro Universitário Senac.
 
-Integrantes
----------------------
-> Atuais
+### Integrantes
 
-Ezequiel França    (@ezefranca)
-Tales Pádua        (@talespadua)
-Gabriel Fontenelle (@OdnaropX)
+- Ezequiel França    (@ezefranca)
+- Tales Pádua        (@talespadua)
+- Gabriel Fontenelle (@OdnaropX)
+- Alexandre Bencz    (@bencz)
 
-> Ex
+### Licença e Créditos
 
-Alexandre Bencz    (@bencz)
-
-Licença e Créditos
-----------------------
 
 ![My image](http://i.creativecommons.org/l/by-sa/3.0/88x31.png)
 
@@ -37,10 +33,10 @@ Recursos
 > Arquivos de audio utilizados no jogo, estão sendo retirados dos seguintes links:
 
 > ##
-http://www.freesfx.co.uk/
-http://freemusicarchive.org/
+  * http://www.freesfx.co.uk/
+  * http://freemusicarchive.org/
 
-Requisitos
+### Requisitos
 ----------------------
 
 Allegro 5.x instalado no sistema
@@ -53,7 +49,5 @@ Utilizando Makefile:
 -> Entrar na pasta make e escrever make:
 ```
 $ cd LogiKid/make ; make
-```
-
 ```
 
